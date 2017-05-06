@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service_quan_ly_ton_giao", "service_quan_ly_ton_giao\service_quan_ly_ton_giao.csproj", "{1D706AB5-D9DF-4916-B592-60EEBC226ADE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1988D509-7C1E-4848-836A-26A2BE828BD7} = {1988D509-7C1E-4848-836A-26A2BE828BD7}
+		{382D599D-5149-43F6-AECE-B88066C971FB} = {382D599D-5149-43F6-AECE-B88066C971FB}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Server_tblUser", "Server_tblUser\", "{382D599D-5149-43F6-AECE-B88066C971FB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49996"
+		Debug.AspNetCompiler.PhysicalPath = "Server_tblUser\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49996\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49996"
+		Release.AspNetCompiler.PhysicalPath = "Server_tblUser\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49996\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49996"
+		SlnRelativePath = "Server_tblUser\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Server_tblCoSoTonGiao", "Server_tblCoSoTonGiao\", "{1988D509-7C1E-4848-836A-26A2BE828BD7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_20928"
+		Debug.AspNetCompiler.PhysicalPath = "Server_tblCoSoTonGiao\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20928\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_20928"
+		Release.AspNetCompiler.PhysicalPath = "Server_tblCoSoTonGiao\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_20928\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "20928"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Server_tblToChucQuanTri", "Server_tblToChucQuanTri\", "{80E45DDC-3725-483A-8B96-B144A7D79F2F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_21044"
+		Debug.AspNetCompiler.PhysicalPath = "Server_tblToChucQuanTri\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_21044\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_21044"
+		Release.AspNetCompiler.PhysicalPath = "Server_tblToChucQuanTri\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_21044\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "21044"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D706AB5-D9DF-4916-B592-60EEBC226ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D706AB5-D9DF-4916-B592-60EEBC226ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D706AB5-D9DF-4916-B592-60EEBC226ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D706AB5-D9DF-4916-B592-60EEBC226ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382D599D-5149-43F6-AECE-B88066C971FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382D599D-5149-43F6-AECE-B88066C971FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382D599D-5149-43F6-AECE-B88066C971FB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{382D599D-5149-43F6-AECE-B88066C971FB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1988D509-7C1E-4848-836A-26A2BE828BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1988D509-7C1E-4848-836A-26A2BE828BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1988D509-7C1E-4848-836A-26A2BE828BD7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1988D509-7C1E-4848-836A-26A2BE828BD7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{80E45DDC-3725-483A-8B96-B144A7D79F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E45DDC-3725-483A-8B96-B144A7D79F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E45DDC-3725-483A-8B96-B144A7D79F2F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E45DDC-3725-483A-8B96-B144A7D79F2F}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
