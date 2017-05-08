@@ -32,13 +32,13 @@
   <wsdl:message name="DangNhapSoapOut">
     <wsdl:part name="parameters" element="tns:DangNhapResponse" />
   </wsdl:message>
-  <wsdl:portType name="WebServiceSoap">
+  <wsdl:portType name="tblUserSoap">
     <wsdl:operation name="DangNhap">
       <wsdl:input message="tns:DangNhapSoapIn" />
       <wsdl:output message="tns:DangNhapSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+  <wsdl:binding name="tblUserSoap" type="tns:tblUserSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DangNhap">
       <soap:operation soapAction="http://tempuri.org/DangNhap" style="document" />
@@ -50,7 +50,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+  <wsdl:binding name="tblUserSoap12" type="tns:tblUserSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DangNhap">
       <soap12:operation soapAction="http://tempuri.org/DangNhap" style="document" />
@@ -62,12 +62,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="WebService">
-    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
-      <soap:address location="http://localhost:49996/WebService.asmx" />
+  <wsdl:service name="tblUser">
+    <wsdl:port name="tblUserSoap" binding="tns:tblUserSoap">
+      <soap:address location="http://localhost:50829/tblUser.asmx" />
     </wsdl:port>
-    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
-      <soap12:address location="http://localhost:49996/WebService.asmx" />
+    <wsdl:port name="tblUserSoap12" binding="tns:tblUserSoap12">
+      <soap12:address location="http://localhost:50829/tblUser.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

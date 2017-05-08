@@ -13,8 +13,8 @@ namespace service_quan_ly_ton_giao.tblUser {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="tblUser.WebServiceSoap")]
-    public interface WebServiceSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="tblUser.tblUserSoap")]
+    public interface tblUserSoap {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DangNhap", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -25,29 +25,29 @@ namespace service_quan_ly_ton_giao.tblUser {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface WebServiceSoapChannel : service_quan_ly_ton_giao.tblUser.WebServiceSoap, System.ServiceModel.IClientChannel {
+    public interface tblUserSoapChannel : service_quan_ly_ton_giao.tblUser.tblUserSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WebServiceSoapClient : System.ServiceModel.ClientBase<service_quan_ly_ton_giao.tblUser.WebServiceSoap>, service_quan_ly_ton_giao.tblUser.WebServiceSoap {
+    public partial class tblUserSoapClient : System.ServiceModel.ClientBase<service_quan_ly_ton_giao.tblUser.tblUserSoap>, service_quan_ly_ton_giao.tblUser.tblUserSoap {
         
-        public WebServiceSoapClient() {
+        public tblUserSoapClient() {
         }
         
-        public WebServiceSoapClient(string endpointConfigurationName) : 
+        public tblUserSoapClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public WebServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public tblUserSoapClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public WebServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public tblUserSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public WebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public tblUserSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

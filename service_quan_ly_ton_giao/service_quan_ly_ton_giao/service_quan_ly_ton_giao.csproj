@@ -172,7 +172,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Service References\tblCoSo\WebService.wsdl" />
-    <None Include="Service References\tblUser\WebService.wsdl" />
+    <None Include="Service References\tblUser\tblUser.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -180,21 +180,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
     <WCFMetadataStorage Include="Service References\tblUser\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\WebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\tblCoSo\WebService.disco" />
@@ -234,6 +219,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblUser\tblUser.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblUser\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblUser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
