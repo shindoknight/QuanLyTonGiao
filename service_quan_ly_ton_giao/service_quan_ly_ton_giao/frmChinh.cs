@@ -143,5 +143,26 @@ namespace service_quan_ly_ton_giao
         {
             Application.Exit();
         }
+
+        private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
+          
+            frmDSTG.Show();
+        }
+
+        private void bbtnThemCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThemCoSoTonGiao frmDSTG = new frmThemCoSoTonGiao();
+           
+            frmDSTG.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMapCoSo frmDSTG = new frmMapCoSo();
+          
+            frmDSTG.Show();
+        }
     }
 }
