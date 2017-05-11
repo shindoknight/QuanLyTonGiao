@@ -144,6 +144,7 @@ namespace service_quan_ly_ton_giao
             Application.Exit();
         }
 
+<<<<<<< HEAD
         private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
@@ -163,6 +164,15 @@ namespace service_quan_ly_ton_giao
             frmMapCoSo frmDSTG = new frmMapCoSo();
           
             frmDSTG.Show();
+=======
+        private void bbtnDSTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            FormDSTonGiao f = new FormDSTonGiao();
+            
+            f.FormBorderStyle = FormBorderStyle.None;
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 2);
+>>>>>>> Hiep
         }
     }
 }
