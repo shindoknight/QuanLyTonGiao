@@ -38,17 +38,19 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(284, 261);
+            this.xtraTabControl1.Size = new System.Drawing.Size(440, 352);
             this.xtraTabControl1.TabIndex = 0;
+            this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
             // xFrmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(440, 352);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "xFrmDanhMuc";
             this.Text = "xFrmDanhMuc";
+            this.Load += new System.EventHandler(this.xFrmDanhMuc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.ResumeLayout(false);
 

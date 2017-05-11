@@ -431,3 +431,5 @@ D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanL
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.xFrmTrangChu.resources
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.csproj.GenerateResource.Cache
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormHome.resources
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormDSTonGiao.resources
