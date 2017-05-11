@@ -23,7 +23,7 @@ public class tblUser : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
     [WebMethod]
     public DataTable DangNhap(string username, string password)
     {
