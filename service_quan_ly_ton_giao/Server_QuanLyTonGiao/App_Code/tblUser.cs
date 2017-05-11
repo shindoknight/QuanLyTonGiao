@@ -22,11 +22,6 @@ public class tblUser : System.Web.Services.WebService
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
-<<<<<<< HEAD
-
-    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
-    [WebMethod]
-=======
     static SqlConnection con = null;
     public static void OpenConnect()
     {
@@ -47,7 +42,6 @@ public class tblUser : System.Web.Services.WebService
             con.Close();
     }
    [WebMethod]
->>>>>>> Hiep
     public DataTable DangNhap(string username, string password)
     {
         OpenConnect();

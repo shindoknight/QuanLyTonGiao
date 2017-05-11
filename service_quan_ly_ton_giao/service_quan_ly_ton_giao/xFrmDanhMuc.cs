@@ -58,7 +58,7 @@ namespace service_quan_ly_ton_giao
                 DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage { Text = Text, Name = Name, ImageIndex = imgindex };
                 xtraTabControl1.TabPages.Add(tabpage);
                 xtraTabControl1.SelectedTabPage = tabpage;
-
+                form.FormBorderStyle = FormBorderStyle.None;
                 form.TopLevel = false;
                 form.Parent = tabpage;
                 form.Show();

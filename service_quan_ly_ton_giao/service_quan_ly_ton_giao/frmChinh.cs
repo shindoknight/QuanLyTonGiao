@@ -144,35 +144,41 @@ namespace service_quan_ly_ton_giao
             Application.Exit();
         }
 
-<<<<<<< HEAD
         private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
-          
-            frmDSTG.Show();
+
+            frmDSTG.FormBorderStyle = FormBorderStyle.None;
+            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
+             
         }
 
         private void bbtnThemCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             frmThemCoSoTonGiao frmDSTG = new frmThemCoSoTonGiao();
+
+            frmDSTG.FormBorderStyle = FormBorderStyle.None;
+            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
            
-            frmDSTG.Show();
         }
 
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmMapCoSo frmDSTG = new frmMapCoSo();
-          
-            frmDSTG.Show();
-=======
         private void bbtnDSTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             FormDSTonGiao f = new FormDSTonGiao();
             
             f.FormBorderStyle = FormBorderStyle.None;
-            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 2);
->>>>>>> Hiep
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
+        }
+
+        private void bbtnBanDoCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmMapCoSo frmDSTG = new frmMapCoSo();
+            frmDSTG.FormBorderStyle = FormBorderStyle.None;
+            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
         }
     }
 }
