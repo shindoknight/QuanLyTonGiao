@@ -247,7 +247,6 @@
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
-    <None Include="Service References\tblCoSo\WebService.wsdl" />
     <None Include="Service References\tblUser\tblUser.wsdl" />
   </ItemGroup>
   <ItemGroup>
@@ -284,16 +283,28 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\tblUser.disco" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\configuration91.svcinfo" />
+    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\configuration.svcinfo" />
+    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\Reference.svcmap">
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -314,29 +325,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\Reference.svcmap"/>
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+    <None Include="Service References\tblUser\tblUser.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+    <None Include="Service References\tblUser\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+    <None Include="Service References\tblUser\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
+    <None Include="Service References\tblUser\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
