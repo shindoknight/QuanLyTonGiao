@@ -89,6 +89,12 @@
     <Compile Include="frmChiTietCoSoTonGiao.Designer.cs">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietToChucQuanTri.Designer.cs">
+      <DependentUpon>frmChiTietToChucQuanTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,30 @@
     <Compile Include="frmDSTinDo.Designer.cs">
       <DependentUpon>frmDSTinDo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSToChucQuanTri.Designer.cs">
+      <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapCoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapCoSo.Designer.cs">
+      <DependentUpon>frmMapCoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemCoSoTonGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemCoSoTonGiao.Designer.cs">
+      <DependentUpon>frmThemCoSoTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemToChucQuanTri.Designer.cs">
+      <DependentUpon>frmThemToChucQuanTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceTonGiao\Reference.cs">
@@ -115,6 +145,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\tblCoSo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\tblToChucQuanTri\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -154,6 +189,9 @@
     <EmbeddedResource Include="frmChiTietCoSoTonGiao.resx">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietToChucQuanTri.resx">
+      <DependentUpon>frmChiTietToChucQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +200,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSTinDo.resx">
       <DependentUpon>frmDSTinDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSToChucQuanTri.resx">
+      <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapCoSo.resx">
+      <DependentUpon>frmMapCoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemCoSoTonGiao.resx">
+      <DependentUpon>frmThemCoSoTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemToChucQuanTri.resx">
+      <DependentUpon>frmThemToChucQuanTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,6 +244,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
     <None Include="Service References\tblCoSo\WebService.wsdl" />
     <None Include="Service References\tblUser\tblUser.wsdl" />
@@ -204,22 +256,8 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
+    <WCFMetadataStorage Include="Service References\tblToChucQuanTri\" />
     <WCFMetadataStorage Include="Service References\tblUser\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\WebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bible.png" />
@@ -261,6 +299,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\tblCoSo\ServiceCoSo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap"/>
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

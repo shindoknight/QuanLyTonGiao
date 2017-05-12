@@ -79,6 +79,7 @@
             // clmTenTG
             // 
             this.clmTenTG.Caption = "Tên Tôn Giáo";
+            this.clmTenTG.FieldName = "TenTonGiao";
             this.clmTenTG.Name = "clmTenTG";
             this.clmTenTG.Visible = true;
             this.clmTenTG.VisibleIndex = 0;
@@ -86,6 +87,7 @@
             // clmGioiThieu
             // 
             this.clmGioiThieu.Caption = "Giới thiệu";
+            this.clmGioiThieu.FieldName = "GioiThieu";
             this.clmGioiThieu.Name = "clmGioiThieu";
             this.clmGioiThieu.Visible = true;
             this.clmGioiThieu.VisibleIndex = 1;
@@ -100,6 +102,7 @@
             // clmSTTinDo
             // 
             this.clmSTTinDo.Caption = "Số Lượng Tín Đồ";
+            this.clmSTTinDo.FieldName = "SLTinDo";
             this.clmSTTinDo.Name = "clmSTTinDo";
             this.clmSTTinDo.Visible = true;
             this.clmSTTinDo.VisibleIndex = 3;
