@@ -347,13 +347,7 @@ namespace service_quan_ly_ton_giao
             InitializeComponent();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            DataTable tc = wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboToChucQuanTri.Text + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'" + cboTonGiao.Text + "' and DaXoa=0)");
-            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
-            frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
-            frm.Show();
-        }
+       
         void HienThiHinhLenMap(int SoLuong, string ki, string vi)
         {
             if (SoLuong == 1)
@@ -491,10 +485,7 @@ namespace service_quan_ly_ton_giao
 
 
             //do du lieu len cac combobox
-            cboTonGiao.DataSource = wf.TruyVanTenTonGiao("");
-            cboTonGiao.DisplayMember = "TenTonGiao";
-            cboTinh.DataSource = wf.DuLieuTinh("");
-            cboTinh.DisplayMember = "TenTinh";
+          
             //làm việc với treeview
             ///group các thành phố trực thuộc trung ương
             DataTable ds1 = wf.DuLieuTinh(" where Loai=N'Thành phố'");
@@ -525,28 +516,6 @@ namespace service_quan_ly_ton_giao
             map.Zoom(9);
         }
 
-        private void cboTinh_TextChanged(object sender, EventArgs e)
-        {
-            cboHuyen.DataSource = wf.TruyVanTenHuyen(cboTinh.Text);
-            cboHuyen.DisplayMember = "TenHuyen";
-        }
-
-        private void cboHuyen_TextChanged(object sender, EventArgs e)
-        {
-            cboXa.DataSource = wf.TruyVanTenXa(cboHuyen.Text);
-            cboXa.DisplayMember = "TenXa";
-        }
-
-        private void cboTonGiao_TextChanged(object sender, EventArgs e)
-        {
-            cboToChucQuanTri.DataSource = wf.DuLieuToChucQuanTri(" where IDTonGiao=(select IDTonGiao from tblTonGiao where TenTonGiao=N'" + cboTonGiao.Text + "')");
-            cboToChucQuanTri.DisplayMember = "TenToChuc";
-        }
-
-        private void btnTimKiemChiTiet_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
