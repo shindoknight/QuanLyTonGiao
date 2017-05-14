@@ -16,13 +16,33 @@ namespace service_quan_ly_ton_giao
         public FormDSTonGiao()
         {
             InitializeComponent();
+
         }
 
         private void FormDSTonGiao_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             ServiceTonGiao.ServiceTonGiaoSoapClient ws = new ServiceTonGiao.ServiceTonGiaoSoapClient();
-            DataTable s=  ws.LayDanhSach();
-            gridControl1.DataSource = s;
+            DataTable s = ws.LayDanhSach();
+            dgvDSTG.DataSource = s;
+            
+        }
+
+
+
+        private void dgvDSTG_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                lbTenTG.Text = dgvDSTG.CurrentRow.Cells["clmTenTG"].Value.ToString();
+                txtSLTindo.Text= dgvDSTG.CurrentRow.Cells["clmSLTinDo"].Value.ToString();
+                rtbGioiThieu.Text= dgvDSTG.CurrentRow.Cells["clmGioiThieu"].Value.ToString();
+                string hinhanh= dgvDSTG.CurrentRow.Cells["clmHinhAnh"].Value.ToString();
+                pictureBox1.Image = Image.FromFile(hinhanh);
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                              // panelHinhAnh.BackgroundImage = global::service_quan_ly_ton_giao.Properties.Resources.user_login_icon;
+            }
         }
     }
 }

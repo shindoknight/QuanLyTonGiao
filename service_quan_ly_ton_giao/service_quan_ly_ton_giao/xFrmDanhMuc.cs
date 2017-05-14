@@ -16,6 +16,7 @@ namespace service_quan_ly_ton_giao
         public xFrmDanhMuc()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
         /// <summary>
         /// Kiểm tra tabpage có tồn tại hay không.
