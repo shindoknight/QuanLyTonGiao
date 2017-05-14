@@ -28,7 +28,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
     {
         try
         {
-            string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            string strConnect = @"Data Source=MI\M;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
             conn = new SqlConnection(strConnect);
             conn.Open();
         }
@@ -48,7 +48,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         OpenConnect();
         SqlCommand comm = new SqlCommand("select * from tblTonGiao where DaXoa=0", conn);
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dtdistrict = new DataTable("tblTomgGiao");
+        DataTable dtdistrict = new DataTable("tblTonGiao");
         da.Fill(dtdistrict);
         CloseConnect();
         return dtdistrict;
@@ -59,7 +59,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("insert into tblThemTonGiao (N'" + Ten + "',N'" + gioithieu + "',N'" + hinhanh + "',0,0)", conn);
+            SqlCommand comm = new SqlCommand("insert into tblTonGiao (N'" + Ten + "',N'" + gioithieu + "',N'" + hinhanh + "',0,0)", conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
@@ -76,7 +76,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblThemTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where id=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
@@ -93,7 +93,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblThemTonGiao set daxoa=1 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set daxoa=1 where id=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();

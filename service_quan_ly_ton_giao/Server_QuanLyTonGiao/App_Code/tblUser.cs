@@ -27,7 +27,7 @@ public class tblUser : System.Web.Services.WebService
     {
         try
         {
-            string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            string strConnect = @"Data Source=MI\M;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
             con = new SqlConnection(strConnect);
             con.Open();
         }
@@ -48,7 +48,7 @@ public class tblUser : System.Web.Services.WebService
         SqlCommand comm = new SqlCommand("select * from tblUser where UserName=N'" + username + "' and PassWord=N'" + password + "'", con);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dtdistrict = new DataTable();
+        DataTable dtdistrict = new DataTable("tblUser");
         da.Fill(dtdistrict);
         CloseConnect();
         return dtdistrict;
