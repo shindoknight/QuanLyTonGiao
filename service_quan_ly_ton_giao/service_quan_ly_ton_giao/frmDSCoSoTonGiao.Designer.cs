@@ -98,8 +98,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(933, 737);
-            this.splitContainer1.SplitterDistance = 164;
+            this.splitContainer1.Size = new System.Drawing.Size(933, 733);
+            this.splitContainer1.SplitterDistance = 163;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -115,7 +115,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainer2.Size = new System.Drawing.Size(933, 164);
+            this.splitContainer2.Size = new System.Drawing.Size(933, 163);
             this.splitContainer2.SplitterDistance = 714;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -135,7 +135,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(714, 164);
+            this.groupControl1.Size = new System.Drawing.Size(714, 163);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tìm kiếm chi tiết";
             // 
@@ -184,6 +184,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(98, 21);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -246,7 +247,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(215, 164);
+            this.groupControl2.Size = new System.Drawing.Size(215, 163);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Tìm kiếm nhanh";
             // 
@@ -291,7 +292,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(933, 569);
+            this.splitContainer3.Size = new System.Drawing.Size(933, 566);
             this.splitContainer3.SplitterDistance = 191;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -305,7 +306,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(191, 569);
+            this.navBarControl1.Size = new System.Drawing.Size(191, 566);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -330,8 +331,8 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.grcDSTonGiao);
-            this.splitContainer4.Size = new System.Drawing.Size(738, 569);
-            this.splitContainer4.SplitterDistance = 500;
+            this.splitContainer4.Size = new System.Drawing.Size(738, 566);
+            this.splitContainer4.SplitterDistance = 497;
             this.splitContainer4.TabIndex = 0;
             // 
             // grcDSTonGiao
@@ -342,7 +343,7 @@
             this.grcDSTonGiao.Name = "grcDSTonGiao";
             this.grcDSTonGiao.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.grcDSTonGiao.Size = new System.Drawing.Size(738, 500);
+            this.grcDSTonGiao.Size = new System.Drawing.Size(738, 497);
             this.grcDSTonGiao.TabIndex = 0;
             this.grcDSTonGiao.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -405,7 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 737);
+            this.ClientSize = new System.Drawing.Size(933, 733);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmDSCoSoTonGiao";
             this.Text = "frmDSCoSoTonGiao";

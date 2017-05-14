@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmThemTinDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemTinDo.Designer.cs">
+      <DependentUpon>frmThemTinDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +108,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\tblTinDo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\tblUser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ThongKe\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -125,6 +141,9 @@
     <Compile Include="xFrmTrangChu.Designer.cs">
       <DependentUpon>xFrmTrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmThemTinDo.resx">
+      <DependentUpon>frmThemTinDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChinh.resx">
       <DependentUpon>frmChinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,14 +191,21 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Service References\tblCoSo\WebService.wsdl" />
+    <None Include="Service References\tblTinDo\tblTinDo.wsdl" />
     <None Include="Service References\tblUser\tblUser.wsdl" />
+    <None Include="Service References\ThongKe\service_quan_ly_ton_giao.ThongKe.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ThongKe\ThongKe.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
+    <WCFMetadataStorage Include="Service References\tblTinDo\" />
     <WCFMetadataStorage Include="Service References\tblUser\" />
+    <WCFMetadataStorage Include="Service References\ThongKe\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\tblCoSo\WebService.disco" />
@@ -231,6 +257,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\tblUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblTinDo\tblTinDo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblTinDo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblTinDo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblTinDo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThongKe\ThongKe.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThongKe\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThongKe\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ThongKe\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

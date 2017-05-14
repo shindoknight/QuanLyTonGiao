@@ -48,6 +48,13 @@
             this.bbtnThemTonGiao = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnThongKe = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnTimKiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barlbName = new DevExpress.XtraBars.BarStaticItem();
+            this.bbtnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnSuaTinDo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection32x32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,19 +69,12 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.barlbName = new DevExpress.XtraBars.BarStaticItem();
             this.labelName = new System.Windows.Forms.Label();
-            this.bbtnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbtnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnSuaTinDo = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection32x32)).BeginInit();
@@ -187,6 +187,7 @@
             this.bbtnDSCSTG.Id = 9;
             this.bbtnDSCSTG.LargeImageIndex = 12;
             this.bbtnDSCSTG.Name = "bbtnDSCSTG";
+            this.bbtnDSCSTG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSCSTG_ItemClick);
             // 
             // bbtnThemCoSo
             // 
@@ -242,6 +243,55 @@
             this.bbtnTimKiem.Id = 17;
             this.bbtnTimKiem.LargeImageIndex = 16;
             this.bbtnTimKiem.Name = "bbtnTimKiem";
+            // 
+            // barlbName
+            // 
+            this.barlbName.Id = 19;
+            this.barlbName.Name = "barlbName";
+            this.barlbName.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // bbtnThoat
+            // 
+            this.bbtnThoat.Caption = "Thoát";
+            this.bbtnThoat.Id = 20;
+            this.bbtnThoat.LargeImageIndex = 17;
+            this.bbtnThoat.Name = "bbtnThoat";
+            this.bbtnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThoat_ItemClick);
+            // 
+            // bbtnSaoLuu
+            // 
+            this.bbtnSaoLuu.Caption = "Sao Lưu";
+            this.bbtnSaoLuu.Id = 21;
+            this.bbtnSaoLuu.LargeImageIndex = 21;
+            this.bbtnSaoLuu.Name = "bbtnSaoLuu";
+            // 
+            // bbtnPhucHoi
+            // 
+            this.bbtnPhucHoi.Caption = "Phục Hồi";
+            this.bbtnPhucHoi.Id = 22;
+            this.bbtnPhucHoi.LargeImageIndex = 22;
+            this.bbtnPhucHoi.Name = "bbtnPhucHoi";
+            // 
+            // bbtnSuaTinDo
+            // 
+            this.bbtnSuaTinDo.Caption = "Sửa Thông Tin Tín Đồ";
+            this.bbtnSuaTinDo.Id = 23;
+            this.bbtnSuaTinDo.LargeImageIndex = 18;
+            this.bbtnSuaTinDo.Name = "bbtnSuaTinDo";
+            // 
+            // bbtnNhap
+            // 
+            this.bbtnNhap.Caption = "Nhập Dữ Liệu";
+            this.bbtnNhap.Id = 24;
+            this.bbtnNhap.LargeImageIndex = 20;
+            this.bbtnNhap.Name = "bbtnNhap";
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.Caption = "Xuất Dữ Liệu";
+            this.btnXuat.Id = 25;
+            this.btnXuat.LargeImageIndex = 19;
+            this.btnXuat.Name = "btnXuat";
             // 
             // imageCollection32x32
             // 
@@ -369,6 +419,20 @@
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Tìm kiếm";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnSaoLuu);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnPhucHoi);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Sao Lưu - Phục Hồi";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.bbtnNhap);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnXuat);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Nhập - Xuất Dữ Liệu";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
@@ -398,12 +462,6 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(918, 357);
             this.xtraTabPage1.Text = "Trang chủ";
             // 
-            // barlbName
-            // 
-            this.barlbName.Id = 19;
-            this.barlbName.Name = "barlbName";
-            this.barlbName.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
             // labelName
             // 
             this.labelName.AutoSize = true;
@@ -413,63 +471,6 @@
             this.labelName.Size = new System.Drawing.Size(60, 22);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "label1";
-            // 
-            // bbtnThoat
-            // 
-            this.bbtnThoat.Caption = "Thoát";
-            this.bbtnThoat.Id = 20;
-            this.bbtnThoat.LargeImageIndex = 17;
-            this.bbtnThoat.Name = "bbtnThoat";
-            this.bbtnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThoat_ItemClick);
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnSaoLuu);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnPhucHoi);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Sao Lưu - Phục Hồi";
-            // 
-            // bbtnSaoLuu
-            // 
-            this.bbtnSaoLuu.Caption = "Sao Lưu";
-            this.bbtnSaoLuu.Id = 21;
-            this.bbtnSaoLuu.LargeImageIndex = 21;
-            this.bbtnSaoLuu.Name = "bbtnSaoLuu";
-            // 
-            // bbtnPhucHoi
-            // 
-            this.bbtnPhucHoi.Caption = "Phục Hồi";
-            this.bbtnPhucHoi.Id = 22;
-            this.bbtnPhucHoi.LargeImageIndex = 22;
-            this.bbtnPhucHoi.Name = "bbtnPhucHoi";
-            // 
-            // bbtnSuaTinDo
-            // 
-            this.bbtnSuaTinDo.Caption = "Sửa Thông Tin Tín Đồ";
-            this.bbtnSuaTinDo.Id = 23;
-            this.bbtnSuaTinDo.LargeImageIndex = 18;
-            this.bbtnSuaTinDo.Name = "bbtnSuaTinDo";
-            // 
-            // ribbonPageGroup11
-            // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.bbtnNhap);
-            this.ribbonPageGroup11.ItemLinks.Add(this.btnXuat);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "Nhập - Xuất Dữ Liệu";
-            // 
-            // bbtnNhap
-            // 
-            this.bbtnNhap.Caption = "Nhập Dữ Liệu";
-            this.bbtnNhap.Id = 24;
-            this.bbtnNhap.LargeImageIndex = 20;
-            this.bbtnNhap.Name = "bbtnNhap";
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Caption = "Xuất Dữ Liệu";
-            this.btnXuat.Id = 25;
-            this.btnXuat.LargeImageIndex = 19;
-            this.btnXuat.Name = "btnXuat";
             // 
             // frmChinh
             // 

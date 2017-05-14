@@ -23,5 +23,10 @@ namespace service_quan_ly_ton_giao
             tblCoSo.WebServiceSoapClient wf = new tblCoSo.WebServiceSoapClient();
             grcDSTonGiao.DataSource = wf.HienThiDSCoSo("");
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

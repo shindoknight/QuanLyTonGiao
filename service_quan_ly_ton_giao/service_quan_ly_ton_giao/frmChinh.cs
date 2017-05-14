@@ -143,5 +143,10 @@ namespace service_quan_ly_ton_giao
         {
             Application.Exit();
         }
+
+        private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
