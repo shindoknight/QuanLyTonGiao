@@ -164,5 +164,11 @@ namespace service_quan_ly_ton_giao
           
             frmDSTG.Show();
         }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMapTinDo frmMapTinDo = new frmMapTinDo();
+            frmMapTinDo.Show();
+        }
     }
 }

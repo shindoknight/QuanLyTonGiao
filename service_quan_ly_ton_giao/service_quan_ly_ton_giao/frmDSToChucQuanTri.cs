@@ -63,6 +63,7 @@ namespace service_quan_ly_ton_giao
             {
 
                 wf1.XoaLogicDLCoSo(int.Parse(row["IDToChuc"].ToString()));
+                wf1.XoaCoSotblTinDo(row["TenToChuc"].ToString(), row["TenTonGiao"].ToString(), "");
                 //load lai du lieu
                 HienThi("");
             }

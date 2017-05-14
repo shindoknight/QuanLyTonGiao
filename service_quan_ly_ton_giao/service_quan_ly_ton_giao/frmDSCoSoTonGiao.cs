@@ -15,6 +15,7 @@ namespace service_quan_ly_ton_giao
     public partial class frmDSCoSoTonGiao : DevExpress.XtraEditors.XtraForm
     {
         tblCoSo.ServiceCoSoSoapClient wf = new tblCoSo.ServiceCoSoSoapClient();
+        tblToChucQuanTri.tblToChucQuanTriSoapClient wf1 = new tblToChucQuanTri.tblToChucQuanTriSoapClient();
         public frmDSCoSoTonGiao()
         {
             InitializeComponent();
@@ -76,6 +77,14 @@ namespace service_quan_ly_ton_giao
                 wf.XoaLogicDLCoSo(int.Parse(row["IDCoSo"].ToString()));
                 //load lai du lieu
                 grcDSTonGiao.DataSource = wf.HienThiDSCoSo("", "");
+                try
+                {
+                    wf.XoaCoSotblTinDo(int.Parse(row["IDCoSo"].ToString()), "");
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể xóa bên bảng tin đồ");
+                }
             }
 
         }
@@ -182,10 +191,18 @@ namespace service_quan_ly_ton_giao
             
             grcDSTonGiao.DataSource = wf.HienThiDSCoSo("", " where a.DiaChi =N'"+xa.Rows[0]["IDXa"].ToString()+"' and a.TenToChuc=N'"+cboTenToChucQuanTri.Text+"'");
         }
-
+        
         private void txtTenCoSo_TextChanged(object sender, EventArgs e)
         {
             grcDSTonGiao.DataSource = wf.HienThiDSCoSo("", " where TenCoSo like N'%" + txtTenCoSo.Text + "%'");
+        }
+
+        private void btnChiTietTC_Click(object sender, EventArgs e)
+        {
+            DataTable tc = wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboTenToChucQuanTri.Text + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'"+cboTonGiao.Text+"' and DaXoa=0)");
+            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
+            frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
+            frm.Show();
         }
     }
 }

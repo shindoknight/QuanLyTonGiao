@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HienThiSLTinDoTheoHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenTonGiao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiSLTinDoTheoHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HienThiSLTinDoTheoHuyenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiSLTinDoTheoTinh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenTonGiao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiSLTinDoTheoTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HienThiSLTinDoTheoTinhResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HienThiSLTinDoTheoHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:HienThiSLTinDoTheoHuyen" />
+  </wsdl:message>
+  <wsdl:message name="HienThiSLTinDoTheoHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:HienThiSLTinDoTheoHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="HienThiSLTinDoTheoTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:HienThiSLTinDoTheoTinh" />
+  </wsdl:message>
+  <wsdl:message name="HienThiSLTinDoTheoTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:HienThiSLTinDoTheoTinhResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceMapSoap">
+    <wsdl:operation name="HienThiSLTinDoTheoHuyen">
+      <wsdl:input message="tns:HienThiSLTinDoTheoHuyenSoapIn" />
+      <wsdl:output message="tns:HienThiSLTinDoTheoHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HienThiSLTinDoTheoTinh">
+      <wsdl:input message="tns:HienThiSLTinDoTheoTinhSoapIn" />
+      <wsdl:output message="tns:HienThiSLTinDoTheoTinhSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceMapSoap" type="tns:ServiceMapSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HienThiSLTinDoTheoHuyen">
+      <soap:operation soapAction="http://tempuri.org/HienThiSLTinDoTheoHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiSLTinDoTheoTinh">
+      <soap:operation soapAction="http://tempuri.org/HienThiSLTinDoTheoTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceMapSoap12" type="tns:ServiceMapSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HienThiSLTinDoTheoHuyen">
+      <soap12:operation soapAction="http://tempuri.org/HienThiSLTinDoTheoHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiSLTinDoTheoTinh">
+      <soap12:operation soapAction="http://tempuri.org/HienThiSLTinDoTheoTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceMap">
+    <wsdl:port name="ServiceMapSoap" binding="tns:ServiceMapSoap">
+      <soap:address location="http://localhost:50829/ServiceMap.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceMapSoap12" binding="tns:ServiceMapSoap12">
+      <soap12:address location="http://localhost:50829/ServiceMap.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

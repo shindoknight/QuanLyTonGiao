@@ -113,6 +113,12 @@
     <Compile Include="frmMapCoSo.Designer.cs">
       <DependentUpon>frmMapCoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMapTinDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapTinDo.Designer.cs">
+      <DependentUpon>frmMapTinDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThemCoSoTonGiao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Map\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\tblCoSo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,6 +195,9 @@
     <EmbeddedResource Include="frmMapCoSo.resx">
       <DependentUpon>frmMapCoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMapTinDo.resx">
+      <DependentUpon>frmMapTinDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemCoSoTonGiao.resx">
       <DependentUpon>frmThemCoSoTonGiao.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +235,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
     <None Include="Service References\tblUser\tblUser.wsdl" />
@@ -229,6 +244,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Map\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
     <WCFMetadataStorage Include="Service References\tblToChucQuanTri\" />
     <WCFMetadataStorage Include="Service References\tblUser\" />
@@ -298,6 +314,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\ServiceMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

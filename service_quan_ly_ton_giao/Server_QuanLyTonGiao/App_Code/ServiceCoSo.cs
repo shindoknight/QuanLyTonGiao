@@ -219,6 +219,7 @@ public class ServiceCoSo : System.Web.Services.WebService
         da.Fill(dt);
         return dt;
     }
+   
     [WebMethod]
     public DataTable DuLieuXa(string dieukien)
     {
@@ -252,5 +253,22 @@ public class ServiceCoSo : System.Web.Services.WebService
         da.Fill(dt);
         return dt;
     }
-
+    [WebMethod]
+    public int XoaCoSotblTinDo(int IDCoSo,string DieuKien)
+    {
+        try
+        {
+            //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
+            SqlCommand comm = new SqlCommand("UPDATE tblTinDo SET IDCoSo = NULL where IDCoSo =N'"+IDCoSo+"' " + DieuKien, conn);
+            comm.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable("tblTinDo");
+            da.Fill(dt);
+            return 1;
+        }
+        catch
+        {
+            return 0;
+        }
+    }
 }
