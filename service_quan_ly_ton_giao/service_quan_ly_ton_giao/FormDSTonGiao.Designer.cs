@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.txtSLTindo = new System.Windows.Forms.TextBox();
-            this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbTenTG = new System.Windows.Forms.Label();
-            this.mapControl1 = new DevExpress.XtraMap.MapControl();
             this.dgvDSTG = new System.Windows.Forms.DataGridView();
             this.clmTenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,18 +36,24 @@
             this.clmSLTinDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbTenTG = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSLTindo = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.mapControl1 = new DevExpress.XtraMap.MapControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -71,63 +71,6 @@
             this.splitContainerControl1.SplitterPosition = 238;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // txtSLTindo
-            // 
-            this.txtSLTindo.Enabled = false;
-            this.txtSLTindo.Location = new System.Drawing.Point(162, 79);
-            this.txtSLTindo.Name = "txtSLTindo";
-            this.txtSLTindo.Size = new System.Drawing.Size(160, 21);
-            this.txtSLTindo.TabIndex = 10;
-            // 
-            // rtbGioiThieu
-            // 
-            this.rtbGioiThieu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 154);
-            this.rtbGioiThieu.Name = "rtbGioiThieu";
-            this.rtbGioiThieu.Size = new System.Drawing.Size(500, 245);
-            this.rtbGioiThieu.TabIndex = 9;
-            this.rtbGioiThieu.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Giới Thiệu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Số lượng tín đồ";
-            // 
-            // lbTenTG
-            // 
-            this.lbTenTG.AutoSize = true;
-            this.lbTenTG.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTG.ForeColor = System.Drawing.Color.Brown;
-            this.lbTenTG.Location = new System.Drawing.Point(138, 12);
-            this.lbTenTG.Name = "lbTenTG";
-            this.lbTenTG.Size = new System.Drawing.Size(44, 24);
-            this.lbTenTG.TabIndex = 8;
-            this.lbTenTG.Text = "Tên";
-            // 
-            // mapControl1
-            // 
-            this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
-            this.mapControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.mapControl1.Location = new System.Drawing.Point(500, 0);
-            this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(337, 469);
-            this.mapControl1.TabIndex = 12;
-            this.mapControl1.ZoomLevel = 5D;
             // 
             // dgvDSTG
             // 
@@ -188,16 +131,6 @@
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnSua);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 399);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 70);
-            this.panel1.TabIndex = 14;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rtbGioiThieu);
@@ -212,6 +145,25 @@
             this.panel2.Size = new System.Drawing.Size(500, 399);
             this.panel2.TabIndex = 15;
             // 
+            // rtbGioiThieu
+            // 
+            this.rtbGioiThieu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 154);
+            this.rtbGioiThieu.Name = "rtbGioiThieu";
+            this.rtbGioiThieu.Size = new System.Drawing.Size(500, 245);
+            this.rtbGioiThieu.TabIndex = 9;
+            this.rtbGioiThieu.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(174, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Giới Thiệu";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(341, 12);
@@ -220,6 +172,44 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // lbTenTG
+            // 
+            this.lbTenTG.AutoSize = true;
+            this.lbTenTG.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenTG.ForeColor = System.Drawing.Color.Brown;
+            this.lbTenTG.Location = new System.Drawing.Point(138, 12);
+            this.lbTenTG.Name = "lbTenTG";
+            this.lbTenTG.Size = new System.Drawing.Size(44, 24);
+            this.lbTenTG.TabIndex = 8;
+            this.lbTenTG.Text = "Tên";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Số lượng tín đồ";
+            // 
+            // txtSLTindo
+            // 
+            this.txtSLTindo.Enabled = false;
+            this.txtSLTindo.Location = new System.Drawing.Point(162, 79);
+            this.txtSLTindo.Name = "txtSLTindo";
+            this.txtSLTindo.Size = new System.Drawing.Size(160, 21);
+            this.txtSLTindo.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnXoa);
+            this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 399);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(500, 70);
+            this.panel1.TabIndex = 14;
             // 
             // btnXoa
             // 
@@ -244,6 +234,17 @@
             this.btnSua.Text = "Chỉnh Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // mapControl1
+            // 
+            this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
+            this.mapControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mapControl1.Location = new System.Drawing.Point(500, 0);
+            this.mapControl1.Name = "mapControl1";
+            this.mapControl1.Size = new System.Drawing.Size(337, 469);
+            this.mapControl1.TabIndex = 12;
+            this.mapControl1.ZoomLevel = 5D;
             // 
             // FormDSTonGiao
             // 
@@ -256,12 +257,12 @@
             this.Load += new System.EventHandler(this.FormDSTonGiao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             this.ResumeLayout(false);
 
         }

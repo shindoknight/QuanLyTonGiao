@@ -23,7 +23,7 @@ public class ServiceCoSo : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
     [WebMethod]
     public int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi)
     {
@@ -90,7 +90,7 @@ public class ServiceCoSo : System.Web.Services.WebService
         SqlCommand comm = new SqlCommand(@"select a.DiaChi,a.TenToChuc,a.IDCoSo,a.TenXa,a.IDXa,ChucNang,TenThuongGoi,TenCoSo,TenTonGiao,a.IDTonGiao,NguoiQuanLy,a.HinhAnh,PhapDanh" + GioiThieu + " from (select tblCoSo.DiaChi,tblToChucQuanTri.TenToChuc,tblCoSo.IDCoSo,tblXa.TenXa,tblXa.IDXa,ChucNang,TenThuongGoi,TenCoSo,TenTonGiao,tblTonGiao.IDTonGiao,NguoiQuanLy,tblCoSo.GioiThieu,tblCoSo.HinhAnh from  tblToChucQuanTri ,tblCoSo , tblTonGiao ,tblXa where tblTonGiao.IDTonGiao=tblToChucQuanTri.IDTonGiao and tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc and tblCoSo.DiaChi=tblXa.IDXa and tblCoSo.DaXoa=0) a left join tblTinDo on a.NguoiQuanLy=tblTinDo.IDTinDo " + dieukien, conn);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dtdistrict = new DataTable();
+        DataTable dtdistrict = new DataTable("a","tblTinDo");
         da.Fill(dtdistrict);
 
         return dtdistrict;
@@ -135,7 +135,7 @@ public class ServiceCoSo : System.Web.Services.WebService
         SqlCommand comm = new SqlCommand("select TenTonGiao from tblTonGiao " + dieukien, conn);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dt = new DataTable();
+        DataTable dt = new DataTable("tblTonGiao");
         da.Fill(dt);
         return dt;
     }

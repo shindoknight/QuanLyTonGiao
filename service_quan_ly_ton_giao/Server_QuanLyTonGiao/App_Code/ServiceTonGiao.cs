@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Drawing;
 using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
@@ -104,6 +105,12 @@ public class ServiceTonGiao : System.Web.Services.WebService
             return 0;
         }
     }
+   // [WebMethod]
+    //public Bitmap LoadAnh (string path)
+   // {
+
+    //    return Bitmap.FromFile(path);
+   // }
 
 
 }
