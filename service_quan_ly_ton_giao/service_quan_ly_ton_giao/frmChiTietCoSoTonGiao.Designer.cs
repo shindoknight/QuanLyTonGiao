@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietCoSoTonGiao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.cboNguoiQuanLy = new System.Windows.Forms.ComboBox();
             this.btnChiTietTonGiao = new System.Windows.Forms.Button();
             this.btnToChucQuanTri = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -75,6 +76,7 @@
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +116,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Aqua;
+            this.splitContainer2.Panel1.Controls.Add(this.cboIDNguoiQL);
+            this.splitContainer2.Panel1.Controls.Add(this.cboNguoiQuanLy);
             this.splitContainer2.Panel1.Controls.Add(this.btnChiTietTonGiao);
             this.splitContainer2.Panel1.Controls.Add(this.btnToChucQuanTri);
             this.splitContainer2.Panel1.Controls.Add(this.button4);
@@ -156,8 +160,18 @@
             this.splitContainer2.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer2.Panel2.Controls.Add(this.btnSua);
             this.splitContainer2.Size = new System.Drawing.Size(548, 491);
-            this.splitContainer2.SplitterDistance = 398;
+            this.splitContainer2.SplitterDistance = 407;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // cboNguoiQuanLy
+            // 
+            this.cboNguoiQuanLy.Enabled = false;
+            this.cboNguoiQuanLy.FormattingEnabled = true;
+            this.cboNguoiQuanLy.Location = new System.Drawing.Point(346, 218);
+            this.cboNguoiQuanLy.Name = "cboNguoiQuanLy";
+            this.cboNguoiQuanLy.Size = new System.Drawing.Size(128, 21);
+            this.cboNguoiQuanLy.TabIndex = 36;
+            this.cboNguoiQuanLy.TextChanged += new System.EventHandler(this.cboNguoiQuanLy_TextChanged);
             // 
             // btnChiTietTonGiao
             // 
@@ -172,17 +186,18 @@
             // btnToChucQuanTri
             // 
             this.btnToChucQuanTri.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToChucQuanTri.Location = new System.Drawing.Point(506, 163);
+            this.btnToChucQuanTri.Location = new System.Drawing.Point(506, 158);
             this.btnToChucQuanTri.Name = "btnToChucQuanTri";
             this.btnToChucQuanTri.Size = new System.Drawing.Size(32, 23);
             this.btnToChucQuanTri.TabIndex = 33;
             this.btnToChucQuanTri.Text = "CT";
             this.btnToChucQuanTri.UseVisualStyleBackColor = true;
+            this.btnToChucQuanTri.Click += new System.EventHandler(this.btnToChucQuanTri_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(480, 202);
+            this.button4.Location = new System.Drawing.Point(480, 218);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(32, 23);
             this.button4.TabIndex = 32;
@@ -214,7 +229,7 @@
             // 
             // txtGioiThieu
             // 
-            this.txtGioiThieu.Location = new System.Drawing.Point(78, 289);
+            this.txtGioiThieu.Location = new System.Drawing.Point(78, 296);
             this.txtGioiThieu.Multiline = true;
             this.txtGioiThieu.Name = "txtGioiThieu";
             this.txtGioiThieu.ReadOnly = true;
@@ -243,7 +258,7 @@
             // 
             this.ckThanhPho.AutoSize = true;
             this.ckThanhPho.Enabled = false;
-            this.ckThanhPho.Location = new System.Drawing.Point(108, 267);
+            this.ckThanhPho.Location = new System.Drawing.Point(108, 274);
             this.ckThanhPho.Name = "ckThanhPho";
             this.ckThanhPho.Size = new System.Drawing.Size(147, 17);
             this.ckThanhPho.TabIndex = 25;
@@ -254,7 +269,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 283);
+            this.label11.Location = new System.Drawing.Point(17, 290);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 24;
@@ -263,7 +278,7 @@
             // btnTimXa
             // 
             this.btnTimXa.Image = ((System.Drawing.Image)(resources.GetObject("btnTimXa.Image")));
-            this.btnTimXa.Location = new System.Drawing.Point(480, 237);
+            this.btnTimXa.Location = new System.Drawing.Point(480, 244);
             this.btnTimXa.Name = "btnTimXa";
             this.btnTimXa.Size = new System.Drawing.Size(27, 23);
             this.btnTimXa.TabIndex = 23;
@@ -274,7 +289,7 @@
             // 
             this.cboTenXa.Enabled = false;
             this.cboTenXa.FormattingEnabled = true;
-            this.cboTenXa.Location = new System.Drawing.Point(385, 239);
+            this.cboTenXa.Location = new System.Drawing.Point(385, 246);
             this.cboTenXa.Name = "cboTenXa";
             this.cboTenXa.Size = new System.Drawing.Size(91, 21);
             this.cboTenXa.TabIndex = 22;
@@ -283,7 +298,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(349, 242);
+            this.label10.Location = new System.Drawing.Point(349, 249);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 21;
@@ -294,7 +309,7 @@
             // 
             this.cboHuyen.Enabled = false;
             this.cboHuyen.FormattingEnabled = true;
-            this.cboHuyen.Location = new System.Drawing.Point(247, 239);
+            this.cboHuyen.Location = new System.Drawing.Point(247, 246);
             this.cboHuyen.Name = "cboHuyen";
             this.cboHuyen.Size = new System.Drawing.Size(91, 21);
             this.cboHuyen.TabIndex = 20;
@@ -303,7 +318,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(205, 242);
+            this.label9.Location = new System.Drawing.Point(205, 249);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 19;
@@ -313,7 +328,7 @@
             // 
             this.cboTinh.Enabled = false;
             this.cboTinh.FormattingEnabled = true;
-            this.cboTinh.Location = new System.Drawing.Point(108, 239);
+            this.cboTinh.Location = new System.Drawing.Point(108, 246);
             this.cboTinh.Name = "cboTinh";
             this.cboTinh.Size = new System.Drawing.Size(91, 21);
             this.cboTinh.TabIndex = 18;
@@ -322,7 +337,7 @@
             // btnTimToChucQuanTri
             // 
             this.btnTimToChucQuanTri.Image = ((System.Drawing.Image)(resources.GetObject("btnTimToChucQuanTri.Image")));
-            this.btnTimToChucQuanTri.Location = new System.Drawing.Point(479, 163);
+            this.btnTimToChucQuanTri.Location = new System.Drawing.Point(479, 158);
             this.btnTimToChucQuanTri.Name = "btnTimToChucQuanTri";
             this.btnTimToChucQuanTri.Size = new System.Drawing.Size(27, 23);
             this.btnTimToChucQuanTri.TabIndex = 17;
@@ -352,7 +367,7 @@
             // 
             this.cboTenToChucQuanTri.Enabled = false;
             this.cboTenToChucQuanTri.FormattingEnabled = true;
-            this.cboTenToChucQuanTri.Location = new System.Drawing.Point(346, 165);
+            this.cboTenToChucQuanTri.Location = new System.Drawing.Point(346, 160);
             this.cboTenToChucQuanTri.Name = "cboTenToChucQuanTri";
             this.cboTenToChucQuanTri.Size = new System.Drawing.Size(129, 21);
             this.cboTenToChucQuanTri.TabIndex = 14;
@@ -360,7 +375,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(258, 168);
+            this.label7.Location = new System.Drawing.Point(258, 163);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 13);
             this.label7.TabIndex = 13;
@@ -369,7 +384,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(75, 242);
+            this.label6.Location = new System.Drawing.Point(75, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 12;
@@ -378,7 +393,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 242);
+            this.label5.Location = new System.Drawing.Point(17, 249);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 11;
@@ -386,16 +401,17 @@
             // 
             // txtTenNguoiQuanLy
             // 
-            this.txtTenNguoiQuanLy.Location = new System.Drawing.Point(346, 203);
+            this.txtTenNguoiQuanLy.Location = new System.Drawing.Point(346, 190);
             this.txtTenNguoiQuanLy.Name = "txtTenNguoiQuanLy";
             this.txtTenNguoiQuanLy.ReadOnly = true;
-            this.txtTenNguoiQuanLy.Size = new System.Drawing.Size(129, 21);
+            this.txtTenNguoiQuanLy.Size = new System.Drawing.Size(128, 21);
             this.txtTenNguoiQuanLy.TabIndex = 9;
+            this.txtTenNguoiQuanLy.TextChanged += new System.EventHandler(this.txtTenNguoiQuanLy_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 206);
+            this.label4.Location = new System.Drawing.Point(258, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 8;
@@ -476,7 +492,7 @@
             this.btnQuayLai.Enabled = false;
             this.btnQuayLai.Image = ((System.Drawing.Image)(resources.GetObject("btnQuayLai.Image")));
             this.btnQuayLai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnQuayLai.Location = new System.Drawing.Point(434, 15);
+            this.btnQuayLai.Location = new System.Drawing.Point(439, 9);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 62);
             this.btnQuayLai.TabIndex = 4;
@@ -490,7 +506,7 @@
             this.btnInRaEx.BackColor = System.Drawing.Color.White;
             this.btnInRaEx.Image = ((System.Drawing.Image)(resources.GetObject("btnInRaEx.Image")));
             this.btnInRaEx.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInRaEx.Location = new System.Drawing.Point(330, 15);
+            this.btnInRaEx.Location = new System.Drawing.Point(335, 9);
             this.btnInRaEx.Name = "btnInRaEx";
             this.btnInRaEx.Size = new System.Drawing.Size(75, 62);
             this.btnInRaEx.TabIndex = 3;
@@ -504,7 +520,7 @@
             this.btnLuu.Enabled = false;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuu.Location = new System.Drawing.Point(124, 15);
+            this.btnLuu.Location = new System.Drawing.Point(129, 9);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 62);
             this.btnLuu.TabIndex = 2;
@@ -518,7 +534,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnXoa.Location = new System.Drawing.Point(231, 15);
+            this.btnXoa.Location = new System.Drawing.Point(236, 9);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 62);
             this.btnXoa.TabIndex = 1;
@@ -532,7 +548,7 @@
             this.btnSua.BackColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSua.Location = new System.Drawing.Point(24, 15);
+            this.btnSua.Location = new System.Drawing.Point(29, 9);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 62);
             this.btnSua.TabIndex = 0;
@@ -570,6 +586,15 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // cboIDNguoiQL
+            // 
+            this.cboIDNguoiQL.Enabled = false;
+            this.cboIDNguoiQL.FormattingEnabled = true;
+            this.cboIDNguoiQL.Location = new System.Drawing.Point(261, 219);
+            this.cboIDNguoiQL.Name = "cboIDNguoiQL";
+            this.cboIDNguoiQL.Size = new System.Drawing.Size(70, 21);
+            this.cboIDNguoiQL.TabIndex = 37;
             // 
             // frmChiTietCoSoTonGiao
             // 
@@ -645,5 +670,7 @@
         private System.Windows.Forms.Button btnChiTietTonGiao;
         private System.Windows.Forms.Button btnToChucQuanTri;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cboNguoiQuanLy;
+        private System.Windows.Forms.ComboBox cboIDNguoiQL;
     }
 }

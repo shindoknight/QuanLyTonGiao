@@ -89,6 +89,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="XoaCoSotblTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenToChuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenTonGiao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieuKien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaCoSotblTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaCoSotblTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ThemDLToChucSoapIn">
@@ -121,6 +137,12 @@
   <wsdl:message name="TaoIDToChucSoapOut">
     <wsdl:part name="parameters" element="tns:TaoIDToChucResponse" />
   </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDo" />
+  </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDoResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblToChucQuanTriSoap">
     <wsdl:operation name="ThemDLToChuc">
       <wsdl:input message="tns:ThemDLToChucSoapIn" />
@@ -141,6 +163,10 @@
     <wsdl:operation name="TaoIDToChuc">
       <wsdl:input message="tns:TaoIDToChucSoapIn" />
       <wsdl:output message="tns:TaoIDToChucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <wsdl:input message="tns:XoaCoSotblTinDoSoapIn" />
+      <wsdl:output message="tns:XoaCoSotblTinDoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblToChucQuanTriSoap" type="tns:tblToChucQuanTriSoap">
@@ -190,6 +216,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblToChucQuanTriSoap12" type="tns:tblToChucQuanTriSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -231,6 +266,15 @@
     </wsdl:operation>
     <wsdl:operation name="TaoIDToChuc">
       <soap12:operation soapAction="http://tempuri.org/TaoIDToChuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap12:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

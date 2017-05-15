@@ -117,6 +117,8 @@ namespace service_quan_ly_ton_giao
             cboTenTonGiao.DataSource = wf2.TruyVanTenTonGiao("");
             cboTenTonGiao.DisplayMember = "TenTonGiao";
             HienThi();
+            //do du lieu co so thuoc to chuc quan tri len to chuc quan tri
+            gridControl1.DataSource = wf2.HienThiDSCoSo("", " where a.TenToChuc=N'"+txtTenToChuc.Text+"' and a.TenTonGiao=N'"+cboTenTonGiao.Text+"'");
             txtIDToChuc.ReadOnly = true;
             txtSLTD.ReadOnly = true;
             txtSLCS.ReadOnly = true;
@@ -149,6 +151,15 @@ namespace service_quan_ly_ton_giao
                 btnXoa.Enabled = true;
 
                 wf1.XoaLogicDLCoSo(int.Parse(txtIDToChuc.Text));
+                try
+                {
+                    wf1.XoaCoSotblTinDo(txtTenToChuc.Text, cboTenTonGiao.Text, "");
+                }
+                catch
+                {
+                    MessageBox.Show("Bạn chưa thể xóa toàn bộ tín đồ nằm trong tổ chức quản trị");
+                }
+                
                 MessageBox.Show("Bạn đã xóa toàn bộ thông tin về " + txtTenToChuc.Text + " thành công ");
                 this.Close();
             }
@@ -238,6 +249,14 @@ namespace service_quan_ly_ton_giao
                     _doianh = true;
                 }
             }
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            DataRow row = gridView1.GetFocusedDataRow();
+            frmChiTietCoSoTonGiao frm = new frmChiTietCoSoTonGiao();
+            frm.txtIDCoSo.Text = row["IDCoSo"].ToString();
+            frm.Show();
         }
     }
 }

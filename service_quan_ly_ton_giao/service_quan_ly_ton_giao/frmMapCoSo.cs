@@ -789,5 +789,13 @@ namespace service_quan_ly_ton_giao
                 }
             }
         }
+
+        private void btnChiTietTC_Click(object sender, EventArgs e)
+        {
+            DataTable tc = wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboTenToChucQuanTri.Text + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'" + cboTonGiao.Text + "' and DaXoa=0)");
+            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
+            frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
+            frm.Show();
+        }
     }
 }

@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietToChucQuanTri));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.picAnh = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtGioiThieu = new System.Windows.Forms.TextBox();
@@ -59,7 +61,14 @@
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
-            this.picAnh = new System.Windows.Forms.PictureBox();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.IDCoSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenCoSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnChiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +79,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -78,7 +88,10 @@
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
+            this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,7 +126,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainer2.Size = new System.Drawing.Size(507, 426);
-            this.splitContainer2.SplitterDistance = 342;
+            this.splitContainer2.SplitterDistance = 321;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupControl1
@@ -136,9 +149,20 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(507, 342);
+            this.groupControl1.Size = new System.Drawing.Size(507, 321);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin chi tiết tổ chức quản trị";
+            // 
+            // picAnh
+            // 
+            this.picAnh.Image = ((System.Drawing.Image)(resources.GetObject("picAnh.Image")));
+            this.picAnh.Location = new System.Drawing.Point(11, 26);
+            this.picAnh.Name = "picAnh";
+            this.picAnh.Size = new System.Drawing.Size(176, 163);
+            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAnh.TabIndex = 14;
+            this.picAnh.TabStop = false;
+            this.picAnh.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 
@@ -267,46 +291,58 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(507, 80);
+            this.groupControl4.Size = new System.Drawing.Size(507, 101);
             this.groupControl4.TabIndex = 1;
             // 
             // btnQuayLai
             // 
+            this.btnQuayLai.Image = ((System.Drawing.Image)(resources.GetObject("btnQuayLai.Image")));
+            this.btnQuayLai.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnQuayLai.Location = new System.Drawing.Point(385, 24);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 54);
             this.btnQuayLai.TabIndex = 3;
             this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnXoa.Location = new System.Drawing.Point(274, 24);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 54);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa thông tin";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLuu.Location = new System.Drawing.Point(159, 23);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 54);
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu thông tin";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSua.Location = new System.Drawing.Point(37, 23);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 54);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa thông tin";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -322,11 +358,13 @@
             // navigationPane1
             // 
             this.navigationPane1.Controls.Add(this.navigationPage1);
+            this.navigationPane1.Controls.Add(this.navigationPage2);
             this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationPane1.Location = new System.Drawing.Point(2, 20);
             this.navigationPane1.Name = "navigationPane1";
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.navigationPage1});
+            this.navigationPage1,
+            this.navigationPage2});
             this.navigationPane1.RegularSize = new System.Drawing.Size(568, 404);
             this.navigationPane1.SelectedPage = this.navigationPage1;
             this.navigationPane1.Size = new System.Drawing.Size(568, 404);
@@ -358,16 +396,77 @@
             this.vectorItemsLayer1.Data = this.mapItemStorage1;
             this.vectorItemsLayer1.Name = "VectorLayer";
             // 
-            // picAnh
+            // navigationPage2
             // 
-            this.picAnh.Image = ((System.Drawing.Image)(resources.GetObject("picAnh.Image")));
-            this.picAnh.Location = new System.Drawing.Point(11, 26);
-            this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(176, 163);
-            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAnh.TabIndex = 14;
-            this.picAnh.TabStop = false;
-            this.picAnh.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.gridControl1);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(454, 344);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnChiTiet});
+            this.gridControl1.Size = new System.Drawing.Size(454, 344);
+            this.gridControl1.TabIndex = 2;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.IDCoSo,
+            this.TenCoSo,
+            this.DiaChi,
+            this.gridColumn1});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            // 
+            // IDCoSo
+            // 
+            this.IDCoSo.Caption = "ID Cơ sở";
+            this.IDCoSo.FieldName = "IDCoSo";
+            this.IDCoSo.Name = "IDCoSo";
+            this.IDCoSo.Visible = true;
+            this.IDCoSo.VisibleIndex = 0;
+            // 
+            // TenCoSo
+            // 
+            this.TenCoSo.Caption = "Tên cơ sở";
+            this.TenCoSo.FieldName = "TenCoSo";
+            this.TenCoSo.Name = "TenCoSo";
+            this.TenCoSo.Visible = true;
+            this.TenCoSo.VisibleIndex = 1;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.Caption = "Địa chỉ";
+            this.DiaChi.FieldName = "TenXa";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Visible = true;
+            this.DiaChi.VisibleIndex = 2;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Chi tiết";
+            this.gridColumn1.ColumnEdit = this.btnChiTiet;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.AutoHeight = false;
+            this.btnChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
             // frmChiTietToChucQuanTri
             // 
@@ -389,6 +488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -397,7 +497,10 @@
             this.navigationPane1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
+            this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChiTiet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +538,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picAnh;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn IDCoSo;
+        private DevExpress.XtraGrid.Columns.GridColumn TenCoSo;
+        private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnChiTiet;
     }
 }

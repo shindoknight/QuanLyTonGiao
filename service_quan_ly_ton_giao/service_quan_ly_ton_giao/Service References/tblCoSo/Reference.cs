@@ -141,6 +141,13 @@ namespace service_quan_ly_ton_giao.tblCoSo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TaoIDCoSo", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> TaoIDCoSoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaCoSotblTinDo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int XoaCoSotblTinDo(int IDCoSo, string DieuKien);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaCoSotblTinDo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> XoaCoSotblTinDoAsync(int IDCoSo, string DieuKien);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -312,6 +319,14 @@ namespace service_quan_ly_ton_giao.tblCoSo {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> TaoIDCoSoAsync() {
             return base.Channel.TaoIDCoSoAsync();
+        }
+        
+        public int XoaCoSotblTinDo(int IDCoSo, string DieuKien) {
+            return base.Channel.XoaCoSotblTinDo(IDCoSo, DieuKien);
+        }
+        
+        public System.Threading.Tasks.Task<int> XoaCoSotblTinDoAsync(int IDCoSo, string DieuKien) {
+            return base.Channel.XoaCoSotblTinDoAsync(IDCoSo, DieuKien);
         }
     }
 }
