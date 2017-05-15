@@ -21,7 +21,7 @@ namespace service_quan_ly_ton_giao
         private void xFrmTrangChu_Load(object sender, EventArgs e)
         {
 
-            frmDangNhap f = new frmDangNhap();
+            FormHome f = new FormHome();
             f.FormBorderStyle = FormBorderStyle.None;
             f.TopLevel = false;
             f.Parent = xtraTabPage1;

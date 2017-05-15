@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e93c86e-cdac-462c-a5e9-f85297da7e61" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="176dfcbc-9ffd-4179-a268-872c29578f8b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:50829/tblUser.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="tblUser.disco" MetadataType="Disco" ID="08e7ba10-0835-431f-b6e3-f5f3083a2011" SourceId="1" SourceUrl="http://localhost:50829/tblUser.asmx?disco" />
-    <MetadataFile FileName="tblUser.wsdl" MetadataType="Wsdl" ID="a937b93d-6a21-4aee-8303-376a8c039f1b" SourceId="1" SourceUrl="http://localhost:50829/tblUser.asmx?wsdl" />
+    <MetadataFile FileName="tblUser.disco" MetadataType="Disco" ID="9ab54979-5116-4e24-9be5-e479689ee72b" SourceId="1" SourceUrl="http://localhost:50829/tblUser.asmx?disco" />
+    <MetadataFile FileName="tblUser.wsdl" MetadataType="Wsdl" ID="7b121f6d-63c7-4abc-8db7-49fe985bd3b9" SourceId="1" SourceUrl="http://localhost:50829/tblUser.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

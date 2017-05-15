@@ -19,7 +19,7 @@ namespace service_quan_ly_ton_giao
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            tblUser.tblUserSoapClient wf = new tblUser.tblUserSoapClient();
+            ServiceUser.ServiceUserSoapClient wf = new ServiceUser.ServiceUserSoapClient();
             DataTable dt = wf.DangNhap(txtTenDangNhap.Text, txtMatKhau.Text);
             if (dt.Rows.Count == 1)
             {

@@ -90,6 +90,12 @@
     <Compile Include="frmChiTietCoSoTonGiao.Designer.cs">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietToChucQuanTri.Designer.cs">
+      <DependentUpon>frmChiTietToChucQuanTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +114,58 @@
     <Compile Include="frmDSTinDo.Designer.cs">
       <DependentUpon>frmDSTinDo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSToChucQuanTri.Designer.cs">
+      <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapCoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapCoSo.Designer.cs">
+      <DependentUpon>frmMapCoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapTinDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapTinDo.Designer.cs">
+      <DependentUpon>frmMapTinDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemCoSoTonGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemCoSoTonGiao.Designer.cs">
+      <DependentUpon>frmThemCoSoTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemToChucQuanTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemToChucQuanTri.Designer.cs">
+      <DependentUpon>frmThemToChucQuanTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Map\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceUser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\tblCoSo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Service References\tblTinDo\Reference.cs">
+=======
+    <Compile Include="Service References\tblToChucQuanTri\Reference.cs">
+>>>>>>> refs/remotes/origin/master
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -160,6 +210,9 @@
     <EmbeddedResource Include="frmChiTietCoSoTonGiao.resx">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietToChucQuanTri.resx">
+      <DependentUpon>frmChiTietToChucQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +221,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSTinDo.resx">
       <DependentUpon>frmDSTinDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSToChucQuanTri.resx">
+      <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapCoSo.resx">
+      <DependentUpon>frmMapCoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapTinDo.resx">
+      <DependentUpon>frmMapTinDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemCoSoTonGiao.resx">
+      <DependentUpon>frmThemCoSoTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemToChucQuanTri.resx">
+      <DependentUpon>frmThemToChucQuanTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -200,8 +268,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+<<<<<<< HEAD
     <None Include="Service References\tblCoSo\WebService.wsdl" />
     <None Include="Service References\tblTinDo\tblTinDo.wsdl" />
+=======
+    <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.Image.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUser\ServiceUser.wsdl" />
+    <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+    <None Include="Service References\Map\ServiceMap.wsdl" />
+    <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
+>>>>>>> refs/remotes/origin/master
     <None Include="Service References\tblUser\tblUser.wsdl" />
     <None Include="Service References\ThongKe\service_quan_ly_ton_giao.ThongKe.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -212,25 +293,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
+    <WCFMetadataStorage Include="Service References\ServiceUser\" />
+    <WCFMetadataStorage Include="Service References\Map\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
+<<<<<<< HEAD
     <WCFMetadataStorage Include="Service References\tblTinDo\" />
+=======
+    <WCFMetadataStorage Include="Service References\tblToChucQuanTri\" />
+>>>>>>> refs/remotes/origin/master
     <WCFMetadataStorage Include="Service References\tblUser\" />
     <WCFMetadataStorage Include="Service References\ThongKe\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\WebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblCoSo\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bible.png" />
@@ -257,6 +330,51 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\ServiceCoSo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblCoSo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\tblUser\tblUser.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +390,38 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ServiceUser\ServiceUser.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\Reference.svcmap"/>
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\ServiceMap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Map\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+<<<<<<< HEAD
     <None Include="Service References\tblTinDo\tblTinDo.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +453,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close-icon.png" />
+=======
+    <None Include="Resources\edit-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.png" />
+>>>>>>> refs/remotes/origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

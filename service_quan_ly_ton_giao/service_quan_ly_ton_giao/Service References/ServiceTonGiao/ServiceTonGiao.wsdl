@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LayDanhSach">
+        <s:complexType />
+      </s:element>
+      <s:element name="LayDanhSachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayDanhSachResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemTonGiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gioithieu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemTonGiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemTonGiaoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaTonGiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gioithieu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sltindo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaTonGiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SuaTonGiaoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Xoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAnh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAnhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAnhResult" type="tns:Image" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Image" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MarshalByRefObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
+              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MarshalByRefObject" abstract="true" />
+      <s:complexType name="ColorPalette" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LayDanhSachSoapIn">
+    <wsdl:part name="parameters" element="tns:LayDanhSach" />
+  </wsdl:message>
+  <wsdl:message name="LayDanhSachSoapOut">
+    <wsdl:part name="parameters" element="tns:LayDanhSachResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemTonGiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemTonGiao" />
+  </wsdl:message>
+  <wsdl:message name="ThemTonGiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemTonGiaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaTonGiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:SuaTonGiao" />
+  </wsdl:message>
+  <wsdl:message name="SuaTonGiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaTonGiaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaSoapIn">
+    <wsdl:part name="parameters" element="tns:Xoa" />
+  </wsdl:message>
+  <wsdl:message name="XoaSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAnhSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAnh" />
+  </wsdl:message>
+  <wsdl:message name="LoadAnhSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAnhResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceTonGiaoSoap">
+    <wsdl:operation name="LayDanhSach">
+      <wsdl:input message="tns:LayDanhSachSoapIn" />
+      <wsdl:output message="tns:LayDanhSachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemTonGiao">
+      <wsdl:input message="tns:ThemTonGiaoSoapIn" />
+      <wsdl:output message="tns:ThemTonGiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaTonGiao">
+      <wsdl:input message="tns:SuaTonGiaoSoapIn" />
+      <wsdl:output message="tns:SuaTonGiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <wsdl:input message="tns:XoaSoapIn" />
+      <wsdl:output message="tns:XoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAnh">
+      <wsdl:input message="tns:LoadAnhSoapIn" />
+      <wsdl:output message="tns:LoadAnhSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceTonGiaoSoap" type="tns:ServiceTonGiaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayDanhSach">
+      <soap:operation soapAction="http://tempuri.org/LayDanhSach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemTonGiao">
+      <soap:operation soapAction="http://tempuri.org/ThemTonGiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaTonGiao">
+      <soap:operation soapAction="http://tempuri.org/SuaTonGiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <soap:operation soapAction="http://tempuri.org/Xoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAnh">
+      <soap:operation soapAction="http://tempuri.org/LoadAnh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceTonGiaoSoap12" type="tns:ServiceTonGiaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LayDanhSach">
+      <soap12:operation soapAction="http://tempuri.org/LayDanhSach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemTonGiao">
+      <soap12:operation soapAction="http://tempuri.org/ThemTonGiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaTonGiao">
+      <soap12:operation soapAction="http://tempuri.org/SuaTonGiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <soap12:operation soapAction="http://tempuri.org/Xoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAnh">
+      <soap12:operation soapAction="http://tempuri.org/LoadAnh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTonGiao">
+    <wsdl:port name="ServiceTonGiaoSoap" binding="tns:ServiceTonGiaoSoap">
+      <soap:address location="http://localhost:50829/ServiceTonGiao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceTonGiaoSoap12" binding="tns:ServiceTonGiaoSoap12">
+      <soap12:address location="http://localhost:50829/ServiceTonGiao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

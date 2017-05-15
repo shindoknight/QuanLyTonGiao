@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Tinh" type="xs:string" minOccurs="0" />
+                <xs:element name="VungDiaLy" type="xs:string" minOccurs="0" />
+                <xs:element name="TonGiao" type="xs:int" minOccurs="0" />
+                <xs:element name="SLTinDo" type="xs:int" minOccurs="0" />
+                <xs:element name="CapitalLat" type="xs:double" minOccurs="0" />
+                <xs:element name="CapitalLon" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table1>
+    <Tinh>Hà Nội</Tinh>
+    <VungDiaLy>Đồng bằng sông Hồng</VungDiaLy>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>4</SLTinDo>
+    <CapitalLat>21.03555</CapitalLat>
+    <CapitalLon>105.8272</CapitalLon>
+  </Table1>
+  <Table1>
+    <Tinh>Hà Nội</Tinh>
+    <VungDiaLy>Đồng bằng sông Hồng</VungDiaLy>
+    <TonGiao>2</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>21.03555</CapitalLat>
+    <CapitalLon>105.8272</CapitalLon>
+  </Table1>
+  <Table1>
+    <Tinh>Ninh Bình</Tinh>
+    <VungDiaLy>Đồng bằng sông Hồng</VungDiaLy>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>20.24583</CapitalLat>
+    <CapitalLon>105.9733</CapitalLon>
+  </Table1>
+  <Table1>
+    <Tinh>Ninh Bình</Tinh>
+    <VungDiaLy>Đồng bằng sông Hồng</VungDiaLy>
+    <TonGiao>2</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>20.24583</CapitalLat>
+    <CapitalLon>105.9733</CapitalLon>
+  </Table1>
+  <Table1>
+    <Tinh>Thái Bình</Tinh>
+    <VungDiaLy>Đồng bằng sông Hồng</VungDiaLy>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>20.44583</CapitalLat>
+    <CapitalLon>106.3322</CapitalLon>
+  </Table1>
+</NewDataSet>

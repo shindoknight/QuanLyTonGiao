@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ThemDLToChuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenToChuc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDTonGiao" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhAnh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDLToChucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDLToChucResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaDLToChuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDToChuc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenToChuc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDTonGiao" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhAnh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaDLToChucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SuaDLToChucResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaLogicDLCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDToChuc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaLogicDLCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaLogicDLCoSoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiDSToChucQuanTri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiDSToChucQuanTriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HienThiDSToChucQuanTriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TaoIDToChuc">
+        <s:complexType />
+      </s:element>
+      <s:element name="TaoIDToChucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaoIDToChucResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaCoSotblTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenToChuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenTonGiao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieuKien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaCoSotblTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaCoSotblTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ThemDLToChucSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDLToChuc" />
+  </wsdl:message>
+  <wsdl:message name="ThemDLToChucSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDLToChucResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaDLToChucSoapIn">
+    <wsdl:part name="parameters" element="tns:SuaDLToChuc" />
+  </wsdl:message>
+  <wsdl:message name="SuaDLToChucSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaDLToChucResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaLogicDLCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaLogicDLCoSo" />
+  </wsdl:message>
+  <wsdl:message name="XoaLogicDLCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaLogicDLCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HienThiDSToChucQuanTriSoapIn">
+    <wsdl:part name="parameters" element="tns:HienThiDSToChucQuanTri" />
+  </wsdl:message>
+  <wsdl:message name="HienThiDSToChucQuanTriSoapOut">
+    <wsdl:part name="parameters" element="tns:HienThiDSToChucQuanTriResponse" />
+  </wsdl:message>
+  <wsdl:message name="TaoIDToChucSoapIn">
+    <wsdl:part name="parameters" element="tns:TaoIDToChuc" />
+  </wsdl:message>
+  <wsdl:message name="TaoIDToChucSoapOut">
+    <wsdl:part name="parameters" element="tns:TaoIDToChucResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDo" />
+  </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="tblToChucQuanTriSoap">
+    <wsdl:operation name="ThemDLToChuc">
+      <wsdl:input message="tns:ThemDLToChucSoapIn" />
+      <wsdl:output message="tns:ThemDLToChucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLToChuc">
+      <wsdl:input message="tns:SuaDLToChucSoapIn" />
+      <wsdl:output message="tns:SuaDLToChucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <wsdl:input message="tns:XoaLogicDLCoSoSoapIn" />
+      <wsdl:output message="tns:XoaLogicDLCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSToChucQuanTri">
+      <wsdl:input message="tns:HienThiDSToChucQuanTriSoapIn" />
+      <wsdl:output message="tns:HienThiDSToChucQuanTriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDToChuc">
+      <wsdl:input message="tns:TaoIDToChucSoapIn" />
+      <wsdl:output message="tns:TaoIDToChucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <wsdl:input message="tns:XoaCoSotblTinDoSoapIn" />
+      <wsdl:output message="tns:XoaCoSotblTinDoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="tblToChucQuanTriSoap" type="tns:tblToChucQuanTriSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDLToChuc">
+      <soap:operation soapAction="http://tempuri.org/ThemDLToChuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLToChuc">
+      <soap:operation soapAction="http://tempuri.org/SuaDLToChuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <soap:operation soapAction="http://tempuri.org/XoaLogicDLCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSToChucQuanTri">
+      <soap:operation soapAction="http://tempuri.org/HienThiDSToChucQuanTri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDToChuc">
+      <soap:operation soapAction="http://tempuri.org/TaoIDToChuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tblToChucQuanTriSoap12" type="tns:tblToChucQuanTriSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDLToChuc">
+      <soap12:operation soapAction="http://tempuri.org/ThemDLToChuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLToChuc">
+      <soap12:operation soapAction="http://tempuri.org/SuaDLToChuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <soap12:operation soapAction="http://tempuri.org/XoaLogicDLCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSToChucQuanTri">
+      <soap12:operation soapAction="http://tempuri.org/HienThiDSToChucQuanTri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDToChuc">
+      <soap12:operation soapAction="http://tempuri.org/TaoIDToChuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap12:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="tblToChucQuanTri">
+    <wsdl:port name="tblToChucQuanTriSoap" binding="tns:tblToChucQuanTriSoap">
+      <soap:address location="http://localhost:50829/tblToChucQuanTri.asmx" />
+    </wsdl:port>
+    <wsdl:port name="tblToChucQuanTriSoap12" binding="tns:tblToChucQuanTriSoap12">
+      <soap12:address location="http://localhost:50829/tblToChucQuanTri.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

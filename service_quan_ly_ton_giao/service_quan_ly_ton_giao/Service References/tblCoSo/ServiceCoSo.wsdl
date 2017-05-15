@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ThemDLCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TenCoSo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NguoiQuanLy" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhAnh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDToChuc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ChucNang" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DaXoa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenThuongGoi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemDLCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemDLCoSoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaDLCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDCoSo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenCoSo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NguoiQuanLy" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HinhAnh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDToChuc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ChucNang" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DaXoa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TenThuongGoi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaDLCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SuaDLCoSoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaLogicDLCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDCoSo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaLogicDLCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaLogicDLCoSoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiDSCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GioiThieu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiDSCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HienThiDSCoSoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTinh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuTinhResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tinh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TruyVanTenHuyenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenXa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="huyen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenXaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TruyVanTenXaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenTonGiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenTonGiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TruyVanTenTonGiaoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimViTriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTriTheoHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTriTheoHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimViTriTheoHuyenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTriTheoTinh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimViTriTheoTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimViTriTheoTinhResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTonGiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTonGiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuTonGiaoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuVung">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuVungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuVungResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuToChucQuanTri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuToChucQuanTriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuToChucQuanTriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuTinDoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuXa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuXaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuXaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuHuyenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TaoIDCoSo">
+        <s:complexType />
+      </s:element>
+      <s:element name="TaoIDCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaoIDCoSoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaCoSotblTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDCoSo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DieuKien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaCoSotblTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaCoSotblTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ThemDLCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemDLCoSo" />
+  </wsdl:message>
+  <wsdl:message name="ThemDLCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemDLCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaDLCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:SuaDLCoSo" />
+  </wsdl:message>
+  <wsdl:message name="SuaDLCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaDLCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaLogicDLCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaLogicDLCoSo" />
+  </wsdl:message>
+  <wsdl:message name="XoaLogicDLCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaLogicDLCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HienThiDSCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:HienThiDSCoSo" />
+  </wsdl:message>
+  <wsdl:message name="HienThiDSCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:HienThiDSCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuTinh" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuTinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:TruyVanTenHuyen" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:TruyVanTenHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenXaSoapIn">
+    <wsdl:part name="parameters" element="tns:TruyVanTenXa" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenXaSoapOut">
+    <wsdl:part name="parameters" element="tns:TruyVanTenXaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenTonGiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:TruyVanTenTonGiao" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenTonGiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:TruyVanTenTonGiaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriSoapIn">
+    <wsdl:part name="parameters" element="tns:TimViTri" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriSoapOut">
+    <wsdl:part name="parameters" element="tns:TimViTriResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriTheoHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:TimViTriTheoHuyen" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriTheoHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:TimViTriTheoHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriTheoTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:TimViTriTheoTinh" />
+  </wsdl:message>
+  <wsdl:message name="TimViTriTheoTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:TimViTriTheoTinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTonGiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuTonGiao" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTonGiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuTonGiaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuVungSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuVung" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuVungSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuVungResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuToChucQuanTriSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuToChucQuanTri" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuToChucQuanTriSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuToChucQuanTriResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuTinDo" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuTinDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuXaSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuXa" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuXaSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuXaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuHuyen" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TaoIDCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:TaoIDCoSo" />
+  </wsdl:message>
+  <wsdl:message name="TaoIDCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:TaoIDCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDo" />
+  </wsdl:message>
+  <wsdl:message name="XoaCoSotblTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaCoSotblTinDoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceCoSoSoap">
+    <wsdl:operation name="ThemDLCoSo">
+      <wsdl:input message="tns:ThemDLCoSoSoapIn" />
+      <wsdl:output message="tns:ThemDLCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLCoSo">
+      <wsdl:input message="tns:SuaDLCoSoSoapIn" />
+      <wsdl:output message="tns:SuaDLCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <wsdl:input message="tns:XoaLogicDLCoSoSoapIn" />
+      <wsdl:output message="tns:XoaLogicDLCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSCoSo">
+      <wsdl:input message="tns:HienThiDSCoSoSoapIn" />
+      <wsdl:output message="tns:HienThiDSCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <wsdl:input message="tns:DuLieuTinhSoapIn" />
+      <wsdl:output message="tns:DuLieuTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <wsdl:input message="tns:TruyVanTenHuyenSoapIn" />
+      <wsdl:output message="tns:TruyVanTenHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <wsdl:input message="tns:TruyVanTenXaSoapIn" />
+      <wsdl:output message="tns:TruyVanTenXaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenTonGiao">
+      <wsdl:input message="tns:TruyVanTenTonGiaoSoapIn" />
+      <wsdl:output message="tns:TruyVanTenTonGiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimViTri">
+      <wsdl:input message="tns:TimViTriSoapIn" />
+      <wsdl:output message="tns:TimViTriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoHuyen">
+      <wsdl:input message="tns:TimViTriTheoHuyenSoapIn" />
+      <wsdl:output message="tns:TimViTriTheoHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoTinh">
+      <wsdl:input message="tns:TimViTriTheoTinhSoapIn" />
+      <wsdl:output message="tns:TimViTriTheoTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTonGiao">
+      <wsdl:input message="tns:DuLieuTonGiaoSoapIn" />
+      <wsdl:output message="tns:DuLieuTonGiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuVung">
+      <wsdl:input message="tns:DuLieuVungSoapIn" />
+      <wsdl:output message="tns:DuLieuVungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuToChucQuanTri">
+      <wsdl:input message="tns:DuLieuToChucQuanTriSoapIn" />
+      <wsdl:output message="tns:DuLieuToChucQuanTriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinDo">
+      <wsdl:input message="tns:DuLieuTinDoSoapIn" />
+      <wsdl:output message="tns:DuLieuTinDoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuXa">
+      <wsdl:input message="tns:DuLieuXaSoapIn" />
+      <wsdl:output message="tns:DuLieuXaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuHuyen">
+      <wsdl:input message="tns:DuLieuHuyenSoapIn" />
+      <wsdl:output message="tns:DuLieuHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDCoSo">
+      <wsdl:input message="tns:TaoIDCoSoSoapIn" />
+      <wsdl:output message="tns:TaoIDCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <wsdl:input message="tns:XoaCoSotblTinDoSoapIn" />
+      <wsdl:output message="tns:XoaCoSotblTinDoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceCoSoSoap" type="tns:ServiceCoSoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDLCoSo">
+      <soap:operation soapAction="http://tempuri.org/ThemDLCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLCoSo">
+      <soap:operation soapAction="http://tempuri.org/SuaDLCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <soap:operation soapAction="http://tempuri.org/XoaLogicDLCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSCoSo">
+      <soap:operation soapAction="http://tempuri.org/HienThiDSCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <soap:operation soapAction="http://tempuri.org/DuLieuTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <soap:operation soapAction="http://tempuri.org/TruyVanTenHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <soap:operation soapAction="http://tempuri.org/TruyVanTenXa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenTonGiao">
+      <soap:operation soapAction="http://tempuri.org/TruyVanTenTonGiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTri">
+      <soap:operation soapAction="http://tempuri.org/TimViTri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoHuyen">
+      <soap:operation soapAction="http://tempuri.org/TimViTriTheoHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoTinh">
+      <soap:operation soapAction="http://tempuri.org/TimViTriTheoTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTonGiao">
+      <soap:operation soapAction="http://tempuri.org/DuLieuTonGiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuVung">
+      <soap:operation soapAction="http://tempuri.org/DuLieuVung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuToChucQuanTri">
+      <soap:operation soapAction="http://tempuri.org/DuLieuToChucQuanTri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinDo">
+      <soap:operation soapAction="http://tempuri.org/DuLieuTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuXa">
+      <soap:operation soapAction="http://tempuri.org/DuLieuXa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuHuyen">
+      <soap:operation soapAction="http://tempuri.org/DuLieuHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDCoSo">
+      <soap:operation soapAction="http://tempuri.org/TaoIDCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceCoSoSoap12" type="tns:ServiceCoSoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ThemDLCoSo">
+      <soap12:operation soapAction="http://tempuri.org/ThemDLCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuaDLCoSo">
+      <soap12:operation soapAction="http://tempuri.org/SuaDLCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaLogicDLCoSo">
+      <soap12:operation soapAction="http://tempuri.org/XoaLogicDLCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiDSCoSo">
+      <soap12:operation soapAction="http://tempuri.org/HienThiDSCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <soap12:operation soapAction="http://tempuri.org/TruyVanTenHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <soap12:operation soapAction="http://tempuri.org/TruyVanTenXa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenTonGiao">
+      <soap12:operation soapAction="http://tempuri.org/TruyVanTenTonGiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTri">
+      <soap12:operation soapAction="http://tempuri.org/TimViTri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoHuyen">
+      <soap12:operation soapAction="http://tempuri.org/TimViTriTheoHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimViTriTheoTinh">
+      <soap12:operation soapAction="http://tempuri.org/TimViTriTheoTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTonGiao">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuTonGiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuVung">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuVung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuToChucQuanTri">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuToChucQuanTri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinDo">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuXa">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuXa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuHuyen">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TaoIDCoSo">
+      <soap12:operation soapAction="http://tempuri.org/TaoIDCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaCoSotblTinDo">
+      <soap12:operation soapAction="http://tempuri.org/XoaCoSotblTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCoSo">
+    <wsdl:port name="ServiceCoSoSoap" binding="tns:ServiceCoSoSoap">
+      <soap:address location="http://localhost:50829/ServiceCoSo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceCoSoSoap12" binding="tns:ServiceCoSoSoap12">
+      <soap12:address location="http://localhost:50829/ServiceCoSo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -22,17 +22,35 @@ public class tblUser : System.Web.Services.WebService
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
+    static SqlConnection con = null;
+    public static void OpenConnect()
+    {
+        try
+        {
+            string strConnect = @"Data Source=MI\M;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            con = new SqlConnection(strConnect);
+            con.Open();
+        }
+        catch
+        {
 
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+        }
+    }
+    public static void CloseConnect()
+    {
+        if (con.State == ConnectionState.Open)
+            con.Close();
+    }
     [WebMethod]
     public DataTable DangNhap(string username, string password)
     {
-
-        SqlCommand comm = new SqlCommand("select * from tblUser where UserName=N'" + username + "' and PassWord=N'" + password + "'", conn);
+        OpenConnect();
+        SqlCommand comm = new SqlCommand("select * from tblUser where UserName=N'" + username + "' and PassWord=N'" + password + "'", con);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
         DataTable dtdistrict = new DataTable("tblUser");
         da.Fill(dtdistrict);
+        CloseConnect();
         return dtdistrict;
     }
 
