@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Table1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Huyen" type="xs:string" minOccurs="0" />
+                <xs:element name="Tinh" type="xs:string" minOccurs="0" />
+                <xs:element name="TonGiao" type="xs:int" minOccurs="0" />
+                <xs:element name="SLTinDo" type="xs:int" minOccurs="0" />
+                <xs:element name="CapitalLat" type="xs:double" minOccurs="0" />
+                <xs:element name="CapitalLon" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Table1>
+    <Huyen>Hoàn Kiếm</Huyen>
+    <Tinh>Hà Nội</Tinh>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>2</SLTinDo>
+    <CapitalLat>21.03806</CapitalLat>
+    <CapitalLon>105.855</CapitalLon>
+  </Table1>
+  <Table1>
+    <Huyen>Hoàn Kiếm</Huyen>
+    <Tinh>Hà Nội</Tinh>
+    <TonGiao>2</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>21.03806</CapitalLat>
+    <CapitalLon>105.855</CapitalLon>
+  </Table1>
+  <Table1>
+    <Huyen>Mỹ Đức</Huyen>
+    <Tinh>Hà Nội</Tinh>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>20.68</CapitalLat>
+    <CapitalLon>105.7372</CapitalLon>
+  </Table1>
+  <Table1>
+    <Huyen>Thanh Trì</Huyen>
+    <Tinh>Hà Nội</Tinh>
+    <TonGiao>1</TonGiao>
+    <SLTinDo>1</SLTinDo>
+    <CapitalLat>20.94944</CapitalLat>
+    <CapitalLon>105.8433</CapitalLon>
+  </Table1>
+</NewDataSet>

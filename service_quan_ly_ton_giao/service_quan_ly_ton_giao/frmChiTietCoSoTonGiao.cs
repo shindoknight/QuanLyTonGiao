@@ -255,6 +255,8 @@ namespace service_quan_ly_ton_giao
             ckThanhPho.Enabled = true;
             txtGioiThieu.ReadOnly = false;
             picAnh.Enabled = true;
+            cboNguoiQuanLy.Enabled = true;
+            cboIDNguoiQL.Enabled = true;
 
             btnQuayLai.Enabled = true;
             btnLuu.Enabled = true;
@@ -276,6 +278,8 @@ namespace service_quan_ly_ton_giao
             cboTenXa.Enabled = false;
             ckThanhPho.Enabled = false;
             txtGioiThieu.ReadOnly = true;
+            cboNguoiQuanLy.Enabled = false;
+            cboIDNguoiQL.Enabled = false;
 
             btnQuayLai.Enabled = false;
             btnLuu.Enabled = false;
@@ -296,15 +300,7 @@ namespace service_quan_ly_ton_giao
                     if (radKhong.Checked == true) ChucNang = 0;
                     int NguoiQuanLy = 0;
                     int IDToChuc = int.Parse(wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboTenToChucQuanTri.Text + "'").Rows[0]["IDToChuc"].ToString());
-                    try
-                    {
-                        DataTable tind = wf.DuLieuTinDo(" where PhapDanh=N'" + txtTenNguoiQuanLy.Text + "' and IDCoSo=N'" + int.Parse(txtIDCoSo.Text) + "'");
-                        NguoiQuanLy = int.Parse(tind.Rows[0]["IDTinDo"].ToString());
-                    }
-                    catch
-                    {
-                        NguoiQuanLy = 0;
-                    }
+                    NguoiQuanLy = int.Parse(cboIDNguoiQL.Text);
                     string HinhAnh = _anh;
                     if (_doianh)
                     {
@@ -369,10 +365,19 @@ namespace service_quan_ly_ton_giao
                 cboTenXa.Enabled = false;
                 ckThanhPho.Enabled = false;
                 txtGioiThieu.ReadOnly = true;
+                cboNguoiQuanLy.Enabled = false;
 
                 btnQuayLai.Enabled = false;
                 btnLuu.Enabled = false;
                 btnXoa.Enabled = true;
+                try
+                {
+                    wf.XoaCoSotblTinDo(int.Parse(txtIDCoSo.Text), "");
+                }
+                catch
+                {
+                    MessageBox.Show("Không thể xóa bên bảng tin đồ");
+                }
                 wf.XoaLogicDLCoSo(int.Parse(txtIDCoSo.Text));
                 MessageBox.Show("Bạn đã xóa toàn bộ thông tin về " + ds.Rows[0]["TenCoSo"].ToString()+" thành công ");
                 this.Close();
@@ -396,6 +401,8 @@ namespace service_quan_ly_ton_giao
             cboTenXa.Enabled = false;
             ckThanhPho.Enabled = false;
             txtGioiThieu.ReadOnly = true;
+            cboIDNguoiQL.Enabled = false;
+            cboNguoiQuanLy.Enabled = false;
 
             btnQuayLai.Enabled = false;
             btnLuu.Enabled = false;
@@ -549,6 +556,29 @@ namespace service_quan_ly_ton_giao
             }
             
             
+        }
+
+        private void btnToChucQuanTri_Click(object sender, EventArgs e)
+        {
+            DataTable tc = wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboTenToChucQuanTri.Text + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'" + cboTenTonGiao.Text + "' and DaXoa=0)");
+            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
+            frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
+            frm.Show();
+        }
+
+        private void txtTenNguoiQuanLy_TextChanged(object sender, EventArgs e)
+        {
+            DataTable ds = wf.DuLieuTinDo(" where PhapDanh like N'%" + txtTenNguoiQuanLy.Text + "%'");
+            cboNguoiQuanLy.DataSource = ds;
+            cboNguoiQuanLy.DisplayMember = "PhapDanh";
+        }
+
+        private void cboNguoiQuanLy_TextChanged(object sender, EventArgs e)
+        {
+            //DataTable ds = wf.DuLieuTinDo(" where PhapDanh ='" + cboTenNguoiQuanLy.Text + "' and IDCoSo =(select IDCoSo from tblCoSo where DiaChi in(select IDXa from tblXa,tblHuyen,tblTinh where tblXa.IDHuyen=tblHuyen.IDHuyen and tblHuyen.IDTinh=tblTinh.IDTinh and TenXa=N'" + cboXa.Text + "' and TenHuyen=N'" + cboHuyen.Text + "' and TenTinh=N'" + cboTinh.Text + "') )");
+            DataTable ds = wf.DuLieuTinDo(" where PhapDanh =N'" + cboNguoiQuanLy.Text + "'");
+            cboIDNguoiQL.DataSource = ds;
+            cboIDNguoiQL.DisplayMember = "IDTinDo";
         }
     }
 }

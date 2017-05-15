@@ -180,5 +180,11 @@ namespace service_quan_ly_ton_giao
             frmDSTG.FormBorderStyle = FormBorderStyle.None;
             _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
         }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMapTinDo frmMapTinDo = new frmMapTinDo();
+            frmMapTinDo.Show();
+        }
     }
 }

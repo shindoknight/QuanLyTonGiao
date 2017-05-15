@@ -30,15 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemCoSoTonGiao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
-            this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
-            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
-            this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
             this.radKhong = new System.Windows.Forms.RadioButton();
             this.radCo = new System.Windows.Forms.RadioButton();
             this.txtGioiThieu = new System.Windows.Forms.TextBox();
@@ -73,24 +66,31 @@
             this.txtIDCoSo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picAnh = new System.Windows.Forms.PictureBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.map = new DevExpress.XtraMap.MapControl();
-            this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
+            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
             this.openStreetMapDataProvider2 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
+            this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage2 = new DevExpress.XtraMap.MapItemStorage();
+            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
+            this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
@@ -112,69 +112,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1309, 541);
             this.splitContainer1.SplitterDistance = 831;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupControl1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupControl3);
-            this.splitContainer2.Size = new System.Drawing.Size(474, 541);
-            this.splitContainer2.SplitterDistance = 119;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // imageLayer1
-            // 
-            this.imageLayer1.DataProvider = this.openStreetMapDataProvider2;
-            // 
-            // vectorItemsLayer1
-            // 
-            this.vectorItemsLayer1.Data = this.mapItemStorage2;
-            this.vectorItemsLayer1.Name = "VectorLayer";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.button5);
-            this.groupControl1.Controls.Add(this.btnThem);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(474, 119);
-            this.groupControl1.TabIndex = 0;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThem.Location = new System.Drawing.Point(139, 25);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(87, 64);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm cơ sở tôn giáo";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(275, 25);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 64);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Xóa toàn bộ thông tin vừa nhập";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupControl2
             // 
@@ -218,6 +155,14 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(831, 541);
             this.groupControl2.TabIndex = 0;
+            // 
+            // cboIDNguoiQL
+            // 
+            this.cboIDNguoiQL.FormattingEnabled = true;
+            this.cboIDNguoiQL.Location = new System.Drawing.Point(600, 226);
+            this.cboIDNguoiQL.Name = "cboIDNguoiQL";
+            this.cboIDNguoiQL.Size = new System.Drawing.Size(72, 21);
+            this.cboIDNguoiQL.TabIndex = 72;
             // 
             // radKhong
             // 
@@ -302,6 +247,7 @@
             this.button4.TabIndex = 64;
             this.button4.Text = "CT";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -545,6 +491,60 @@
             this.picAnh.TabStop = false;
             this.picAnh.Click += new System.EventHandler(this.picAnh_Click_1);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupControl1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupControl3);
+            this.splitContainer2.Size = new System.Drawing.Size(474, 541);
+            this.splitContainer2.SplitterDistance = 119;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.button5);
+            this.groupControl1.Controls.Add(this.btnThem);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(474, 119);
+            this.groupControl1.TabIndex = 0;
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button5.Location = new System.Drawing.Point(275, 25);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(88, 64);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Xóa toàn bộ thông tin vừa nhập";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThem.Location = new System.Drawing.Point(139, 25);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(87, 64);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm cơ sở tôn giáo";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.map);
@@ -565,13 +565,14 @@
             this.map.Size = new System.Drawing.Size(470, 396);
             this.map.TabIndex = 1;
             // 
-            // cboIDNguoiQL
+            // imageLayer1
             // 
-            this.cboIDNguoiQL.FormattingEnabled = true;
-            this.cboIDNguoiQL.Location = new System.Drawing.Point(600, 226);
-            this.cboIDNguoiQL.Name = "cboIDNguoiQL";
-            this.cboIDNguoiQL.Size = new System.Drawing.Size(72, 21);
-            this.cboIDNguoiQL.TabIndex = 72;
+            this.imageLayer1.DataProvider = this.openStreetMapDataProvider2;
+            // 
+            // vectorItemsLayer1
+            // 
+            this.vectorItemsLayer1.Data = this.mapItemStorage2;
+            this.vectorItemsLayer1.Name = "VectorLayer";
             // 
             // frmThemCoSoTonGiao
             // 
@@ -586,16 +587,16 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();

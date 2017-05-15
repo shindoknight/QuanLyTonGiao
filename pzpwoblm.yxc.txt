@@ -1,0 +1,55 @@
+﻿Merge branch 'master' into linhtuty
+
+# Conflicts:
+#	service_quan_ly_ton_giao/.vs/service_quan_ly_ton_giao/v14/.suo
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/app.config
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.exe
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.exe.config
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.pdb
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.vshost.exe.config
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/frmChinh.Designer.cs
+#	service_quan_ly_ton_giao/service_quan_ly_ton_giao/service_quan_ly_ton_giao.csproj
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch linhtuty
+# Your branch is up-to-date with 'origin/linhtuty'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   service_quan_ly_ton_giao/Server_QuanLyTonGiao/App_Code/ServiceCoSo.cs
+#	new file:   service_quan_ly_ton_giao/Server_QuanLyTonGiao/App_Code/ServiceTonGiao.cs
+#	modified:   service_quan_ly_ton_giao/Server_QuanLyTonGiao/App_Code/tblUser.cs
+#	new file:   service_quan_ly_ton_giao/Server_QuanLyTonGiao/ServiceTonGiao.asmx
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Data/sochi2014.xml
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormDSTonGiao.Designer.cs
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormDSTonGiao.cs
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormDSTonGiao.resx
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormHome.Designer.cs
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormHome.cs
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/FormHome.resx
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/Reference.cs
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/Reference.svcmap
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/ServiceTonGiao.disco
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/ServiceTonGiao.wsdl
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/configuration.svcinfo
+#	new file:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/Service References/ServiceTonGiao/configuration91.svcinfo
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/app.config
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.exe.config
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/bin/Debug/service_quan_ly_ton_giao.vshost.exe.config
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/frmChinh.Designer.cs
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/frmChinh.cs
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/frmChinh.resx
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/service_quan_ly_ton_giao.csproj
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/xFrmDanhMuc.Designer.cs
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/xFrmDanhMuc.cs
+#	modified:   service_quan_ly_ton_giao/service_quan_ly_ton_giao/xFrmTrangChu.cs
+#
+

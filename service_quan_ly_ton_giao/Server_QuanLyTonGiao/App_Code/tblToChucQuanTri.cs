@@ -104,5 +104,23 @@ public class tblToChucQuanTri : System.Web.Services.WebService
         da.Fill(dt);
         return dt;
     }
+    [WebMethod]
+    public int XoaCoSotblTinDo(string TenToChuc,string TenTonGiao,string DieuKien)
+    {
+        try
+        {
+            //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
+            SqlCommand comm = new SqlCommand("UPDATE tblTinDo SET IDCoSo = NULL where IDCoSo in (select IDCoSo from tblCoSo where IDToChuc in (select IDToChuc from tblToChucQuanTri where TenToChuc=N'" + TenToChuc + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'" + TenTonGiao + "' and DaXoa=0) )) "+DieuKien, conn);
+            comm.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            DataTable dt = new DataTable("tblTinDo");
+            da.Fill(dt);
+            return 1;
+        }
+        catch
+        {
+            return 0;
+        }
+    }
 
 }

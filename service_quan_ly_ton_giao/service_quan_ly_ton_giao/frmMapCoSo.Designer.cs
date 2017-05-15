@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMapCoSo));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -173,6 +173,7 @@
             this.btnChiTietTC.TabIndex = 13;
             this.btnChiTietTC.Text = "CT";
             this.btnChiTietTC.UseVisualStyleBackColor = true;
+            this.btnChiTietTC.Click += new System.EventHandler(this.btnChiTietTC_Click);
             // 
             // btnChiTietTonGiao
             // 
@@ -377,14 +378,14 @@
             this.treeView1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "nodecThanhPhoTU";
-            treeNode4.Text = "Thành phố trực thuộc Trung ương";
-            treeNode5.Name = "nodecKhuVucDiaGioiHanhChinh";
-            treeNode5.Text = "Khu vực địa giới hành chính";
-            treeNode6.Name = "nodediagioihanhchinh";
-            treeNode6.Text = "Địa giới hành chính";
+            treeNode1.Name = "nodecThanhPhoTU";
+            treeNode1.Text = "Thành phố trực thuộc Trung ương";
+            treeNode2.Name = "nodecKhuVucDiaGioiHanhChinh";
+            treeNode2.Text = "Khu vực địa giới hành chính";
+            treeNode3.Name = "nodediagioihanhchinh";
+            treeNode3.Text = "Địa giới hành chính";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(267, 446);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -498,11 +499,12 @@
             // 
             // btnConggiao
             // 
+            this.btnConggiao.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnConggiao.Image = ((System.Drawing.Image)(resources.GetObject("btnConggiao.Image")));
             this.btnConggiao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConggiao.Location = new System.Drawing.Point(183, 22);
+            this.btnConggiao.Location = new System.Drawing.Point(110, 20);
             this.btnConggiao.Name = "btnConggiao";
-            this.btnConggiao.Size = new System.Drawing.Size(108, 25);
+            this.btnConggiao.Size = new System.Drawing.Size(108, 33);
             this.btnConggiao.TabIndex = 1;
             this.btnConggiao.Text = "Công giáo";
             this.btnConggiao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -511,11 +513,12 @@
             // 
             // btnPhatGiao
             // 
+            this.btnPhatGiao.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnPhatGiao.Image = ((System.Drawing.Image)(resources.GetObject("btnPhatGiao.Image")));
             this.btnPhatGiao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhatGiao.Location = new System.Drawing.Point(33, 22);
+            this.btnPhatGiao.Location = new System.Drawing.Point(2, 20);
             this.btnPhatGiao.Name = "btnPhatGiao";
-            this.btnPhatGiao.Size = new System.Drawing.Size(108, 25);
+            this.btnPhatGiao.Size = new System.Drawing.Size(108, 33);
             this.btnPhatGiao.TabIndex = 0;
             this.btnPhatGiao.Text = "Phật giáo";
             this.btnPhatGiao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

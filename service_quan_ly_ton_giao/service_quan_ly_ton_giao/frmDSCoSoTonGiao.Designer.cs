@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Tôn giáo");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSCoSoTonGiao));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Tôn giáo");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -186,6 +186,7 @@
             this.btnChiTietTC.Text = "CT";
             this.btnChiTietTC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTietTC.UseVisualStyleBackColor = true;
+            this.btnChiTietTC.Click += new System.EventHandler(this.btnChiTietTC_Click);
             // 
             // btnChiTietTonGiao
             // 
@@ -381,17 +382,17 @@
             this.treeView1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode5.Name = "nodeTonGiao";
-            treeNode5.Text = "Tôn giáo";
-            treeNode6.Name = "nodecThanhPhoTU";
-            treeNode6.Text = "Thành phố trực thuộc Trung ương";
-            treeNode7.Name = "nodecKhuVucDiaGioiHanhChinh";
-            treeNode7.Text = "Khu vực địa giới hành chính";
-            treeNode8.Name = "nodediagioihanhchinh";
-            treeNode8.Text = "Địa giới hành chính";
+            treeNode1.Name = "nodeTonGiao";
+            treeNode1.Text = "Tôn giáo";
+            treeNode2.Name = "nodecThanhPhoTU";
+            treeNode2.Text = "Thành phố trực thuộc Trung ương";
+            treeNode3.Name = "nodecKhuVucDiaGioiHanhChinh";
+            treeNode3.Text = "Khu vực địa giới hành chính";
+            treeNode4.Name = "nodediagioihanhchinh";
+            treeNode4.Text = "Địa giới hành chính";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode8});
+            treeNode1,
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(191, 566);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -500,7 +501,7 @@
             // 
             this.btnXoa.AutoHeight = false;
             this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoa.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnXoa.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnXoa.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnXoa_ButtonClick);
@@ -519,7 +520,7 @@
             // 
             this.btnChiTiet.AutoHeight = false;
             this.btnChiTiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnChiTiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);

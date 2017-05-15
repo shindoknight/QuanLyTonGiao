@@ -205,7 +205,7 @@ namespace service_quan_ly_ton_giao
         private void cboTenNguoiQuanLy_TextChanged(object sender, EventArgs e)
         {
             //DataTable ds = wf.DuLieuTinDo(" where PhapDanh ='" + cboTenNguoiQuanLy.Text + "' and IDCoSo =(select IDCoSo from tblCoSo where DiaChi in(select IDXa from tblXa,tblHuyen,tblTinh where tblXa.IDHuyen=tblHuyen.IDHuyen and tblHuyen.IDTinh=tblTinh.IDTinh and TenXa=N'" + cboXa.Text + "' and TenHuyen=N'" + cboHuyen.Text + "' and TenTinh=N'" + cboTinh.Text + "') )");
-            DataTable ds = wf.DuLieuTinDo(" where PhapDanh ='" + cboTenNguoiQuanLy.Text + "'");
+            DataTable ds = wf.DuLieuTinDo(" where PhapDanh =N'" + cboTenNguoiQuanLy.Text + "'");
             cboIDNguoiQL.DataSource= ds;
             cboIDNguoiQL.DisplayMember = "IDTinDo";
         }
@@ -429,6 +429,14 @@ namespace service_quan_ly_ton_giao
                 }
             }
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataTable tc = wf.DuLieuToChucQuanTri(" where TenToChuc=N'" + cboTenToChucQuanTri.Text + "' and IDTonGiao in (select IDTonGiao from tblTonGiao where TenTonGiao=N'" + cboTenTonGiao.Text + "' and DaXoa=0)");
+            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
+            frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
+            frm.Show();
         }
     }
 }
