@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTenCoSo = new System.Windows.Forms.TextBox();
-            this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.txtChucSac = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.cbQueQuanXa = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -41,17 +37,13 @@
             this.cbQueQuanTinh = new System.Windows.Forms.ComboBox();
             this.txtMatDao = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.cbXa = new System.Windows.Forms.ComboBox();
+            this.cbDiaChiXa = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cbDiaChiHuyen = new System.Windows.Forms.ComboBox();
             this.cbDiaChiTinh = new System.Windows.Forms.ComboBox();
             this.cbDanToc = new System.Windows.Forms.ComboBox();
-            this.cbKhongXacDinh = new System.Windows.Forms.CheckBox();
-            this.cbNu = new System.Windows.Forms.CheckBox();
-            this.cbNam = new System.Windows.Forms.CheckBox();
             this.txtPhapDanh = new System.Windows.Forms.TextBox();
-            this.txtNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.txtHdCaNhan = new System.Windows.Forms.TextBox();
             this.txtMatDoi = new System.Windows.Forms.TextBox();
             this.txtTcNguyHiem = new System.Windows.Forms.TextBox();
@@ -78,35 +70,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.cbbChucSac = new System.Windows.Forms.ComboBox();
+            this.cbbChucVu = new System.Windows.Forms.ComboBox();
+            this.cbbCoSo = new System.Windows.Forms.ComboBox();
+            this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayVaoTonGiao = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-            // 
-            // txtTenCoSo
-            // 
-            this.txtTenCoSo.Location = new System.Drawing.Point(636, 315);
-            this.txtTenCoSo.Multiline = true;
-            this.txtTenCoSo.Name = "txtTenCoSo";
-            this.txtTenCoSo.Size = new System.Drawing.Size(159, 24);
-            this.txtTenCoSo.TabIndex = 107;
-            // 
-            // txtChucVu
-            // 
-            this.txtChucVu.Location = new System.Drawing.Point(636, 354);
-            this.txtChucVu.Multiline = true;
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(159, 24);
-            this.txtChucVu.TabIndex = 106;
-            // 
-            // txtChucSac
-            // 
-            this.txtChucSac.Location = new System.Drawing.Point(111, 351);
-            this.txtChucSac.Multiline = true;
-            this.txtChucSac.Name = "txtChucSac";
-            this.txtChucSac.Size = new System.Drawing.Size(164, 24);
-            this.txtChucSac.TabIndex = 105;
             // 
             // textBox9
             // 
@@ -115,18 +88,6 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(159, 24);
             this.textBox9.TabIndex = 104;
-            // 
-            // dateEdit2
-            // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(636, 87);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(159, 20);
-            this.dateEdit2.TabIndex = 103;
             // 
             // label6
             // 
@@ -145,6 +106,7 @@
             this.cbQueQuanXa.Name = "cbQueQuanXa";
             this.cbQueQuanXa.Size = new System.Drawing.Size(121, 21);
             this.cbQueQuanXa.TabIndex = 101;
+            this.cbQueQuanXa.SelectedIndexChanged += new System.EventHandler(this.cbQueQuanXa_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -181,6 +143,7 @@
             this.cbQueQuanTinh.Name = "cbQueQuanTinh";
             this.cbQueQuanTinh.Size = new System.Drawing.Size(132, 21);
             this.cbQueQuanTinh.TabIndex = 97;
+            this.cbQueQuanTinh.SelectedIndexChanged += new System.EventHandler(this.cbQueQuanTinh_SelectedIndexChanged);
             // 
             // txtMatDao
             // 
@@ -200,13 +163,13 @@
             this.label24.TabIndex = 95;
             this.label24.Text = "Xã";
             // 
-            // cbXa
+            // cbDiaChiXa
             // 
-            this.cbXa.FormattingEnabled = true;
-            this.cbXa.Location = new System.Drawing.Point(551, 223);
-            this.cbXa.Name = "cbXa";
-            this.cbXa.Size = new System.Drawing.Size(121, 21);
-            this.cbXa.TabIndex = 94;
+            this.cbDiaChiXa.FormattingEnabled = true;
+            this.cbDiaChiXa.Location = new System.Drawing.Point(551, 223);
+            this.cbDiaChiXa.Name = "cbDiaChiXa";
+            this.cbDiaChiXa.Size = new System.Drawing.Size(121, 21);
+            this.cbDiaChiXa.TabIndex = 94;
             // 
             // label23
             // 
@@ -243,44 +206,20 @@
             this.cbDiaChiTinh.Name = "cbDiaChiTinh";
             this.cbDiaChiTinh.Size = new System.Drawing.Size(132, 21);
             this.cbDiaChiTinh.TabIndex = 90;
+            this.cbDiaChiTinh.SelectedIndexChanged += new System.EventHandler(this.cbDiaChiTinh_SelectedIndexChanged);
             // 
             // cbDanToc
             // 
             this.cbDanToc.FormattingEnabled = true;
+            this.cbDanToc.Items.AddRange(new object[] {
+            "Kinh",
+            "Mường",
+            "Thái",
+            "Dao"});
             this.cbDanToc.Location = new System.Drawing.Point(111, 159);
             this.cbDanToc.Name = "cbDanToc";
             this.cbDanToc.Size = new System.Drawing.Size(164, 21);
             this.cbDanToc.TabIndex = 89;
-            // 
-            // cbKhongXacDinh
-            // 
-            this.cbKhongXacDinh.AutoSize = true;
-            this.cbKhongXacDinh.Location = new System.Drawing.Point(325, 129);
-            this.cbKhongXacDinh.Name = "cbKhongXacDinh";
-            this.cbKhongXacDinh.Size = new System.Drawing.Size(104, 17);
-            this.cbKhongXacDinh.TabIndex = 88;
-            this.cbKhongXacDinh.Text = "Không Xác Định";
-            this.cbKhongXacDinh.UseVisualStyleBackColor = true;
-            // 
-            // cbNu
-            // 
-            this.cbNu.AutoSize = true;
-            this.cbNu.Location = new System.Drawing.Point(234, 129);
-            this.cbNu.Name = "cbNu";
-            this.cbNu.Size = new System.Drawing.Size(40, 17);
-            this.cbNu.TabIndex = 87;
-            this.cbNu.Text = "Nữ";
-            this.cbNu.UseVisualStyleBackColor = true;
-            // 
-            // cbNam
-            // 
-            this.cbNam.AutoSize = true;
-            this.cbNam.Location = new System.Drawing.Point(111, 129);
-            this.cbNam.Name = "cbNam";
-            this.cbNam.Size = new System.Drawing.Size(48, 17);
-            this.cbNam.TabIndex = 86;
-            this.cbNam.Text = "Nam";
-            this.cbNam.UseVisualStyleBackColor = true;
             // 
             // txtPhapDanh
             // 
@@ -289,18 +228,6 @@
             this.txtPhapDanh.Name = "txtPhapDanh";
             this.txtPhapDanh.Size = new System.Drawing.Size(164, 24);
             this.txtPhapDanh.TabIndex = 85;
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.EditValue = null;
-            this.txtNgaySinh.Location = new System.Drawing.Point(111, 91);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgaySinh.Size = new System.Drawing.Size(164, 20);
-            this.txtNgaySinh.TabIndex = 84;
             // 
             // txtHdCaNhan
             // 
@@ -548,17 +475,113 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Thế Danh";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(392, 481);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 33);
+            this.button1.TabIndex = 108;
+            this.button1.Text = "Thêm Tín Đồ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(114, 129);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 17);
+            this.radioButton1.TabIndex = 109;
+            this.radioButton1.Text = "Nam";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(229, 129);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(39, 17);
+            this.radioButton2.TabIndex = 110;
+            this.radioButton2.Text = "Nữ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(354, 129);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(103, 17);
+            this.radioButton3.TabIndex = 111;
+            this.radioButton3.Text = "Không Xác Định";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // cbbChucSac
+            // 
+            this.cbbChucSac.FormattingEnabled = true;
+            this.cbbChucSac.Items.AddRange(new object[] {
+            "Hòa thượng",
+            "Thượng tọa"});
+            this.cbbChucSac.Location = new System.Drawing.Point(111, 354);
+            this.cbbChucSac.Name = "cbbChucSac";
+            this.cbbChucSac.Size = new System.Drawing.Size(164, 21);
+            this.cbbChucSac.TabIndex = 112;
+            // 
+            // cbbChucVu
+            // 
+            this.cbbChucVu.FormattingEnabled = true;
+            this.cbbChucVu.Items.AddRange(new object[] {
+            "Pháp chủ",
+            "Phó Pháp chủ"});
+            this.cbbChucVu.Location = new System.Drawing.Point(636, 354);
+            this.cbbChucVu.Name = "cbbChucVu";
+            this.cbbChucVu.Size = new System.Drawing.Size(159, 21);
+            this.cbbChucVu.TabIndex = 113;
+            // 
+            // cbbCoSo
+            // 
+            this.cbbCoSo.FormattingEnabled = true;
+            this.cbbCoSo.Items.AddRange(new object[] {
+            "Chùa Keo",
+            "Chùa Hương"});
+            this.cbbCoSo.Location = new System.Drawing.Point(636, 315);
+            this.cbbCoSo.Name = "cbbCoSo";
+            this.cbbCoSo.Size = new System.Drawing.Size(159, 21);
+            this.cbbCoSo.TabIndex = 114;
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.CustomFormat = "MM/dd/yyyy";
+            this.txtNgaySinh.Location = new System.Drawing.Point(108, 94);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(167, 20);
+            this.txtNgaySinh.TabIndex = 115;
+            this.txtNgaySinh.Value = new System.DateTime(1995, 10, 14, 0, 0, 0, 0);
+            // 
+            // dtNgayVaoTonGiao
+            // 
+            this.dtNgayVaoTonGiao.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayVaoTonGiao.Location = new System.Drawing.Point(638, 88);
+            this.dtNgayVaoTonGiao.Name = "dtNgayVaoTonGiao";
+            this.dtNgayVaoTonGiao.Size = new System.Drawing.Size(157, 20);
+            this.dtNgayVaoTonGiao.TabIndex = 116;
+            this.dtNgayVaoTonGiao.Value = new System.DateTime(2017, 6, 14, 0, 0, 0, 0);
+            // 
             // frmThemTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(830, 526);
-            this.Controls.Add(this.txtTenCoSo);
-            this.Controls.Add(this.txtChucVu);
-            this.Controls.Add(this.txtChucSac);
+            this.Controls.Add(this.dtNgayVaoTonGiao);
+            this.Controls.Add(this.txtNgaySinh);
+            this.Controls.Add(this.cbbCoSo);
+            this.Controls.Add(this.cbbChucVu);
+            this.Controls.Add(this.cbbChucSac);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.dateEdit2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbQueQuanXa);
             this.Controls.Add(this.label25);
@@ -567,17 +590,13 @@
             this.Controls.Add(this.cbQueQuanTinh);
             this.Controls.Add(this.txtMatDao);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.cbXa);
+            this.Controls.Add(this.cbDiaChiXa);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.cbDiaChiHuyen);
             this.Controls.Add(this.cbDiaChiTinh);
             this.Controls.Add(this.cbDanToc);
-            this.Controls.Add(this.cbKhongXacDinh);
-            this.Controls.Add(this.cbNu);
-            this.Controls.Add(this.cbNam);
             this.Controls.Add(this.txtPhapDanh);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtHdCaNhan);
             this.Controls.Add(this.txtMatDoi);
             this.Controls.Add(this.txtTcNguyHiem);
@@ -607,22 +626,13 @@
             this.Name = "frmThemTinDo";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmThemTinDo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTenCoSo;
-        private System.Windows.Forms.TextBox txtChucVu;
-        private System.Windows.Forms.TextBox txtChucSac;
         private System.Windows.Forms.TextBox textBox9;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbQueQuanXa;
         private System.Windows.Forms.Label label25;
@@ -631,17 +641,13 @@
         private System.Windows.Forms.ComboBox cbQueQuanTinh;
         private System.Windows.Forms.TextBox txtMatDao;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox cbXa;
+        private System.Windows.Forms.ComboBox cbDiaChiXa;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cbDiaChiHuyen;
         private System.Windows.Forms.ComboBox cbDiaChiTinh;
         private System.Windows.Forms.ComboBox cbDanToc;
-        private System.Windows.Forms.CheckBox cbKhongXacDinh;
-        private System.Windows.Forms.CheckBox cbNu;
-        private System.Windows.Forms.CheckBox cbNam;
         private System.Windows.Forms.TextBox txtPhapDanh;
-        private DevExpress.XtraEditors.DateEdit txtNgaySinh;
         private System.Windows.Forms.TextBox txtHdCaNhan;
         private System.Windows.Forms.TextBox txtMatDoi;
         private System.Windows.Forms.TextBox txtTcNguyHiem;
@@ -668,5 +674,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.ComboBox cbbChucSac;
+        private System.Windows.Forms.ComboBox cbbChucVu;
+        private System.Windows.Forms.ComboBox cbbCoSo;
+        private System.Windows.Forms.DateTimePicker txtNgaySinh;
+        private System.Windows.Forms.DateTimePicker dtNgayVaoTonGiao;
     }
 }

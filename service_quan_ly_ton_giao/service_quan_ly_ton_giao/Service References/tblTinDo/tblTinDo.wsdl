@@ -19,6 +19,187 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ThemTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phapDanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="theDanh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="gioiTinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="danToc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queQuan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diaChi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taiChinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sucKhoe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcTichCuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNguyHiem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhAnh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matDoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matDao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hdCaNhan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hdToChuc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idChucSac" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCoSo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="daXoa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayVaoTonGiao" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idChucVu" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuTinh">
+        <s:complexType />
+      </s:element>
+      <s:element name="DuLieuTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuTinhResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tinh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TruyVanTenHuyenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenXa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="huyen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TruyVanTenXaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TruyVanTenXaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdQueQuan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="huyen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdQueQuanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdQueQuanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdDiaChi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="huyen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdDiaChiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdDiaChiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdChucSac">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenChucSac" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdChucSacResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdChucSacResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdCoSo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenCoSo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdCoSoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdCoSoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdChucVu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenChucVu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdChucVuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdChucVuResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiDSTinDoSoapIn">
@@ -27,10 +208,110 @@
   <wsdl:message name="HienThiDSTinDoSoapOut">
     <wsdl:part name="parameters" element="tns:HienThiDSTinDoResponse" />
   </wsdl:message>
+  <wsdl:message name="ThemTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemTinDo" />
+  </wsdl:message>
+  <wsdl:message name="ThemTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemTinDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:XoaTinDo" />
+  </wsdl:message>
+  <wsdl:message name="XoaTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaTinDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuTinh" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuTinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:TruyVanTenHuyen" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:TruyVanTenHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenXaSoapIn">
+    <wsdl:part name="parameters" element="tns:TruyVanTenXa" />
+  </wsdl:message>
+  <wsdl:message name="TruyVanTenXaSoapOut">
+    <wsdl:part name="parameters" element="tns:TruyVanTenXaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdQueQuanSoapIn">
+    <wsdl:part name="parameters" element="tns:IdQueQuan" />
+  </wsdl:message>
+  <wsdl:message name="IdQueQuanSoapOut">
+    <wsdl:part name="parameters" element="tns:IdQueQuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdDiaChiSoapIn">
+    <wsdl:part name="parameters" element="tns:IdDiaChi" />
+  </wsdl:message>
+  <wsdl:message name="IdDiaChiSoapOut">
+    <wsdl:part name="parameters" element="tns:IdDiaChiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdChucSacSoapIn">
+    <wsdl:part name="parameters" element="tns:IdChucSac" />
+  </wsdl:message>
+  <wsdl:message name="IdChucSacSoapOut">
+    <wsdl:part name="parameters" element="tns:IdChucSacResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdCoSoSoapIn">
+    <wsdl:part name="parameters" element="tns:IdCoSo" />
+  </wsdl:message>
+  <wsdl:message name="IdCoSoSoapOut">
+    <wsdl:part name="parameters" element="tns:IdCoSoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdChucVuSoapIn">
+    <wsdl:part name="parameters" element="tns:IdChucVu" />
+  </wsdl:message>
+  <wsdl:message name="IdChucVuSoapOut">
+    <wsdl:part name="parameters" element="tns:IdChucVuResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblTinDoSoap">
     <wsdl:operation name="HienThiDSTinDo">
       <wsdl:input message="tns:HienThiDSTinDoSoapIn" />
       <wsdl:output message="tns:HienThiDSTinDoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemTinDo">
+      <wsdl:input message="tns:ThemTinDoSoapIn" />
+      <wsdl:output message="tns:ThemTinDoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaTinDo">
+      <wsdl:input message="tns:XoaTinDoSoapIn" />
+      <wsdl:output message="tns:XoaTinDoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <wsdl:input message="tns:DuLieuTinhSoapIn" />
+      <wsdl:output message="tns:DuLieuTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <wsdl:input message="tns:TruyVanTenHuyenSoapIn" />
+      <wsdl:output message="tns:TruyVanTenHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <wsdl:input message="tns:TruyVanTenXaSoapIn" />
+      <wsdl:output message="tns:TruyVanTenXaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdQueQuan">
+      <wsdl:input message="tns:IdQueQuanSoapIn" />
+      <wsdl:output message="tns:IdQueQuanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdDiaChi">
+      <wsdl:input message="tns:IdDiaChiSoapIn" />
+      <wsdl:output message="tns:IdDiaChiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdChucSac">
+      <wsdl:input message="tns:IdChucSacSoapIn" />
+      <wsdl:output message="tns:IdChucSacSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdCoSo">
+      <wsdl:input message="tns:IdCoSoSoapIn" />
+      <wsdl:output message="tns:IdCoSoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdChucVu">
+      <wsdl:input message="tns:IdChucVuSoapIn" />
+      <wsdl:output message="tns:IdChucVuSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblTinDoSoap" type="tns:tblTinDoSoap">
@@ -44,11 +325,191 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ThemTinDo">
+      <soap:operation soapAction="http://tempuri.org/ThemTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaTinDo">
+      <soap:operation soapAction="http://tempuri.org/XoaTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <soap:operation soapAction="http://tempuri.org/DuLieuTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <soap:operation soapAction="http://tempuri.org/TruyVanTenHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <soap:operation soapAction="http://tempuri.org/TruyVanTenXa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdQueQuan">
+      <soap:operation soapAction="http://tempuri.org/IdQueQuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdDiaChi">
+      <soap:operation soapAction="http://tempuri.org/IdDiaChi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdChucSac">
+      <soap:operation soapAction="http://tempuri.org/IdChucSac" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdCoSo">
+      <soap:operation soapAction="http://tempuri.org/IdCoSo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdChucVu">
+      <soap:operation soapAction="http://tempuri.org/IdChucVu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblTinDoSoap12" type="tns:tblTinDoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="HienThiDSTinDo">
       <soap12:operation soapAction="http://tempuri.org/HienThiDSTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemTinDo">
+      <soap12:operation soapAction="http://tempuri.org/ThemTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaTinDo">
+      <soap12:operation soapAction="http://tempuri.org/XoaTinDo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuTinh">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenHuyen">
+      <soap12:operation soapAction="http://tempuri.org/TruyVanTenHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruyVanTenXa">
+      <soap12:operation soapAction="http://tempuri.org/TruyVanTenXa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdQueQuan">
+      <soap12:operation soapAction="http://tempuri.org/IdQueQuan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdDiaChi">
+      <soap12:operation soapAction="http://tempuri.org/IdDiaChi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdChucSac">
+      <soap12:operation soapAction="http://tempuri.org/IdChucSac" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdCoSo">
+      <soap12:operation soapAction="http://tempuri.org/IdCoSo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdChucVu">
+      <soap12:operation soapAction="http://tempuri.org/IdChucVu" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

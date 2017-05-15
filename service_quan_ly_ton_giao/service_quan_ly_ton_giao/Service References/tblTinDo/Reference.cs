@@ -22,6 +22,118 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HienThiDSTinDo", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> HienThiDSTinDoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTinDo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int ThemTinDo(
+                    string phapDanh, 
+                    string theDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTinDo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> ThemTinDoAsync(
+                    string phapDanh, 
+                    string theDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaTinDo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int XoaTinDo(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaTinDo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> XoaTinDoAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DuLieuTinh", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable DuLieuTinh();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DuLieuTinh", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> DuLieuTinhAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TruyVanTenHuyen", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable TruyVanTenHuyen(string tinh);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TruyVanTenHuyen", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> TruyVanTenHuyenAsync(string tinh);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TruyVanTenXa", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable TruyVanTenXa(string huyen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TruyVanTenXa", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> TruyVanTenXaAsync(string huyen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdQueQuan", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string IdQueQuan(string tinh, string huyen, string xa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdQueQuan", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> IdQueQuanAsync(string tinh, string huyen, string xa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdDiaChi", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string IdDiaChi(string tinh, string huyen, string xa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdDiaChi", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> IdDiaChiAsync(string tinh, string huyen, string xa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdChucSac", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int IdChucSac(string tenChucSac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdChucSac", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> IdChucSacAsync(string tenChucSac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdCoSo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int IdCoSo(string tenCoSo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdCoSo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> IdCoSoAsync(string tenCoSo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdChucVu", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int IdChucVu(string tenChucVu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdChucVu", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> IdChucVuAsync(string tenChucVu);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -57,6 +169,128 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> HienThiDSTinDoAsync() {
             return base.Channel.HienThiDSTinDoAsync();
+        }
+        
+        public int ThemTinDo(
+                    string phapDanh, 
+                    string theDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu) {
+            return base.Channel.ThemTinDo(phapDanh, theDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+        }
+        
+        public System.Threading.Tasks.Task<int> ThemTinDoAsync(
+                    string phapDanh, 
+                    string theDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu) {
+            return base.Channel.ThemTinDoAsync(phapDanh, theDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+        }
+        
+        public int XoaTinDo(int Id) {
+            return base.Channel.XoaTinDo(Id);
+        }
+        
+        public System.Threading.Tasks.Task<int> XoaTinDoAsync(int Id) {
+            return base.Channel.XoaTinDoAsync(Id);
+        }
+        
+        public System.Data.DataTable DuLieuTinh() {
+            return base.Channel.DuLieuTinh();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> DuLieuTinhAsync() {
+            return base.Channel.DuLieuTinhAsync();
+        }
+        
+        public System.Data.DataTable TruyVanTenHuyen(string tinh) {
+            return base.Channel.TruyVanTenHuyen(tinh);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> TruyVanTenHuyenAsync(string tinh) {
+            return base.Channel.TruyVanTenHuyenAsync(tinh);
+        }
+        
+        public System.Data.DataTable TruyVanTenXa(string huyen) {
+            return base.Channel.TruyVanTenXa(huyen);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> TruyVanTenXaAsync(string huyen) {
+            return base.Channel.TruyVanTenXaAsync(huyen);
+        }
+        
+        public string IdQueQuan(string tinh, string huyen, string xa) {
+            return base.Channel.IdQueQuan(tinh, huyen, xa);
+        }
+        
+        public System.Threading.Tasks.Task<string> IdQueQuanAsync(string tinh, string huyen, string xa) {
+            return base.Channel.IdQueQuanAsync(tinh, huyen, xa);
+        }
+        
+        public string IdDiaChi(string tinh, string huyen, string xa) {
+            return base.Channel.IdDiaChi(tinh, huyen, xa);
+        }
+        
+        public System.Threading.Tasks.Task<string> IdDiaChiAsync(string tinh, string huyen, string xa) {
+            return base.Channel.IdDiaChiAsync(tinh, huyen, xa);
+        }
+        
+        public int IdChucSac(string tenChucSac) {
+            return base.Channel.IdChucSac(tenChucSac);
+        }
+        
+        public System.Threading.Tasks.Task<int> IdChucSacAsync(string tenChucSac) {
+            return base.Channel.IdChucSacAsync(tenChucSac);
+        }
+        
+        public int IdCoSo(string tenCoSo) {
+            return base.Channel.IdCoSo(tenCoSo);
+        }
+        
+        public System.Threading.Tasks.Task<int> IdCoSoAsync(string tenCoSo) {
+            return base.Channel.IdCoSoAsync(tenCoSo);
+        }
+        
+        public int IdChucVu(string tenChucVu) {
+            return base.Channel.IdChucVu(tenChucVu);
+        }
+        
+        public System.Threading.Tasks.Task<int> IdChucVuAsync(string tenChucVu) {
+            return base.Channel.IdChucVuAsync(tenChucVu);
         }
     }
 }

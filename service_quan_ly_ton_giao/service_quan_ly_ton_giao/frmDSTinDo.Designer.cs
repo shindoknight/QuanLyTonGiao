@@ -42,8 +42,12 @@
             this.HDCaNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HDToChuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.IDTinDo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // gridCTinDo
@@ -52,14 +56,19 @@
             this.gridCTinDo.Location = new System.Drawing.Point(0, 0);
             this.gridCTinDo.MainView = this.gridVTinDo;
             this.gridCTinDo.Name = "gridCTinDo";
-            this.gridCTinDo.Size = new System.Drawing.Size(504, 329);
+            this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnXoa});
+            this.gridCTinDo.Size = new System.Drawing.Size(530, 329);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
+            this.gridCTinDo.Click += new System.EventHandler(this.gridCTinDo_Click);
+            this.gridCTinDo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridCTinDo_MouseClick);
             // 
             // gridVTinDo
             // 
             this.gridVTinDo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.IDTinDo,
             this.PhapDanh,
             this.TheDanh,
             this.NgaySinh,
@@ -71,7 +80,8 @@
             this.HinhAnh,
             this.HDCaNhan,
             this.HDToChuc,
-            this.NgayVaoTonGiao});
+            this.NgayVaoTonGiao,
+            this.gridColumn1});
             this.gridVTinDo.GridControl = this.gridCTinDo;
             this.gridVTinDo.Name = "gridVTinDo";
             this.gridVTinDo.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -180,17 +190,43 @@
             this.NgayVaoTonGiao.Visible = true;
             this.NgayVaoTonGiao.VisibleIndex = 11;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Xoa";
+            this.gridColumn1.ColumnEdit = this.btnXoa;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 12;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AutoHeight = false;
+            this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // IDTinDo
+            // 
+            this.IDTinDo.Caption = "STT";
+            this.IDTinDo.FieldName = "IDTinDo";
+            this.IDTinDo.MinWidth = 70;
+            this.IDTinDo.Name = "IDTinDo";
+            this.IDTinDo.Visible = true;
+            this.IDTinDo.VisibleIndex = 13;
+            // 
             // frmDSTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 329);
+            this.ClientSize = new System.Drawing.Size(530, 329);
             this.Controls.Add(this.gridCTinDo);
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
             this.Load += new System.EventHandler(this.frmDSTinDo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,5 +247,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn HDCaNhan;
         private DevExpress.XtraGrid.Columns.GridColumn HDToChuc;
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn IDTinDo;
     }
 }

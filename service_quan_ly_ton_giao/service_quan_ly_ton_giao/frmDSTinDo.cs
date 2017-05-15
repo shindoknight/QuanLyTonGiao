@@ -19,12 +19,28 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
-
+        tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
         private void frmDSTinDo_Load(object sender, EventArgs e)
         {
-            tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
+
             gridCTinDo.DataSource = tindo.HienThiDSTinDo();
 
+        }
+
+        private void gridCTinDo_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void gridCTinDo_Click(object sender, EventArgs e)
+        {
+            Point clickPoint = gridCTinDo.PointToClient(Control.MousePosition);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DataRow row = gridVTinDo.GetFocusedDataRow();
+            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
         }
     }
 }

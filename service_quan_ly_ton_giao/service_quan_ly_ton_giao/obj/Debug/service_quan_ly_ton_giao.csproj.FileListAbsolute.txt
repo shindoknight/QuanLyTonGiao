@@ -576,4 +576,4 @@ F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\ob
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.xFrmTrangChu.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.csproj.GenerateResource.Cache
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
-F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.ThemTinDo.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmThemTinDo.resources

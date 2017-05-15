@@ -10,10 +10,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTabbedMdi;
 using service_quan_ly_ton_giao;
+using service_quan_ly_ton_giao.tblTinDo;
+
 namespace service_quan_ly_ton_giao
 {
     public partial class frmChinh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
         private int _quyen;
         private string _id;
         private string _user;
@@ -147,6 +150,30 @@ namespace service_quan_ly_ton_giao
         private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void bbtnThemTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThemTinDo ThemTinDo = new frmThemTinDo();
+            ThemTinDo.ShowDialog();
+        }
+        tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int id = BienToanCuc.IdTinDo;
+
+            string tenTindo = BienToanCuc.tenTinDo;
+            if (MessageBox.Show("Xóa " + tenTindo, "Thông báo???", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
+                
+                tindo.XoaTinDo(id);
+                MessageBox.Show("Xóa Thành Công ");
+        }
+        }
+
+        private void bbtnDSTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDSTinDo tindo = new frmDSTinDo();
+            tindo.ShowDialog();
         }
     }
 }

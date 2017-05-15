@@ -55,6 +55,7 @@
             this.bbtnSuaTinDo = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection32x32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -111,10 +112,11 @@
             this.bbtnPhucHoi,
             this.bbtnSuaTinDo,
             this.bbtnNhap,
-            this.btnXuat});
+            this.btnXuat,
+            this.barButtonItem1});
             this.ribbonControl1.LargeImages = this.imageCollection32x32;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTrangChu,
@@ -157,6 +159,7 @@
             this.bbtnDSTinDo.Id = 4;
             this.bbtnDSTinDo.LargeImageIndex = 11;
             this.bbtnDSTinDo.Name = "bbtnDSTinDo";
+            this.bbtnDSTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSTinDo_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -180,6 +183,7 @@
             this.bbtnThemTinDo.Id = 7;
             this.bbtnThemTinDo.LargeImageIndex = 3;
             this.bbtnThemTinDo.Name = "bbtnThemTinDo";
+            this.bbtnThemTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTinDo_ItemClick);
             // 
             // bbtnDSCSTG
             // 
@@ -293,6 +297,14 @@
             this.btnXuat.LargeImageIndex = 19;
             this.btnXuat.Name = "btnXuat";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Xóa Tín Đồ";
+            this.barButtonItem1.Glyph = global::service_quan_ly_ton_giao.Properties.Resources.Close_icon;
+            this.barButtonItem1.Id = 26;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // imageCollection32x32
             // 
             this.imageCollection32x32.ImageSize = new System.Drawing.Size(32, 32);
@@ -379,6 +391,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnDSTinDo);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnThemTinDo);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnSuaTinDo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Tín đồ";
             // 
@@ -546,5 +559,6 @@
         private DevExpress.XtraBars.BarButtonItem btnXuat;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
