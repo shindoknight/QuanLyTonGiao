@@ -123,6 +123,16 @@ namespace service_quan_ly_ton_giao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Floppy_Small_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Floppy-Small-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_icon {
             get {
                 object obj = ResourceManager.GetObject("logout-icon", resourceCulture);

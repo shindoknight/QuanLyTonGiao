@@ -166,11 +166,11 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnDSTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-           // FormDSTonGiao f = new FormDSTonGiao();
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            FormDSTonGiao f = new FormDSTonGiao();
             
-           // f.FormBorderStyle = FormBorderStyle.None;
-         //   _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
+            f.FormBorderStyle = FormBorderStyle.None;
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
         }
 
         private void bbtnBanDoCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,6 +185,13 @@ namespace service_quan_ly_ton_giao
         {
             frmMapTinDo frmMapTinDo = new frmMapTinDo();
             frmMapTinDo.Show();
+        }
+
+        private void bbtnThemTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            FormThemTonGiao f = new FormThemTonGiao();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 11);
         }
     }
 }

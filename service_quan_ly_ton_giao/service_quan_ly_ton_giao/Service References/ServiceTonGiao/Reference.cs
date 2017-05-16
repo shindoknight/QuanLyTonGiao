@@ -23,12 +23,13 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayDanhSach", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> LayDanhSachAsync();
         
+        // CODEGEN: Parameter 'f' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTonGiao", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int ThemTonGiao(string Ten, string gioithieu, string hinhanh);
+        service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse ThemTonGiao(service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTonGiao", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> ThemTonGiaoAsync(string Ten, string gioithieu, string hinhanh);
+        System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse> ThemTonGiaoAsync(service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SuaTonGiao", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -43,87 +44,52 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Xoa", ReplyAction="*")]
         System.Threading.Tasks.Task<int> XoaAsync(string id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LoadAnh", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MarshalByRefObject))]
-        service_quan_ly_ton_giao.ServiceTonGiao.Image LoadAnh(string path);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LoadAnh", ReplyAction="*")]
-        System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.Image> LoadAnhAsync(string path);
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public abstract partial class Image : MarshalByRefObject {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ThemTonGiao", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ThemTonGiaoRequest {
         
-        private object tagField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string Ten;
         
-        private ColorPalette paletteField;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string gioithieu;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public object Tag {
-            get {
-                return this.tagField;
-            }
-            set {
-                this.tagField = value;
-                this.RaisePropertyChanged("Tag");
-            }
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string hinhanh;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] f;
+        
+        public ThemTonGiaoRequest() {
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public ColorPalette Palette {
-            get {
-                return this.paletteField;
-            }
-            set {
-                this.paletteField = value;
-                this.RaisePropertyChanged("Palette");
-            }
+        public ThemTonGiaoRequest(string Ten, string gioithieu, string hinhanh, byte[] f) {
+            this.Ten = Ten;
+            this.gioithieu = gioithieu;
+            this.hinhanh = hinhanh;
+            this.f = f;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class ColorPalette : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ThemTonGiaoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class ThemTonGiaoResponse {
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string ThemTonGiaoResult;
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public ThemTonGiaoResponse() {
         }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Image))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public abstract partial class MarshalByRefObject : object, System.ComponentModel.INotifyPropertyChanged {
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
+        public ThemTonGiaoResponse(string ThemTonGiaoResult) {
+            this.ThemTonGiaoResult = ThemTonGiaoResult;
         }
     }
     
@@ -162,12 +128,33 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
             return base.Channel.LayDanhSachAsync();
         }
         
-        public int ThemTonGiao(string Ten, string gioithieu, string hinhanh) {
-            return base.Channel.ThemTonGiao(Ten, gioithieu, hinhanh);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap.ThemTonGiao(service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest request) {
+            return base.Channel.ThemTonGiao(request);
         }
         
-        public System.Threading.Tasks.Task<int> ThemTonGiaoAsync(string Ten, string gioithieu, string hinhanh) {
-            return base.Channel.ThemTonGiaoAsync(Ten, gioithieu, hinhanh);
+        public string ThemTonGiao(string Ten, string gioithieu, string hinhanh, byte[] f) {
+            service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest inValue = new service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest();
+            inValue.Ten = Ten;
+            inValue.gioithieu = gioithieu;
+            inValue.hinhanh = hinhanh;
+            inValue.f = f;
+            service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse retVal = ((service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap)(this)).ThemTonGiao(inValue);
+            return retVal.ThemTonGiaoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse> service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap.ThemTonGiaoAsync(service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest request) {
+            return base.Channel.ThemTonGiaoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse> ThemTonGiaoAsync(string Ten, string gioithieu, string hinhanh, byte[] f) {
+            service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest inValue = new service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest();
+            inValue.Ten = Ten;
+            inValue.gioithieu = gioithieu;
+            inValue.hinhanh = hinhanh;
+            inValue.f = f;
+            return ((service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap)(this)).ThemTonGiaoAsync(inValue);
         }
         
         public int SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo) {
@@ -184,14 +171,6 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         
         public System.Threading.Tasks.Task<int> XoaAsync(string id) {
             return base.Channel.XoaAsync(id);
-        }
-        
-        public service_quan_ly_ton_giao.ServiceTonGiao.Image LoadAnh(string path) {
-            return base.Channel.LoadAnh(path);
-        }
-        
-        public System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.Image> LoadAnhAsync(string path) {
-            return base.Channel.LoadAnhAsync(path);
         }
     }
 }

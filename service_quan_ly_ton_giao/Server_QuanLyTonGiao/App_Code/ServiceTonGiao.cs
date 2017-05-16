@@ -29,7 +29,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
     {
         try
         {
-            string strConnect = @"Data Source=MI\M;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
             conn = new SqlConnection(strConnect);
             conn.Open();
         }
@@ -55,20 +55,45 @@ public class ServiceTonGiao : System.Web.Services.WebService
         return dtdistrict;
     }
     [WebMethod]
-    public int ThemTonGiao(string Ten, string gioithieu, string hinhanh)
+    public string ThemTonGiao(string Ten, string gioithieu, string hinhanh, byte[] f)
     {
+        FilesTransfer trans = new FilesTransfer();
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("insert into tblTonGiao (N'" + Ten + "',N'" + gioithieu + "',N'" + hinhanh + "',0,0)", conn);
-            int n;
-            n = comm.ExecuteNonQuery();
-            CloseConnect();
-            return n;
+            int n=0;
+            if (hinhanh != "")
+            {
+                string upfile = trans.UploadFile(f, hinhanh);
+
+                if (upfile == "OK")
+                {
+                    SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'"+ "/Images/" + hinhanh+"',0,0)", conn);
+                    n = comm.ExecuteNonQuery();
+                }
+
+                else
+                {
+                    CloseConnect();
+                    return "Lỗi up file: \n" + upfile;
+                }
+                CloseConnect();
+            }
+            else
+            {
+                SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'',0,0)", conn);
+                n = comm.ExecuteNonQuery();
+                CloseConnect();
+            }
+            if (n > 0)
+            {
+                return "Thêm Tôn giáo thành công!";
+            }
+            else return "Thêm Tôn giáo không thành công!";
         }
-        catch
+        catch(Exception ex)
         {
-            return 0;
+            return "Thêm Tôn giáo không thành công!";
         }
     }
     [WebMethod]
@@ -77,13 +102,13 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where IDTonGiao=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
             return n;
         }
-        catch
+        catch(Exception e)
         {
             return 0;
         }
@@ -94,7 +119,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblTonGiao set daxoa=1 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set daxoa=1 where IDTonGiao=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
