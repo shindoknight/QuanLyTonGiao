@@ -130,12 +130,51 @@ public class ServiceTonGiao : System.Web.Services.WebService
             return 0;
         }
     }
-   // [WebMethod]
+    // [WebMethod]
     //public Bitmap LoadAnh (string path)
-   // {
+    // {
 
     //    return Bitmap.FromFile(path);
-   // }
+    // }
+    [WebMethod]
+    public string Exec(string sql) // hàm thực thi câu lệnh trong sql
+    {
+        try
+        {
+            OpenConnect();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+              CloseConnect();
+              return "Back up thành công!";
+            
+        }
+        catch (Exception ex)
+        {
+            return "Lỗi: " + ex;
+        }
+    }
+    [WebMethod]
+    public string PhucHoi(string path)
+    {
+        try
+        {
+            string strConnect = @"Data Source=.\SQLEXPRESS; Database=Master;Integrated Security=True";
+            conn = new SqlConnection(strConnect);
+            conn.Open();
 
+            string stRestore = "ALTER DATABASE [QUANLYTONGIAO] SET SINGLE_USER WITH ROLLBACK IMMEDIATE ";
+            stRestore += " RESTORE DATABASE [QUANLYTONGIAO] FROM DISK = N'" + path + "'";
+            stRestore += " WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+            stRestore += " ALTER DATABASE [QUANLYTONGIAO] SET MULTI_USER ";
+            SqlCommand cmd = new SqlCommand(stRestore, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return "Phục Hồi thành công!";
+        }
+        catch(Exception e)
+        {
+            return "Phục hồi không thành công! Lỗi: \n"+e.ToString();
+        }
+    }
 
 }

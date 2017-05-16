@@ -266,6 +266,7 @@
             this.bbtnSaoLuu.Id = 21;
             this.bbtnSaoLuu.LargeImageIndex = 21;
             this.bbtnSaoLuu.Name = "bbtnSaoLuu";
+            this.bbtnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnSaoLuu_ItemClick);
             // 
             // bbtnPhucHoi
             // 
@@ -273,6 +274,7 @@
             this.bbtnPhucHoi.Id = 22;
             this.bbtnPhucHoi.LargeImageIndex = 22;
             this.bbtnPhucHoi.Name = "bbtnPhucHoi";
+            this.bbtnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnPhucHoi_ItemClick);
             // 
             // bbtnSuaTinDo
             // 

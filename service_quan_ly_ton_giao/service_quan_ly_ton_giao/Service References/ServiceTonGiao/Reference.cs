@@ -44,6 +44,20 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Xoa", ReplyAction="*")]
         System.Threading.Tasks.Task<int> XoaAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Exec", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string Exec(string sql);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Exec", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> ExecAsync(string sql);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PhucHoi", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string PhucHoi(string path);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PhucHoi", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> PhucHoiAsync(string path);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -171,6 +185,22 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         
         public System.Threading.Tasks.Task<int> XoaAsync(string id) {
             return base.Channel.XoaAsync(id);
+        }
+        
+        public string Exec(string sql) {
+            return base.Channel.Exec(sql);
+        }
+        
+        public System.Threading.Tasks.Task<string> ExecAsync(string sql) {
+            return base.Channel.ExecAsync(sql);
+        }
+        
+        public string PhucHoi(string path) {
+            return base.Channel.PhucHoi(path);
+        }
+        
+        public System.Threading.Tasks.Task<string> PhucHoiAsync(string path) {
+            return base.Channel.PhucHoiAsync(path);
         }
     }
 }
