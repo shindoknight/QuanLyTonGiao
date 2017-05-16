@@ -48,7 +48,7 @@ public class ServiceUser : System.Web.Services.WebService
         SqlCommand comm = new SqlCommand("select * from tblUser where UserName=N'" + username + "' and PassWord=N'" + password + "'", con);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dtdistrict = new DataTable();
+        DataTable dtdistrict = new DataTable("tblUser");
         da.Fill(dtdistrict);
         CloseConnect();
         return dtdistrict;

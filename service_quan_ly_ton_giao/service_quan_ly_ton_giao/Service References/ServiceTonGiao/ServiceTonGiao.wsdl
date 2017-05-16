@@ -25,13 +25,14 @@
             <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="gioithieu" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="ThemTonGiaoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ThemTonGiaoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ThemTonGiaoResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -67,32 +68,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="LoadAnh">
+      <s:element name="Exec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PhucHoi">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="LoadAnhResponse">
+      <s:element name="PhucHoiResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LoadAnhResult" type="tns:Image" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhucHoiResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="Image" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="tns:MarshalByRefObject">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="Tag" />
-              <s:element minOccurs="0" maxOccurs="1" name="Palette" type="tns:ColorPalette" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="MarshalByRefObject" abstract="true" />
-      <s:complexType name="ColorPalette" />
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LayDanhSachSoapIn">
@@ -119,11 +122,17 @@
   <wsdl:message name="XoaSoapOut">
     <wsdl:part name="parameters" element="tns:XoaResponse" />
   </wsdl:message>
-  <wsdl:message name="LoadAnhSoapIn">
-    <wsdl:part name="parameters" element="tns:LoadAnh" />
+  <wsdl:message name="ExecSoapIn">
+    <wsdl:part name="parameters" element="tns:Exec" />
   </wsdl:message>
-  <wsdl:message name="LoadAnhSoapOut">
-    <wsdl:part name="parameters" element="tns:LoadAnhResponse" />
+  <wsdl:message name="ExecSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="PhucHoiSoapIn">
+    <wsdl:part name="parameters" element="tns:PhucHoi" />
+  </wsdl:message>
+  <wsdl:message name="PhucHoiSoapOut">
+    <wsdl:part name="parameters" element="tns:PhucHoiResponse" />
   </wsdl:message>
   <wsdl:portType name="ServiceTonGiaoSoap">
     <wsdl:operation name="LayDanhSach">
@@ -142,9 +151,13 @@
       <wsdl:input message="tns:XoaSoapIn" />
       <wsdl:output message="tns:XoaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="LoadAnh">
-      <wsdl:input message="tns:LoadAnhSoapIn" />
-      <wsdl:output message="tns:LoadAnhSoapOut" />
+    <wsdl:operation name="Exec">
+      <wsdl:input message="tns:ExecSoapIn" />
+      <wsdl:output message="tns:ExecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <wsdl:input message="tns:PhucHoiSoapIn" />
+      <wsdl:output message="tns:PhucHoiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceTonGiaoSoap" type="tns:ServiceTonGiaoSoap">
@@ -185,8 +198,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LoadAnh">
-      <soap:operation soapAction="http://tempuri.org/LoadAnh" style="document" />
+    <wsdl:operation name="Exec">
+      <soap:operation soapAction="http://tempuri.org/Exec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <soap:operation soapAction="http://tempuri.org/PhucHoi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -233,8 +255,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LoadAnh">
-      <soap12:operation soapAction="http://tempuri.org/LoadAnh" style="document" />
+    <wsdl:operation name="Exec">
+      <soap12:operation soapAction="http://tempuri.org/Exec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <soap12:operation soapAction="http://tempuri.org/PhucHoi" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

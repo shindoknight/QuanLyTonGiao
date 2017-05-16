@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b413b51-36ba-464a-9209-7a3f93a4cbdb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b289d93-f6bc-4bd2-b9aa-d9e9b102b23d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:50829/ServiceTonGiao.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:50829/FilesTransfer.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceTonGiao.wsdl" MetadataType="Wsdl" ID="66b0c338-387c-4ad3-990d-1839ad11dc27" SourceId="1" SourceUrl="http://localhost:50829/ServiceTonGiao.asmx?wsdl" />
-    <MetadataFile FileName="ServiceTonGiao.disco" MetadataType="Disco" ID="3e3a4be7-b7d7-4a5b-8cf5-60c1c0a03956" SourceId="1" SourceUrl="http://localhost:50829/ServiceTonGiao.asmx?disco" />
+    <MetadataFile FileName="FilesTransfer.disco" MetadataType="Disco" ID="5a13e17d-307c-46bd-83e5-5c10341cddda" SourceId="1" SourceUrl="http://localhost:50829/FilesTransfer.asmx?disco" />
+    <MetadataFile FileName="FilesTransfer.wsdl" MetadataType="Wsdl" ID="164a4242-a141-4d2f-9df8-c3d5e38305e2" SourceId="1" SourceUrl="http://localhost:50829/FilesTransfer.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

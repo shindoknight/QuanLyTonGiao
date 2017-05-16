@@ -41,6 +41,7 @@ namespace service_quan_ly_ton_giao
         }
         xFrmDanhMuc _frmDanhMuc = new xFrmDanhMuc();
         xFrmTrangChu _frmTrangChu = new xFrmTrangChu();
+        ServiceTonGiao.ServiceTonGiaoSoapClient wsTonGiao = new ServiceTonGiao.ServiceTonGiaoSoapClient();
         private void frmChinh_Load(object sender, EventArgs e)
         {
             _frmTrangChu.TopLevel = false;
@@ -185,6 +186,40 @@ namespace service_quan_ly_ton_giao
         {
             frmMapTinDo frmMapTinDo = new frmMapTinDo();
             frmMapTinDo.Show();
+        }
+
+        private void bbtnThemTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            FormThemTonGiao f = new FormThemTonGiao();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 11);
+        }
+
+        private void bbtnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path;
+            SaveFileDialog backup = new SaveFileDialog();
+            backup.Filter = "|*.bak";
+            backup.RestoreDirectory = true;
+            if (backup.ShowDialog() == DialogResult.OK)
+            {
+                path = backup.FileName;
+                string kq= wsTonGiao.Exec("BACKUP DATABASE QUANLYTONGIAO TO DISK = '" + path + "'");
+                MessageBox.Show(kq);
+            }
+        }
+
+        private void bbtnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path;
+            OpenFileDialog phuchoi = new OpenFileDialog();
+            //phuchoi.Filter = "|.bak";
+            if (phuchoi.ShowDialog() == DialogResult.OK)
+            {
+                path = phuchoi.FileName;
+                string kq =wsTonGiao.PhucHoi(path);
+                MessageBox.Show(kq);
+            }
         }
     }
 }

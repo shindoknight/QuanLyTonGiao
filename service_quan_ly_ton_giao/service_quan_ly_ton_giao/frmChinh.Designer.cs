@@ -128,6 +128,7 @@
             // 
             this.imageCollection16x16.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection16x16.ImageStream")));
             this.imageCollection16x16.Images.SetKeyName(0, "house.png");
+            this.imageCollection16x16.Images.SetKeyName(11, "bible.png");
             // 
             // bbtnTTTaiKhoan
             // 
@@ -221,6 +222,7 @@
             this.bbtnDSTonGiao.Id = 14;
             this.bbtnDSTonGiao.LargeImageIndex = 0;
             this.bbtnDSTonGiao.Name = "bbtnDSTonGiao";
+            this.bbtnDSTonGiao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSTonGiao_ItemClick);
             // 
             // bbtnThemTonGiao
             // 
@@ -228,6 +230,7 @@
             this.bbtnThemTonGiao.Id = 15;
             this.bbtnThemTonGiao.LargeImageIndex = 13;
             this.bbtnThemTonGiao.Name = "bbtnThemTonGiao";
+            this.bbtnThemTonGiao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTonGiao_ItemClick);
             // 
             // bbtnThongKe
             // 
@@ -263,6 +266,7 @@
             this.bbtnSaoLuu.Id = 21;
             this.bbtnSaoLuu.LargeImageIndex = 21;
             this.bbtnSaoLuu.Name = "bbtnSaoLuu";
+            this.bbtnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnSaoLuu_ItemClick);
             // 
             // bbtnPhucHoi
             // 
@@ -270,6 +274,7 @@
             this.bbtnPhucHoi.Id = 22;
             this.bbtnPhucHoi.LargeImageIndex = 22;
             this.bbtnPhucHoi.Name = "bbtnPhucHoi";
+            this.bbtnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnPhucHoi_ItemClick);
             // 
             // bbtnSuaTinDo
             // 
