@@ -277,6 +277,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+<<<<<<< HEAD
     <None Include="Service References\FilesTransfer\FilesTransfer.wsdl" />
     <None Include="Service References\FilesTransfer\service_quan_ly_ton_giao.FilesTransfer.DownloadFileResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -286,11 +287,18 @@
     </None>
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
     <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse.datasource">
+=======
+    <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.Image.datasource">
+>>>>>>> master
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceUser\ServiceUser.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
+<<<<<<< HEAD
+=======
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+>>>>>>> master
     <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
@@ -300,7 +308,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <WCFMetadataStorage Include="Service References\FilesTransfer\" />
+=======
+>>>>>>> master
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
     <WCFMetadataStorage Include="Service References\ServiceUser\" />
     <WCFMetadataStorage Include="Service References\Map\" />
@@ -387,7 +398,11 @@
     <None Include="Service References\ServiceUser\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Service References\ServiceUser\Reference.svcmap" />
+=======
+    <None Include="Service References\ServiceUser\Reference.svcmap"/>
+>>>>>>> master
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
