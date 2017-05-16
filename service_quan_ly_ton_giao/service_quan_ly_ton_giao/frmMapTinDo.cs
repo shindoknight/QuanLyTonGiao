@@ -346,11 +346,6 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
-       
         void HienThiHinhLenMap(int SoLuong, string ki, string vi)
         {
             if (SoLuong == 1)
@@ -487,11 +482,6 @@ namespace service_quan_ly_ton_giao
         {
 
 
-<<<<<<< HEAD
-            //do du lieu len cac combobox
-=======
-           
->>>>>>> master
             //làm việc với treeview
             ///group các thành phố trực thuộc trung ương
             DataTable ds1 = wf.DuLieuTinh(" where Loai=N'Thành phố'");
@@ -522,12 +512,6 @@ namespace service_quan_ly_ton_giao
             map.Zoom(9);
         }
 
-<<<<<<< HEAD
-       
-=======
-      
-
->>>>>>> master
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             tree = e.Node.Text;

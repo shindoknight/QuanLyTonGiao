@@ -67,7 +67,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageChucNang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,6 +74,10 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.labelName = new System.Windows.Forms.Label();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbtnDSToChuc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThemToChuc = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection32x32)).BeginInit();
@@ -111,11 +114,15 @@
             this.bbtnPhucHoi,
             this.bbtnSuaTinDo,
             this.bbtnNhap,
-            this.btnXuat});
+            this.btnXuat,
+            this.bbtnDSToChuc,
+            this.btnThemToChuc,
+            this.barButtonItem3});
             this.ribbonControl1.LargeImages = this.imageCollection32x32;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.barButtonItem3);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTrangChu,
             this.ribbonPageDanhMuc,
@@ -129,6 +136,10 @@
             this.imageCollection16x16.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection16x16.ImageStream")));
             this.imageCollection16x16.Images.SetKeyName(0, "house.png");
             this.imageCollection16x16.Images.SetKeyName(11, "bible.png");
+            this.imageCollection16x16.Images.SetKeyName(12, "diagram.png");
+            this.imageCollection16x16.Images.SetKeyName(13, "map.png");
+            this.imageCollection16x16.Images.SetKeyName(14, "placeholder.png");
+            this.imageCollection16x16.Images.SetKeyName(15, "Actions-list-add-icon.png");
             // 
             // bbtnTTTaiKhoan
             // 
@@ -163,6 +174,7 @@
             // 
             this.bbtnBanDoTinDo.Caption = "Bản đồ theo tín đồ";
             this.bbtnBanDoTinDo.Id = 5;
+            this.bbtnBanDoTinDo.LargeImageIndex = 26;
             this.bbtnBanDoTinDo.Name = "bbtnBanDoTinDo";
             this.bbtnBanDoTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
@@ -170,6 +182,7 @@
             // 
             this.bbtnBanDoCoSo.Caption = "Bản đồ theo cơ sở tôn giáo";
             this.bbtnBanDoCoSo.Id = 6;
+            this.bbtnBanDoCoSo.LargeImageIndex = 25;
             this.bbtnBanDoCoSo.Name = "bbtnBanDoCoSo";
             this.bbtnBanDoCoSo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnBanDoCoSo_ItemClick);
             // 
@@ -324,6 +337,9 @@
             this.imageCollection32x32.Images.SetKeyName(20, "import-icon.png");
             this.imageCollection32x32.Images.SetKeyName(21, "Backup-Folder-Ash-icon.png");
             this.imageCollection32x32.Images.SetKeyName(22, "Drive-Restore-icon.png");
+            this.imageCollection32x32.Images.SetKeyName(24, "diagram.png");
+            this.imageCollection32x32.Images.SetKeyName(25, "map.png");
+            this.imageCollection32x32.Images.SetKeyName(26, "placeholder.png");
             // 
             // ribbonPageTrangChu
             // 
@@ -367,7 +383,9 @@
             this.ribbonPageDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup12});
+            this.ribbonPageDanhMuc.ImageIndex = 1;
             this.ribbonPageDanhMuc.Name = "ribbonPageDanhMuc";
             this.ribbonPageDanhMuc.Text = "Danh Mục";
             // 
@@ -397,10 +415,10 @@
             // 
             this.ribbonPageChucNang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
-            this.ribbonPageGroup5,
             this.ribbonPageGroup9,
             this.ribbonPageGroup3,
             this.ribbonPageGroup11});
+            this.ribbonPageChucNang.ImageIndex = 2;
             this.ribbonPageChucNang.Name = "ribbonPageChucNang";
             this.ribbonPageChucNang.Text = "Chức năng";
             // 
@@ -411,17 +429,12 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Bản đồ";
             // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.bbtnThongKe);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Thống kê";
-            // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.bbtnThongKe);
             this.ribbonPageGroup9.ItemLinks.Add(this.bbtnTimKiem);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "Tìm kiếm";
+            this.ribbonPageGroup9.Text = "Chức năng chung";
             // 
             // ribbonPageGroup3
             // 
@@ -470,11 +483,40 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(743, 87);
+            this.labelName.Location = new System.Drawing.Point(837, 27);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(60, 22);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "label1";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.bbtnDSToChuc);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnThemToChuc);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Tổ chức quản trị";
+            // 
+            // bbtnDSToChuc
+            // 
+            this.bbtnDSToChuc.Caption = "Danh Sách tổ chức quản trị";
+            this.bbtnDSToChuc.Id = 26;
+            this.bbtnDSToChuc.LargeImageIndex = 24;
+            this.bbtnDSToChuc.Name = "bbtnDSToChuc";
+            this.bbtnDSToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSToChuc_ItemClick);
+            // 
+            // btnThemToChuc
+            // 
+            this.btnThemToChuc.Caption = "Thêm tổ chức";
+            this.btnThemToChuc.Id = 27;
+            this.btnThemToChuc.LargeImageIndex = 2;
+            this.btnThemToChuc.Name = "btnThemToChuc";
+            this.btnThemToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemToChuc_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 28;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // frmChinh
             // 
@@ -488,10 +530,12 @@
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MaximizeBox = false;
             this.Name = "frmChinh";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).EndInit();
@@ -522,7 +566,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageChucNang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem bbtnThemTinDo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
@@ -550,5 +593,9 @@
         private DevExpress.XtraBars.BarButtonItem btnXuat;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem bbtnDSToChuc;
+        private DevExpress.XtraBars.BarButtonItem btnThemToChuc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
     }
 }

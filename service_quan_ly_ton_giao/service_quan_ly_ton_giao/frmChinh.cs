@@ -41,6 +41,7 @@ namespace service_quan_ly_ton_giao
         }
         xFrmDanhMuc _frmDanhMuc = new xFrmDanhMuc();
         xFrmTrangChu _frmTrangChu = new xFrmTrangChu();
+        xFrmChucNang _frmChucNang = new xFrmChucNang();
         ServiceTonGiao.ServiceTonGiaoSoapClient wsTonGiao = new ServiceTonGiao.ServiceTonGiaoSoapClient();
         private void frmChinh_Load(object sender, EventArgs e)
         {
@@ -168,24 +169,22 @@ namespace service_quan_ly_ton_giao
         private void bbtnDSTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            //FormDSTonGiao f = new FormDSTonGiao();
-            
-           // f.FormBorderStyle = FormBorderStyle.None;
-           // _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
+            FormDSTonGiao f = new FormDSTonGiao();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
         }
 
         private void bbtnBanDoCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            frmMapCoSo frmDSTG = new frmMapCoSo();
-            frmDSTG.FormBorderStyle = FormBorderStyle.None;
-            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
+            TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
+            frmMapCoSo f = new frmMapCoSo();
+            _frmChucNang.TabCreating(f.Text, f.Name, f, imageCollection16x16, 13);
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmMapTinDo frmMapTinDo = new frmMapTinDo();
-            frmMapTinDo.Show();
+            TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
+            frmMapTinDo f = new frmMapTinDo();
+            _frmChucNang.TabCreating(f.Text, f.Name, f, imageCollection16x16, 14);
         }
 
         private void bbtnThemTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,6 +219,20 @@ namespace service_quan_ly_ton_giao
                 string kq =wsTonGiao.PhucHoi(path);
                 MessageBox.Show(kq);
             }
+        }
+
+        private void bbtnDSToChuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmDSToChucQuanTri f = new frmDSToChucQuanTri();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 12);
+        }
+
+        private void btnThemToChuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmThemToChucQuanTri f = new frmThemToChucQuanTri();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 15);
         }
     }
 }

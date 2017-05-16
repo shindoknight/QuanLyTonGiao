@@ -60,8 +60,8 @@ namespace service_quan_ly_ton_giao
             DataTable ds5 = wf.DuLieuXa("where IDHuyen=N'" + ds4.Rows[0]["IDHuyen"].ToString() + "'");
             try
             {
-                string ki = ds5.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                string vi = ds5.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                string ki = ds5.Rows[0]["ViDo"].ToString();
+                string vi = ds5.Rows[0]["KinhDo"].ToString();
 
                 map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                 map.Zoom(12);
@@ -69,8 +69,8 @@ namespace service_quan_ly_ton_giao
             catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
             {
                 DataTable tv3 = wf.TimViTriTheoHuyen(" where IDHuyen=N'" + ds5.Rows[0]["IDHuyen"].ToString() + "'");
-                string ki = tv3.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                string vi = tv3.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                string ki = tv3.Rows[0]["ViDo"].ToString();
+                string vi = tv3.Rows[0]["KinhDo"].ToString();
 
                 map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                 //map.Zoom(5);
@@ -82,8 +82,8 @@ namespace service_quan_ly_ton_giao
                 DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                    string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = tv1.Rows[0]["ViDo"].ToString();
+                    string vi = tv1.Rows[0]["KinhDo"].ToString();
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
