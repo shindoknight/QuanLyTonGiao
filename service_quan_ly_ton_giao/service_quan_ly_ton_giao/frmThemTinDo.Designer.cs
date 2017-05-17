@@ -79,6 +79,8 @@
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
             this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtNgayVaoTonGiao = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox9
@@ -282,7 +284,7 @@
             this.txtTheDanh.Location = new System.Drawing.Point(111, 56);
             this.txtTheDanh.Multiline = true;
             this.txtTheDanh.Name = "txtTheDanh";
-            this.txtTheDanh.Size = new System.Drawing.Size(164, 24);
+            this.txtTheDanh.Size = new System.Drawing.Size(123, 24);
             this.txtTheDanh.TabIndex = 77;
             // 
             // txtNgayVaoTonGiao
@@ -471,9 +473,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Thế Danh";
+            this.label1.Text = "Tên Thế Danh";
             // 
             // button1
             // 
@@ -566,12 +568,32 @@
             this.dtNgayVaoTonGiao.TabIndex = 116;
             this.dtNgayVaoTonGiao.Value = new System.DateTime(2017, 6, 14, 0, 0, 0, 0);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(366, 61);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(116, 24);
+            this.textBox1.TabIndex = 118;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(308, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "Họ Đệm";
+            // 
             // frmThemTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
-            this.ClientSize = new System.Drawing.Size(830, 526);
+            this.ClientSize = new System.Drawing.Size(821, 526);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtNgayVaoTonGiao);
             this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.cbbCoSo);
@@ -683,5 +705,7 @@
         private System.Windows.Forms.ComboBox cbbCoSo;
         private System.Windows.Forms.DateTimePicker txtNgaySinh;
         private System.Windows.Forms.DateTimePicker dtNgayVaoTonGiao;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
     }
 }

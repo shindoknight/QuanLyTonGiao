@@ -172,14 +172,10 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnDSTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDSTinDo tindo = new frmDSTinDo();
-            tindo.ShowDialog();
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            //frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
+            frmDSTinDo frmDSTG = new frmDSTinDo();
+            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 8);
 
-           // frmDSTG.FormBorderStyle = FormBorderStyle.None;
-          //  _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
-             
         }
 
         private void bbtnThemCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

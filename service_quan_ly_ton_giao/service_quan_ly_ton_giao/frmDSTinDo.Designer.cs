@@ -30,7 +30,6 @@
         {
             this.gridCTinDo = new DevExpress.XtraGrid.GridControl();
             this.gridVTinDo = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.IDTinDo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PhapDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,6 +44,7 @@
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.HoDemTheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
@@ -58,7 +58,7 @@
             this.gridCTinDo.Name = "gridCTinDo";
             this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa});
-            this.gridCTinDo.Size = new System.Drawing.Size(601, 329);
+            this.gridCTinDo.Size = new System.Drawing.Size(671, 329);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
@@ -68,9 +68,9 @@
             // gridVTinDo
             // 
             this.gridVTinDo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.IDTinDo,
             this.PhapDanh,
             this.TheDanh,
+            this.HoDemTheDanh,
             this.NgaySinh,
             this.GioiTinh,
             this.QueQuan,
@@ -86,15 +86,6 @@
             this.gridVTinDo.Name = "gridVTinDo";
             this.gridVTinDo.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
-            // IDTinDo
-            // 
-            this.IDTinDo.Caption = "STT";
-            this.IDTinDo.FieldName = "IDTinDo";
-            this.IDTinDo.MinWidth = 70;
-            this.IDTinDo.Name = "IDTinDo";
-            this.IDTinDo.Visible = true;
-            this.IDTinDo.VisibleIndex = 13;
-            // 
             // PhapDanh
             // 
             this.PhapDanh.Caption = "Pháp Danh";
@@ -107,8 +98,8 @@
             // 
             // TheDanh
             // 
-            this.TheDanh.Caption = "Thế Danh";
-            this.TheDanh.FieldName = "TheDanh";
+            this.TheDanh.Caption = "Tên Thế Danh";
+            this.TheDanh.FieldName = "TenTheDanh";
             this.TheDanh.MinWidth = 70;
             this.TheDanh.Name = "TheDanh";
             this.TheDanh.Visible = true;
@@ -215,11 +206,19 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // HoDemTheDanh
+            // 
+            this.HoDemTheDanh.Caption = "Họ Đệm";
+            this.HoDemTheDanh.FieldName = "HoDemTheDanh";
+            this.HoDemTheDanh.Name = "HoDemTheDanh";
+            this.HoDemTheDanh.Visible = true;
+            this.HoDemTheDanh.VisibleIndex = 13;
+            // 
             // frmDSTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 329);
+            this.ClientSize = new System.Drawing.Size(671, 329);
             this.Controls.Add(this.gridCTinDo);
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
@@ -249,6 +248,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
-        private DevExpress.XtraGrid.Columns.GridColumn IDTinDo;
+        private DevExpress.XtraGrid.Columns.GridColumn HoDemTheDanh;
     }
 }
