@@ -102,7 +102,7 @@ namespace service_quan_ly_ton_giao
             string sucKhoe = txtSucKhoe.Text;
             string tcTichCuc = txtTcTichCuc.Text;
             string tcNguyHiem = txtTcNguyHiem.Text;
-            string hinhAnh = null;
+            string hinhAnh = "";
             string matDoi = txtMatDoi.Text;
             string matDao = txtMatDao.Text;
             string hdCaNhan = txtHdCaNhan.Text;

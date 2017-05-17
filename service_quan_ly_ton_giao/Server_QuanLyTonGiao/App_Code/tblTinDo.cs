@@ -60,7 +60,10 @@ public class tblTinDo : System.Web.Services.WebService
     public int ThemTinDo(string phapDanh,string hodemTheDanh, string tenTheDanh, DateTime ngaySinh, string gioiTinh, string danToc, string queQuan, string diaChi, string taiChinh, string sucKhoe, string tcTichCuc, string tcNguyHiem, string hinhAnh, string matDoi, string matDao, string hdCaNhan, string hdToChuc, int idChucSac, int idCoSo, int daXoa, DateTime ngayVaoTonGiao, int idChucVu)
     {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("PhapDanh, HoDemTheDanh, TenTheDanh, NgaySinh, GioiTinh, DanToc, QueQuan, DiaChi,TaiChinh, SucKhoe, TCTichCuc, TCNguyHiem, HinhAnh, MatDoi, MatDao, HDCaNhan, HDToChuc, IDChucSac, IDCoSo, DaXoa, NgayVaoTonGiao, IDChucVu) Values ( N'" + phapDanh + "', N'"+hodemTheDanh+"', N'"+tenTheDanh+"', N'" + ngaySinh + "' , N'" + gioiTinh + "' , N'" + danToc + "' , N'" + queQuan + "',N'" + diaChi + "' ,N'" + taiChinh + "',N'" + sucKhoe + "',N'" + tcTichCuc + "',N'" + tcNguyHiem + "',N'" + hinhAnh + "',N'" + matDoi + "',N'" + matDao + "',N'" + hdCaNhan + "',N'" + hdToChuc + "',N'" + idChucSac + "',N'" + idCoSo + "',N'" + daXoa + "',N'" + ngayVaoTonGiao + "',N'" + idChucVu + "' ", conn);
+            SqlCommand comm = new SqlCommand("insert into tblTinDo (PhapDanh, HoDemTheDanh, TenTheDanh, NgaySinh, GioiTinh, DanToc, QueQuan, DiaChi,TaiChinh, SucKhoe, " +
+                "TCTichCuc, TCNguyHiem, HinhAnh, MatDoi, MatDao, HDCaNhan, HDToChuc, IDChucSac, IDCoSo, DaXoa, NgayVaoTonGiao, IDChucVu) "+
+                "Values ( N'" + phapDanh + "', N'"+hodemTheDanh+"', N'"+tenTheDanh+"', N'" + ngaySinh + "' , N'" + gioiTinh + "' , N'" + danToc + "' , N'" + queQuan + "',N'" + diaChi + "' ,N'" + taiChinh + "',N'" + sucKhoe + "',"+
+                " N'" + tcTichCuc + "',N'" + tcNguyHiem + "',N'" + hinhAnh + "',N'" + matDoi + "',N'" + matDao + "',N'" + hdCaNhan + "',N'" + hdToChuc + "','" + idChucSac + "','" + idCoSo + "','" + daXoa + "',N'" + ngayVaoTonGiao + "',N'"+idChucVu+"' ) ", conn);
             
             comm.ExecuteNonQuery();
             CloseConnect();
@@ -71,7 +74,7 @@ public class tblTinDo : System.Web.Services.WebService
     public int XoaTinDo(int Id)
     {
         OpenConnect();
-        SqlCommand comm = new SqlCommand("Delete from tblTinDo where IDTinDo = '"+Id+"' ", conn);
+        SqlCommand comm = new SqlCommand("update tblTinDo set DaXoa = 0 where IDTinDo ='"+Id+"' ", conn);
         comm.ExecuteNonQuery();
         CloseConnect();
         return 1;
