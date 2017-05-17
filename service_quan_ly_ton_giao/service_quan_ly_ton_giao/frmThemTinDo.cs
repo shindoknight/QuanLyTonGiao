@@ -29,13 +29,15 @@ namespace service_quan_ly_ton_giao
             cbDiaChiTinh.DisplayMember = "TenTinh";
 
 
+            string tongiao = "select * from tblTonGiao";
+            cbbChucSac.DataSource = tindo.OneRecord("tblTonGiao", tongiao);
+            cbbChucSac.DisplayMember = "TenTonGiao";
+
             string chucsac = "select * from tblchucsac";
             cbbChucSac.DataSource = tindo.OneRecord("tblChucSac",chucsac);
             cbbChucSac.DisplayMember = "TenChucSac";
 
-
-           
-
+            
 
             string chucvu = "select * from tblChucVu";
             cbbChucVu.DataSource = tindo.OneRecord("tblChucVu", chucvu);
@@ -134,12 +136,19 @@ namespace service_quan_ly_ton_giao
             if (tinh != null || tinh !="")
             { cbQueQuanHuyen.DataSource = tindo.TruyVanTenHuyen(tinh);
                 cbQueQuanHuyen.DisplayMember = "TenHuyen";
-                string huyen = cbQueQuanHuyen.Text;
-                if (huyen != null || huyen != "") { cbQueQuanXa.DataSource = tindo.TruyVanTenXa(huyen);
-                    cbQueQuanXa.DisplayMember = "TenXa";
-                }
+                
             }
         }
+
+        private void cbQueQuanHuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string huyen = cbQueQuanHuyen.Text;
+            if (huyen != null || huyen != "")
+            {
+                cbQueQuanXa.DataSource = tindo.TruyVanTenXa(huyen);
+                cbQueQuanXa.DisplayMember = "TenXa";
+            }
+        } 
 
         private void cbDiaChiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -148,18 +157,42 @@ namespace service_quan_ly_ton_giao
             {
                 cbDiaChiHuyen.DataSource = tindo.TruyVanTenHuyen(tinh);
                 cbDiaChiHuyen.DisplayMember = "TenHuyen";
-                string huyen = cbDiaChiHuyen.Text;
-                if (huyen != null || huyen != "")
-                {
-                    cbDiaChiXa.DataSource = tindo.TruyVanTenXa(huyen);
-                    cbDiaChiXa.DisplayMember = "TenXa";
-                }
+                
+            }
+        }
+        private void cbDiaChiHuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string huyen = cbDiaChiHuyen.Text;
+            if (huyen != null || huyen != "")
+            {
+                cbDiaChiXa.DataSource = tindo.TruyVanTenXa(huyen);
+                cbDiaChiXa.DisplayMember = "TenXa";
             }
         }
 
         private void cbQueQuanXa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //txtPhapDanh.Text = IdQueQuan();
+
+        }
+
+        private void txtTonGiao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tongiao = cbbTonGiao.Text;
+            if (tongiao != null || tongiao != "")
+            {
+                cbbChucSac.DataSource = tindo.OneRecord("tblChucSac", "select * from tblChucSac");
+                cbbChucSac.DisplayMember = "TenChucSac";
+            }
+        }
+
+        private void cbDiaChiXa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string diachixa = cbDiaChiXa.Text;
+            if (diachixa != null || diachixa != "")
+            {
+                cbbTonGiao.DataSource = tindo.OneRecord("tblTonGiao", "select * from tblTonGiao");
+                cbbTonGiao.DisplayMember = "TenTonGiao";
+            }
         }
     }
 }
