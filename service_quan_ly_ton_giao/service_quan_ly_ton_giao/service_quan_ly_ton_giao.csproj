@@ -172,7 +172,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\tblTinDo\Reference.cs" />
+    <Compile Include="Service References\tblTinDo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\tblToChucQuanTri\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

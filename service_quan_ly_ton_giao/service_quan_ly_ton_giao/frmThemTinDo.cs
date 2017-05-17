@@ -27,7 +27,19 @@ namespace service_quan_ly_ton_giao
 
             cbDiaChiTinh.DataSource = tindo.DuLieuTinh();
             cbDiaChiTinh.DisplayMember = "TenTinh";
-            
+
+
+            string chucsac = "select * from tblchucsac";
+            cbbChucSac.DataSource = tindo.OneRecord("tblChucSac",chucsac);
+            cbbChucSac.DisplayMember = "TenChucSac";
+
+
+           
+
+
+            string chucvu = "select * from tblChucVu";
+            cbbChucVu.DataSource = tindo.OneRecord("tblChucVu", chucvu);
+            cbbChucVu.DisplayMember = "TenChucVu";
         }
 
         string IdQueQuan()
@@ -78,7 +90,8 @@ namespace service_quan_ly_ton_giao
             }
             
             string phapDanh = txtPhapDanh.Text;
-            string theDanh = txtTenTheDanh.Text;
+            string tenTheDanh = txtTenTheDanh.Text;
+            string hodemTheDanh = txtHoDemTheDanh.Text;
             DateTime NgaySinh = txtNgaySinh.Value;
             
             
@@ -107,7 +120,7 @@ namespace service_quan_ly_ton_giao
             string ChucVu = cbbChucVu.Text;
             int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
 
-            int them = tindo.ThemTinDo(phapDanh, theDanh, NgaySinh,gioiTinh , danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChusSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+            int them = tindo.ThemTinDo(phapDanh, hodemTheDanh, tenTheDanh, NgaySinh,gioiTinh , danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChusSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
             if(them==1)
             {
                 MessageBox.Show("Ok");

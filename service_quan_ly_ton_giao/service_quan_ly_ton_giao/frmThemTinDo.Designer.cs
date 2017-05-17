@@ -553,6 +553,7 @@
             // txtNgaySinh
             // 
             this.txtNgaySinh.CustomFormat = "MM/dd/yyyy";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNgaySinh.Location = new System.Drawing.Point(108, 94);
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(167, 20);
@@ -562,6 +563,7 @@
             // dtNgayVaoTonGiao
             // 
             this.dtNgayVaoTonGiao.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayVaoTonGiao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayVaoTonGiao.Location = new System.Drawing.Point(638, 88);
             this.dtNgayVaoTonGiao.Name = "dtNgayVaoTonGiao";
             this.dtNgayVaoTonGiao.Size = new System.Drawing.Size(157, 20);

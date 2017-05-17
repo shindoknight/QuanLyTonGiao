@@ -42,7 +42,7 @@
             this.HDCaNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HDToChuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.HoDemTheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
@@ -58,12 +58,14 @@
             this.gridCTinDo.Name = "gridCTinDo";
             this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa});
-            this.gridCTinDo.Size = new System.Drawing.Size(671, 329);
+            this.gridCTinDo.Size = new System.Drawing.Size(679, 329);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
             this.gridCTinDo.Click += new System.EventHandler(this.gridCTinDo_Click);
+            this.gridCTinDo.DoubleClick += new System.EventHandler(this.gridCTinDo_DoubleClick);
             this.gridCTinDo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridCTinDo_MouseClick);
+            this.gridCTinDo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridCTinDo_MouseDoubleClick);
             // 
             // gridVTinDo
             // 
@@ -81,7 +83,7 @@
             this.HDCaNhan,
             this.HDToChuc,
             this.NgayVaoTonGiao,
-            this.gridColumn1});
+            this.Xoa});
             this.gridVTinDo.GridControl = this.gridCTinDo;
             this.gridVTinDo.Name = "gridVTinDo";
             this.gridVTinDo.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -103,7 +105,7 @@
             this.TheDanh.MinWidth = 70;
             this.TheDanh.Name = "TheDanh";
             this.TheDanh.Visible = true;
-            this.TheDanh.VisibleIndex = 1;
+            this.TheDanh.VisibleIndex = 2;
             this.TheDanh.Width = 70;
             // 
             // NgaySinh
@@ -112,7 +114,7 @@
             this.NgaySinh.FieldName = "NgaySinh";
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.Visible = true;
-            this.NgaySinh.VisibleIndex = 2;
+            this.NgaySinh.VisibleIndex = 3;
             // 
             // GioiTinh
             // 
@@ -120,7 +122,7 @@
             this.GioiTinh.FieldName = "GioiTinh";
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Visible = true;
-            this.GioiTinh.VisibleIndex = 3;
+            this.GioiTinh.VisibleIndex = 4;
             // 
             // QueQuan
             // 
@@ -129,7 +131,7 @@
             this.QueQuan.MaxWidth = 70;
             this.QueQuan.Name = "QueQuan";
             this.QueQuan.Visible = true;
-            this.QueQuan.VisibleIndex = 4;
+            this.QueQuan.VisibleIndex = 5;
             this.QueQuan.Width = 70;
             // 
             // DiaChi
@@ -139,7 +141,7 @@
             this.DiaChi.MaxWidth = 70;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 5;
+            this.DiaChi.VisibleIndex = 6;
             this.DiaChi.Width = 70;
             // 
             // TCTichCuc
@@ -148,7 +150,7 @@
             this.TCTichCuc.FieldName = "TCTichCuc";
             this.TCTichCuc.Name = "TCTichCuc";
             this.TCTichCuc.Visible = true;
-            this.TCTichCuc.VisibleIndex = 6;
+            this.TCTichCuc.VisibleIndex = 7;
             // 
             // TCNguyHiem
             // 
@@ -156,7 +158,7 @@
             this.TCNguyHiem.FieldName = "TCNguyHiem";
             this.TCNguyHiem.Name = "TCNguyHiem";
             this.TCNguyHiem.Visible = true;
-            this.TCNguyHiem.VisibleIndex = 7;
+            this.TCNguyHiem.VisibleIndex = 8;
             // 
             // HinhAnh
             // 
@@ -164,7 +166,7 @@
             this.HinhAnh.FieldName = "HinhAnh";
             this.HinhAnh.Name = "HinhAnh";
             this.HinhAnh.Visible = true;
-            this.HinhAnh.VisibleIndex = 8;
+            this.HinhAnh.VisibleIndex = 9;
             // 
             // HDCaNhan
             // 
@@ -172,7 +174,7 @@
             this.HDCaNhan.FieldName = "HDCaNhan";
             this.HDCaNhan.Name = "HDCaNhan";
             this.HDCaNhan.Visible = true;
-            this.HDCaNhan.VisibleIndex = 9;
+            this.HDCaNhan.VisibleIndex = 10;
             // 
             // HDToChuc
             // 
@@ -180,7 +182,7 @@
             this.HDToChuc.FieldName = "HDToChuc";
             this.HDToChuc.Name = "HDToChuc";
             this.HDToChuc.Visible = true;
-            this.HDToChuc.VisibleIndex = 10;
+            this.HDToChuc.VisibleIndex = 11;
             // 
             // NgayVaoTonGiao
             // 
@@ -188,15 +190,15 @@
             this.NgayVaoTonGiao.FieldName = "NgayVaoTonGiao";
             this.NgayVaoTonGiao.Name = "NgayVaoTonGiao";
             this.NgayVaoTonGiao.Visible = true;
-            this.NgayVaoTonGiao.VisibleIndex = 11;
+            this.NgayVaoTonGiao.VisibleIndex = 12;
             // 
-            // gridColumn1
+            // Xoa
             // 
-            this.gridColumn1.Caption = "Xoa";
-            this.gridColumn1.ColumnEdit = this.btnXoa;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 12;
+            this.Xoa.Caption = "Xoa";
+            this.Xoa.ColumnEdit = this.btnXoa;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Visible = true;
+            this.Xoa.VisibleIndex = 13;
             // 
             // btnXoa
             // 
@@ -212,13 +214,13 @@
             this.HoDemTheDanh.FieldName = "HoDemTheDanh";
             this.HoDemTheDanh.Name = "HoDemTheDanh";
             this.HoDemTheDanh.Visible = true;
-            this.HoDemTheDanh.VisibleIndex = 13;
+            this.HoDemTheDanh.VisibleIndex = 1;
             // 
             // frmDSTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 329);
+            this.ClientSize = new System.Drawing.Size(679, 329);
             this.Controls.Add(this.gridCTinDo);
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
@@ -246,7 +248,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn HDCaNhan;
         private DevExpress.XtraGrid.Columns.GridColumn HDToChuc;
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn HoDemTheDanh;
     }

@@ -27,7 +27,8 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int ThemTinDo(
                     string phapDanh, 
-                    string theDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
                     System.DateTime ngaySinh, 
                     string gioiTinh, 
                     string danToc, 
@@ -51,7 +52,8 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTinDo", ReplyAction="*")]
         System.Threading.Tasks.Task<int> ThemTinDoAsync(
                     string phapDanh, 
-                    string theDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
                     System.DateTime ngaySinh, 
                     string gioiTinh, 
                     string danToc, 
@@ -134,6 +136,13 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IdChucVu", ReplyAction="*")]
         System.Threading.Tasks.Task<int> IdChucVuAsync(string tenChucVu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/OneRecord", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable OneRecord(string tblBang, string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/OneRecord", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> OneRecordAsync(string tblBang, string sqlString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -173,7 +182,8 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public int ThemTinDo(
                     string phapDanh, 
-                    string theDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
                     System.DateTime ngaySinh, 
                     string gioiTinh, 
                     string danToc, 
@@ -193,12 +203,13 @@ namespace service_quan_ly_ton_giao.tblTinDo {
                     int daXoa, 
                     System.DateTime ngayVaoTonGiao, 
                     int idChucVu) {
-            return base.Channel.ThemTinDo(phapDanh, theDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+            return base.Channel.ThemTinDo(phapDanh, hodemTheDanh, tenTheDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
         }
         
         public System.Threading.Tasks.Task<int> ThemTinDoAsync(
                     string phapDanh, 
-                    string theDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
                     System.DateTime ngaySinh, 
                     string gioiTinh, 
                     string danToc, 
@@ -218,7 +229,7 @@ namespace service_quan_ly_ton_giao.tblTinDo {
                     int daXoa, 
                     System.DateTime ngayVaoTonGiao, 
                     int idChucVu) {
-            return base.Channel.ThemTinDoAsync(phapDanh, theDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+            return base.Channel.ThemTinDoAsync(phapDanh, hodemTheDanh, tenTheDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
         }
         
         public int XoaTinDo(int Id) {
@@ -291,6 +302,14 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<int> IdChucVuAsync(string tenChucVu) {
             return base.Channel.IdChucVuAsync(tenChucVu);
+        }
+        
+        public System.Data.DataTable OneRecord(string tblBang, string sqlString) {
+            return base.Channel.OneRecord(tblBang, sqlString);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> OneRecordAsync(string tblBang, string sqlString) {
+            return base.Channel.OneRecordAsync(tblBang, sqlString);
         }
     }
 }

@@ -34,10 +34,24 @@ namespace service_quan_ly_ton_giao
 
         private void gridCTinDo_Click(object sender, EventArgs e)
         {
-            Point clickPoint = gridCTinDo.PointToClient(Control.MousePosition);
+            DataRow row = gridVTinDo.GetFocusedDataRow();
+            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DataRow row = gridVTinDo.GetFocusedDataRow();
+            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+        }
+
+        private void gridCTinDo_DoubleClick(object sender, EventArgs e)
+        {
+            DataRow row = gridVTinDo.GetFocusedDataRow();
+            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+        }
+
+        private void gridCTinDo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             DataRow row = gridVTinDo.GetFocusedDataRow();
             BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());

@@ -23,7 +23,8 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="phapDanh" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="theDanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hodemTheDanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenTheDanh" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
             <s:element minOccurs="0" maxOccurs="1" name="gioiTinh" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="danToc" type="s:string" />
@@ -200,6 +201,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="OneRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tblBang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneRecordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiDSTinDoSoapIn">
@@ -268,6 +291,12 @@
   <wsdl:message name="IdChucVuSoapOut">
     <wsdl:part name="parameters" element="tns:IdChucVuResponse" />
   </wsdl:message>
+  <wsdl:message name="OneRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:OneRecord" />
+  </wsdl:message>
+  <wsdl:message name="OneRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:OneRecordResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblTinDoSoap">
     <wsdl:operation name="HienThiDSTinDo">
       <wsdl:input message="tns:HienThiDSTinDoSoapIn" />
@@ -312,6 +341,10 @@
     <wsdl:operation name="IdChucVu">
       <wsdl:input message="tns:IdChucVuSoapIn" />
       <wsdl:output message="tns:IdChucVuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneRecord">
+      <wsdl:input message="tns:OneRecordSoapIn" />
+      <wsdl:output message="tns:OneRecordSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblTinDoSoap" type="tns:tblTinDoSoap">
@@ -415,6 +448,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="OneRecord">
+      <soap:operation soapAction="http://tempuri.org/OneRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblTinDoSoap12" type="tns:tblTinDoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -510,6 +552,15 @@
     </wsdl:operation>
     <wsdl:operation name="IdChucVu">
       <soap12:operation soapAction="http://tempuri.org/IdChucVu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneRecord">
+      <soap12:operation soapAction="http://tempuri.org/OneRecord" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

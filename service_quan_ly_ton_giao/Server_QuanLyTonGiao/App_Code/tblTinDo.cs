@@ -57,15 +57,15 @@ public class tblTinDo : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public int ThemTinDo(string phapDanh, string theDanh, DateTime ngaySinh, string gioiTinh, string danToc, string queQuan, string diaChi, string taiChinh, string sucKhoe, string tcTichCuc, string tcNguyHiem, string hinhAnh, string matDoi, string matDao, string hdCaNhan, string hdToChuc, int idChucSac, int idCoSo, int daXoa, DateTime ngayVaoTonGiao, int idChucVu)
+    public int ThemTinDo(string phapDanh,string hodemTheDanh, string tenTheDanh, DateTime ngaySinh, string gioiTinh, string danToc, string queQuan, string diaChi, string taiChinh, string sucKhoe, string tcTichCuc, string tcNguyHiem, string hinhAnh, string matDoi, string matDao, string hdCaNhan, string hdToChuc, int idChucSac, int idCoSo, int daXoa, DateTime ngayVaoTonGiao, int idChucVu)
     {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("PhapDanh, TheDanh, NgaySinh, GioiTinh, DanToc, QueQuan, DiaChi,TaiChinh, SucKhoe, TCTichCuc, TCNguyHiem, HinhAnh, MatDoi, MatDao, HDCaNhan, HDToChuc, IDChucSac, IDCoSo, DaXoa, NgayVaoTonGiao, IDChucVu) Values (N'" + theDanh + "', N'" + phapDanh + "', N'" + ngaySinh + "' , N'" + gioiTinh + "' , N'" + danToc + "' ,N'" + queQuan + "'  ,N'" + diaChi + "' ,N'" + taiChinh + "',N'" + sucKhoe + "',N'" + tcTichCuc + "',N'" + tcNguyHiem + "',N'" + hinhAnh + "',N'" + matDoi + "',N'" + matDao + "',N'" + hdCaNhan + "',N'" + hdToChuc + "',N'" + idChucSac + "',N'" + idCoSo + "',N'" + daXoa + "',N'" + ngayVaoTonGiao + "',N'" + idChucVu + "' ", conn);
+            SqlCommand comm = new SqlCommand("PhapDanh, HoDemTheDanh, TenTheDanh, NgaySinh, GioiTinh, DanToc, QueQuan, DiaChi,TaiChinh, SucKhoe, TCTichCuc, TCNguyHiem, HinhAnh, MatDoi, MatDao, HDCaNhan, HDToChuc, IDChucSac, IDCoSo, DaXoa, NgayVaoTonGiao, IDChucVu) Values ( N'" + phapDanh + "', N'"+hodemTheDanh+"', N'"+tenTheDanh+"', N'" + ngaySinh + "' , N'" + gioiTinh + "' , N'" + danToc + "' , N'" + queQuan + "',N'" + diaChi + "' ,N'" + taiChinh + "',N'" + sucKhoe + "',N'" + tcTichCuc + "',N'" + tcNguyHiem + "',N'" + hinhAnh + "',N'" + matDoi + "',N'" + matDao + "',N'" + hdCaNhan + "',N'" + hdToChuc + "',N'" + idChucSac + "',N'" + idCoSo + "',N'" + daXoa + "',N'" + ngayVaoTonGiao + "',N'" + idChucVu + "' ", conn);
+            
             comm.ExecuteNonQuery();
             CloseConnect();
             return 1;
     }
-
 
     [WebMethod]
     public int XoaTinDo(int Id)
@@ -210,4 +210,22 @@ public class tblTinDo : System.Web.Services.WebService
        
 
     }
+
+    [WebMethod]
+    public DataTable OneRecord( string tblBang,string sqlString)
+    {
+        OpenConnect();
+       
+        SqlCommand comm = new SqlCommand(sqlString, conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable(tblBang);
+        da.Fill(dtdistrict);
+        CloseConnect();
+        return dtdistrict;
+
+
+
+    }
+
 }
