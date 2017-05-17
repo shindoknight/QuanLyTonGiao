@@ -50,7 +50,7 @@
             this.txtTcTichCuc = new System.Windows.Forms.TextBox();
             this.txtTaiChinh = new System.Windows.Forms.TextBox();
             this.txtDhToChuc = new System.Windows.Forms.TextBox();
-            this.txtTheDanh = new System.Windows.Forms.TextBox();
+            this.txtTenTheDanh = new System.Windows.Forms.TextBox();
             this.txtNgayVaoTonGiao = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.cbbCoSo = new System.Windows.Forms.ComboBox();
             this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtNgayVaoTonGiao = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHoDemTheDanh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -279,13 +279,13 @@
             this.txtDhToChuc.Size = new System.Drawing.Size(159, 93);
             this.txtDhToChuc.TabIndex = 78;
             // 
-            // txtTheDanh
+            // txtTenTheDanh
             // 
-            this.txtTheDanh.Location = new System.Drawing.Point(111, 56);
-            this.txtTheDanh.Multiline = true;
-            this.txtTheDanh.Name = "txtTheDanh";
-            this.txtTheDanh.Size = new System.Drawing.Size(123, 24);
-            this.txtTheDanh.TabIndex = 77;
+            this.txtTenTheDanh.Location = new System.Drawing.Point(111, 56);
+            this.txtTenTheDanh.Multiline = true;
+            this.txtTenTheDanh.Name = "txtTenTheDanh";
+            this.txtTenTheDanh.Size = new System.Drawing.Size(164, 24);
+            this.txtTenTheDanh.TabIndex = 77;
             // 
             // txtNgayVaoTonGiao
             // 
@@ -568,19 +568,19 @@
             this.dtNgayVaoTonGiao.TabIndex = 116;
             this.dtNgayVaoTonGiao.Value = new System.DateTime(2017, 6, 14, 0, 0, 0, 0);
             // 
-            // textBox1
+            // txtHoDemTheDanh
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 61);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 24);
-            this.textBox1.TabIndex = 118;
+            this.txtHoDemTheDanh.Location = new System.Drawing.Point(354, 56);
+            this.txtHoDemTheDanh.Multiline = true;
+            this.txtHoDemTheDanh.Name = "txtHoDemTheDanh";
+            this.txtHoDemTheDanh.Size = new System.Drawing.Size(116, 24);
+            this.txtHoDemTheDanh.TabIndex = 118;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(308, 67);
+            this.label7.Location = new System.Drawing.Point(296, 62);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 117;
@@ -592,7 +592,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(821, 526);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtHoDemTheDanh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtNgayVaoTonGiao);
             this.Controls.Add(this.txtNgaySinh);
@@ -625,7 +625,7 @@
             this.Controls.Add(this.txtTcTichCuc);
             this.Controls.Add(this.txtTaiChinh);
             this.Controls.Add(this.txtDhToChuc);
-            this.Controls.Add(this.txtTheDanh);
+            this.Controls.Add(this.txtTenTheDanh);
             this.Controls.Add(this.txtNgayVaoTonGiao);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -676,7 +676,7 @@
         private System.Windows.Forms.TextBox txtTcTichCuc;
         private System.Windows.Forms.TextBox txtTaiChinh;
         private System.Windows.Forms.TextBox txtDhToChuc;
-        private System.Windows.Forms.TextBox txtTheDanh;
+        private System.Windows.Forms.TextBox txtTenTheDanh;
         private System.Windows.Forms.Label txtNgayVaoTonGiao;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -705,7 +705,7 @@
         private System.Windows.Forms.ComboBox cbbCoSo;
         private System.Windows.Forms.DateTimePicker txtNgaySinh;
         private System.Windows.Forms.DateTimePicker dtNgayVaoTonGiao;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHoDemTheDanh;
         private System.Windows.Forms.Label label7;
     }
 }

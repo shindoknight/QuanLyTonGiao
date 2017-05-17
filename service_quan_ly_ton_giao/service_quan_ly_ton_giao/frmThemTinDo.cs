@@ -78,7 +78,7 @@ namespace service_quan_ly_ton_giao
             }
             
             string phapDanh = txtPhapDanh.Text;
-            string theDanh = txtTheDanh.Text;
+            string theDanh = txtTenTheDanh.Text;
             DateTime NgaySinh = txtNgaySinh.Value;
             
             
