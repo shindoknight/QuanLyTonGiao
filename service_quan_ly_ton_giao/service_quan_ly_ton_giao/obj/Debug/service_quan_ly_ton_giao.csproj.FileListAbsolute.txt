@@ -154,7 +154,6 @@ F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\ob
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmChinh.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmChiTietCoSoTonGiao.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmDangNhap.resources
-F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmDSCoSoTonGiao.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmDSTinDo.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.Properties.Resources.resources
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.xFrmChucNang.resources
