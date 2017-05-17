@@ -612,7 +612,7 @@ namespace service_quan_ly_ton_giao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tree == "Địa giới hành chính" ||tree == "Thành phố trực thuộc Trung ương" ||tree == "Khu vực địa giới hành chính")
+            if (tree == "Địa giới hành chính" ||tree == "Thành phố trực thuộc Trung ương" ||tree == "Khu vực địa giới hành chính"||tree=="")
             {
                 DataTable dsvung = wf.DuLieuVung("");
 
@@ -718,7 +718,7 @@ namespace service_quan_ly_ton_giao
                     }
                     if (int.Parse(ds8.Rows.Count.ToString()) != 0 && i != m)//xac dinh day khong phai la vung dau tien co du lieu ton giao de ghi vao file
                     {
-                        GhiDuLieuThemVaoFileTheoTinh("", dsvung.Rows[i]["TenVungDiaLy"].ToString());
+                        GhiDuLieuThemVaoFileTheoTinh(TonGiao, dsvung.Rows[i]["TenVungDiaLy"].ToString());
                     }
 
                 }
@@ -794,8 +794,8 @@ namespace service_quan_ly_ton_giao
         }
         private void btnPhatGiao_Click(object sender, EventArgs e)
         {
-            XacDinhTinDoTheoTungTonGiao("Phật Giáo");
-            txtTenTonGiao.Text = "Phật Giáo";
+            XacDinhTinDoTheoTungTonGiao("Phật giáo");
+            txtTenTonGiao.Text = "Phật giáo";
         }
 
         private void btnCongGiao_Click(object sender, EventArgs e)

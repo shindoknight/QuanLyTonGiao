@@ -179,12 +179,12 @@
             // 
             // bbtnBanDoTinDo
             // 
-           
             this.bbtnBanDoTinDo.Caption = "Bản đồ theo tín đồ";
             this.bbtnBanDoTinDo.Glyph = ((System.Drawing.Image)(resources.GetObject("bbtnBanDoTinDo.Glyph")));
             this.bbtnBanDoTinDo.Id = 5;
             this.bbtnBanDoTinDo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbtnBanDoTinDo.LargeGlyph")));
             this.bbtnBanDoTinDo.Name = "bbtnBanDoTinDo";
+            this.bbtnBanDoTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnBanDoTinDo_ItemClick);
             // 
             // bbtnBanDoCoSo
             // 

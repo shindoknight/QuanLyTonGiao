@@ -258,5 +258,10 @@ namespace service_quan_ly_ton_giao
             frm.txtIDCoSo.Text = row["IDCoSo"].ToString();
             frm.Show();
         }
+
+        private void navigationPane1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

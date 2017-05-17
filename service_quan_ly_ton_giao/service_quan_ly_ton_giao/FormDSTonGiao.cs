@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-
 namespace service_quan_ly_ton_giao
 {
     public partial class FormDSTonGiao : Form

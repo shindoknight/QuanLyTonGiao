@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMapCoSo));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -378,14 +378,14 @@
             this.treeView1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "nodecThanhPhoTU";
-            treeNode1.Text = "Thành phố trực thuộc Trung ương";
-            treeNode2.Name = "nodecKhuVucDiaGioiHanhChinh";
-            treeNode2.Text = "Khu vực địa giới hành chính";
-            treeNode3.Name = "nodediagioihanhchinh";
-            treeNode3.Text = "Địa giới hành chính";
+            treeNode4.Name = "nodecThanhPhoTU";
+            treeNode4.Text = "Thành phố trực thuộc Trung ương";
+            treeNode5.Name = "nodecKhuVucDiaGioiHanhChinh";
+            treeNode5.Text = "Khu vực địa giới hành chính";
+            treeNode6.Name = "nodediagioihanhchinh";
+            treeNode6.Text = "Địa giới hành chính";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(267, 446);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);

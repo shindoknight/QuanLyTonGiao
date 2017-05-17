@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietCoSoTonGiao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
             this.cboNguoiQuanLy = new System.Windows.Forms.ComboBox();
             this.btnChiTietTonGiao = new System.Windows.Forms.Button();
             this.btnToChucQuanTri = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.txtTenCoSo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnInRaEx = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -76,7 +76,6 @@
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -155,13 +154,21 @@
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Blue;
             this.splitContainer2.Panel2.Controls.Add(this.btnQuayLai);
-            this.splitContainer2.Panel2.Controls.Add(this.btnInRaEx);
             this.splitContainer2.Panel2.Controls.Add(this.btnLuu);
             this.splitContainer2.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer2.Panel2.Controls.Add(this.btnSua);
             this.splitContainer2.Size = new System.Drawing.Size(548, 491);
             this.splitContainer2.SplitterDistance = 407;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // cboIDNguoiQL
+            // 
+            this.cboIDNguoiQL.Enabled = false;
+            this.cboIDNguoiQL.FormattingEnabled = true;
+            this.cboIDNguoiQL.Location = new System.Drawing.Point(261, 219);
+            this.cboIDNguoiQL.Name = "cboIDNguoiQL";
+            this.cboIDNguoiQL.Size = new System.Drawing.Size(70, 21);
+            this.cboIDNguoiQL.TabIndex = 37;
             // 
             // cboNguoiQuanLy
             // 
@@ -501,26 +508,13 @@
             this.btnQuayLai.UseVisualStyleBackColor = false;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
-            // btnInRaEx
-            // 
-            this.btnInRaEx.BackColor = System.Drawing.Color.White;
-            this.btnInRaEx.Image = ((System.Drawing.Image)(resources.GetObject("btnInRaEx.Image")));
-            this.btnInRaEx.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInRaEx.Location = new System.Drawing.Point(335, 9);
-            this.btnInRaEx.Name = "btnInRaEx";
-            this.btnInRaEx.Size = new System.Drawing.Size(75, 62);
-            this.btnInRaEx.TabIndex = 3;
-            this.btnInRaEx.Text = "In ra Excel";
-            this.btnInRaEx.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnInRaEx.UseVisualStyleBackColor = false;
-            // 
             // btnLuu
             // 
             this.btnLuu.BackColor = System.Drawing.Color.White;
             this.btnLuu.Enabled = false;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuu.Location = new System.Drawing.Point(129, 9);
+            this.btnLuu.Location = new System.Drawing.Point(168, 9);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 62);
             this.btnLuu.TabIndex = 2;
@@ -534,7 +528,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnXoa.Location = new System.Drawing.Point(236, 9);
+            this.btnXoa.Location = new System.Drawing.Point(293, 9);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 62);
             this.btnXoa.TabIndex = 1;
@@ -587,15 +581,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // cboIDNguoiQL
-            // 
-            this.cboIDNguoiQL.Enabled = false;
-            this.cboIDNguoiQL.FormattingEnabled = true;
-            this.cboIDNguoiQL.Location = new System.Drawing.Point(261, 219);
-            this.cboIDNguoiQL.Name = "cboIDNguoiQL";
-            this.cboIDNguoiQL.Size = new System.Drawing.Size(70, 21);
-            this.cboIDNguoiQL.TabIndex = 37;
-            // 
             // frmChiTietCoSoTonGiao
             // 
             this.Appearance.BackColor = System.Drawing.Color.Lime;
@@ -641,7 +626,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenCoSo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnInRaEx;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;

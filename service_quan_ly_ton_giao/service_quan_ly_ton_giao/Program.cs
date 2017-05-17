@@ -20,7 +20,7 @@ namespace service_quan_ly_ton_giao
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmChinh());
         }
     }
 }

@@ -151,3 +151,4 @@ E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.pdb
+E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmMapChinh.resources
