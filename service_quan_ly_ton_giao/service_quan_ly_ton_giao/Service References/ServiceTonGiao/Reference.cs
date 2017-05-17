@@ -52,6 +52,13 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Exec", ReplyAction="*")]
         System.Threading.Tasks.Task<string> ExecAsync(string sql);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTable", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetTable(string sql, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTable", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetTableAsync(string sql, string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PhucHoi", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string PhucHoi(string path);
@@ -193,6 +200,14 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         
         public System.Threading.Tasks.Task<string> ExecAsync(string sql) {
             return base.Channel.ExecAsync(sql);
+        }
+        
+        public System.Data.DataTable GetTable(string sql, string name) {
+            return base.Channel.GetTable(sql, name);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetTableAsync(string sql, string name) {
+            return base.Channel.GetTableAsync(sql, name);
         }
         
         public string PhucHoi(string path) {

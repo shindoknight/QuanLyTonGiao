@@ -152,3 +152,4 @@ D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanL
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.pdb
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormThongKe.resources

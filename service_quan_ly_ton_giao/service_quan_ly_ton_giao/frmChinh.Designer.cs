@@ -55,6 +55,9 @@
             this.bbtnSuaTinDo = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnDSToChuc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThemToChuc = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection32x32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,6 +68,7 @@
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageChucNang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -74,10 +78,6 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.labelName = new System.Windows.Forms.Label();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbtnDSToChuc = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThemToChuc = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection32x32)).BeginInit();
@@ -140,6 +140,7 @@
             this.imageCollection16x16.Images.SetKeyName(13, "map.png");
             this.imageCollection16x16.Images.SetKeyName(14, "placeholder.png");
             this.imageCollection16x16.Images.SetKeyName(15, "Actions-list-add-icon.png");
+            this.imageCollection16x16.Images.SetKeyName(16, "chart-icon.png");
             // 
             // bbtnTTTaiKhoan
             // 
@@ -251,6 +252,7 @@
             this.bbtnThongKe.Id = 16;
             this.bbtnThongKe.LargeImageIndex = 15;
             this.bbtnThongKe.Name = "bbtnThongKe";
+            this.bbtnThongKe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThongKe_ItemClick);
             // 
             // bbtnTimKiem
             // 
@@ -309,6 +311,28 @@
             this.btnXuat.Id = 25;
             this.btnXuat.LargeImageIndex = 19;
             this.btnXuat.Name = "btnXuat";
+            // 
+            // bbtnDSToChuc
+            // 
+            this.bbtnDSToChuc.Caption = "Danh Sách tổ chức quản trị";
+            this.bbtnDSToChuc.Id = 26;
+            this.bbtnDSToChuc.LargeImageIndex = 24;
+            this.bbtnDSToChuc.Name = "bbtnDSToChuc";
+            this.bbtnDSToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSToChuc_ItemClick);
+            // 
+            // btnThemToChuc
+            // 
+            this.btnThemToChuc.Caption = "Thêm tổ chức";
+            this.btnThemToChuc.Id = 27;
+            this.btnThemToChuc.LargeImageIndex = 2;
+            this.btnThemToChuc.Name = "btnThemToChuc";
+            this.btnThemToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemToChuc_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 28;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // imageCollection32x32
             // 
@@ -411,6 +435,13 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Cơ sở tôn giáo";
             // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.bbtnDSToChuc);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnThemToChuc);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Tổ chức quản trị";
+            // 
             // ribbonPageChucNang
             // 
             this.ribbonPageChucNang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -488,35 +519,6 @@
             this.labelName.Size = new System.Drawing.Size(60, 22);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "label1";
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.bbtnDSToChuc);
-            this.ribbonPageGroup12.ItemLinks.Add(this.btnThemToChuc);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "Tổ chức quản trị";
-            // 
-            // bbtnDSToChuc
-            // 
-            this.bbtnDSToChuc.Caption = "Danh Sách tổ chức quản trị";
-            this.bbtnDSToChuc.Id = 26;
-            this.bbtnDSToChuc.LargeImageIndex = 24;
-            this.bbtnDSToChuc.Name = "bbtnDSToChuc";
-            this.bbtnDSToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSToChuc_ItemClick);
-            // 
-            // btnThemToChuc
-            // 
-            this.btnThemToChuc.Caption = "Thêm tổ chức";
-            this.btnThemToChuc.Id = 27;
-            this.btnThemToChuc.LargeImageIndex = 2;
-            this.btnThemToChuc.Name = "btnThemToChuc";
-            this.btnThemToChuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemToChuc_ItemClick);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "barButtonItem3";
-            this.barButtonItem3.Id = 28;
-            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // frmChinh
             // 

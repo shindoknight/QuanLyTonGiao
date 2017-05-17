@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5});
-            DevExpress.XtraMap.SizeLegend sizeLegend2 = new DevExpress.XtraMap.SizeLegend();
-            DevExpress.XtraMap.ColorListLegend colorListLegend2 = new DevExpress.XtraMap.ColorListLegend();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
+            DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage2 = new DevExpress.XtraMap.MapItemStorage();
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
@@ -176,14 +176,14 @@
             this.treeView1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(2, 20);
             this.treeView1.Name = "treeView1";
-            treeNode4.Name = "nodecThanhPhoTU";
-            treeNode4.Text = "Thành phố trực thuộc Trung ương";
-            treeNode5.Name = "nodecKhuVucDiaGioiHanhChinh";
-            treeNode5.Text = "Khu vực địa giới hành chính";
-            treeNode6.Name = "nodediagioihanhchinh";
-            treeNode6.Text = "Địa giới hành chính";
+            treeNode1.Name = "nodecThanhPhoTU";
+            treeNode1.Text = "Thành phố trực thuộc Trung ương";
+            treeNode2.Name = "nodecKhuVucDiaGioiHanhChinh";
+            treeNode2.Text = "Khu vực địa giới hành chính";
+            treeNode3.Name = "nodediagioihanhchinh";
+            treeNode3.Text = "Địa giới hành chính";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(236, 488);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -220,12 +220,12 @@
             this.map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.map.Layers.Add(this.imageLayer1);
             this.map.Layers.Add(this.vectorItemsLayer1);
-            sizeLegend2.Header = "Số lượng tín đồ";
-            sizeLegend2.Layer = this.vectorItemsLayer1;
-            colorListLegend2.Header = "Tôn giáo";
-            colorListLegend2.Layer = this.vectorItemsLayer1;
-            this.map.Legends.Add(sizeLegend2);
-            this.map.Legends.Add(colorListLegend2);
+            sizeLegend1.Header = "Số lượng tín đồ";
+            sizeLegend1.Layer = this.vectorItemsLayer1;
+            colorListLegend1.Header = "Tôn giáo";
+            colorListLegend1.Layer = this.vectorItemsLayer1;
+            this.map.Legends.Add(sizeLegend1);
+            this.map.Legends.Add(colorListLegend1);
             this.map.Location = new System.Drawing.Point(2, 20);
             this.map.Name = "map";
             this.map.Size = new System.Drawing.Size(937, 431);

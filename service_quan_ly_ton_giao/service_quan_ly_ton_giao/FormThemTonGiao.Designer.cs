@@ -36,9 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNhapLai = new System.Windows.Forms.Button();
             this.btnXong = new System.Windows.Forms.Button();
             this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
-            this.btnNhapLai = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,7 +83,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 195);
+            this.groupBox1.Size = new System.Drawing.Size(813, 195);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Tôn Giáo";
@@ -124,10 +124,24 @@
             this.panel1.Controls.Add(this.btnNhapLai);
             this.panel1.Controls.Add(this.btnXong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 311);
+            this.panel1.Location = new System.Drawing.Point(0, 454);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 53);
+            this.panel1.Size = new System.Drawing.Size(813, 53);
             this.panel1.TabIndex = 25;
+            // 
+            // btnNhapLai
+            // 
+            this.btnNhapLai.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapLai.Image = global::service_quan_ly_ton_giao.Properties.Resources.Remove;
+            this.btnNhapLai.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnNhapLai.Location = new System.Drawing.Point(211, 6);
+            this.btnNhapLai.Name = "btnNhapLai";
+            this.btnNhapLai.Size = new System.Drawing.Size(94, 35);
+            this.btnNhapLai.TabIndex = 24;
+            this.btnNhapLai.Text = "Nhập lại";
+            this.btnNhapLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhapLai.UseVisualStyleBackColor = true;
+            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // btnXong
             // 
@@ -149,29 +163,15 @@
             this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbGioiThieu.Location = new System.Drawing.Point(0, 195);
             this.rtbGioiThieu.Name = "rtbGioiThieu";
-            this.rtbGioiThieu.Size = new System.Drawing.Size(746, 116);
+            this.rtbGioiThieu.Size = new System.Drawing.Size(813, 259);
             this.rtbGioiThieu.TabIndex = 26;
             this.rtbGioiThieu.Text = "";
-            // 
-            // btnNhapLai
-            // 
-            this.btnNhapLai.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapLai.Image = global::service_quan_ly_ton_giao.Properties.Resources.Remove;
-            this.btnNhapLai.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnNhapLai.Location = new System.Drawing.Point(211, 6);
-            this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(94, 35);
-            this.btnNhapLai.TabIndex = 24;
-            this.btnNhapLai.Text = "Nhập lại";
-            this.btnNhapLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNhapLai.UseVisualStyleBackColor = true;
-            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // FormThemTonGiao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 364);
+            this.ClientSize = new System.Drawing.Size(813, 507);
             this.Controls.Add(this.rtbGioiThieu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

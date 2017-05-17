@@ -154,6 +154,26 @@ public class ServiceTonGiao : System.Web.Services.WebService
         }
     }
     [WebMethod]
+    public DataTable GetTable(string sql, string name) // hàm lấy bảng bất kỳ
+    {
+        DataTable table = new DataTable(name);
+        try
+        {
+            OpenConnect();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(table);
+            CloseConnect();
+            return table;
+
+        }
+        catch (Exception ex)
+        {
+            return table;
+
+        }
+    }
+    [WebMethod]
     public string PhucHoi(string path)
     {
         try

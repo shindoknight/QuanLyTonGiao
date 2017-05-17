@@ -152,7 +152,7 @@ namespace service_quan_ly_ton_giao
             frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
 
             frmDSTG.FormBorderStyle = FormBorderStyle.None;
-            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
+            _frmDanhMuc.TabCreating("Danh Sách Cơ sỏ Tôn giáo", frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
              
         }
 
@@ -162,7 +162,7 @@ namespace service_quan_ly_ton_giao
             frmThemCoSoTonGiao frmDSTG = new frmThemCoSoTonGiao();
 
             frmDSTG.FormBorderStyle = FormBorderStyle.None;
-            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
+            _frmDanhMuc.TabCreating("Thêm cơ sở Tôn giáo", frmDSTG.Name, frmDSTG, imageCollection16x16, 6);
            
         }
 
@@ -170,28 +170,28 @@ namespace service_quan_ly_ton_giao
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             FormDSTonGiao f = new FormDSTonGiao();
-            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 1);
+            _frmDanhMuc.TabCreating("Danh sách Tôn giáo", f.Name, f, imageCollection16x16, 1);
         }
 
         private void bbtnBanDoCoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
             frmMapCoSo f = new frmMapCoSo();
-            _frmChucNang.TabCreating(f.Text, f.Name, f, imageCollection16x16, 13);
+            _frmChucNang.TabCreating("Bản đồ cơ sở Tôn giáo", f.Name, f, imageCollection16x16, 13);
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
             frmMapTinDo f = new frmMapTinDo();
-            _frmChucNang.TabCreating(f.Text, f.Name, f, imageCollection16x16, 14);
+            _frmChucNang.TabCreating("Bản đồ tín đồ tôn giáo", f.Name, f, imageCollection16x16, 14);
         }
 
         private void bbtnThemTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             FormThemTonGiao f = new FormThemTonGiao();
-            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 11);
+            _frmDanhMuc.TabCreating("Thêm tôn giáo", f.Name, f, imageCollection16x16, 11);
         }
 
         private void bbtnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -225,7 +225,7 @@ namespace service_quan_ly_ton_giao
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             frmDSToChucQuanTri f = new frmDSToChucQuanTri();
-            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 12);
+            _frmDanhMuc.TabCreating("Danh sách tổ chức tôn giáo", f.Name, f, imageCollection16x16, 12);
         }
 
         private void btnThemToChuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -233,6 +233,13 @@ namespace service_quan_ly_ton_giao
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
             frmThemToChucQuanTri f = new frmThemToChucQuanTri();
             _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 15);
+        }
+
+        private void bbtnThongKe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
+            FormThongKe f = new FormThongKe();
+            _frmChucNang.TabCreating("Thống kê", f.Name, f, imageCollection16x16, 16);
         }
     }
 }

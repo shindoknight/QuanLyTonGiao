@@ -63,7 +63,11 @@ namespace service_quan_ly_ton_giao
                 }
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
-               
+                btnLuu.Enabled = false;
+                btnThemChucSac.Visible = true;
+                btnThemToChuc.Visible = true;
+                dgvChucSac.DataSource = ws.GetTable("select tenchucsac,gioithieu from tblChucSac where daxoa=0 and idtongiao="+id,"tblChucSac");
+                dgvToChuc.DataSource = ws.GetTable("select tentochuc,gioithieu from tblTochucquantri where daxoa=0 and idtongiao=" + id, "tblToChucQuanTri");
                 
                 // panelHinhAnh.BackgroundImage = global::service_quan_ly_ton_giao.Properties.Resources.user_login_icon;
             }
@@ -158,6 +162,19 @@ namespace service_quan_ly_ton_giao
             }
             catch
             { }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemToChuc_Click(object sender, EventArgs e)
+        {
+            frmThemToChucQuanTri frm = new frmThemToChucQuanTri();
+            frm.cboTenTonGiao.Text = lbTenTG.Text;
+            frm.cboTenTonGiao.Enabled = false;
+            frm.ShowDialog();
         }
     }
 }
