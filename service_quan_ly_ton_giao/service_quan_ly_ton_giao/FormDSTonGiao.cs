@@ -46,24 +46,20 @@ namespace service_quan_ly_ton_giao
                     FilesTransfer.FilesTransferSoapClient WSFile = new FilesTransfer.FilesTransferSoapClient();
                     System.IO.FileStream fs1 = null;
                     byte[] b1 = null;
-                    if(File.Exists(@"..\..\hinh_anh\tongiao\" + id.ToString() + ".xml"))
+                    string name = hinhanh.Substring(hinhanh.LastIndexOf("/") + 1);
+                    if (File.Exists(@"..\..\hinh_anh\tongiao\" + name+".xml"))
                     {
-                        File.Delete(@"..\..\hinh_anh\tongiao\" + id.ToString() + ".xml");
-                        b1 = WSFile.DownloadFile(hinhanh);
-                        fs1 = new FileStream(@"..\..\hinh_anh\tongiao\" + id + ".xml", FileMode.Create);
-                        fs1.Write(b1, 0, b1.Length);
-                        fs1.Close();
-                        fs1 = null;
+                       
                     }
                     else
                     {
                         b1 = WSFile.DownloadFile(hinhanh);
-                        fs1 = new FileStream(@"..\..\hinh_anh\tongiao\" + id + ".xml", FileMode.Create);
+                        fs1 = new FileStream(@"..\..\hinh_anh\tongiao\" + name + ".xml", FileMode.Create);
                         fs1.Write(b1, 0, b1.Length);
                         fs1.Close();
                         fs1 = null;
                     }
-                    pictureBox1.Image = Image.FromFile(@"..\..\hinh_anh\tongiao\" + id.ToString() + ".xml");
+                    pictureBox1.Image = Image.FromFile(@"..\..\hinh_anh\tongiao\" + name + ".xml");
                 }
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;

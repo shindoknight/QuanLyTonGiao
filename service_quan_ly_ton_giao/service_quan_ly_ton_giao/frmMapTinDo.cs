@@ -346,7 +346,10 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
        
+=======
+>>>>>>> refs/remotes/origin/master
         void HienThiHinhLenMap(int SoLuong, string ki, string vi)
         {
             if (SoLuong == 1)

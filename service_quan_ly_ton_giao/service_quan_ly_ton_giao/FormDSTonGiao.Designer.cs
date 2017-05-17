@@ -266,7 +266,7 @@
             // 
             // clmSLTinDo
             // 
-            this.clmSLTinDo.DataPropertyName = "SLTinDo";
+            this.clmSLTinDo.DataPropertyName = "SoLuongTinDo";
             this.clmSLTinDo.HeaderText = "Số Lượng Tín Đồ";
             this.clmSLTinDo.Name = "clmSLTinDo";
             // 
