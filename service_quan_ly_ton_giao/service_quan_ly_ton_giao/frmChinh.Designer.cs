@@ -55,10 +55,7 @@
             this.bbtnSuaTinDo = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
-<<<<<<< HEAD
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-=======
->>>>>>> refs/remotes/origin/master
             this.imageCollection32x32 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPageTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -299,7 +296,6 @@
             this.btnXuat.LargeImageIndex = 19;
             this.btnXuat.Name = "btnXuat";
             // 
-<<<<<<< HEAD
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Xóa Tín Đồ";
@@ -308,8 +304,6 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-=======
->>>>>>> refs/remotes/origin/master
             // imageCollection32x32
             // 
             this.imageCollection32x32.ImageSize = new System.Drawing.Size(32, 32);

@@ -163,3 +163,12 @@ F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\ob
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.csproj.GenerateResource.Cache
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
 F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmThemTinDo.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormDSTonGiao.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormHome.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmSuaTinDo.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmChiTietToChucQuanTri.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmDSToChucQuanTri.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmMapCoSo.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmMapTinDo.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmThemCoSoTonGiao.resources
+F:\Visual\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmThemToChucQuanTri.resources

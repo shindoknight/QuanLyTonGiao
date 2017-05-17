@@ -149,7 +149,6 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-<<<<<<< HEAD
 
         }
 
@@ -175,12 +174,11 @@ namespace service_quan_ly_ton_giao
         {
             frmDSTinDo tindo = new frmDSTinDo();
             tindo.ShowDialog();
-=======
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
+            //frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
 
-            frmDSTG.FormBorderStyle = FormBorderStyle.None;
-            _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
+           // frmDSTG.FormBorderStyle = FormBorderStyle.None;
+          //  _frmDanhMuc.TabCreating(frmDSTG.Text, frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
              
         }
 
@@ -215,7 +213,6 @@ namespace service_quan_ly_ton_giao
         {
             frmMapTinDo frmMapTinDo = new frmMapTinDo();
             frmMapTinDo.Show();
->>>>>>> refs/remotes/origin/master
         }
     }
 }
