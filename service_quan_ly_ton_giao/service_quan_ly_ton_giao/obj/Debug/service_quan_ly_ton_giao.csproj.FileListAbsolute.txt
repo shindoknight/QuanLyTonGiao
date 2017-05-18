@@ -308,3 +308,4 @@ E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.xFrmTrangChu.resources
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.csproj.GenerateResource.Cache
 E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
+E:\HOC_TAP2\hoc_ky_2_nam_4\lap_trinh_tich_hop\githup\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmMapChinh.resources

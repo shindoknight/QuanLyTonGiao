@@ -60,8 +60,8 @@ namespace service_quan_ly_ton_giao
             DataTable ds5 = wf.DuLieuXa("where IDHuyen=N'" + ds4.Rows[0]["IDHuyen"].ToString() + "'");
             try
             {
-                string ki = ds5.Rows[0]["ViDo"].ToString();
-                string vi = ds5.Rows[0]["KinhDo"].ToString();
+                string ki = ds5.Rows[0]["ViDo"].ToString().Replace(".",",");
+                string vi = ds5.Rows[0]["KinhDo"].ToString().Replace(".", ",");
 
                 map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                 map.Zoom(12);

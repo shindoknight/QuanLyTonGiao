@@ -182,15 +182,6 @@ namespace service_quan_ly_ton_giao
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-<<<<<<< HEAD
-            
-        }
-
-        private void bbtnBanDoTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmMapTinDo frmMapTinDo = new frmMapTinDo();
-            frmMapTinDo.Show();
-=======
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
             frmMapTinDo f = new frmMapTinDo();
             _frmChucNang.TabCreating("Bản đồ tín đồ tôn giáo", f.Name, f, imageCollection16x16, 14);
@@ -249,7 +240,6 @@ namespace service_quan_ly_ton_giao
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
             FormThongKe f = new FormThongKe();
             _frmChucNang.TabCreating("Thống kê", f.Name, f, imageCollection16x16, 16);
->>>>>>> master
         }
     }
 }

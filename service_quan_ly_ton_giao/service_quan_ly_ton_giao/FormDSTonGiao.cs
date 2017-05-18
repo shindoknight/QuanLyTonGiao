@@ -7,11 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
-=======
 using System.IO;
 
->>>>>>> master
 namespace service_quan_ly_ton_giao
 {
     public partial class FormDSTonGiao : Form
