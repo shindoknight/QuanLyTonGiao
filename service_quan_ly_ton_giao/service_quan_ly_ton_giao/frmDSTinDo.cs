@@ -22,9 +22,8 @@ namespace service_quan_ly_ton_giao
         tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
         private void frmDSTinDo_Load(object sender, EventArgs e)
         {
-
+            
             gridCTinDo.DataSource = tindo.HienThiDSTinDo();
-
         }
 
         private void gridCTinDo_MouseClick(object sender, MouseEventArgs e)
@@ -36,25 +35,25 @@ namespace service_quan_ly_ton_giao
         {
             DataRow row = gridVTinDo.GetFocusedDataRow();
             BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+            BienToanCuc.tenTinDo = row["HoDemTheDanh"].ToString() + row["TenTheDanh"].ToString();
 
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataRow row = gridVTinDo.GetFocusedDataRow();
-            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+            
         }
 
         private void gridCTinDo_DoubleClick(object sender, EventArgs e)
         {
             DataRow row = gridVTinDo.GetFocusedDataRow();
             BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+            BienToanCuc.tenTinDo = row["HoDemTheDanh"].ToString() + row["TenTheDanh"].ToString();
         }
 
         private void gridCTinDo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DataRow row = gridVTinDo.GetFocusedDataRow();
-            BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
+           
         }
     }
 }

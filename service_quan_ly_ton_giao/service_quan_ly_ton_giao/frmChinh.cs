@@ -163,10 +163,21 @@ namespace service_quan_ly_ton_giao
             int id = BienToanCuc.IdTinDo;
 
             string tenTindo = BienToanCuc.tenTinDo;
+
             if (MessageBox.Show("Xóa " + tenTindo, "Thông báo???", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
                 
-                tindo.XoaTinDo(id);
-                MessageBox.Show("Xóa Thành Công ");
+                int i = tindo.XoaTinDo(id);
+                if (i > 0)
+                {
+                    MessageBox.Show("Xóa Thành Công ");
+                    frmDSTinDo.ActiveForm.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Không Thành Công ");
+                }
+               
         }
         }
 
@@ -209,6 +220,11 @@ namespace service_quan_ly_ton_giao
         {
             frmMapTinDo frmMapTinDo = new frmMapTinDo();
             frmMapTinDo.Show();
+        }
+
+        private void bbtnSuaTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChinh));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageCollection16x16 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection16x16 = new DevExpress.Utils.ImageCollection();
             this.bbtnTTTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnThemTK = new DevExpress.XtraBars.BarButtonItem();
@@ -56,7 +55,7 @@
             this.bbtnNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.imageCollection32x32 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection32x32 = new DevExpress.Utils.ImageCollection();
             this.ribbonPageTrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupHeThong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -281,6 +280,7 @@
             this.bbtnSuaTinDo.Id = 23;
             this.bbtnSuaTinDo.LargeImageIndex = 18;
             this.bbtnSuaTinDo.Name = "bbtnSuaTinDo";
+            this.bbtnSuaTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnSuaTinDo_ItemClick);
             // 
             // bbtnNhap
             // 

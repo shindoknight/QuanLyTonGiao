@@ -336,7 +336,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(517, 328);
+            this.label16.Location = new System.Drawing.Point(515, 326);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(67, 13);
             this.label16.TabIndex = 72;
@@ -548,12 +548,15 @@
             // 
             this.cbbCoSo.FormattingEnabled = true;
             this.cbbCoSo.Items.AddRange(new object[] {
-            "Chùa Keo",
-            "Chùa Hương"});
-            this.cbbCoSo.Location = new System.Drawing.Point(652, 323);
+            "Chùa Hương",
+            "Chùa Keo"});
+            this.cbbCoSo.Location = new System.Drawing.Point(650, 320);
+            this.cbbCoSo.MaximumSize = new System.Drawing.Size(200, 0);
+            this.cbbCoSo.MaxLength = 20000;
             this.cbbCoSo.Name = "cbbCoSo";
-            this.cbbCoSo.Size = new System.Drawing.Size(157, 21);
+            this.cbbCoSo.Size = new System.Drawing.Size(159, 21);
             this.cbbCoSo.TabIndex = 114;
+            this.cbbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbbCoSo_SelectedIndexChanged);
             // 
             // txtNgaySinh
             // 
@@ -577,7 +580,7 @@
             // 
             // txtHoDemTheDanh
             // 
-            this.txtHoDemTheDanh.Location = new System.Drawing.Point(354, 56);
+            this.txtHoDemTheDanh.Location = new System.Drawing.Point(369, 56);
             this.txtHoDemTheDanh.Multiline = true;
             this.txtHoDemTheDanh.Name = "txtHoDemTheDanh";
             this.txtHoDemTheDanh.Size = new System.Drawing.Size(116, 24);
@@ -587,7 +590,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(296, 62);
+            this.label7.Location = new System.Drawing.Point(311, 62);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 117;
@@ -599,7 +602,7 @@
             this.cbbTonGiao.Items.AddRange(new object[] {
             "Hòa thượng",
             "Thượng tọa"});
-            this.cbbTonGiao.Location = new System.Drawing.Point(114, 362);
+            this.cbbTonGiao.Location = new System.Drawing.Point(114, 359);
             this.cbbTonGiao.Name = "cbbTonGiao";
             this.cbbTonGiao.Size = new System.Drawing.Size(161, 21);
             this.cbbTonGiao.TabIndex = 120;

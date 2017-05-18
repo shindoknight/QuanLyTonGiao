@@ -74,10 +74,11 @@ public class tblTinDo : System.Web.Services.WebService
     public int XoaTinDo(int Id)
     {
         OpenConnect();
-        SqlCommand comm = new SqlCommand("update tblTinDo set DaXoa = 0 where IDTinDo ='"+Id+"' ", conn);
-        comm.ExecuteNonQuery();
+        SqlCommand comm = new SqlCommand("update tblTinDo set DaXoa = 1 where IDTinDo ='"+Id+"' ", conn);
+        int t= comm.ExecuteNonQuery();
         CloseConnect();
-        return 1;
+        if (t>0) return 1;
+        else return 0;
     }
 
     [WebMethod]
@@ -226,9 +227,27 @@ public class tblTinDo : System.Web.Services.WebService
         da.Fill(dtdistrict);
         CloseConnect();
         return dtdistrict;
-
-
+    }
+    [WebMethod]
+    public int IDTonGiao(string tenTonGiao)
+    {
+        OpenConnect();
+        string temp = null;
+        //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
+        SqlCommand comm = new SqlCommand("select IdTonGiao from tblTonGiao where TenTonGiao = N'" + tenTonGiao + "' ", conn);
+        SqlDataReader sqldr = comm.ExecuteReader();
+        while (sqldr.Read())
+            temp = sqldr[0].ToString();
+        CloseConnect();
+        int id = 0;
+        if (temp == null) return id;
+        else
+        {
+            id = Int32.Parse(temp); return id;
+        }
 
     }
+
+
 
 }

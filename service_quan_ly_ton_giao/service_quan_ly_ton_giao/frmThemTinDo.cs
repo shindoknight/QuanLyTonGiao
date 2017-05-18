@@ -30,14 +30,16 @@ namespace service_quan_ly_ton_giao
 
 
             string tongiao = "select * from tblTonGiao";
-            cbbChucSac.DataSource = tindo.OneRecord("tblTonGiao", tongiao);
-            cbbChucSac.DisplayMember = "TenTonGiao";
+            cbbTonGiao.DataSource = tindo.OneRecord("tblTonGiao", tongiao);
+            cbbTonGiao.DisplayMember = "TenTonGiao";
 
             string chucsac = "select * from tblchucsac";
             cbbChucSac.DataSource = tindo.OneRecord("tblChucSac",chucsac);
             cbbChucSac.DisplayMember = "TenChucSac";
 
-            
+            string tencoso = "select TenCoSo from tblCoSo";
+            cbbCoSo.DataSource = tindo.OneRecord("tblCoSo", tencoso);
+            cbbCoSo.DisplayMember = "TenCoSo";
 
             string chucvu = "select * from tblChucVu";
             cbbChucVu.DataSource = tindo.OneRecord("tblChucVu", chucvu);
@@ -178,20 +180,29 @@ namespace service_quan_ly_ton_giao
         private void txtTonGiao_SelectedIndexChanged(object sender, EventArgs e)
         {
             string tongiao = cbbTonGiao.Text;
+            
             if (tongiao != null || tongiao != "")
             {
-                cbbChucSac.DataSource = tindo.OneRecord("tblChucSac", "select * from tblChucSac");
+                int id = tindo.IDTonGiao(tongiao);
+                cbbChucSac.DataSource = tindo.OneRecord("tblChucSac", "select * from tblChucSac where IDTonGiao = N'"+id+"'");
                 cbbChucSac.DisplayMember = "TenChucSac";
             }
         }
 
         private void cbDiaChiXa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string diachixa = cbDiaChiXa.Text;
-            if (diachixa != null || diachixa != "")
+            
+        }
+
+        private void cbbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tencoso = cbbCoSo.Text;
+
+            if (tencoso != null || tencoso != "")
             {
-                cbbTonGiao.DataSource = tindo.OneRecord("tblTonGiao", "select * from tblTonGiao");
-                cbbTonGiao.DisplayMember = "TenTonGiao";
+                int id = tindo.IDTonGiao(tencoso);
+                cbbChucSac.DataSource = tindo.OneRecord("tblChucSac", "select * from tblChucSac where IDTonGiao = N'" + id + "'");
+                cbbChucSac.DisplayMember = "TenChucSac";
             }
         }
     }

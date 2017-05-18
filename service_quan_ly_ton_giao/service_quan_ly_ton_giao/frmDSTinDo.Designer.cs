@@ -42,7 +42,6 @@
             this.HDCaNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HDToChuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.HoDemTheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
@@ -58,7 +57,7 @@
             this.gridCTinDo.Name = "gridCTinDo";
             this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa});
-            this.gridCTinDo.Size = new System.Drawing.Size(679, 329);
+            this.gridCTinDo.Size = new System.Drawing.Size(869, 329);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
@@ -82,8 +81,7 @@
             this.HinhAnh,
             this.HDCaNhan,
             this.HDToChuc,
-            this.NgayVaoTonGiao,
-            this.Xoa});
+            this.NgayVaoTonGiao});
             this.gridVTinDo.GridControl = this.gridCTinDo;
             this.gridVTinDo.Name = "gridVTinDo";
             this.gridVTinDo.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -192,14 +190,6 @@
             this.NgayVaoTonGiao.Visible = true;
             this.NgayVaoTonGiao.VisibleIndex = 12;
             // 
-            // Xoa
-            // 
-            this.Xoa.Caption = "Xoa";
-            this.Xoa.ColumnEdit = this.btnXoa;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Visible = true;
-            this.Xoa.VisibleIndex = 13;
-            // 
             // btnXoa
             // 
             this.btnXoa.AutoHeight = false;
@@ -220,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 329);
+            this.ClientSize = new System.Drawing.Size(869, 329);
             this.Controls.Add(this.gridCTinDo);
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
@@ -248,7 +238,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn HDCaNhan;
         private DevExpress.XtraGrid.Columns.GridColumn HDToChuc;
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
-        private DevExpress.XtraGrid.Columns.GridColumn Xoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn HoDemTheDanh;
     }

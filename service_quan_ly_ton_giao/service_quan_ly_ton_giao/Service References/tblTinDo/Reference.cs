@@ -143,6 +143,13 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/OneRecord", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> OneRecordAsync(string tblBang, string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDTonGiao", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int IDTonGiao(string tenTonGiao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDTonGiao", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> IDTonGiaoAsync(string tenTonGiao);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -310,6 +317,14 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> OneRecordAsync(string tblBang, string sqlString) {
             return base.Channel.OneRecordAsync(tblBang, sqlString);
+        }
+        
+        public int IDTonGiao(string tenTonGiao) {
+            return base.Channel.IDTonGiao(tenTonGiao);
+        }
+        
+        public System.Threading.Tasks.Task<int> IDTonGiaoAsync(string tenTonGiao) {
+            return base.Channel.IDTonGiaoAsync(tenTonGiao);
         }
     }
 }
