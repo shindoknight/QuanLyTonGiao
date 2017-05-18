@@ -27,7 +27,7 @@ public class tblTinDo : System.Web.Services.WebService
     {
         try
         {
-            string strConnect = @"Data Source=DESKTOP-0UL0DR1;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
             conn = new SqlConnection(strConnect);
             conn.Open();
         }
@@ -245,6 +245,20 @@ public class tblTinDo : System.Web.Services.WebService
         {
             id = Int32.Parse(temp); return id;
         }
+        
+    }
+    [WebMethod]
+    public DataTable LayDiaChi(string idxa)
+    {
+        OpenConnect();
+        string temp = null;
+        //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
+        SqlCommand comm = new SqlCommand("select TenXa,TenHuyen,TenTinh from tblXa a,tblTinh c, tblHuyen b where a.IDHuyen=b.IDHuyen and b.IDTinh=c.IDTinh and IDXa=" + idxa + "", conn);
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        CloseConnect();
+        return dt;
 
     }
 

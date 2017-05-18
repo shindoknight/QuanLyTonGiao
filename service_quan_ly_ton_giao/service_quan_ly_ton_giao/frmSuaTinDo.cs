@@ -18,7 +18,7 @@ namespace service_quan_ly_ton_giao
             InitializeComponent();
         }
         tblTinDoSoapClient tindo = new tblTinDoSoapClient();
-
+        public string id;
         string IdQueQuan()
         {
             string tinh = cbQueQuanTinh.Text;
@@ -50,7 +50,7 @@ namespace service_quan_ly_ton_giao
             int id = BienToanCuc.IdTinDo;
 
             DataTable DataTinDo = new DataTable();
-            DataTinDo = tindo.GetData("tblTinDo", "Select * from tblTinDo where IDTinDo = N'" + id + "'");
+            DataTinDo = tindo.OneRecord("tblTinDo", "Select * from tblTinDo where IDTinDo = N'" + id + "'");
 
             int idXa = Int32.Parse(DataTinDo.Rows[0]["QueQuan"].ToString());
 
@@ -69,20 +69,19 @@ namespace service_quan_ly_ton_giao
             else radioButton3.Checked = true;
 
             txtPhapDanh.Text = DataTinDo.Rows[0]["PhapDanh"].ToString();
-            txtTenTheDanh.Text = DataTinDo.Rows[0]["TenPhapDanh"].ToString();
+            txtTenTheDanh.Text = DataTinDo.Rows[0]["TenTheDanh"].ToString();
             txtHoDemTheDanh.Text = DataTinDo.Rows[0]["HoDemTheDanh"].ToString();
-            txtNgaySinh.Value = DateTime.ParseExact(DataTinDo.Rows[0]["NgaySinh"].ToString(), "d", null);
+            //txtNgaySinh.Value = DateTime.ParseExact(DataTinDo.Rows[0]["NgaySinh"].ToString(), "d", null);
 
 
             cbDanToc.Text = DataTinDo.Rows[0]["DanToc"].ToString();
 
 
             string queQuan = DataTinDo.Rows[0]["QueQuan"].ToString();
-            int quequan = Int16.Parse(queQuan);
-            DataTable xahuyentinh = tindo.DuLieuDon(quequan);
-            cbQueQuanXa.Text = xahuyentinh.Rows[0][0].ToString();
-            cbQueQuanHuyen.Text = xahuyentinh.Rows[0][1].ToString();
-            cbQueQuanTinh.Text = xahuyentinh.Rows[0][2].ToString();
+            DataTable xahuyentinh = tindo.LayDiaChi(queQuan);
+            cbQueQuanXa.Text = xahuyentinh.Rows[0]["TenXa"].ToString();
+            cbQueQuanHuyen.Text = xahuyentinh.Rows[0]["TenHuyen"].ToString();
+            cbQueQuanTinh.Text = xahuyentinh.Rows[0]["TenTinh"].ToString();
 
             /*
             string diaChi = IdDiaChi();

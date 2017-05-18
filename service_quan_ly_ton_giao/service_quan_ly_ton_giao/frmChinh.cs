@@ -170,7 +170,6 @@ namespace service_quan_ly_ton_giao
                 if (i > 0)
                 {
                     MessageBox.Show("Xóa Thành Công ");
-                    frmDSTinDo.ActiveForm.Close();
 
                 }
                 else
@@ -224,7 +223,8 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnSuaTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmSuaTinDo sua = new frmSuaTinDo();
+            sua.ShowDialog();
         }
     }
 }

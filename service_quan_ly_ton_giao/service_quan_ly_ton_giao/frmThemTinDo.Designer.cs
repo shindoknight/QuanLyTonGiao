@@ -544,23 +544,23 @@
             // 
             // txtNgaySinh
             // 
-            this.txtNgaySinh.CustomFormat = "MM/dd/yyyy";
-            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgaySinh.CustomFormat = "yyyy/MM/dd";
+            this.txtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgaySinh.Location = new System.Drawing.Point(108, 94);
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(167, 20);
             this.txtNgaySinh.TabIndex = 115;
-            this.txtNgaySinh.Value = new System.DateTime(1995, 10, 14, 0, 0, 0, 0);
+            this.txtNgaySinh.Value = new System.DateTime(2017, 5, 18, 0, 0, 0, 0);
             // 
             // dtNgayVaoTonGiao
             // 
-            this.dtNgayVaoTonGiao.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayVaoTonGiao.CustomFormat = "yyyy/MM/dd";
             this.dtNgayVaoTonGiao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayVaoTonGiao.Location = new System.Drawing.Point(652, 93);
             this.dtNgayVaoTonGiao.Name = "dtNgayVaoTonGiao";
             this.dtNgayVaoTonGiao.Size = new System.Drawing.Size(157, 20);
             this.dtNgayVaoTonGiao.TabIndex = 116;
-            this.dtNgayVaoTonGiao.Value = new System.DateTime(2017, 6, 14, 0, 0, 0, 0);
+            this.dtNgayVaoTonGiao.Value = new System.DateTime(2017, 6, 23, 0, 0, 0, 0);
             // 
             // txtHoDemTheDanh
             // 
