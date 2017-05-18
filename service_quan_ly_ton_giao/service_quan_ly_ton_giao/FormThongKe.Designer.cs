@@ -31,15 +31,12 @@
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            DevExpress.XtraCharts.XYDiagram3D xyDiagram3D1 = new DevExpress.XtraCharts.XYDiagram3D();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBar3DSeriesView sideBySideBar3DSeriesView1 = new DevExpress.XtraCharts.SideBySideBar3DSeriesView();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3D1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBar3DSeriesView1)).BeginInit();
+            this.chartTinDo = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTinDo)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -56,37 +53,36 @@
             treeNode2});
             this.treeView1.Size = new System.Drawing.Size(236, 474);
             this.treeView1.TabIndex = 1;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
-            // chartControl1
+            // chartTinDo
             // 
-            xyDiagram3D1.RotationMatrixSerializable = "0.766044443118978;-0.219846310392954;0.604022773555054;0;0;0.939692620785908;0.34" +
-    "2020143325669;0;-0.642787609686539;-0.262002630229385;0.719846310392954;0;0;0;0;" +
-    "1";
-            this.chartControl1.Diagram = xyDiagram3D1;
-            this.chartControl1.Legend.Name = "Default Legend";
-            this.chartControl1.Location = new System.Drawing.Point(260, 27);
-            this.chartControl1.Name = "chartControl1";
-            series1.Name = "Series 1";
-            series1.View = sideBySideBar3DSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.Size = new System.Drawing.Size(628, 302);
-            this.chartControl1.TabIndex = 2;
+            chartArea1.Name = "ChartArea1";
+            this.chartTinDo.ChartAreas.Add(chartArea1);
+            this.chartTinDo.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartTinDo.Legends.Add(legend1);
+            this.chartTinDo.Location = new System.Drawing.Point(236, 0);
+            this.chartTinDo.Name = "chartTinDo";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Tín đồ";
+            this.chartTinDo.Series.Add(series1);
+            this.chartTinDo.Size = new System.Drawing.Size(682, 474);
+            this.chartTinDo.TabIndex = 2;
+            this.chartTinDo.Text = "chart1";
             // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 474);
-            this.Controls.Add(this.chartControl1);
+            this.Controls.Add(this.chartTinDo);
             this.Controls.Add(this.treeView1);
             this.Name = "FormThongKe";
             this.Text = "FormThongKe";
             this.Load += new System.EventHandler(this.FormThongKe_Load);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3D1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBar3DSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartTinDo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,6 +90,6 @@
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTinDo;
     }
 }

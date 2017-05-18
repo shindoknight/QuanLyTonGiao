@@ -127,7 +127,7 @@
             this.ribbonPageTrangChu,
             this.ribbonPageDanhMuc,
             this.ribbonPageChucNang});
-            this.ribbonControl1.Size = new System.Drawing.Size(924, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(1089, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
@@ -483,10 +483,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 534);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 748);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(924, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1089, 31);
             // 
             // xtraTabControl1
             // 
@@ -497,7 +497,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(924, 388);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1089, 602);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -507,14 +507,14 @@
             // 
             this.xtraTabPage1.ImageIndex = 0;
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(918, 357);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1083, 571);
             this.xtraTabPage1.Text = "Trang chủ";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(837, 27);
+            this.labelName.Location = new System.Drawing.Point(1029, 55);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(60, 22);
             this.labelName.TabIndex = 7;
@@ -525,7 +525,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 565);
+            this.ClientSize = new System.Drawing.Size(1089, 779);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar1);

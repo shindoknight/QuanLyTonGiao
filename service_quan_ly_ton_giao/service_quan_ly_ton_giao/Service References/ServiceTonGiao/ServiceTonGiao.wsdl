@@ -104,6 +104,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetTable2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTable2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTable2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PhucHoi">
         <s:complexType>
           <s:sequence>
@@ -156,6 +177,12 @@
   <wsdl:message name="GetTableSoapOut">
     <wsdl:part name="parameters" element="tns:GetTableResponse" />
   </wsdl:message>
+  <wsdl:message name="GetTable2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTable2" />
+  </wsdl:message>
+  <wsdl:message name="GetTable2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTable2Response" />
+  </wsdl:message>
   <wsdl:message name="PhucHoiSoapIn">
     <wsdl:part name="parameters" element="tns:PhucHoi" />
   </wsdl:message>
@@ -186,6 +213,10 @@
     <wsdl:operation name="GetTable">
       <wsdl:input message="tns:GetTableSoapIn" />
       <wsdl:output message="tns:GetTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <wsdl:input message="tns:GetTable2SoapIn" />
+      <wsdl:output message="tns:GetTable2SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PhucHoi">
       <wsdl:input message="tns:PhucHoiSoapIn" />
@@ -241,6 +272,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTable">
       <soap:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <soap:operation soapAction="http://tempuri.org/GetTable2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -307,6 +347,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTable">
       <soap12:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <soap12:operation soapAction="http://tempuri.org/GetTable2" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
