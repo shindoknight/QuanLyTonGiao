@@ -25,13 +25,14 @@
             <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="gioithieu" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="ThemTonGiaoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ThemTonGiaoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ThemTonGiaoResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -67,6 +68,77 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Exec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTable2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTable2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTable2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PhucHoi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PhucHoiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhucHoiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LayDanhSachSoapIn">
@@ -93,6 +165,30 @@
   <wsdl:message name="XoaSoapOut">
     <wsdl:part name="parameters" element="tns:XoaResponse" />
   </wsdl:message>
+  <wsdl:message name="ExecSoapIn">
+    <wsdl:part name="parameters" element="tns:Exec" />
+  </wsdl:message>
+  <wsdl:message name="ExecSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTable2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTable2" />
+  </wsdl:message>
+  <wsdl:message name="GetTable2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTable2Response" />
+  </wsdl:message>
+  <wsdl:message name="PhucHoiSoapIn">
+    <wsdl:part name="parameters" element="tns:PhucHoi" />
+  </wsdl:message>
+  <wsdl:message name="PhucHoiSoapOut">
+    <wsdl:part name="parameters" element="tns:PhucHoiResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceTonGiaoSoap">
     <wsdl:operation name="LayDanhSach">
       <wsdl:input message="tns:LayDanhSachSoapIn" />
@@ -109,6 +205,22 @@
     <wsdl:operation name="Xoa">
       <wsdl:input message="tns:XoaSoapIn" />
       <wsdl:output message="tns:XoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <wsdl:input message="tns:ExecSoapIn" />
+      <wsdl:output message="tns:ExecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <wsdl:input message="tns:GetTableSoapIn" />
+      <wsdl:output message="tns:GetTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <wsdl:input message="tns:GetTable2SoapIn" />
+      <wsdl:output message="tns:GetTable2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <wsdl:input message="tns:PhucHoiSoapIn" />
+      <wsdl:output message="tns:PhucHoiSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceTonGiaoSoap" type="tns:ServiceTonGiaoSoap">
@@ -149,6 +261,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap:operation soapAction="http://tempuri.org/Exec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <soap:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <soap:operation soapAction="http://tempuri.org/GetTable2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <soap:operation soapAction="http://tempuri.org/PhucHoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceTonGiaoSoap12" type="tns:ServiceTonGiaoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -181,6 +329,42 @@
     </wsdl:operation>
     <wsdl:operation name="Xoa">
       <soap12:operation soapAction="http://tempuri.org/Xoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exec">
+      <soap12:operation soapAction="http://tempuri.org/Exec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable">
+      <soap12:operation soapAction="http://tempuri.org/GetTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTable2">
+      <soap12:operation soapAction="http://tempuri.org/GetTable2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhucHoi">
+      <soap12:operation soapAction="http://tempuri.org/PhucHoi" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

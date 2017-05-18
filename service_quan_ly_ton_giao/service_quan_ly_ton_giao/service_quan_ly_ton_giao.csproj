@@ -77,6 +77,21 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="FormThemTonGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemTonGiao.Designer.cs">
+      <DependentUpon>FormThemTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
+>>>>>>> master
     <Compile Include="frmChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +166,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\FilesTransfer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Map\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +181,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Service References\ServiceUser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+>>>>>>> master
     <Compile Include="Service References\tblCoSo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,8 +228,18 @@
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="FormThemTonGiao.resx">
+      <DependentUpon>FormThemTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> master
     <EmbeddedResource Include="frmChinh.resx">
       <DependentUpon>frmChinh.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCoSoTonGiao.resx">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
@@ -267,6 +305,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\FilesTransfer\FilesTransfer.wsdl" />
+    <None Include="Service References\FilesTransfer\service_quan_ly_ton_giao.FilesTransfer.DownloadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FilesTransfer\service_quan_ly_ton_giao.FilesTransfer.UploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+    <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUser\ServiceUser.wsdl" />
+    <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
     <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
@@ -278,6 +330,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FilesTransfer\" />
+    <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
+    <WCFMetadataStorage Include="Service References\ServiceUser\" />
     <WCFMetadataStorage Include="Service References\Map\" />
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
@@ -309,19 +364,16 @@
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\tblUser.disco" />
+    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\configuration91.svcinfo" />
+    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\configuration.svcinfo" />
+    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\tblCoSo\ServiceCoSo.disco" />
@@ -339,15 +391,28 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.disco" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\configuration91.svcinfo" />
+    <None Include="Service References\tblUser\tblUser.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblToChucQuanTri\configuration.svcinfo" />
+    <None Include="Service References\tblUser\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\tblUser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\tblUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\ServiceUser.disco" />
+  </ItemGroup>
+  <ItemGroup>
+<<<<<<< HEAD
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +426,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceTonGiao\Reference.svcmap">
+=======
+    <None Include="Service References\ServiceUser\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\Reference.svcmap" />
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
+>>>>>>> master
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -381,7 +456,53 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Data\" />
+=======
+    <None Include="Resources\edit-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floppy-Small-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesTransfer\FilesTransfer.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesTransfer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesTransfer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FilesTransfer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+>>>>>>> master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

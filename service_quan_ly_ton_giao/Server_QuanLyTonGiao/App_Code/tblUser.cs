@@ -33,7 +33,7 @@ public class tblUser : System.Web.Services.WebService
         }
         catch
         {
-            
+
         }
     }
     public static void CloseConnect()
@@ -41,7 +41,7 @@ public class tblUser : System.Web.Services.WebService
         if (con.State == ConnectionState.Open)
             con.Close();
     }
-   [WebMethod]
+    [WebMethod]
     public DataTable DangNhap(string username, string password)
     {
         OpenConnect();

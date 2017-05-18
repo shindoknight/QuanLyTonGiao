@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Drawing;
 using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
@@ -54,20 +55,45 @@ public class ServiceTonGiao : System.Web.Services.WebService
         return dtdistrict;
     }
     [WebMethod]
-    public int ThemTonGiao(string Ten, string gioithieu, string hinhanh)
+    public string ThemTonGiao(string Ten, string gioithieu, string hinhanh, byte[] f)
     {
+        FilesTransfer trans = new FilesTransfer();
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("insert into tblTonGiao (N'" + Ten + "',N'" + gioithieu + "',N'" + hinhanh + "',0,0)", conn);
-            int n;
-            n = comm.ExecuteNonQuery();
-            CloseConnect();
-            return n;
+            int n=0;
+            if (hinhanh != "")
+            {
+                string upfile = trans.UploadFile(f, hinhanh);
+
+                if (upfile == "OK")
+                {
+                    SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'"+ "/Images/" + hinhanh+"',0,0)", conn);
+                    n = comm.ExecuteNonQuery();
+                }
+
+                else
+                {
+                    CloseConnect();
+                    return "Lỗi up file: \n" + upfile;
+                }
+                CloseConnect();
+            }
+            else
+            {
+                SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'',0,0)", conn);
+                n = comm.ExecuteNonQuery();
+                CloseConnect();
+            }
+            if (n > 0)
+            {
+                return "Thêm Tôn giáo thành công!";
+            }
+            else return "Thêm Tôn giáo không thành công!";
         }
-        catch
+        catch(Exception ex)
         {
-            return 0;
+            return "Thêm Tôn giáo không thành công!";
         }
     }
     [WebMethod]
@@ -76,13 +102,13 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where IDTonGiao=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
             return n;
         }
-        catch
+        catch(Exception e)
         {
             return 0;
         }
@@ -93,7 +119,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblTonGiao set daxoa=1 where id=" + id, conn);
+            SqlCommand comm = new SqlCommand("update tblTonGiao set daxoa=1 where IDTonGiao=" + id, conn);
             int n;
             n = comm.ExecuteNonQuery();
             CloseConnect();
@@ -104,6 +130,91 @@ public class ServiceTonGiao : System.Web.Services.WebService
             return 0;
         }
     }
+    // [WebMethod]
+    //public Bitmap LoadAnh (string path)
+    // {
 
+    //    return Bitmap.FromFile(path);
+    // }
+    [WebMethod]
+    public string Exec(string sql) // hàm thực thi câu lệnh trong sql
+    {
+        try
+        {
+            OpenConnect();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+              CloseConnect();
+              return "Back up thành công!";
+            
+        }
+        catch (Exception ex)
+        {
+            return "Lỗi: " + ex;
+        }
+    }
+    [WebMethod]
+    public DataTable GetTable(string sql, string name) // hàm lấy bảng bất kỳ
+    {
+        DataTable table = new DataTable(name);
+        try
+        {
+            OpenConnect();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(table);
+            CloseConnect();
+            return table;
+
+        }
+        catch (Exception ex)
+        {
+            return table;
+
+        }
+    }
+    [WebMethod]
+    public DataTable GetTable2(string sql) // hàm lấy bảng bất kỳ
+    {
+        DataTable table = new DataTable();
+        try
+        {
+            OpenConnect();
+            SqlCommand comm = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(table);
+            CloseConnect();
+            return table;
+
+        }
+        catch (Exception ex)
+        {
+            return table;
+
+        }
+    }
+    [WebMethod]
+    public string PhucHoi(string path)
+    {
+        try
+        {
+            string strConnect = @"Data Source=.\SQLEXPRESS; Database=Master;Integrated Security=True";
+            conn = new SqlConnection(strConnect);
+            conn.Open();
+
+            string stRestore = "ALTER DATABASE [QUANLYTONGIAO] SET SINGLE_USER WITH ROLLBACK IMMEDIATE ";
+            stRestore += " RESTORE DATABASE [QUANLYTONGIAO] FROM DISK = N'" + path + "'";
+            stRestore += " WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+            stRestore += " ALTER DATABASE [QUANLYTONGIAO] SET MULTI_USER ";
+            SqlCommand cmd = new SqlCommand(stRestore, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return "Phục Hồi thành công!";
+        }
+        catch(Exception e)
+        {
+            return "Phục hồi không thành công! Lỗi: \n"+e.ToString();
+        }
+    }
 
 }
