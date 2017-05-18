@@ -237,6 +237,49 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tblBang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuDon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idXa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuLieuDonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuLieuDonResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiDSTinDoSoapIn">
@@ -317,6 +360,18 @@
   <wsdl:message name="IDTonGiaoSoapOut">
     <wsdl:part name="parameters" element="tns:IDTonGiaoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuDonSoapIn">
+    <wsdl:part name="parameters" element="tns:DuLieuDon" />
+  </wsdl:message>
+  <wsdl:message name="DuLieuDonSoapOut">
+    <wsdl:part name="parameters" element="tns:DuLieuDonResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblTinDoSoap">
     <wsdl:operation name="HienThiDSTinDo">
       <wsdl:input message="tns:HienThiDSTinDoSoapIn" />
@@ -369,6 +424,14 @@
     <wsdl:operation name="IDTonGiao">
       <wsdl:input message="tns:IDTonGiaoSoapIn" />
       <wsdl:output message="tns:IDTonGiaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input message="tns:GetDataSoapIn" />
+      <wsdl:output message="tns:GetDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuDon">
+      <wsdl:input message="tns:DuLieuDonSoapIn" />
+      <wsdl:output message="tns:DuLieuDonSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblTinDoSoap" type="tns:tblTinDoSoap">
@@ -490,6 +553,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuDon">
+      <soap:operation soapAction="http://tempuri.org/DuLieuDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblTinDoSoap12" type="tns:tblTinDoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -603,6 +684,24 @@
     </wsdl:operation>
     <wsdl:operation name="IDTonGiao">
       <soap12:operation soapAction="http://tempuri.org/IDTonGiao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuLieuDon">
+      <soap12:operation soapAction="http://tempuri.org/DuLieuDon" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

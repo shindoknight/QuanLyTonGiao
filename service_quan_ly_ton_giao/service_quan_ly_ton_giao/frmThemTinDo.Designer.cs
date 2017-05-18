@@ -44,12 +44,10 @@
             this.cbDiaChiTinh = new System.Windows.Forms.ComboBox();
             this.cbDanToc = new System.Windows.Forms.ComboBox();
             this.txtPhapDanh = new System.Windows.Forms.TextBox();
-            this.txtHdCaNhan = new System.Windows.Forms.TextBox();
             this.txtMatDoi = new System.Windows.Forms.TextBox();
             this.txtTcNguyHiem = new System.Windows.Forms.TextBox();
             this.txtTcTichCuc = new System.Windows.Forms.TextBox();
             this.txtTaiChinh = new System.Windows.Forms.TextBox();
-            this.txtDhToChuc = new System.Windows.Forms.TextBox();
             this.txtTenTheDanh = new System.Windows.Forms.TextBox();
             this.txtNgayVaoTonGiao = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -83,6 +81,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbbTonGiao = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.txtHdCaNhan = new System.Windows.Forms.RichTextBox();
+            this.txtDhToChuc = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // textBox9
@@ -236,14 +236,6 @@
             this.txtPhapDanh.Size = new System.Drawing.Size(164, 24);
             this.txtPhapDanh.TabIndex = 0;
             // 
-            // txtHdCaNhan
-            // 
-            this.txtHdCaNhan.Location = new System.Drawing.Point(111, 403);
-            this.txtHdCaNhan.Multiline = true;
-            this.txtHdCaNhan.Name = "txtHdCaNhan";
-            this.txtHdCaNhan.Size = new System.Drawing.Size(164, 74);
-            this.txtHdCaNhan.TabIndex = 83;
-            // 
             // txtMatDoi
             // 
             this.txtMatDoi.Location = new System.Drawing.Point(111, 273);
@@ -275,14 +267,6 @@
             this.txtTaiChinh.Name = "txtTaiChinh";
             this.txtTaiChinh.Size = new System.Drawing.Size(159, 24);
             this.txtTaiChinh.TabIndex = 79;
-            // 
-            // txtDhToChuc
-            // 
-            this.txtDhToChuc.Location = new System.Drawing.Point(650, 408);
-            this.txtDhToChuc.Multiline = true;
-            this.txtDhToChuc.Name = "txtDhToChuc";
-            this.txtDhToChuc.Size = new System.Drawing.Size(159, 81);
-            this.txtDhToChuc.TabIndex = 78;
             // 
             // txtTenTheDanh
             // 
@@ -618,12 +602,30 @@
             this.label21.TabIndex = 119;
             this.label21.Text = "Tôn Giáo";
             // 
+            // txtHdCaNhan
+            // 
+            this.txtHdCaNhan.Location = new System.Drawing.Point(114, 399);
+            this.txtHdCaNhan.Name = "txtHdCaNhan";
+            this.txtHdCaNhan.Size = new System.Drawing.Size(162, 72);
+            this.txtHdCaNhan.TabIndex = 121;
+            this.txtHdCaNhan.Text = "";
+            // 
+            // txtDhToChuc
+            // 
+            this.txtDhToChuc.Location = new System.Drawing.Point(647, 399);
+            this.txtDhToChuc.Name = "txtDhToChuc";
+            this.txtDhToChuc.Size = new System.Drawing.Size(162, 72);
+            this.txtDhToChuc.TabIndex = 122;
+            this.txtDhToChuc.Text = "";
+            // 
             // frmThemTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(846, 526);
+            this.Controls.Add(this.txtDhToChuc);
+            this.Controls.Add(this.txtHdCaNhan);
             this.Controls.Add(this.cbbTonGiao);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txtHoDemTheDanh);
@@ -653,12 +655,10 @@
             this.Controls.Add(this.cbDiaChiTinh);
             this.Controls.Add(this.cbDanToc);
             this.Controls.Add(this.txtPhapDanh);
-            this.Controls.Add(this.txtHdCaNhan);
             this.Controls.Add(this.txtMatDoi);
             this.Controls.Add(this.txtTcNguyHiem);
             this.Controls.Add(this.txtTcTichCuc);
             this.Controls.Add(this.txtTaiChinh);
-            this.Controls.Add(this.txtDhToChuc);
             this.Controls.Add(this.txtTenTheDanh);
             this.Controls.Add(this.txtNgayVaoTonGiao);
             this.Controls.Add(this.label20);
@@ -704,12 +704,10 @@
         private System.Windows.Forms.ComboBox cbDiaChiTinh;
         private System.Windows.Forms.ComboBox cbDanToc;
         private System.Windows.Forms.TextBox txtPhapDanh;
-        private System.Windows.Forms.TextBox txtHdCaNhan;
         private System.Windows.Forms.TextBox txtMatDoi;
         private System.Windows.Forms.TextBox txtTcNguyHiem;
         private System.Windows.Forms.TextBox txtTcTichCuc;
         private System.Windows.Forms.TextBox txtTaiChinh;
-        private System.Windows.Forms.TextBox txtDhToChuc;
         private System.Windows.Forms.TextBox txtTenTheDanh;
         private System.Windows.Forms.Label txtNgayVaoTonGiao;
         private System.Windows.Forms.Label label20;
@@ -743,5 +741,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbTonGiao;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RichTextBox txtHdCaNhan;
+        private System.Windows.Forms.RichTextBox txtDhToChuc;
     }
 }

@@ -150,6 +150,20 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDTonGiao", ReplyAction="*")]
         System.Threading.Tasks.Task<int> IDTonGiaoAsync(string tenTonGiao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetData(string tblBang, string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetData", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetDataAsync(string tblBang, string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DuLieuDon", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable DuLieuDon(int idXa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DuLieuDon", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> DuLieuDonAsync(int idXa);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -325,6 +339,22 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<int> IDTonGiaoAsync(string tenTonGiao) {
             return base.Channel.IDTonGiaoAsync(tenTonGiao);
+        }
+        
+        public System.Data.DataTable GetData(string tblBang, string sqlString) {
+            return base.Channel.GetData(tblBang, sqlString);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetDataAsync(string tblBang, string sqlString) {
+            return base.Channel.GetDataAsync(tblBang, sqlString);
+        }
+        
+        public System.Data.DataTable DuLieuDon(int idXa) {
+            return base.Channel.DuLieuDon(idXa);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> DuLieuDonAsync(int idXa) {
+            return base.Channel.DuLieuDonAsync(idXa);
         }
     }
 }

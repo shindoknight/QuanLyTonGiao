@@ -55,5 +55,10 @@ namespace service_quan_ly_ton_giao
         {
            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gridCTinDo.DataSource = tindo.HienThiDSTinDo();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.gridVTinDo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PhapDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoDemTheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QueQuan = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +44,7 @@
             this.HDToChuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.HoDemTheDanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
@@ -51,13 +52,12 @@
             // 
             // gridCTinDo
             // 
-            this.gridCTinDo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCTinDo.Location = new System.Drawing.Point(0, 0);
             this.gridCTinDo.MainView = this.gridVTinDo;
             this.gridCTinDo.Name = "gridCTinDo";
             this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa});
-            this.gridCTinDo.Size = new System.Drawing.Size(869, 329);
+            this.gridCTinDo.Size = new System.Drawing.Size(752, 329);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
@@ -105,6 +105,14 @@
             this.TheDanh.Visible = true;
             this.TheDanh.VisibleIndex = 2;
             this.TheDanh.Width = 70;
+            // 
+            // HoDemTheDanh
+            // 
+            this.HoDemTheDanh.Caption = "Họ Đệm";
+            this.HoDemTheDanh.FieldName = "HoDemTheDanh";
+            this.HoDemTheDanh.Name = "HoDemTheDanh";
+            this.HoDemTheDanh.Visible = true;
+            this.HoDemTheDanh.VisibleIndex = 1;
             // 
             // NgaySinh
             // 
@@ -198,20 +206,25 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // HoDemTheDanh
+            // button1
             // 
-            this.HoDemTheDanh.Caption = "Họ Đệm";
-            this.HoDemTheDanh.FieldName = "HoDemTheDanh";
-            this.HoDemTheDanh.Name = "HoDemTheDanh";
-            this.HoDemTheDanh.Visible = true;
-            this.HoDemTheDanh.VisibleIndex = 1;
+            this.button1.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon;
+            this.button1.Location = new System.Drawing.Point(775, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 59);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmDSTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 329);
+            this.ClientSize = new System.Drawing.Size(868, 329);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gridCTinDo);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
             this.Load += new System.EventHandler(this.frmDSTinDo_Load);
@@ -240,5 +253,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn HoDemTheDanh;
+        private System.Windows.Forms.Button button1;
     }
 }
