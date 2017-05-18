@@ -52,8 +52,15 @@ namespace service_quan_ly_ton_giao
             DataTable DataTinDo = new DataTable();
             DataTinDo = tindo.OneRecord("tblTinDo", "Select * from tblTinDo where IDTinDo = N'" + id + "'");
 
-            int idXa = Int32.Parse(DataTinDo.Rows[0]["QueQuan"].ToString());
-
+            string idXa = DataTinDo.Rows[0]["QueQuan"].ToString();
+            if(idXa!="")
+            {
+                DataTable xahuyentinh = tindo.LayDiaChi(idXa);
+                cbQueQuanXa.Text = xahuyentinh.Rows[0]["TenXa"].ToString();
+                cbQueQuanHuyen.Text = xahuyentinh.Rows[0]["TenHuyen"].ToString();
+                cbQueQuanTinh.Text = xahuyentinh.Rows[0]["TenTinh"].ToString();
+            }
+            
 
 
             string gioiTinh = DataTinDo.Rows[0]["GioiTinh"].ToString();
@@ -77,11 +84,7 @@ namespace service_quan_ly_ton_giao
             cbDanToc.Text = DataTinDo.Rows[0]["DanToc"].ToString();
 
 
-            string queQuan = DataTinDo.Rows[0]["QueQuan"].ToString();
-            DataTable xahuyentinh = tindo.LayDiaChi(queQuan);
-            cbQueQuanXa.Text = xahuyentinh.Rows[0]["TenXa"].ToString();
-            cbQueQuanHuyen.Text = xahuyentinh.Rows[0]["TenHuyen"].ToString();
-            cbQueQuanTinh.Text = xahuyentinh.Rows[0]["TenTinh"].ToString();
+            
 
             /*
             string diaChi = IdDiaChi();
