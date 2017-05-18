@@ -92,7 +92,7 @@
     <Compile Include="frmChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChinh.Designer.cs">
+    <Compile Include="frmChinh.designer.cs">
       <DependentUpon>frmChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChiTietCoSoTonGiao.cs">
@@ -130,6 +130,12 @@
     </Compile>
     <Compile Include="frmDSToChucQuanTri.Designer.cs">
       <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapChinh.Designer.cs">
+      <DependentUpon>frmMapChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMapCoSo.cs">
       <SubType>Form</SubType>
@@ -224,7 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChinh.resx">
       <DependentUpon>frmChinh.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietCoSoTonGiao.resx">
       <DependentUpon>frmChiTietCoSoTonGiao.cs</DependentUpon>
@@ -243,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSToChucQuanTri.resx">
       <DependentUpon>frmDSToChucQuanTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapChinh.resx">
+      <DependentUpon>frmMapChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMapCoSo.resx">
       <DependentUpon>frmMapCoSo.cs</DependentUpon>
@@ -304,6 +312,8 @@
     <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+    <None Include="Service References\tblCoSo\WebService.wsdl" />
     <None Include="Service References\tblUser\tblUser.wsdl" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +324,7 @@
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
     <WCFMetadataStorage Include="Service References\ServiceUser\" />
     <WCFMetadataStorage Include="Service References\Map\" />
+    <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
     <WCFMetadataStorage Include="Service References\tblToChucQuanTri\" />
     <WCFMetadataStorage Include="Service References\tblUser\" />
@@ -391,6 +402,19 @@
     <None Include="Service References\ServiceUser\ServiceUser.disco" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\Reference.svcmap" />
     <None Include="Service References\ServiceUser\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>

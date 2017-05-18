@@ -92,6 +92,7 @@
             // 
             this.vectorItemsLayer1.Data = this.mapItemStorage2;
             this.vectorItemsLayer1.Name = "VectorLayer";
+            this.vectorItemsLayer1.ToolTipPattern = "<b>%A%</b>\r\nPhật giáo: %V0%\r\nCông giáo: %V1%\r\nTổng tín đồ: %V%\"";
             // 
             // splitContainer1
             // 

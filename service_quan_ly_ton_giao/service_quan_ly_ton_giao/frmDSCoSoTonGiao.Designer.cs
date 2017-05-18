@@ -446,6 +446,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // TenXa

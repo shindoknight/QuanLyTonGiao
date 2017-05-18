@@ -204,5 +204,10 @@ namespace service_quan_ly_ton_giao
             frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
             frm.Show();
         }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+
+        }
     }
 }

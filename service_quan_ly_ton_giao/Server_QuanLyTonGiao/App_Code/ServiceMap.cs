@@ -15,7 +15,7 @@ using System.Data.SqlClient;//dùng để sử dụng các câu lệnh kết n�
 // [System.Web.Script.Services.ScriptService]
 public class ServiceMap : System.Web.Services.WebService
 {
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
 
     public ServiceMap()
     {
@@ -50,6 +50,20 @@ public class ServiceMap : System.Web.Services.WebService
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
         DataTable dtdistrict = new DataTable("tblTinDo", "c");
+        da.Fill(dtdistrict);
+
+        return dtdistrict;
+    }
+    [WebMethod]
+
+    public DataTable HienThiTinDoTheoTonGiao( string dieukien)
+    {
+        SqlCommand comm = new SqlCommand(@"select count(IDTinDo) as SLTinDo,a.TenTonGiao from (select TenTonGiao,tblCoSo.DiaChi,tblCoSo.IDCoSo from tblCoSo,tblTonGiao,tblToChucQuanTri where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+            and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao) a,tblTinDo where tblTinDo.IDCoSo=a.IDCoSo
+            group by a.TenTonGiao" + dieukien, conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable("tblTinDo", "a");
         da.Fill(dtdistrict);
 
         return dtdistrict;
