@@ -29,6 +29,13 @@ namespace service_quan_ly_ton_giao.Map {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HienThiSLTinDoTheoTinh", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> HienThiSLTinDoTheoTinhAsync(string TenTonGiao, string dieukien);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HienThiTinDoTheoTonGiao", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable HienThiTinDoTheoTonGiao(string dieukien);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HienThiTinDoTheoTonGiao", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> HienThiTinDoTheoTonGiaoAsync(string dieukien);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -72,6 +79,14 @@ namespace service_quan_ly_ton_giao.Map {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> HienThiSLTinDoTheoTinhAsync(string TenTonGiao, string dieukien) {
             return base.Channel.HienThiSLTinDoTheoTinhAsync(TenTonGiao, dieukien);
+        }
+        
+        public System.Data.DataTable HienThiTinDoTheoTonGiao(string dieukien) {
+            return base.Channel.HienThiTinDoTheoTonGiao(dieukien);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> HienThiTinDoTheoTonGiaoAsync(string dieukien) {
+            return base.Channel.HienThiTinDoTheoTonGiaoAsync(dieukien);
         }
     }
 }

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraMap;
 using System.Xml;
 using System.Xml.Linq;
+//using DevExpress.XtraCharts;
 
 namespace service_quan_ly_ton_giao
 {
@@ -254,10 +255,32 @@ namespace service_quan_ly_ton_giao
             map.Zoom(5);
             
         }
+        void HienThiThongKetonGiao()
+        {
+            /*DevExpress.XtraCharts.Series series = new DevExpress.XtraCharts.Series("Series1", DevExpress.XtraCharts.ViewType.Bar);
+            series.DataSource = wf1.HienThiTinDoTheoTonGiao("");
+            //series.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series.ArgumentDataMember = "TenTonGiao";
+            series.ValueScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            series.ValueDataMembers.AddRange(new string[] { "SLTinDo" });
+            ((DevExpress.XtraCharts.SideBySideBarSeriesView)series.View).ColorEach = true;
+            //((DevExpress.XtraCharts.XYDiagram)chart.Diagram).AxisY.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            chart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;*/
+            DataTable ds= wf1.HienThiTinDoTheoTonGiao("");
+            chart.DataSource =ds;
+            
+            chart.Series[0].ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            chart.Series[0].ArgumentDataMember = "TenTonGiao";
+            chart.Series[0].ValueDataMembers[0] = "SLTinDo";
+                
+         
+            
+        }
         private void frmMapChinh_Load(object sender, EventArgs e)
         {
             HienThiTinDo();
             HienThiCoSo();
+            HienThiThongKetonGiao();
         }
 
         private void btnTatCa_Click(object sender, EventArgs e)

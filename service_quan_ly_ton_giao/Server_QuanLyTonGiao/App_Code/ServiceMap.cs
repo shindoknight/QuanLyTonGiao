@@ -54,4 +54,18 @@ public class ServiceMap : System.Web.Services.WebService
 
         return dtdistrict;
     }
+    [WebMethod]
+
+    public DataTable HienThiTinDoTheoTonGiao( string dieukien)
+    {
+        SqlCommand comm = new SqlCommand(@"select count(IDTinDo) as SLTinDo,a.TenTonGiao from (select TenTonGiao,tblCoSo.DiaChi,tblCoSo.IDCoSo from tblCoSo,tblTonGiao,tblToChucQuanTri where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+            and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao) a,tblTinDo where tblTinDo.IDCoSo=a.IDCoSo
+            group by a.TenTonGiao" + dieukien, conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable("tblTinDo", "a");
+        da.Fill(dtdistrict);
+
+        return dtdistrict;
+    }
 }

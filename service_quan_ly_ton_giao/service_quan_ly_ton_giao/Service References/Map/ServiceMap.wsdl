@@ -46,6 +46,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="HienThiTinDoTheoTonGiao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dieukien" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HienThiTinDoTheoTonGiaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HienThiTinDoTheoTonGiaoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiSLTinDoTheoHuyenSoapIn">
@@ -60,6 +81,12 @@
   <wsdl:message name="HienThiSLTinDoTheoTinhSoapOut">
     <wsdl:part name="parameters" element="tns:HienThiSLTinDoTheoTinhResponse" />
   </wsdl:message>
+  <wsdl:message name="HienThiTinDoTheoTonGiaoSoapIn">
+    <wsdl:part name="parameters" element="tns:HienThiTinDoTheoTonGiao" />
+  </wsdl:message>
+  <wsdl:message name="HienThiTinDoTheoTonGiaoSoapOut">
+    <wsdl:part name="parameters" element="tns:HienThiTinDoTheoTonGiaoResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceMapSoap">
     <wsdl:operation name="HienThiSLTinDoTheoHuyen">
       <wsdl:input message="tns:HienThiSLTinDoTheoHuyenSoapIn" />
@@ -68,6 +95,10 @@
     <wsdl:operation name="HienThiSLTinDoTheoTinh">
       <wsdl:input message="tns:HienThiSLTinDoTheoTinhSoapIn" />
       <wsdl:output message="tns:HienThiSLTinDoTheoTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HienThiTinDoTheoTonGiao">
+      <wsdl:input message="tns:HienThiTinDoTheoTonGiaoSoapIn" />
+      <wsdl:output message="tns:HienThiTinDoTheoTonGiaoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceMapSoap" type="tns:ServiceMapSoap">
@@ -90,6 +121,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HienThiTinDoTheoTonGiao">
+      <soap:operation soapAction="http://tempuri.org/HienThiTinDoTheoTonGiao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceMapSoap12" type="tns:ServiceMapSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -104,6 +144,15 @@
     </wsdl:operation>
     <wsdl:operation name="HienThiSLTinDoTheoTinh">
       <soap12:operation soapAction="http://tempuri.org/HienThiSLTinDoTheoTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HienThiTinDoTheoTonGiao">
+      <soap12:operation soapAction="http://tempuri.org/HienThiTinDoTheoTonGiao" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
