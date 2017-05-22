@@ -20,13 +20,13 @@ namespace service_quan_ly_ton_giao
 
         private void xFrmTrangChu_Load(object sender, EventArgs e)
         {
-
+            /*
             frmMapChinh f = new frmMapChinh();
             f.FormBorderStyle = FormBorderStyle.None;
             f.TopLevel = false;
             f.Parent = xtraTabPage1;
             f.Dock = DockStyle.Fill;
-            f.Show();
+            f.Show();*/
         }
         /// <summary>
         /// Kiểm tra tabpage có tồn tại hay không.

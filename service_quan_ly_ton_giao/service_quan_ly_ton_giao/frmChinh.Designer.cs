@@ -72,8 +72,8 @@
             this.ribbonPageChucNang = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonSaoLuu_PhucHoi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonNhap_Xuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -447,8 +447,8 @@
             this.ribbonPageChucNang.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
             this.ribbonPageGroup9,
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup11});
+            this.ribbonSaoLuu_PhucHoi,
+            this.ribbonNhap_Xuat});
             this.ribbonPageChucNang.ImageIndex = 2;
             this.ribbonPageChucNang.Name = "ribbonPageChucNang";
             this.ribbonPageChucNang.Text = "Chức năng";
@@ -467,23 +467,23 @@
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Chức năng chung";
             // 
-            // ribbonPageGroup3
+            // ribbonSaoLuu_PhucHoi
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnSaoLuu);
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbtnPhucHoi);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Sao Lưu - Phục Hồi";
+            this.ribbonSaoLuu_PhucHoi.ItemLinks.Add(this.bbtnSaoLuu);
+            this.ribbonSaoLuu_PhucHoi.ItemLinks.Add(this.bbtnPhucHoi);
+            this.ribbonSaoLuu_PhucHoi.Name = "ribbonSaoLuu_PhucHoi";
+            this.ribbonSaoLuu_PhucHoi.Text = "Sao Lưu - Phục Hồi";
             // 
-            // ribbonPageGroup11
+            // ribbonNhap_Xuat
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.bbtnNhap);
-            this.ribbonPageGroup11.ItemLinks.Add(this.btnXuat);
-            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "Nhập - Xuất Dữ Liệu";
+            this.ribbonNhap_Xuat.ItemLinks.Add(this.bbtnNhap);
+            this.ribbonNhap_Xuat.ItemLinks.Add(this.btnXuat);
+            this.ribbonNhap_Xuat.Name = "ribbonNhap_Xuat";
+            this.ribbonNhap_Xuat.Text = "Nhập - Xuất Dữ Liệu";
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 748);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 744);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1089, 31);
@@ -497,7 +497,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1089, 602);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1089, 598);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -507,7 +507,7 @@
             // 
             this.xtraTabPage1.ImageIndex = 0;
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1083, 571);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1083, 567);
             this.xtraTabPage1.Text = "Trang chủ";
             // 
             // labelName
@@ -525,7 +525,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 779);
+            this.ClientSize = new System.Drawing.Size(1089, 775);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -593,8 +593,8 @@
         private DevExpress.XtraBars.BarButtonItem bbtnSuaTinDo;
         private DevExpress.XtraBars.BarButtonItem bbtnNhap;
         private DevExpress.XtraBars.BarButtonItem btnXuat;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonSaoLuu_PhucHoi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonNhap_Xuat;
         private DevExpress.XtraBars.BarButtonItem bbtnDSToChuc;
         private DevExpress.XtraBars.BarButtonItem btnThemToChuc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;

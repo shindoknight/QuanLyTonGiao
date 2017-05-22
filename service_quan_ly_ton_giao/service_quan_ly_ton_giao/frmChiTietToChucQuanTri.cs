@@ -30,7 +30,16 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
-
+        public frmChiTietToChucQuanTri(int quyen)
+        {
+            InitializeComponent();
+            if(quyen==3)
+            {
+                btnSua.Visible = false;
+                btnXoa.Visible=false;
+                btnLuu.Visible = false;
+            }
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

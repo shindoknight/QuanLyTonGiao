@@ -33,7 +33,17 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
-
+        public frmChiTietCoSoTonGiao(int quyen)
+        {
+            InitializeComponent();
+            if(quyen==3)
+            {
+                btnLuu.Visible = false;
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+                
+            }
+        }
         private void label10_Click(object sender, EventArgs e)
         {
 

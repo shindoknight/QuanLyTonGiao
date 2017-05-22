@@ -16,9 +16,19 @@ namespace service_quan_ly_ton_giao
     {
         tblCoSo.ServiceCoSoSoapClient wf = new tblCoSo.ServiceCoSoSoapClient();
         tblToChucQuanTri.tblToChucQuanTriSoapClient wf1 = new tblToChucQuanTri.tblToChucQuanTriSoapClient();
+        int _quyen;
         public frmDSCoSoTonGiao()
         {
             InitializeComponent();
+        }
+        public frmDSCoSoTonGiao(int quyen)
+        {
+            InitializeComponent();
+            _quyen = quyen;
+            if(quyen==3)
+            {
+                gridColumn1.Visible = false;
+            }
         }
         void HienThi(string where)
         {
@@ -143,7 +153,7 @@ namespace service_quan_ly_ton_giao
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
             DataRow row = gridView1.GetFocusedDataRow();
-            frmChiTietCoSoTonGiao frm = new frmChiTietCoSoTonGiao();
+            frmChiTietCoSoTonGiao frm = new frmChiTietCoSoTonGiao(_quyen);
             frm.txtIDCoSo.Text = row["IDCoSo"].ToString();
             frm.Show();
         }
