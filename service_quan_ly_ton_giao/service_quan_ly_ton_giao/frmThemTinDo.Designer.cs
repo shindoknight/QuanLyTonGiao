@@ -397,7 +397,7 @@
             // 
             this.txtSucKhoe.AutoSize = true;
             this.txtSucKhoe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSucKhoe.Location = new System.Drawing.Point(528, 138);
+            this.txtSucKhoe.Location = new System.Drawing.Point(528, 133);
             this.txtSucKhoe.Name = "txtSucKhoe";
             this.txtSucKhoe.Size = new System.Drawing.Size(62, 13);
             this.txtSucKhoe.TabIndex = 63;

@@ -118,7 +118,9 @@ namespace service_quan_ly_ton_giao
         private void frmSuaTinDo_Load(object sender, EventArgs e)
         {
             HienThi();
+
             int id = BienToanCuc.IdTinDo;
+            
 
             DataTable DataTinDo = new DataTable();
             DataTinDo = tindo.OneRecord("tblTinDo", "Select * from tblTinDo where IDTinDo = N'" + id + "'");
