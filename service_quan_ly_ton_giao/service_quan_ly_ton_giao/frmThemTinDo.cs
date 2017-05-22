@@ -21,6 +21,18 @@ namespace service_quan_ly_ton_giao
 
         void HienThi()
         {
+
+            txtPhapDanh.Clear();
+            txtHoDemTheDanh.Clear();
+            txtTenTheDanh.Clear();
+            txtMatDao.Clear();
+            txtMatDoi.Clear();
+            textBox9.Clear();
+            txtTaiChinh.Clear();
+            txtHdCaNhan.Clear();
+            txtDhToChuc.Clear();
+            txtTcNguyHiem.Clear();
+            txtTcTichCuc.Clear();
             
             cbQueQuanTinh.DataSource= tindo.DuLieuTinh();
             cbQueQuanTinh.DisplayMember= "TenTinh";
@@ -113,21 +125,22 @@ namespace service_quan_ly_ton_giao
             string hdToChuc = txtDhToChuc.Text;
 
             string ChucSac = cbbChucSac.Text;
-            int idChusSac = tindo.IdChucSac(ChucSac); if(idChusSac==0) idChusSac=10;
+            int idChusSac = tindo.IdChucSac(ChucSac);
 
             string CoSo = cbbCoSo.Text;
-            int idCoSo = tindo.IdCoSo(CoSo); if (idCoSo == 0) idCoSo = 51;
+            int idCoSo = tindo.IdCoSo(CoSo); 
 
             int daXoa = 0;
             DateTime ngayVaoTonGiao = dtNgayVaoTonGiao.Value;
 
             string ChucVu = cbbChucVu.Text;
-            int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
+            int idChucVu = tindo.IdChucVu(ChucVu); 
 
             int them = tindo.ThemTinDo(phapDanh, hodemTheDanh, tenTheDanh, NgaySinh,gioiTinh , danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChusSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
             if(them==1)
             {
                 MessageBox.Show("Ok");
+                HienThi();
             }
             else { MessageBox.Show("Fail!"); }
         }
@@ -204,6 +217,11 @@ namespace service_quan_ly_ton_giao
                 cbbChucSac.DataSource = tindo.OneRecord("tblChucSac", "select * from tblChucSac where IDTonGiao = N'" + id + "'");
                 cbbChucSac.DisplayMember = "TenChucSac";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HienThi();
         }
     }
 }

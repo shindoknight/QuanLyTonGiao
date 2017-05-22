@@ -175,7 +175,7 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateTinDo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int UpdateTinDo(
-                    string idTinDo, 
+                    int idTinDo, 
                     string phapDanh, 
                     string hodemTheDanh, 
                     string tenTheDanh, 
@@ -201,7 +201,7 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateTinDo", ReplyAction="*")]
         System.Threading.Tasks.Task<int> UpdateTinDoAsync(
-                    string idTinDo, 
+                    int idTinDo, 
                     string phapDanh, 
                     string hodemTheDanh, 
                     string tenTheDanh, 
@@ -426,7 +426,7 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         }
         
         public int UpdateTinDo(
-                    string idTinDo, 
+                    int idTinDo, 
                     string phapDanh, 
                     string hodemTheDanh, 
                     string tenTheDanh, 
@@ -453,7 +453,7 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         }
         
         public System.Threading.Tasks.Task<int> UpdateTinDoAsync(
-                    string idTinDo, 
+                    int idTinDo, 
                     string phapDanh, 
                     string hodemTheDanh, 
                     string tenTheDanh, 

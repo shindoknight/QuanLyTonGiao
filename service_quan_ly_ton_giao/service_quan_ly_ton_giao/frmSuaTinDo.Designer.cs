@@ -106,10 +106,11 @@
             // cbbTonGiao
             // 
             this.cbbTonGiao.FormattingEnabled = true;
-            this.cbbTonGiao.Location = new System.Drawing.Point(126, 273);
+            this.cbbTonGiao.Location = new System.Drawing.Point(125, 273);
             this.cbbTonGiao.Name = "cbbTonGiao";
             this.cbbTonGiao.Size = new System.Drawing.Size(165, 21);
             this.cbbTonGiao.TabIndex = 212;
+            this.cbbTonGiao.SelectedIndexChanged += new System.EventHandler(this.cbbTonGiao_SelectedIndexChanged);
             this.cbbTonGiao.TextChanged += new System.EventHandler(this.cbbTonGiao_TextChanged);
             // 
             // label21
@@ -219,7 +220,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(722, 119);
+            this.textBox9.Location = new System.Drawing.Point(724, 127);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(159, 24);

@@ -44,10 +44,62 @@ namespace service_quan_ly_ton_giao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            int id = BienToanCuc.IdTinDo;
+            string gioiTinh = null;
+            if (radioButton1.Checked == true)
+            {
+                gioiTinh = radioButton1.Text;
+            }
+            else
+                if (radioButton2.Checked == true)
+            {
+                gioiTinh = radioButton2.Text;
+            }
+            else if (radioButton3.Checked == true)
+            {
+                gioiTinh = radioButton1.Text;
+            }
+
+            string phapDanh = txtPhapDanh.Text;
+            string tenTheDanh = txtTenTheDanh.Text;
+            string hodemTheDanh = txtHoDemTheDanh.Text;
+            DateTime NgaySinh = txtNgaySinh.Value;
 
 
+            string danToc = cbDanToc.Text;
+            string queQuan = IdQueQuan();
+            string diaChi = IdDiaChi();
+            string taiChinh = txtTaiChinh.Text;
+            string sucKhoe = txtSucKhoe.Text;
+            string tcTichCuc = txtTcTichCuc.Text;
+            string tcNguyHiem = txtTcNguyHiem.Text;
+            string hinhAnh = "";
+            string matDoi = txtMatDoi.Text;
+            string matDao = txtMatDao.Text;
+            string hdCaNhan = txtHdCaNhan.Text;
+            string hdToChuc = txtDhToChuc.Text;
 
+            string ChucSac = cbbChucSac.Text;
+            int idChusSac = tindo.IdChucSac(ChucSac); 
+
+            string CoSo = cbbCoSo.Text;
+            int idCoSo = tindo.IdCoSo(CoSo);
+
+            string chucvu = cbbChucVu.Text;
+            int idChucvu = tindo.IdChucVu(chucvu);
+
+            int daXoa = 0;
+            DateTime ngayVaoTonGiao = dtNgayVaoTonGiao.Value;
+
+
+            int check = tindo.UpdateTinDo(id ,phapDanh, hodemTheDanh, tenTheDanh, NgaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChusSac, idCoSo, daXoa, ngayVaoTonGiao, idChucvu);
+
+            if (check>0)
+            {
+                MessageBox.Show("Ok");
+                this.Close();
+            }
+            else { MessageBox.Show("Fail!"); }
         }
         public void HienThi()
         {
@@ -125,7 +177,7 @@ namespace service_quan_ly_ton_giao
 
             txtTaiChinh.Text = DataTinDo.Rows[0]["TaiChinh"].ToString();
 
-            txtSucKhoe.Text = DataTinDo.Rows[0]["SucKhoe"].ToString();
+            textBox9.Text = DataTinDo.Rows[0]["SucKhoe"].ToString();
              txtTcTichCuc.Text = DataTinDo.Rows[0]["TCTichCuc"].ToString();
             txtTcNguyHiem.Text = DataTinDo.Rows[0]["TCNguyHiem"].ToString();
             string hinhAnh = "";
@@ -250,6 +302,11 @@ namespace service_quan_ly_ton_giao
                 cbbChucVu.DataSource = tindo.OneRecord("tblChucVu", stringTenChucVu);
                 cbbChucVu.DisplayMember = "TenChucVu";
             }
+
+        }
+
+        private void cbbTonGiao_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

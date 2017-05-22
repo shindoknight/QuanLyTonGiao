@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridCTinDo = new DevExpress.XtraGrid.GridControl();
             this.gridVTinDo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PhapDanh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,21 +44,27 @@
             this.HDCaNhan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HDToChuc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridCTinDo
             // 
-            this.gridCTinDo.Location = new System.Drawing.Point(0, 0);
+            this.gridCTinDo.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode2.RelationName = "Level1";
+            this.gridCTinDo.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gridCTinDo.Location = new System.Drawing.Point(3, 17);
             this.gridCTinDo.MainView = this.gridVTinDo;
             this.gridCTinDo.Name = "gridCTinDo";
-            this.gridCTinDo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnXoa});
-            this.gridCTinDo.Size = new System.Drawing.Size(752, 329);
+            this.gridCTinDo.Size = new System.Drawing.Size(954, 489);
             this.gridCTinDo.TabIndex = 0;
             this.gridCTinDo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridVTinDo});
@@ -198,18 +205,10 @@
             this.NgayVaoTonGiao.Visible = true;
             this.NgayVaoTonGiao.VisibleIndex = 12;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.AutoHeight = false;
-            this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // button1
             // 
             this.button1.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon;
-            this.button1.Location = new System.Drawing.Point(775, 49);
+            this.button1.Location = new System.Drawing.Point(113, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 59);
             this.button1.TabIndex = 1;
@@ -217,20 +216,62 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(960, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(289, 509);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thuộc Tính";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.gridCTinDo);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(960, 509);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh Sách Tín Đồ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(42, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 21);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tìm Kiếm";
+            // 
             // frmDSTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 329);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.gridCTinDo);
+            this.ClientSize = new System.Drawing.Size(1249, 509);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
             this.Name = "frmDSTinDo";
             this.Text = "frmDSTinDo";
             this.Load += new System.EventHandler(this.frmDSTinDo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -251,8 +292,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn HDCaNhan;
         private DevExpress.XtraGrid.Columns.GridColumn HDToChuc;
         private DevExpress.XtraGrid.Columns.GridColumn NgayVaoTonGiao;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn HoDemTheDanh;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
