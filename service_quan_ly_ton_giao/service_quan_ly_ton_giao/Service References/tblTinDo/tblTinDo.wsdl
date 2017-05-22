@@ -258,6 +258,41 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="LayGiaTriDon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayGiaTriDonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayGiaTriDonResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayMotBang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sqlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LayMotBangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayMotBangResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiDSTinDoSoapIn">
@@ -344,6 +379,18 @@
   <wsdl:message name="LayDiaChiSoapOut">
     <wsdl:part name="parameters" element="tns:LayDiaChiResponse" />
   </wsdl:message>
+  <wsdl:message name="LayGiaTriDonSoapIn">
+    <wsdl:part name="parameters" element="tns:LayGiaTriDon" />
+  </wsdl:message>
+  <wsdl:message name="LayGiaTriDonSoapOut">
+    <wsdl:part name="parameters" element="tns:LayGiaTriDonResponse" />
+  </wsdl:message>
+  <wsdl:message name="LayMotBangSoapIn">
+    <wsdl:part name="parameters" element="tns:LayMotBang" />
+  </wsdl:message>
+  <wsdl:message name="LayMotBangSoapOut">
+    <wsdl:part name="parameters" element="tns:LayMotBangResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblTinDoSoap">
     <wsdl:operation name="HienThiDSTinDo">
       <wsdl:input message="tns:HienThiDSTinDoSoapIn" />
@@ -400,6 +447,14 @@
     <wsdl:operation name="LayDiaChi">
       <wsdl:input message="tns:LayDiaChiSoapIn" />
       <wsdl:output message="tns:LayDiaChiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayGiaTriDon">
+      <wsdl:input message="tns:LayGiaTriDonSoapIn" />
+      <wsdl:output message="tns:LayGiaTriDonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LayMotBang">
+      <wsdl:input message="tns:LayMotBangSoapIn" />
+      <wsdl:output message="tns:LayMotBangSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblTinDoSoap" type="tns:tblTinDoSoap">
@@ -530,6 +585,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="LayGiaTriDon">
+      <soap:operation soapAction="http://tempuri.org/LayGiaTriDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMotBang">
+      <soap:operation soapAction="http://tempuri.org/LayMotBang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblTinDoSoap12" type="tns:tblTinDoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -652,6 +725,24 @@
     </wsdl:operation>
     <wsdl:operation name="LayDiaChi">
       <soap12:operation soapAction="http://tempuri.org/LayDiaChi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayGiaTriDon">
+      <soap12:operation soapAction="http://tempuri.org/LayGiaTriDon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LayMotBang">
+      <soap12:operation soapAction="http://tempuri.org/LayMotBang" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -157,6 +157,20 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayDiaChi", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> LayDiaChiAsync(string idxa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayGiaTriDon", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        object LayGiaTriDon(string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayGiaTriDon", ReplyAction="*")]
+        System.Threading.Tasks.Task<object> LayGiaTriDonAsync(string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayMotBang", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable LayMotBang(string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayMotBang", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> LayMotBangAsync(string sqlString);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -340,6 +354,22 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> LayDiaChiAsync(string idxa) {
             return base.Channel.LayDiaChiAsync(idxa);
+        }
+        
+        public object LayGiaTriDon(string sqlString) {
+            return base.Channel.LayGiaTriDon(sqlString);
+        }
+        
+        public System.Threading.Tasks.Task<object> LayGiaTriDonAsync(string sqlString) {
+            return base.Channel.LayGiaTriDonAsync(sqlString);
+        }
+        
+        public System.Data.DataTable LayMotBang(string sqlString) {
+            return base.Channel.LayMotBang(sqlString);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> LayMotBangAsync(string sqlString) {
+            return base.Channel.LayMotBangAsync(sqlString);
         }
     }
 }

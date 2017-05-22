@@ -151,3 +151,4 @@ F:\Visual\Webservice\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_
 F:\Visual\Webservice\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
 F:\Visual\Webservice\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe
 F:\Visual\Webservice\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.pdb
+F:\Visual\Webservice\Git\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.csprojResolveAssemblyReference.cache

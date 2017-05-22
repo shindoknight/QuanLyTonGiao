@@ -55,7 +55,9 @@ namespace service_quan_ly_ton_giao
             cbbTonGiao.DataSource = tindo.OneRecord("tblTonGiao", "select * from tblTonGiao");
             cbbTonGiao.DisplayMember = "TenTonGiao";
 
+
         }
+       
         private void frmSuaTinDo_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -131,10 +133,35 @@ namespace service_quan_ly_ton_giao
             if(ChucSac!="")
             {
                 int idChucSac = Int16.Parse(ChucSac);
-                //string TenChucSac = tindo.("select TenChucSac from tblChucSac where idChucSac = N'" + idChucSac"'");
+                object tenchucsac = tindo.LayGiaTriDon("select TenChucSac from tblChucSac where idChucSac = N'"+idChucSac+"'");
+                string TenChucSac = tenchucsac.ToString();
+                cbbChucSac.Text = TenChucSac;
+
+                object tentongiao = tindo.LayGiaTriDon("select TenTonGiao from tblTonGiao, tblChucSac  where tblTonGiao.IDTonGiao = tblChucSac.IDTonGiao and IDChucSac = N'"+idChucSac+"'");
+                string TenTonGiao = tentongiao.ToString();
+                cbbTonGiao.Text = TenTonGiao;
 
 
             }
+
+            string CoSo = DataTinDo.Rows[0]["IDCoSo"].ToString();
+            if (CoSo != "")
+            {
+                int idCoSo = Int16.Parse(CoSo);
+                object tencoso = tindo.LayGiaTriDon("select TenCoSo from tblCoSo where idCoSo = N'" + idCoSo + "'");
+                string TenChucSac = tencoso.ToString();
+                cbbCoSo.Text = TenChucSac;
+            }
+
+            string chucvu = DataTinDo.Rows[0]["IDChucVu"].ToString();
+            if (chucvu != "")
+            {
+                int idChucVu = Int16.Parse(chucvu);
+                object tenchucvu = tindo.LayGiaTriDon("select TenChucVu from tblChucVu where IDChucVu = N'" + idChucVu + "'");
+                string TenChucVu = tenchucvu.ToString();
+                cbbChucVu.Text = TenChucVu;
+            }
+
             /*
             int idChusSac = tindo.IdChucSac(ChucSac); if (idChusSac == 0) idChusSac = 10;
 
@@ -147,7 +174,7 @@ namespace service_quan_ly_ton_giao
             string ChucVu = cbbChucVu.Text;
             int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
             */
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -195,6 +222,22 @@ namespace service_quan_ly_ton_giao
                 cbDiaChiXa.DataSource = tindo.TruyVanTenXa(huyen);
                 cbDiaChiXa.DisplayMember = "TenXa";
             }
+        }
+
+        private void cbbChucSac_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbbTonGiao_TextChanged(object sender, EventArgs e)
+        {
+            string tongiao = cbbTonGiao.Text;
+            if (tongiao != null || tongiao != "")
+            {
+                cbbChucSac.DataSource = tindo.OneRecord("tblChucSac","select TenChucSac from tblChucSac, tblTonGiao where tblChucSac.IDTonGiao = tblTonGiao.IDTonGiao and tblTonGiao.TenTonGiao = N'" + tongiao + "'");
+                cbbChucSac.DisplayMember = "TenChucSac";
+            }
+
         }
     }
 }

@@ -279,6 +279,18 @@ public class tblTinDo : System.Web.Services.WebService
         return temp;
 
     }
+    [WebMethod]
+    public DataTable LayMotBang(string sqlString)
+    {
+        OpenConnect();
 
+        SqlCommand comm = new SqlCommand(sqlString, conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable();
+        da.Fill(dtdistrict);
+        CloseConnect();
+        return dtdistrict;
+    }
 
 }

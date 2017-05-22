@@ -106,13 +106,11 @@
             // cbbTonGiao
             // 
             this.cbbTonGiao.FormattingEnabled = true;
-            this.cbbTonGiao.Items.AddRange(new object[] {
-            "Hòa thượng",
-            "Thượng tọa"});
             this.cbbTonGiao.Location = new System.Drawing.Point(126, 273);
             this.cbbTonGiao.Name = "cbbTonGiao";
             this.cbbTonGiao.Size = new System.Drawing.Size(165, 21);
             this.cbbTonGiao.TabIndex = 212;
+            this.cbbTonGiao.TextChanged += new System.EventHandler(this.cbbTonGiao_TextChanged);
             // 
             // label21
             // 
@@ -165,9 +163,6 @@
             // cbbCoSo
             // 
             this.cbbCoSo.FormattingEnabled = true;
-            this.cbbCoSo.Items.AddRange(new object[] {
-            "Chùa Hương",
-            "Chùa Keo"});
             this.cbbCoSo.Location = new System.Drawing.Point(722, 273);
             this.cbbCoSo.MaximumSize = new System.Drawing.Size(200, 0);
             this.cbbCoSo.MaxLength = 20000;
@@ -178,9 +173,6 @@
             // cbbChucVu
             // 
             this.cbbChucVu.FormattingEnabled = true;
-            this.cbbChucVu.Items.AddRange(new object[] {
-            "Pháp chủ",
-            "Phó Pháp chủ"});
             this.cbbChucVu.Location = new System.Drawing.Point(722, 304);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(159, 21);
@@ -189,13 +181,11 @@
             // cbbChucSac
             // 
             this.cbbChucSac.FormattingEnabled = true;
-            this.cbbChucSac.Items.AddRange(new object[] {
-            "Hòa thượng",
-            "Thượng tọa"});
             this.cbbChucSac.Location = new System.Drawing.Point(126, 304);
             this.cbbChucSac.Name = "cbbChucSac";
             this.cbbChucSac.Size = new System.Drawing.Size(164, 21);
             this.cbbChucSac.TabIndex = 204;
+            this.cbbChucSac.TextChanged += new System.EventHandler(this.cbbChucSac_TextChanged);
             // 
             // radioButton3
             // 
@@ -405,7 +395,7 @@
             this.txtTaiChinh.Location = new System.Drawing.Point(126, 336);
             this.txtTaiChinh.Multiline = true;
             this.txtTaiChinh.Name = "txtTaiChinh";
-            this.txtTaiChinh.Size = new System.Drawing.Size(159, 76);
+            this.txtTaiChinh.Size = new System.Drawing.Size(165, 76);
             this.txtTaiChinh.TabIndex = 181;
             // 
             // txtTenTheDanh
