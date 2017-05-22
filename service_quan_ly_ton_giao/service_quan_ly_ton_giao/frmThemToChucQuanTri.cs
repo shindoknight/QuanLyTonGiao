@@ -59,10 +59,15 @@ namespace service_quan_ly_ton_giao
                 }
             }
         }
-
+        void HienThiDS(string where)
+        {
+            DataTable ds = wf1.HienThiDSToChucQuanTri(where);
+            gridControl2.DataSource = ds;
+        }
         private void frmThemToChucQuanTri_Load(object sender, EventArgs e)
         {
             HienThi();
+            HienThiDS("");
         }
 
         private void btnXoaTT_Click(object sender, EventArgs e)
@@ -93,6 +98,24 @@ namespace service_quan_ly_ton_giao
                     MessageBox.Show("Bạn đã thêm thành công tổ chức " + txtTenToChuc.Text);
                 }
             }
+        }
+
+        private void btnTonGiao_Click(object sender, EventArgs e)
+        {
+            HienThiDS(" where b.TenTonGiao=N'"+cboTenTonGiao.Text+"'");
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            DataRow row = gridView2.GetFocusedDataRow();
+            frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
+            frm.txtIDToChuc.Text = row["IDToChuc"].ToString();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HienThiDS(" where b.TenTonGiao=N'" + cboTenTonGiao.Text + "'");
         }
     }
 }

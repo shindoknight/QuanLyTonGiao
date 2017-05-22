@@ -23,7 +23,7 @@ public class ServiceCoSo : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
     [WebMethod]
     public int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi)
     {
