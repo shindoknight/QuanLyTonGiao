@@ -111,7 +111,7 @@ public class tblTinDo : System.Web.Services.WebService
     [WebMethod]
     public DataTable TruyVanTenXa(string huyen)
     {
-        CloseConnect();
+        OpenConnect();
         //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
         SqlCommand comm = new SqlCommand("select TenXa from tblXa where IDHuyen=(select IDHuyen from tblHuyen where TenHuyen=N'" + huyen + "')", conn);
         comm.CommandType = CommandType.Text;
@@ -293,17 +293,17 @@ public class tblTinDo : System.Web.Services.WebService
         return dtdistrict;
     }
     [WebMethod]
-    public int UpdateTinDo(string idTinDo, string phapDanh, string hodemTheDanh, string tenTheDanh, DateTime ngaySinh, string gioiTinh, string danToc, string queQuan, string diaChi, string taiChinh, string sucKhoe, string tcTichCuc, string tcNguyHiem, string hinhAnh, string matDoi, string matDao, string hdCaNhan, string hdToChuc, int idChucSac, int idCoSo, int daXoa, DateTime ngayVaoTonGiao, int idChucVu)
+    public int UpdateTinDo(int idTinDo, string phapDanh, string hodemTheDanh, string tenTheDanh, DateTime ngaySinh, string gioiTinh, string danToc, string queQuan, string diaChi, string taiChinh, string sucKhoe, string tcTichCuc, string tcNguyHiem, string hinhAnh, string matDoi, string matDao, string hdCaNhan, string hdToChuc, int idChucSac, int idCoSo, int daXoa, DateTime ngayVaoTonGiao, int idChucVu)
     {
         OpenConnect();
         string sqlString = "update tblTinDo set PhapDanh =N'" + phapDanh + "' , HoDemTheDanh= N'" + hodemTheDanh + "', TenTheDanh= N'" + tenTheDanh + "' , NgaySinh=  N'" + ngaySinh + "', GioiTinh= N'" + gioiTinh + "' , DanToc=  N'" + danToc + "', QueQuan= N'" + queQuan + "', DiaChi= N'" + diaChi + "',TaiChinh= N'" + taiChinh + "', SucKhoe= N'" + sucKhoe + "', " +
-                " TCTichCuc =  N'" + tcTichCuc + "', TCNguyHiem =N'" + tcNguyHiem + "' , HinhAnh = N'" + hinhAnh + "', MatDoi =N'" + matDoi + "' , MatDao =N'" + matDao + "' , HDCaNhan = N'" + hdCaNhan + "', HDToChuc =N'" + hdToChuc + "' , IDChucSac ='" + idChucSac + "' , IDCoSo = '" + idCoSo + "', DaXoa = ,'" + daXoa + "', NgayVaoTonGiao = N'" + ngayVaoTonGiao + "', IDChucVu = N'" + idChucVu + "'" +
-                          " where IDTinDo = N'"+idTinDo+"'";
+                " TCTichCuc =  N'" + tcTichCuc + "', TCNguyHiem =N'" + tcNguyHiem + "' , HinhAnh = N'" + hinhAnh + "', MatDoi =N'" + matDoi + "' , MatDao =N'" + matDao + "' , HDCaNhan = N'" + hdCaNhan + "', HDToChuc =N'" + hdToChuc + "' , IDChucSac ='" + idChucSac + "' , IDCoSo = '" + idCoSo + "', DaXoa = N'" + daXoa + "', NgayVaoTonGiao = N'" + ngayVaoTonGiao + "', IDChucVu = N'" + idChucVu + "' "+
+                          " where IDTinDo = N'"+idTinDo+"' ";
 
         SqlCommand comm = new SqlCommand( sqlString, conn);
-        comm.ExecuteNonQuery();
+        int check = comm.ExecuteNonQuery();
         CloseConnect();
-        return 1;
+        return check;
     }
 
 }
