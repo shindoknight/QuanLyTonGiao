@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
+            DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dgvDSTG = new System.Windows.Forms.DataGridView();
             this.clmTenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,44 +40,49 @@
             this.clmHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.dgvToChuc = new System.Windows.Forms.DataGridView();
+            this.clmTenToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiThieuTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dgvChucSac = new System.Windows.Forms.DataGridView();
+            this.clmTenChucSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmThongTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenTG = new System.Windows.Forms.TextBox();
             this.labelTen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTenTG = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSLTindo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mapControl1 = new DevExpress.XtraMap.MapControl();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.dgvChucSac = new System.Windows.Forms.DataGridView();
-            this.dgvToChuc = new System.Windows.Forms.DataGridView();
-            this.clmTenChucSac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmThongTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenToChuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiThieuTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThemToChuc = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThemChucSac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.map = new DevExpress.XtraMap.MapControl();
+            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
+            this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
+            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
+            this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvToChuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -86,7 +94,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.panel2);
             this.splitContainerControl1.Panel2.Controls.Add(this.panel1);
-            this.splitContainerControl1.Panel2.Controls.Add(this.mapControl1);
+            this.splitContainerControl1.Panel2.Controls.Add(this.map);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1352, 601);
             this.splitContainerControl1.SplitterPosition = 238;
@@ -179,6 +187,108 @@
             this.panel2.Size = new System.Drawing.Size(726, 531);
             this.panel2.TabIndex = 15;
             // 
+            // rtbGioiThieu
+            // 
+            this.rtbGioiThieu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 162);
+            this.rtbGioiThieu.Name = "rtbGioiThieu";
+            this.rtbGioiThieu.Size = new System.Drawing.Size(726, 169);
+            this.rtbGioiThieu.TabIndex = 17;
+            this.rtbGioiThieu.Text = "";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.groupControl2);
+            this.panel3.Controls.Add(this.groupControl1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 331);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(726, 200);
+            this.panel3.TabIndex = 16;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgvToChuc);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(396, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(330, 200);
+            this.groupControl2.TabIndex = 0;
+            this.groupControl2.Text = "Hệ thống Tổ chức quản trị";
+            // 
+            // dgvToChuc
+            // 
+            this.dgvToChuc.AllowUserToAddRows = false;
+            this.dgvToChuc.AllowUserToDeleteRows = false;
+            this.dgvToChuc.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvToChuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvToChuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmTenToChuc,
+            this.clmGioiThieuTC});
+            this.dgvToChuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvToChuc.Location = new System.Drawing.Point(2, 20);
+            this.dgvToChuc.Name = "dgvToChuc";
+            this.dgvToChuc.ReadOnly = true;
+            this.dgvToChuc.Size = new System.Drawing.Size(326, 178);
+            this.dgvToChuc.TabIndex = 0;
+            // 
+            // clmTenToChuc
+            // 
+            this.clmTenToChuc.DataPropertyName = "TenToChuc";
+            this.clmTenToChuc.HeaderText = "Tên Tổ Chức";
+            this.clmTenToChuc.Name = "clmTenToChuc";
+            this.clmTenToChuc.ReadOnly = true;
+            // 
+            // clmGioiThieuTC
+            // 
+            this.clmGioiThieuTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmGioiThieuTC.DataPropertyName = "GioiThieu";
+            this.clmGioiThieuTC.HeaderText = "Giới Thiệu";
+            this.clmGioiThieuTC.Name = "clmGioiThieuTC";
+            this.clmGioiThieuTC.ReadOnly = true;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dgvChucSac);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(396, 200);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Hệ thống chức sắc";
+            // 
+            // dgvChucSac
+            // 
+            this.dgvChucSac.AllowUserToAddRows = false;
+            this.dgvChucSac.AllowUserToDeleteRows = false;
+            this.dgvChucSac.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvChucSac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChucSac.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmTenChucSac,
+            this.clmThongTin});
+            this.dgvChucSac.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChucSac.Location = new System.Drawing.Point(2, 20);
+            this.dgvChucSac.Name = "dgvChucSac";
+            this.dgvChucSac.ReadOnly = true;
+            this.dgvChucSac.Size = new System.Drawing.Size(392, 178);
+            this.dgvChucSac.TabIndex = 0;
+            // 
+            // clmTenChucSac
+            // 
+            this.clmTenChucSac.DataPropertyName = "TenChucSac";
+            this.clmTenChucSac.HeaderText = "Tên Chức Sắc";
+            this.clmTenChucSac.Name = "clmTenChucSac";
+            this.clmTenChucSac.ReadOnly = true;
+            // 
+            // clmThongTin
+            // 
+            this.clmThongTin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmThongTin.DataPropertyName = "GioiThieu";
+            this.clmThongTin.HeaderText = "Thông Tin";
+            this.clmThongTin.Name = "clmThongTin";
+            this.clmThongTin.ReadOnly = true;
+            // 
             // txtTenTG
             // 
             this.txtTenTG.Location = new System.Drawing.Point(162, 17);
@@ -206,6 +316,15 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Giới Thiệu";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // lbTenTG
             // 
@@ -248,118 +367,6 @@
             this.panel1.Size = new System.Drawing.Size(726, 70);
             this.panel1.TabIndex = 14;
             // 
-            // mapControl1
-            // 
-            this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
-            this.mapControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.mapControl1.Location = new System.Drawing.Point(726, 0);
-            this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(383, 601);
-            this.mapControl1.TabIndex = 12;
-            this.mapControl1.ZoomLevel = 5D;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.groupControl2);
-            this.panel3.Controls.Add(this.groupControl1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 331);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(726, 200);
-            this.panel3.TabIndex = 16;
-            // 
-            // rtbGioiThieu
-            // 
-            this.rtbGioiThieu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 162);
-            this.rtbGioiThieu.Name = "rtbGioiThieu";
-            this.rtbGioiThieu.Size = new System.Drawing.Size(726, 169);
-            this.rtbGioiThieu.TabIndex = 17;
-            this.rtbGioiThieu.Text = "";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.dgvChucSac);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(396, 200);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Hệ thống chức sắc";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.dgvToChuc);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(396, 0);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(330, 200);
-            this.groupControl2.TabIndex = 0;
-            this.groupControl2.Text = "Hệ thống Tổ chức quản trị";
-            // 
-            // dgvChucSac
-            // 
-            this.dgvChucSac.AllowUserToAddRows = false;
-            this.dgvChucSac.AllowUserToDeleteRows = false;
-            this.dgvChucSac.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvChucSac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChucSac.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTenChucSac,
-            this.clmThongTin});
-            this.dgvChucSac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvChucSac.Location = new System.Drawing.Point(2, 20);
-            this.dgvChucSac.Name = "dgvChucSac";
-            this.dgvChucSac.ReadOnly = true;
-            this.dgvChucSac.Size = new System.Drawing.Size(392, 178);
-            this.dgvChucSac.TabIndex = 0;
-            // 
-            // dgvToChuc
-            // 
-            this.dgvToChuc.AllowUserToAddRows = false;
-            this.dgvToChuc.AllowUserToDeleteRows = false;
-            this.dgvToChuc.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvToChuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvToChuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTenToChuc,
-            this.clmGioiThieuTC});
-            this.dgvToChuc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvToChuc.Location = new System.Drawing.Point(2, 20);
-            this.dgvToChuc.Name = "dgvToChuc";
-            this.dgvToChuc.ReadOnly = true;
-            this.dgvToChuc.Size = new System.Drawing.Size(326, 178);
-            this.dgvToChuc.TabIndex = 0;
-            // 
-            // clmTenChucSac
-            // 
-            this.clmTenChucSac.DataPropertyName = "TenChucSac";
-            this.clmTenChucSac.HeaderText = "Tên Chức Sắc";
-            this.clmTenChucSac.Name = "clmTenChucSac";
-            this.clmTenChucSac.ReadOnly = true;
-            // 
-            // clmThongTin
-            // 
-            this.clmThongTin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmThongTin.DataPropertyName = "GioiThieu";
-            this.clmThongTin.HeaderText = "Thông Tin";
-            this.clmThongTin.Name = "clmThongTin";
-            this.clmThongTin.ReadOnly = true;
-            // 
-            // clmTenToChuc
-            // 
-            this.clmTenToChuc.DataPropertyName = "TenToChuc";
-            this.clmTenToChuc.HeaderText = "Tên Tổ Chức";
-            this.clmTenToChuc.Name = "clmTenToChuc";
-            this.clmTenToChuc.ReadOnly = true;
-            // 
-            // clmGioiThieuTC
-            // 
-            this.clmGioiThieuTC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmGioiThieuTC.DataPropertyName = "GioiThieu";
-            this.clmGioiThieuTC.HeaderText = "Giới Thiệu";
-            this.clmGioiThieuTC.Name = "clmGioiThieuTC";
-            this.clmGioiThieuTC.ReadOnly = true;
-            // 
             // btnThemToChuc
             // 
             this.btnThemToChuc.Image = global::service_quan_ly_ton_giao.Properties.Resources.Add;
@@ -372,15 +379,6 @@
             this.btnThemToChuc.UseVisualStyleBackColor = true;
             this.btnThemToChuc.Visible = false;
             this.btnThemToChuc.Click += new System.EventHandler(this.btnThemToChuc_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // btnThemChucSac
             // 
@@ -433,6 +431,36 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // map
+            // 
+            this.map.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
+            this.map.Dock = System.Windows.Forms.DockStyle.Right;
+            this.map.Layers.Add(this.imageLayer1);
+            this.map.Layers.Add(this.vectorItemsLayer1);
+            sizeLegend1.Layer = this.vectorItemsLayer1;
+            colorListLegend1.Layer = this.vectorItemsLayer1;
+            this.map.Legends.Add(sizeLegend1);
+            this.map.Legends.Add(colorListLegend1);
+            this.map.Location = new System.Drawing.Point(726, 0);
+            this.map.Name = "map";
+            this.map.Size = new System.Drawing.Size(383, 601);
+            this.map.TabIndex = 12;
+            this.map.ToolTipController = this.toolTipController1;
+            this.map.ZoomLevel = 5D;
+            // 
+            // imageLayer1
+            // 
+            this.imageLayer1.DataProvider = this.openStreetMapDataProvider1;
+            // 
+            // vectorItemsLayer1
+            // 
+            this.vectorItemsLayer1.Data = this.mapItemStorage1;
+            this.vectorItemsLayer1.Name = "VectorLayer";
+            // 
+            // toolTipController1
+            // 
+            this.toolTipController1.AllowHtmlText = true;
+            // 
             // FormDSTonGiao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,16 +475,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvToChuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,7 +496,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTenTG;
-        private DevExpress.XtraMap.MapControl mapControl1;
+        private DevExpress.XtraMap.MapControl map;
         private System.Windows.Forms.DataGridView dgvDSTG;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
@@ -496,5 +524,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmThongTin;
         private System.Windows.Forms.Button btnThemToChuc;
         private System.Windows.Forms.Button btnThemChucSac;
+        private DevExpress.XtraMap.ImageLayer imageLayer1;
+        private DevExpress.XtraMap.OpenStreetMapDataProvider openStreetMapDataProvider1;
+        private DevExpress.XtraMap.VectorItemsLayer vectorItemsLayer1;
+        private DevExpress.XtraMap.MapItemStorage mapItemStorage1;
+        private DevExpress.Utils.ToolTipController toolTipController1;
     }
 }

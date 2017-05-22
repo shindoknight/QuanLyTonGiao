@@ -266,7 +266,7 @@ namespace service_quan_ly_ton_giao
             ((DevExpress.XtraCharts.SideBySideBarSeriesView)series.View).ColorEach = true;
             //((DevExpress.XtraCharts.XYDiagram)chart.Diagram).AxisY.Visibility = DevExpress.Utils.DefaultBoolean.False;
             chart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;*/
-            DataTable ds= wf1.HienThiTinDoTheoTonGiao("");
+            DataTable ds= wf1.HienThiTinDoTheoTonGiaoTheoTinh("");
             chart.DataSource =ds;
             
             chart.Series[0].ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
