@@ -238,7 +238,7 @@
             // cbQueQuanXa
             // 
             this.cbQueQuanXa.FormattingEnabled = true;
-            this.cbQueQuanXa.Location = new System.Drawing.Point(722, 185);
+            this.cbQueQuanXa.Location = new System.Drawing.Point(722, 195);
             this.cbQueQuanXa.Name = "cbQueQuanXa";
             this.cbQueQuanXa.Size = new System.Drawing.Size(121, 21);
             this.cbQueQuanXa.TabIndex = 197;
@@ -302,7 +302,7 @@
             // cbDiaChiXa
             // 
             this.cbDiaChiXa.FormattingEnabled = true;
-            this.cbDiaChiXa.Location = new System.Drawing.Point(722, 218);
+            this.cbDiaChiXa.Location = new System.Drawing.Point(722, 228);
             this.cbDiaChiXa.Name = "cbDiaChiXa";
             this.cbDiaChiXa.Size = new System.Drawing.Size(121, 21);
             this.cbDiaChiXa.TabIndex = 190;

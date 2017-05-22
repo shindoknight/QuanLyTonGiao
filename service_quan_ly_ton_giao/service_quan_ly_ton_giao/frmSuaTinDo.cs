@@ -173,8 +173,7 @@ namespace service_quan_ly_ton_giao
 
             string ChucVu = cbbChucVu.Text;
             int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
-            */
-
+           */
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -232,10 +231,21 @@ namespace service_quan_ly_ton_giao
         private void cbbTonGiao_TextChanged(object sender, EventArgs e)
         {
             string tongiao = cbbTonGiao.Text;
+            
             if (tongiao != null || tongiao != "")
             {
+
                 cbbChucSac.DataSource = tindo.OneRecord("tblChucSac","select TenChucSac from tblChucSac, tblTonGiao where tblChucSac.IDTonGiao = tblTonGiao.IDTonGiao and tblTonGiao.TenTonGiao = N'" + tongiao + "'");
-                cbbChucSac.DisplayMember = "TenChucSac";
+                cbbChucSac.DisplayMember = "TenChucSac"; //Ten Bang trong Bang
+
+                
+                string stringTenCoSo = "select TenCoSo from tblCoSo,tblToChucQuanTri, tblTonGiao where tblCoSo.IDToChuc =tblToChucQuanTri.IDToChuc and tblToChucQuanTri.IDTonGiao =  tblTonGiao.IDTonGiao and tblTonGiao.TenTonGiao = N'" + tongiao + "'";
+                cbbCoSo.DataSource = tindo.OneRecord("tblCoSo",stringTenCoSo);
+                cbbCoSo.DisplayMember = "TenCoSo";
+
+                string stringTenChucVu = "select TenChucVu from tblTonGiao, tblToChucQuanTri, tblChucVu where tblTonGiao.IDTonGiao = tblToChucQuanTri.IDTonGiao and tblToChucQuanTri.IDToChuc = tblChucVu.IDToChuc and tblTonGiao.TenTonGiao = N'" + tongiao + "'";
+                cbbChucVu.DataSource = tindo.OneRecord("tblChucVu", stringTenChucVu);
+                cbbChucVu.DisplayMember = "TenChucVu";
             }
 
         }
