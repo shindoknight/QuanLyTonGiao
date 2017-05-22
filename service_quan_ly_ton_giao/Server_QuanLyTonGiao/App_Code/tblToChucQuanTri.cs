@@ -24,7 +24,7 @@ public class tblToChucQuanTri : System.Web.Services.WebService
     }
 
    
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
     [WebMethod]
     public int ThemDLToChuc(string TenToChuc, int IDTonGiao, string GioiThieu, string HinhAnh)
     {
