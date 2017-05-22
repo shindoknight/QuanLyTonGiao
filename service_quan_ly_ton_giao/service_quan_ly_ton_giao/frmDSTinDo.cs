@@ -36,7 +36,8 @@ namespace service_quan_ly_ton_giao
             DataRow row = gridVTinDo.GetFocusedDataRow();
             BienToanCuc.IdTinDo = int.Parse(row["IDTinDo"].ToString());
             BienToanCuc.tenTinDo = row["HoDemTheDanh"].ToString() + row["TenTheDanh"].ToString();
-
+            bntSua.Enabled = true;
+            bntXoa.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -59,6 +60,11 @@ namespace service_quan_ly_ton_giao
         private void button1_Click(object sender, EventArgs e)
         {
             gridCTinDo.DataSource = tindo.HienThiDSTinDo();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

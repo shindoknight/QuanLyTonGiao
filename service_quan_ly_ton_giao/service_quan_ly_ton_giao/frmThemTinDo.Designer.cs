@@ -42,7 +42,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.cbDiaChiHuyen = new System.Windows.Forms.ComboBox();
             this.cbDiaChiTinh = new System.Windows.Forms.ComboBox();
-            this.cbDanToc = new System.Windows.Forms.ComboBox();
             this.txtPhapDanh = new System.Windows.Forms.TextBox();
             this.txtMatDoi = new System.Windows.Forms.TextBox();
             this.txtTcNguyHiem = new System.Windows.Forms.TextBox();
@@ -83,6 +82,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtHdCaNhan = new System.Windows.Forms.RichTextBox();
             this.txtDhToChuc = new System.Windows.Forms.RichTextBox();
+            this.cbDanToc = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox9
@@ -214,19 +214,6 @@
             this.cbDiaChiTinh.Size = new System.Drawing.Size(132, 21);
             this.cbDiaChiTinh.TabIndex = 90;
             this.cbDiaChiTinh.SelectedIndexChanged += new System.EventHandler(this.cbDiaChiTinh_SelectedIndexChanged);
-            // 
-            // cbDanToc
-            // 
-            this.cbDanToc.FormattingEnabled = true;
-            this.cbDanToc.Items.AddRange(new object[] {
-            "Kinh",
-            "Mường",
-            "Thái",
-            "Dao"});
-            this.cbDanToc.Location = new System.Drawing.Point(111, 159);
-            this.cbDanToc.Name = "cbDanToc";
-            this.cbDanToc.Size = new System.Drawing.Size(164, 21);
-            this.cbDanToc.TabIndex = 89;
             // 
             // txtPhapDanh
             // 
@@ -618,12 +605,21 @@
             this.txtDhToChuc.TabIndex = 122;
             this.txtDhToChuc.Text = "";
             // 
+            // cbDanToc
+            // 
+            this.cbDanToc.Location = new System.Drawing.Point(104, 156);
+            this.cbDanToc.Multiline = true;
+            this.cbDanToc.Name = "cbDanToc";
+            this.cbDanToc.Size = new System.Drawing.Size(164, 24);
+            this.cbDanToc.TabIndex = 123;
+            // 
             // frmThemTinDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(846, 526);
+            this.Controls.Add(this.cbDanToc);
             this.Controls.Add(this.txtDhToChuc);
             this.Controls.Add(this.txtHdCaNhan);
             this.Controls.Add(this.cbbTonGiao);
@@ -653,7 +649,6 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.cbDiaChiHuyen);
             this.Controls.Add(this.cbDiaChiTinh);
-            this.Controls.Add(this.cbDanToc);
             this.Controls.Add(this.txtPhapDanh);
             this.Controls.Add(this.txtMatDoi);
             this.Controls.Add(this.txtTcNguyHiem);
@@ -702,7 +697,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cbDiaChiHuyen;
         private System.Windows.Forms.ComboBox cbDiaChiTinh;
-        private System.Windows.Forms.ComboBox cbDanToc;
         private System.Windows.Forms.TextBox txtPhapDanh;
         private System.Windows.Forms.TextBox txtMatDoi;
         private System.Windows.Forms.TextBox txtTcNguyHiem;
@@ -743,5 +737,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.RichTextBox txtHdCaNhan;
         private System.Windows.Forms.RichTextBox txtDhToChuc;
+        private System.Windows.Forms.TextBox cbDanToc;
     }
 }
