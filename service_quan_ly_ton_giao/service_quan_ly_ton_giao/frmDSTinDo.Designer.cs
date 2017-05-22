@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Thành phố trực thuộc Trung ương");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Khu vực địa giới hành chính");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Địa giới hành chính", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.gridCTinDo = new DevExpress.XtraGrid.GridControl();
             this.gridVTinDo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PhapDanh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,19 +51,29 @@
             this.NgayVaoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.bntSua = new System.Windows.Forms.Button();
             this.bntXoa = new System.Windows.Forms.Button();
+            this.bntSua = new System.Windows.Forms.Button();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.cboTonGiao = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridCTinDo
@@ -178,8 +193,6 @@
             this.HinhAnh.Caption = "Hình Ảnh";
             this.HinhAnh.FieldName = "HinhAnh";
             this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.Visible = true;
-            this.HinhAnh.VisibleIndex = 6;
             // 
             // HDCaNhan
             // 
@@ -187,7 +200,7 @@
             this.HDCaNhan.FieldName = "HDCaNhan";
             this.HDCaNhan.Name = "HDCaNhan";
             this.HDCaNhan.Visible = true;
-            this.HDCaNhan.VisibleIndex = 7;
+            this.HDCaNhan.VisibleIndex = 6;
             // 
             // HDToChuc
             // 
@@ -195,7 +208,7 @@
             this.HDToChuc.FieldName = "HDToChuc";
             this.HDToChuc.Name = "HDToChuc";
             this.HDToChuc.Visible = true;
-            this.HDToChuc.VisibleIndex = 8;
+            this.HDToChuc.VisibleIndex = 7;
             // 
             // NgayVaoTonGiao
             // 
@@ -203,15 +216,15 @@
             this.NgayVaoTonGiao.FieldName = "NgayVaoTonGiao";
             this.NgayVaoTonGiao.Name = "NgayVaoTonGiao";
             this.NgayVaoTonGiao.Visible = true;
-            this.NgayVaoTonGiao.VisibleIndex = 9;
+            this.NgayVaoTonGiao.VisibleIndex = 8;
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon;
+            this.button1.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon__1_;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 60);
+            this.button1.Size = new System.Drawing.Size(101, 60);
             this.button1.TabIndex = 1;
             this.button1.Text = "Refresh";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -230,35 +243,6 @@
             this.groupBox1.Text = "Thuộc Tính";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.gridCTinDo);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(932, 509);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh Sách Tín Đồ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tìm Kiếm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(42, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 21);
-            this.textBox1.TabIndex = 1;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -271,33 +255,118 @@
             this.splitContainer1.Panel1.Controls.Add(this.bntXoa);
             this.splitContainer1.Panel1.Controls.Add(this.bntSua);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainer1.Size = new System.Drawing.Size(283, 489);
             this.splitContainer1.SplitterDistance = 60;
             this.splitContainer1.TabIndex = 2;
-            // 
-            // bntSua
-            // 
-            this.bntSua.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bntSua.Enabled = false;
-            this.bntSua.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon;
-            this.bntSua.Location = new System.Drawing.Point(81, 0);
-            this.bntSua.Name = "bntSua";
-            this.bntSua.Size = new System.Drawing.Size(81, 60);
-            this.bntSua.TabIndex = 2;
-            this.bntSua.Text = "Sửa";
-            this.bntSua.UseVisualStyleBackColor = true;
             // 
             // bntXoa
             // 
             this.bntXoa.Dock = System.Windows.Forms.DockStyle.Left;
             this.bntXoa.Enabled = false;
-            this.bntXoa.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon;
-            this.bntXoa.Location = new System.Drawing.Point(162, 0);
+            this.bntXoa.Image = global::service_quan_ly_ton_giao.Properties.Resources.Actions_edit_delete_icon__1_;
+            this.bntXoa.Location = new System.Drawing.Point(190, 0);
             this.bntXoa.Name = "bntXoa";
-            this.bntXoa.Size = new System.Drawing.Size(81, 60);
+            this.bntXoa.Size = new System.Drawing.Size(84, 60);
             this.bntXoa.TabIndex = 3;
             this.bntXoa.Text = "Xóa";
+            this.bntXoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bntXoa.UseVisualStyleBackColor = true;
+            this.bntXoa.Click += new System.EventHandler(this.bntXoa_Click);
+            // 
+            // bntSua
+            // 
+            this.bntSua.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bntSua.Enabled = false;
+            this.bntSua.Image = global::service_quan_ly_ton_giao.Properties.Resources.Actions_document_edit_icon__1_;
+            this.bntSua.Location = new System.Drawing.Point(101, 0);
+            this.bntSua.Name = "bntSua";
+            this.bntSua.Size = new System.Drawing.Size(89, 60);
+            this.bntSua.TabIndex = 2;
+            this.bntSua.Text = "Sửa";
+            this.bntSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bntSua.UseVisualStyleBackColor = true;
+            this.bntSua.Click += new System.EventHandler(this.bntSua_Click);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.splitContainer2);
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(283, 425);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Tìm Kiếm";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(2, 20);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.cboTonGiao);
+            this.splitContainer2.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.treeView1);
+            this.splitContainer2.Size = new System.Drawing.Size(279, 403);
+            this.splitContainer2.SplitterDistance = 43;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // cboTonGiao
+            // 
+            this.cboTonGiao.FormattingEnabled = true;
+            this.cboTonGiao.Items.AddRange(new object[] {
+            "Tất cả"});
+            this.cboTonGiao.Location = new System.Drawing.Point(99, 10);
+            this.cboTonGiao.Name = "cboTonGiao";
+            this.cboTonGiao.Size = new System.Drawing.Size(121, 21);
+            this.cboTonGiao.TabIndex = 1;
+            this.cboTonGiao.TextChanged += new System.EventHandler(this.cboTonGiao_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tôn giáo";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "nodecThanhPhoTU";
+            treeNode1.Text = "Thành phố trực thuộc Trung ương";
+            treeNode2.Name = "nodecKhuVucDiaGioiHanhChinh";
+            treeNode2.Text = "Khu vực địa giới hành chính";
+            treeNode3.Name = "nodediagioihanhchinh";
+            treeNode3.Text = "Địa giới hành chính";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+            this.treeView1.Size = new System.Drawing.Size(279, 356);
+            this.treeView1.TabIndex = 1;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.gridCTinDo);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(932, 509);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh Sách Tín Đồ";
             // 
             // frmDSTinDo
             // 
@@ -313,11 +382,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCTinDo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridVTinDo)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -342,10 +418,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button bntXoa;
         private System.Windows.Forms.Button bntSua;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ComboBox cboTonGiao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

@@ -178,7 +178,7 @@ public class tblTinDo : System.Web.Services.WebService
         OpenConnect();
         string temp = null;
         //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
-        SqlCommand comm = new SqlCommand("select IDCoSo from tblCoSo where TenCoSo = '"+ tenCoSo + "' ", conn);
+        SqlCommand comm = new SqlCommand("select IDCoSo from tblCoSo where TenCoSo = N'"+ tenCoSo + "' ", conn);
         SqlDataReader sqldr = comm.ExecuteReader();
         while (sqldr.Read())
             temp = sqldr[0].ToString();
