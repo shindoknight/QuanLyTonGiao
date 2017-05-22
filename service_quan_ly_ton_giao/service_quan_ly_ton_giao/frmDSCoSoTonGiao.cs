@@ -151,7 +151,7 @@ namespace service_quan_ly_ton_giao
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             DataTable ds2 = wf.DuLieuTonGiao(" where TenTonGiao=N'"+ e.Node.Text + "'");
-            if(e.Node.Text=="Tôn giáo" || e.Node.Text== "Địa giới hành chính" || e.Node.Text == "Khu vực địa giới hành chính")
+            if(e.Node.Text=="Tôn giáo" || e.Node.Text== "Địa giới hành chính" || e.Node.Text == "Khu vực địa giới hành chính"|| e.Node.Text == "Thành phố trực thuộc Trung ương")
             {
                 grcDSTonGiao.DataSource = wf.HienThiDSCoSo("", "");
             }

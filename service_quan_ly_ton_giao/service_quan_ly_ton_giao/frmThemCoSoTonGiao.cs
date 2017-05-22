@@ -82,8 +82,8 @@ namespace service_quan_ly_ton_giao
                 DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = tv1.Rows[0]["ViDo"].ToString();
-                    string vi = tv1.Rows[0]["KinhDo"].ToString();
+                    string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
+                    string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");

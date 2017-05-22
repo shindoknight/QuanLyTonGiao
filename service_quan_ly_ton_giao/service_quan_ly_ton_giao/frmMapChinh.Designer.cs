@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMapChinh));
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel2 = new DevExpress.XtraCharts.PieSeriesLabel();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraMap.SizeLegend sizeLegend2 = new DevExpress.XtraMap.SizeLegend();
-            DevExpress.XtraMap.ColorListLegend colorListLegend2 = new DevExpress.XtraMap.ColorListLegend();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
+            DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage4 = new DevExpress.XtraMap.MapItemStorage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -86,9 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
@@ -189,23 +189,23 @@
             this.chart.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chart.Location = new System.Drawing.Point(2, 20);
             this.chart.Name = "chart";
-            series2.CheckedInLegend = false;
-            pieSeriesLabel2.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            pieSeriesLabel2.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
-            pieSeriesLabel2.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
-            series2.Label = pieSeriesLabel2;
-            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series2.LegendTextPattern = "{A}:{V}";
-            series2.Name = "Series1";
-            series2.View = pieSeriesView2;
+            series1.CheckedInLegend = false;
+            pieSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            pieSeriesLabel1.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
+            pieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
+            series1.Label = pieSeriesLabel1;
+            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.LegendTextPattern = "{A}:{V}";
+            series1.Name = "Series1";
+            series1.View = pieSeriesView1;
             this.chart.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
+        series1};
             this.chart.Size = new System.Drawing.Size(564, 366);
             this.chart.TabIndex = 0;
-            chartTitle2.Text = "Thống kê tôn giáo theo số lượng tín đồ";
-            chartTitle2.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            chartTitle1.Text = "Thống kê tôn giáo theo số lượng tín đồ";
+            chartTitle1.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chart.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle2});
+            chartTitle1});
             // 
             // navigationPane1
             // 
@@ -298,10 +298,10 @@
             this.map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.map.Layers.Add(this.imageLayer1);
             this.map.Layers.Add(this.vectorItemsLayer1);
-            sizeLegend2.Layer = this.vectorItemsLayer1;
-            colorListLegend2.Layer = this.vectorItemsLayer1;
-            this.map.Legends.Add(sizeLegend2);
-            this.map.Legends.Add(colorListLegend2);
+            sizeLegend1.Layer = this.vectorItemsLayer1;
+            colorListLegend1.Layer = this.vectorItemsLayer1;
+            this.map.Legends.Add(sizeLegend1);
+            this.map.Legends.Add(colorListLegend1);
             this.map.Location = new System.Drawing.Point(2, 20);
             this.map.Name = "map";
             this.map.Size = new System.Drawing.Size(561, 432);
@@ -433,9 +433,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);

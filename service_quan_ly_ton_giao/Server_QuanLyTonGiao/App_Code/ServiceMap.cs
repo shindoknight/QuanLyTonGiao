@@ -56,16 +56,71 @@ public class ServiceMap : System.Web.Services.WebService
     }
     [WebMethod]
 
-    public DataTable HienThiTinDoTheoTonGiao( string dieukien)
+    public DataTable HienThiTinDoTheoTonGiaoTheoTinh( string dieukien)
     {
-        SqlCommand comm = new SqlCommand(@"select count(IDTinDo) as SLTinDo,a.TenTonGiao from (select TenTonGiao,tblCoSo.DiaChi,tblCoSo.IDCoSo from tblCoSo,tblTonGiao,tblToChucQuanTri where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
-            and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao) a,tblTinDo where tblTinDo.IDCoSo=a.IDCoSo
-            group by a.TenTonGiao" + dieukien, conn);
+        SqlCommand comm = new SqlCommand(@"select SLCoSo,SLTinDo,b.TenTonGiao from (select count(IDTinDo) as SLTinDo,a.TenTonGiao from (select TenTonGiao,tblCoSo.DiaChi,tblCoSo.IDCoSo,tblHuyen.TenHuyen,TenTinh 
+        from tblCoSo,tblTonGiao,tblToChucQuanTri,tblXa,tblHuyen,tblTinh where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+        and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and TenTinh like N'%"+dieukien+@"%') a,tblTinDo where tblTinDo.IDCoSo=a.IDCoSo
+        group by a.TenTonGiao) b,
+        (select TenTonGiao,count(tblCoSo.IDCoSo) as SLCoSo
+        from tblCoSo,tblTonGiao,tblToChucQuanTri,tblXa,tblHuyen,tblTinh where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+        and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and TenTinh like N'%"+dieukien+@"%'
+        group by tblTonGiao.TenTonGiao) c
+        where b.TenTonGiao=c.TenTonGiao", conn);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
-        DataTable dtdistrict = new DataTable("tblTinDo", "a");
+        DataTable dtdistrict = new DataTable("b", "c");
         da.Fill(dtdistrict);
 
         return dtdistrict;
     }
+    [WebMethod]
+
+    public DataTable HienThiTinDoTheoTonGiaoTheoKhuVuc(string dieukien)
+    {
+        SqlCommand comm = new SqlCommand(@"select SLCoSo,SLTinDo,b.TenTonGiao from (select count(IDTinDo) as SLTinDo,a.TenTonGiao from (select TenTonGiao,tblCoSo.DiaChi,tblCoSo.IDCoSo,tblHuyen.TenHuyen,TenTinh 
+        from tblCoSo,tblTonGiao,tblToChucQuanTri,tblXa,tblHuyen,tblTinh,tblVungDiaLy where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+        and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and tblTinh.IDVungDiaLy=tblVungDiaLy.IDVungDiaLy and TenVungDiaLy like N'%" + dieukien + @"%') a,tblTinDo where tblTinDo.IDCoSo=a.IDCoSo
+        group by a.TenTonGiao) b,
+        (select TenTonGiao,count(tblCoSo.IDCoSo) as SLCoSo
+        from tblCoSo,tblTonGiao,tblToChucQuanTri,tblXa,tblHuyen,tblTinh,tblVungDiaLy where tblCoSo.IDToChuc=tblToChucQuanTri.IDToChuc 
+        and tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and tblTinh.IDVungDiaLy=tblVungDiaLy.IDVungDiaLy and TenVungDiaLy like N'%" + dieukien + @"%'
+        group by tblTonGiao.TenTonGiao) c
+        where b.TenTonGiao=c.TenTonGiao", conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable("b", "c");
+        da.Fill(dtdistrict);
+
+        return dtdistrict;
+    }
+    [WebMethod]
+
+    public DataTable HienThiCoSoTheoTonGiaoTheoTinh(string TenTinh,string TenTonGiao)
+    {
+        SqlCommand comm = new SqlCommand(@"select count(IDCoSo) as SLCoSo,TenHuyen from (select IDCoSo,TenHuyen,IDToChuc from tblCoSo,tblXa,tblHuyen,tblTinh where tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and TenTinh like N'%" + TenTinh + @"%') a, 
+        (select IDToChuc,TenTonGiao from tblToChucQuanTri,tblTonGiao where  tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblTonGiao.IDTonGiao like N'%" + TenTonGiao+@"%' ) b where  a.IDToChuc=b.IDToChuc
+        group by a.TenHuyen", conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable("a", "b");
+        da.Fill(dtdistrict);
+
+        return dtdistrict;
+    }
+    [WebMethod]
+
+    public DataTable HienThiCoSoTheoTonGiaoTheoKhuVuc(string TenKhuVuc, string TenTonGiao)
+    {
+        SqlCommand comm = new SqlCommand(@"select count(IDCoSo) as SLCoSo,TenTinh from (select IDCoSo,TenTinh,IDToChuc from tblCoSo,tblXa,tblHuyen,tblTinh,tblVungDiaLy where tblXa.IDXa=tblCoSo.DiaChi and tblHuyen.IDHuyen=tblXa.IDHuyen and tblTinh.IDTinh=tblHuyen.IDTinh and tblTinh.IDVungDiaLy=tblVungDiaLy.IDVungDiaLy and TenVungDiaLy like N'%" + TenKhuVuc + @"%') a, 
+        (select IDToChuc,TenTonGiao from tblToChucQuanTri,tblTonGiao where  tblToChucQuanTri.IDTonGiao=tblTonGiao.IDTonGiao and tblTonGiao.IDTonGiao like N'%" + TenTonGiao + @"%' ) b where  a.IDToChuc=b.IDToChuc
+        group by a.TenTinh", conn);
+        comm.CommandType = CommandType.Text;
+        SqlDataAdapter da = new SqlDataAdapter(comm);
+        DataTable dtdistrict = new DataTable("a", "b");
+        da.Fill(dtdistrict);
+
+        return dtdistrict;
+    }
+
 }
