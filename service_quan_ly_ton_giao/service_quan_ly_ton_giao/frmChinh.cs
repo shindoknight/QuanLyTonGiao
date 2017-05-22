@@ -32,10 +32,16 @@ namespace service_quan_ly_ton_giao
             {
                 case 1: break;
                 case 2:
-                    
+                    ribbonPageGroupHeThong.Visible = false;
                     break;
                 default:
                     ribbonPageGroupHeThong.Visible = false;
+                    ribbonNhap_Xuat.Visible = false;
+                    ribbonSaoLuu_PhucHoi.Visible = false;
+                    bbtnThemCoSo.Enabled = false;
+                    bbtnThemTinDo.Enabled = false;
+                    bbtnThemTonGiao.Enabled = false;
+                    btnThemToChuc.Enabled = false;
                     break;
               }
         }
@@ -149,7 +155,7 @@ namespace service_quan_ly_ton_giao
         private void bbtnDSCSTG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao();
+            frmDSCoSoTonGiao frmDSTG = new frmDSCoSoTonGiao(_quyen);
 
             frmDSTG.FormBorderStyle = FormBorderStyle.None;
             _frmDanhMuc.TabCreating("Danh Sách Cơ sỏ Tôn giáo", frmDSTG.Name, frmDSTG, imageCollection16x16, 7);
@@ -224,7 +230,7 @@ namespace service_quan_ly_ton_giao
         private void bbtnDSToChuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
-            frmDSToChucQuanTri f = new frmDSToChucQuanTri();
+            frmDSToChucQuanTri f = new frmDSToChucQuanTri(_quyen);
             _frmDanhMuc.TabCreating("Danh sách tổ chức tôn giáo", f.Name, f, imageCollection16x16, 12);
         }
 
@@ -238,7 +244,7 @@ namespace service_quan_ly_ton_giao
         private void bbtnThongKe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
-            FormThongKe f = new FormThongKe();
+            xtrThongKe f = new xtrThongKe();
             _frmChucNang.TabCreating("Thống kê", f.Name, f, imageCollection16x16, 16);
         }
     }

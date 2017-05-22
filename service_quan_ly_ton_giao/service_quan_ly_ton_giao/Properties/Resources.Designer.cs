@@ -123,6 +123,16 @@ namespace service_quan_ly_ton_giao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Refresh_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Button-Refresh-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("edit-icon (1)", resourceCulture);

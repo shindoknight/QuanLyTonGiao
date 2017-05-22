@@ -52,7 +52,7 @@
             this.TenTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SLCoSoTonGiao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuongTinDo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clmXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnChiTiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -263,7 +263,7 @@
             this.TenTonGiao,
             this.SLCoSoTonGiao,
             this.SoLuongTinDo,
-            this.gridColumn6,
+            this.clmXoa,
             this.gridColumn7});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -314,13 +314,13 @@
             this.SoLuongTinDo.VisibleIndex = 4;
             this.SoLuongTinDo.Width = 147;
             // 
-            // gridColumn6
+            // clmXoa
             // 
-            this.gridColumn6.Caption = "Xóa";
-            this.gridColumn6.ColumnEdit = this.btnXoa;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.clmXoa.Caption = "Xóa";
+            this.clmXoa.ColumnEdit = this.btnXoa;
+            this.clmXoa.Name = "clmXoa";
+            this.clmXoa.Visible = true;
+            this.clmXoa.VisibleIndex = 5;
             // 
             // btnXoa
             // 
@@ -411,7 +411,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenTonGiao;
         private DevExpress.XtraGrid.Columns.GridColumn SLCoSoTonGiao;
         private DevExpress.XtraGrid.Columns.GridColumn SoLuongTinDo;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn clmXoa;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnXoa;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnChiTiet;

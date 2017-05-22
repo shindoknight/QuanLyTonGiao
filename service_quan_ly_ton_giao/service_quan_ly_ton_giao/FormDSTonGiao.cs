@@ -241,6 +241,21 @@ namespace service_quan_ly_ton_giao
             InitializeComponent();
 
         }
+        public FormDSTonGiao(int quyen)
+        {
+            InitializeComponent();
+            if (quyen==3)
+            {
+                btnLuu.Visible = false;
+                btnSua.Visible = false;
+                btnThemChucSac.Visible = false;
+                btnThemToChuc.Visible = false;
+                btnXoa.Visible = false;
+                btnLoad.Visible = false;
+            }
+
+
+        }
         private void FormDSTonGiao_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -396,6 +411,12 @@ namespace service_quan_ly_ton_giao
             frm.cboTenTonGiao.Text = lbTenTG.Text;
             frm.cboTenTonGiao.Enabled = false;
             frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable s = ws.LayDanhSach();
+            dgvDSTG.DataSource = s;
         }
     }
 }

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
             DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
+            this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
+            this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dgvDSTG = new System.Windows.Forms.DataGridView();
             this.clmTenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,22 +55,21 @@
             this.txtTenTG = new System.Windows.Forms.TextBox();
             this.labelTen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTenTG = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSLTindo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.map = new DevExpress.XtraMap.MapControl();
+            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
+            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThemToChuc = new System.Windows.Forms.Button();
             this.btnThemChucSac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.map = new DevExpress.XtraMap.MapControl();
-            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
-            this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
-            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
-            this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
@@ -80,10 +81,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vectorItemsLayer1
+            // 
+            this.vectorItemsLayer1.Data = this.mapItemStorage1;
+            this.vectorItemsLayer1.Name = "VectorLayer";
             // 
             // splitContainerControl1
             // 
@@ -317,15 +323,6 @@
             this.label4.Text = "Giới Thiệu";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbTenTG
             // 
             this.lbTenTG.AutoSize = true;
@@ -360,76 +357,13 @@
             this.panel1.Controls.Add(this.btnThemChucSac);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnLuu);
+            this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 531);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(726, 70);
             this.panel1.TabIndex = 14;
-            // 
-            // btnThemToChuc
-            // 
-            this.btnThemToChuc.Image = global::service_quan_ly_ton_giao.Properties.Resources.Add;
-            this.btnThemToChuc.Location = new System.Drawing.Point(609, 15);
-            this.btnThemToChuc.Name = "btnThemToChuc";
-            this.btnThemToChuc.Size = new System.Drawing.Size(82, 43);
-            this.btnThemToChuc.TabIndex = 1;
-            this.btnThemToChuc.Text = "Thêm tổ chức";
-            this.btnThemToChuc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemToChuc.UseVisualStyleBackColor = true;
-            this.btnThemToChuc.Visible = false;
-            this.btnThemToChuc.Click += new System.EventHandler(this.btnThemToChuc_Click);
-            // 
-            // btnThemChucSac
-            // 
-            this.btnThemChucSac.Image = global::service_quan_ly_ton_giao.Properties.Resources.Actions_list_add_icon__1_;
-            this.btnThemChucSac.Location = new System.Drawing.Point(464, 15);
-            this.btnThemChucSac.Name = "btnThemChucSac";
-            this.btnThemChucSac.Size = new System.Drawing.Size(91, 43);
-            this.btnThemChucSac.TabIndex = 1;
-            this.btnThemChucSac.Text = "Thêm Chức sắc";
-            this.btnThemChucSac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemChucSac.UseVisualStyleBackColor = true;
-            this.btnThemChucSac.Visible = false;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Enabled = false;
-            this.btnXoa.Image = global::service_quan_ly_ton_giao.Properties.Resources.Remove;
-            this.btnXoa.Location = new System.Drawing.Point(335, 15);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(74, 43);
-            this.btnXoa.TabIndex = 0;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Enabled = false;
-            this.btnLuu.Image = global::service_quan_ly_ton_giao.Properties.Resources.Floppy_Small_icon__1_;
-            this.btnLuu.Location = new System.Drawing.Point(202, 15);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(80, 43);
-            this.btnLuu.TabIndex = 0;
-            this.btnLuu.Text = "Lưu Lại";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Enabled = false;
-            this.btnSua.Image = global::service_quan_ly_ton_giao.Properties.Resources.edit_icon__1_;
-            this.btnSua.Location = new System.Drawing.Point(45, 15);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 43);
-            this.btnSua.TabIndex = 0;
-            this.btnSua.Text = "Chỉnh Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // map
             // 
@@ -452,14 +386,95 @@
             // 
             this.imageLayer1.DataProvider = this.openStreetMapDataProvider1;
             // 
-            // vectorItemsLayer1
-            // 
-            this.vectorItemsLayer1.Data = this.mapItemStorage1;
-            this.vectorItemsLayer1.Name = "VectorLayer";
-            // 
             // toolTipController1
             // 
             this.toolTipController1.AllowHtmlText = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnThemToChuc
+            // 
+            this.btnThemToChuc.Image = global::service_quan_ly_ton_giao.Properties.Resources.Add;
+            this.btnThemToChuc.Location = new System.Drawing.Point(638, 15);
+            this.btnThemToChuc.Name = "btnThemToChuc";
+            this.btnThemToChuc.Size = new System.Drawing.Size(82, 43);
+            this.btnThemToChuc.TabIndex = 1;
+            this.btnThemToChuc.Text = "Thêm tổ chức";
+            this.btnThemToChuc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemToChuc.UseVisualStyleBackColor = true;
+            this.btnThemToChuc.Visible = false;
+            this.btnThemToChuc.Click += new System.EventHandler(this.btnThemToChuc_Click);
+            // 
+            // btnThemChucSac
+            // 
+            this.btnThemChucSac.Image = global::service_quan_ly_ton_giao.Properties.Resources.Actions_list_add_icon__1_;
+            this.btnThemChucSac.Location = new System.Drawing.Point(511, 15);
+            this.btnThemChucSac.Name = "btnThemChucSac";
+            this.btnThemChucSac.Size = new System.Drawing.Size(91, 43);
+            this.btnThemChucSac.TabIndex = 1;
+            this.btnThemChucSac.Text = "Thêm Chức sắc";
+            this.btnThemChucSac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemChucSac.UseVisualStyleBackColor = true;
+            this.btnThemChucSac.Visible = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Enabled = false;
+            this.btnXoa.Image = global::service_quan_ly_ton_giao.Properties.Resources.Remove;
+            this.btnXoa.Location = new System.Drawing.Point(413, 15);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(74, 43);
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Enabled = false;
+            this.btnLuu.Image = global::service_quan_ly_ton_giao.Properties.Resources.Floppy_Small_icon__1_;
+            this.btnLuu.Location = new System.Drawing.Point(298, 15);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(80, 43);
+            this.btnLuu.TabIndex = 0;
+            this.btnLuu.Text = "Lưu Lại";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Enabled = false;
+            this.btnLoad.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon__1_;
+            this.btnLoad.Location = new System.Drawing.Point(13, 15);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(98, 43);
+            this.btnLoad.TabIndex = 0;
+            this.btnLoad.Text = "Refresh";
+            this.btnLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Enabled = false;
+            this.btnSua.Image = global::service_quan_ly_ton_giao.Properties.Resources.edit_icon__1_;
+            this.btnSua.Location = new System.Drawing.Point(142, 15);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(108, 43);
+            this.btnSua.TabIndex = 0;
+            this.btnSua.Text = "Chỉnh Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // FormDSTonGiao
             // 
@@ -482,9 +497,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,5 +544,6 @@
         private DevExpress.XtraMap.VectorItemsLayer vectorItemsLayer1;
         private DevExpress.XtraMap.MapItemStorage mapItemStorage1;
         private DevExpress.Utils.ToolTipController toolTipController1;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
