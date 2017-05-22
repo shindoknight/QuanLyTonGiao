@@ -44,9 +44,21 @@ namespace service_quan_ly_ton_giao
         {
             
         }
+        public void HienThi()
+        {
+            cbQueQuanTinh.DataSource = tindo.DuLieuTinh();
+            cbQueQuanTinh.DisplayMember = "TenTinh";
 
+            cbDiaChiTinh.DataSource = tindo.DuLieuTinh();
+            cbDiaChiTinh.DisplayMember = "TenTinh";
+
+            cbbTonGiao.DataSource = tindo.OneRecord("tblTonGiao", "select * from tblTonGiao");
+            cbbTonGiao.DisplayMember = "TenTonGiao";
+
+        }
         private void frmSuaTinDo_Load(object sender, EventArgs e)
         {
+            HienThi();
             int id = BienToanCuc.IdTinDo;
 
             DataTable DataTinDo = new DataTable();
@@ -60,8 +72,28 @@ namespace service_quan_ly_ton_giao
                 cbQueQuanHuyen.Text = xahuyentinh.Rows[0]["TenHuyen"].ToString();
                 cbQueQuanTinh.Text = xahuyentinh.Rows[0]["TenTinh"].ToString();
             }
-            
+            else
+            {
+                cbQueQuanXa.Text = "";
+                cbQueQuanHuyen.Text = "";
+                cbQueQuanTinh.Text = "";
+            }
 
+
+            string idXaDiaChi = DataTinDo.Rows[0]["DiaChi"].ToString();
+            if (idXaDiaChi != "")
+            {
+                DataTable xahuyentinh = tindo.LayDiaChi(idXaDiaChi);
+                cbDiaChiXa.Text = xahuyentinh.Rows[0]["TenXa"].ToString();
+                cbDiaChiHuyen.Text = xahuyentinh.Rows[0]["TenHuyen"].ToString();
+                cbDiaChiTinh.Text = xahuyentinh.Rows[0]["TenTinh"].ToString();
+            }
+            else
+            {
+                cbDiaChiXa.Text = "";
+                cbDiaChiHuyen.Text = "";
+                cbDiaChiTinh.Text = "";
+            }
 
             string gioiTinh = DataTinDo.Rows[0]["GioiTinh"].ToString();
             if (gioiTinh == "Nam")
@@ -82,23 +114,28 @@ namespace service_quan_ly_ton_giao
 
 
             cbDanToc.Text = DataTinDo.Rows[0]["DanToc"].ToString();
-
-
             
 
-            /*
-            string diaChi = IdDiaChi();
-            string taiChinh = txtTaiChinh.Text;
-            string sucKhoe = txtSucKhoe.Text;
-            string tcTichCuc = txtTcTichCuc.Text;
-            string tcNguyHiem = txtTcNguyHiem.Text;
-            string hinhAnh = "";
-            string matDoi = txtMatDoi.Text;
-            string matDao = txtMatDao.Text;
-            string hdCaNhan = txtHdCaNhan.Text;
-            string hdToChuc = txtDhToChuc.Text;
+            txtTaiChinh.Text = DataTinDo.Rows[0]["TaiChinh"].ToString();
 
-            string ChucSac = cbbChucSac.Text;
+            txtSucKhoe.Text = DataTinDo.Rows[0]["SucKhoe"].ToString();
+             txtTcTichCuc.Text = DataTinDo.Rows[0]["TCTichCuc"].ToString();
+            txtTcNguyHiem.Text = DataTinDo.Rows[0]["TCNguyHiem"].ToString();
+            string hinhAnh = "";
+            txtMatDoi.Text = DataTinDo.Rows[0]["MatDoi"].ToString();
+            txtMatDao.Text = DataTinDo.Rows[0]["MatDao"].ToString();
+            txtHdCaNhan.Text = DataTinDo.Rows[0]["HDCaNhan"].ToString();
+            txtDhToChuc.Text = DataTinDo.Rows[0]["HDToChuc"].ToString();
+
+            string ChucSac = DataTinDo.Rows[0]["IDChucSac"].ToString();
+            if(ChucSac!="")
+            {
+                int idChucSac = Int16.Parse(ChucSac);
+                //string TenChucSac = tindo.("select TenChucSac from tblChucSac where idChucSac = N'" + idChucSac"'");
+
+
+            }
+            /*
             int idChusSac = tindo.IdChucSac(ChucSac); if (idChusSac == 0) idChusSac = 10;
 
             string CoSo = cbbCoSo.Text;
@@ -109,19 +146,55 @@ namespace service_quan_ly_ton_giao
 
             string ChucVu = cbbChucVu.Text;
             int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
-
-            //int them = tindo.ThemTinDo(phapDanh, hodemTheDanh, tenTheDanh, NgaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChusSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
-            if (them == 1)
-            {
-                MessageBox.Show("Ok");
-            }
-            else { MessageBox.Show("Fail!"); }
             */
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbQueQuanTinh_TextChanged(object sender, EventArgs e)
+        {
+            string tinh = cbQueQuanTinh.Text;
+            if (tinh != null || tinh != "")
+            {
+                cbQueQuanHuyen.DataSource = tindo.TruyVanTenHuyen(tinh);
+                cbQueQuanHuyen.DisplayMember = "TenHuyen";
+
+            }
+        }
+
+        private void cbDiaChiTinh_TextChanged(object sender, EventArgs e)
+        {
+            string tinh = cbDiaChiTinh.Text;
+            if (tinh != null || tinh != "")
+            {
+                cbDiaChiHuyen.DataSource = tindo.TruyVanTenHuyen(tinh);
+                cbDiaChiHuyen.DisplayMember = "TenHuyen";
+
+            }
+        }
+
+        private void cbQueQuanHuyen_TextChanged(object sender, EventArgs e)
+        {
+            string huyen = cbQueQuanHuyen.Text;
+            if (huyen != null || huyen != "")
+            {
+                cbQueQuanXa.DataSource = tindo.TruyVanTenXa(huyen);
+                cbQueQuanXa.DisplayMember = "TenXa";
+            }
+        }
+
+        private void cbDiaChiHuyen_TextChanged(object sender, EventArgs e)
+        {
+            string huyen = cbDiaChiHuyen.Text;
+            if (huyen != null || huyen != "")
+            {
+                cbDiaChiXa.DataSource = tindo.TruyVanTenXa(huyen);
+                cbDiaChiXa.DisplayMember = "TenXa";
+            }
         }
     }
 }

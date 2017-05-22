@@ -228,6 +228,7 @@ public class tblTinDo : System.Web.Services.WebService
         CloseConnect();
         return dtdistrict;
     }
+
     [WebMethod]
     public int IDTonGiao(string tenTonGiao)
     {
@@ -247,6 +248,7 @@ public class tblTinDo : System.Web.Services.WebService
         }
         
     }
+
     [WebMethod]
     public DataTable LayDiaChi(string idxa)
     {
@@ -262,6 +264,21 @@ public class tblTinDo : System.Web.Services.WebService
 
     }
 
+    [WebMethod]
+    public object LayGiaTriDon(string sqlString)
+    {
+        OpenConnect();
+        object temp = null;
+        //SqlConnection conn = new SqlConnection(@"server=MI\M; database=dia_gioi_hanh_chinh; integrated security = true;");
+        SqlCommand comm = new SqlCommand(sqlString, conn);
+        SqlDataReader sqldr = comm.ExecuteReader();
+        while (sqldr.Read())
+            temp = sqldr[0].ToString();
+        CloseConnect();
+
+        return temp;
+
+    }
 
 
 }
