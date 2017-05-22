@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using service_quan_ly_ton_giao.tblTinDo;
 
+using System.Globalization;
+
 namespace service_quan_ly_ton_giao
 {
     public partial class frmSuaTinDo : Form
@@ -43,6 +45,9 @@ namespace service_quan_ly_ton_giao
         private void button1_Click(object sender, EventArgs e)
         {
             
+
+
+
         }
         public void HienThi()
         {
@@ -162,18 +167,16 @@ namespace service_quan_ly_ton_giao
                 cbbChucVu.Text = TenChucVu;
             }
 
-            /*
-            int idChusSac = tindo.IdChucSac(ChucSac); if (idChusSac == 0) idChusSac = 10;
+            var ngaysinh = DataTinDo.Rows[0]["NgaySinh"].ToString();//"4/12/1917 12:00:00 AM"
+            //-> m/d/yvar date = mydate.ToDateTime(format: "ddMMyyyy")
+            txtNgaySinh.Text = ngaysinh;
 
-            string CoSo = cbbCoSo.Text;
-            int idCoSo = tindo.IdCoSo(CoSo); if (idCoSo == 0) idCoSo = 51;
+            var ngayvaotongiao = DataTinDo.Rows[0]["NgayVaoTonGiao"].ToString();//"4/12/1917 12:00:00 AM"
+            //-> m/d/yvar date = mydate.ToDateTime(format: "ddMMyyyy")
+            dtNgayVaoTonGiao.Text = ngayvaotongiao;
+            
 
-            int daXoa = 0;
-            DateTime ngayVaoTonGiao = dtNgayVaoTonGiao.Value;
-
-            string ChucVu = cbbChucVu.Text;
-            int idChucVu = tindo.IdChucVu(ChucVu); if (idChucVu == 0) idChucVu = 13;
-           */
+          
         }
 
         private void button2_Click(object sender, EventArgs e)

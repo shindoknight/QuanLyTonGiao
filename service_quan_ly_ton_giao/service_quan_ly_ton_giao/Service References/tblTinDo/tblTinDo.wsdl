@@ -293,6 +293,42 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateTinDo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idTinDo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phapDanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hodemTheDanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenTheDanh" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngaySinh" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="gioiTinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="danToc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="queQuan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="diaChi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taiChinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sucKhoe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcTichCuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNguyHiem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhAnh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matDoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matDao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hdCaNhan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hdToChuc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idChucSac" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCoSo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="daXoa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ngayVaoTonGiao" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idChucVu" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTinDoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTinDoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HienThiDSTinDoSoapIn">
@@ -391,6 +427,12 @@
   <wsdl:message name="LayMotBangSoapOut">
     <wsdl:part name="parameters" element="tns:LayMotBangResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateTinDoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTinDo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTinDoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTinDoResponse" />
+  </wsdl:message>
   <wsdl:portType name="tblTinDoSoap">
     <wsdl:operation name="HienThiDSTinDo">
       <wsdl:input message="tns:HienThiDSTinDoSoapIn" />
@@ -455,6 +497,10 @@
     <wsdl:operation name="LayMotBang">
       <wsdl:input message="tns:LayMotBangSoapIn" />
       <wsdl:output message="tns:LayMotBangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTinDo">
+      <wsdl:input message="tns:UpdateTinDoSoapIn" />
+      <wsdl:output message="tns:UpdateTinDoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tblTinDoSoap" type="tns:tblTinDoSoap">
@@ -603,6 +649,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateTinDo">
+      <soap:operation soapAction="http://tempuri.org/UpdateTinDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="tblTinDoSoap12" type="tns:tblTinDoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -743,6 +798,15 @@
     </wsdl:operation>
     <wsdl:operation name="LayMotBang">
       <soap12:operation soapAction="http://tempuri.org/LayMotBang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTinDo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTinDo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

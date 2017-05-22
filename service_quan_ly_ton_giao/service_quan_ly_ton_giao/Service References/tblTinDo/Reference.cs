@@ -171,6 +171,59 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/LayMotBang", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> LayMotBangAsync(string sqlString);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateTinDo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int UpdateTinDo(
+                    string idTinDo, 
+                    string phapDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateTinDo", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> UpdateTinDoAsync(
+                    string idTinDo, 
+                    string phapDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -370,6 +423,60 @@ namespace service_quan_ly_ton_giao.tblTinDo {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> LayMotBangAsync(string sqlString) {
             return base.Channel.LayMotBangAsync(sqlString);
+        }
+        
+        public int UpdateTinDo(
+                    string idTinDo, 
+                    string phapDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu) {
+            return base.Channel.UpdateTinDo(idTinDo, phapDanh, hodemTheDanh, tenTheDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateTinDoAsync(
+                    string idTinDo, 
+                    string phapDanh, 
+                    string hodemTheDanh, 
+                    string tenTheDanh, 
+                    System.DateTime ngaySinh, 
+                    string gioiTinh, 
+                    string danToc, 
+                    string queQuan, 
+                    string diaChi, 
+                    string taiChinh, 
+                    string sucKhoe, 
+                    string tcTichCuc, 
+                    string tcNguyHiem, 
+                    string hinhAnh, 
+                    string matDoi, 
+                    string matDao, 
+                    string hdCaNhan, 
+                    string hdToChuc, 
+                    int idChucSac, 
+                    int idCoSo, 
+                    int daXoa, 
+                    System.DateTime ngayVaoTonGiao, 
+                    int idChucVu) {
+            return base.Channel.UpdateTinDoAsync(idTinDo, phapDanh, hodemTheDanh, tenTheDanh, ngaySinh, gioiTinh, danToc, queQuan, diaChi, taiChinh, sucKhoe, tcTichCuc, tcNguyHiem, hinhAnh, matDoi, matDao, hdCaNhan, hdToChuc, idChucSac, idCoSo, daXoa, ngayVaoTonGiao, idChucVu);
         }
     }
 }
