@@ -76,7 +76,7 @@
             this.ribbonNhap_Xuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xFrmTrangChu = new DevExpress.XtraTab.XtraTabPage();
             this.labelName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).BeginInit();
@@ -141,6 +141,7 @@
             this.imageCollection16x16.Images.SetKeyName(14, "placeholder.png");
             this.imageCollection16x16.Images.SetKeyName(15, "Actions-list-add-icon.png");
             this.imageCollection16x16.Images.SetKeyName(16, "chart-icon.png");
+            this.imageCollection16x16.Images.SetKeyName(17, "1459435555_User.png");
             // 
             // bbtnTTTaiKhoan
             // 
@@ -163,6 +164,7 @@
             this.bbtnThemTK.Id = 3;
             this.bbtnThemTK.LargeImageIndex = 3;
             this.bbtnThemTK.Name = "bbtnThemTK";
+            this.bbtnThemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTK_ItemClick);
             // 
             // bbtnDSTinDo
             // 
@@ -218,6 +220,7 @@
             this.bbtnDanhSachTK.Id = 11;
             this.bbtnDanhSachTK.LargeImageIndex = 4;
             this.bbtnDanhSachTK.Name = "bbtnDanhSachTK";
+            this.bbtnDanhSachTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDanhSachTK_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -499,19 +502,19 @@
             this.xtraTabControl1.Images = this.imageCollection16x16;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.SelectedTabPage = this.xFrmTrangChu;
             this.xtraTabControl1.Size = new System.Drawing.Size(1089, 598);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
+            this.xFrmTrangChu});
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
-            // xtraTabPage1
+            // xFrmTrangChu
             // 
-            this.xtraTabPage1.ImageIndex = 0;
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1083, 567);
-            this.xtraTabPage1.Text = "Trang chủ";
+            this.xFrmTrangChu.ImageIndex = 0;
+            this.xFrmTrangChu.Name = "xFrmTrangChu";
+            this.xFrmTrangChu.Size = new System.Drawing.Size(1083, 567);
+            this.xFrmTrangChu.Text = "Trang chủ";
             // 
             // labelName
             // 
@@ -583,7 +586,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.Utils.ImageCollection imageCollection16x16;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xFrmTrangChu;
         private DevExpress.XtraBars.BarButtonItem bbtnDSTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThemTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThongKe;

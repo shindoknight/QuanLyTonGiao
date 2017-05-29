@@ -52,7 +52,7 @@ namespace service_quan_ly_ton_giao
         private void frmChinh_Load(object sender, EventArgs e)
         {
             _frmTrangChu.TopLevel = false;
-            _frmTrangChu.Parent = xtraTabPage1;
+            _frmTrangChu.Parent = xFrmTrangChu;
             _frmTrangChu.Dock = DockStyle.Fill;
             _frmTrangChu.Show();
 
@@ -131,9 +131,14 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnTTTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDSTinDo f = new frmDSTinDo();
-
-            _frmTrangChu.TabCreating(f.Text, f.Name, f, imageCollection16x16, 0);
+            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            FormUser f;
+            if (_quyen==1)
+            {
+                f = new FormUser(_id,true);
+            }
+            else f = new FormUser(_id, false);
+            _frmTrangChu.TabCreating(f.Text, f.Name, f, imageCollection16x16, 17);
             
         }
 
@@ -268,5 +273,20 @@ namespace service_quan_ly_ton_giao
             frmThemTinDo f = new frmThemTinDo();
             _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 9);
         }
+
+        private void bbtnThemTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            FormUser f = new FormUser(true);
+            _frmTrangChu.TabCreating("Thêm User", "ThemUser", f, imageCollection16x16, 3);
+        }
+
+        private void bbtnDanhSachTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            FormDSUser f = new FormDSUser();
+            _frmTrangChu.TabCreating("Thêm User", "ThemUser", f, imageCollection16x16, 3);
+        }
+    
     }
 }

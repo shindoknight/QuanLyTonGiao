@@ -23,7 +23,7 @@ namespace service_quan_ly_ton_giao
         {
             
             OpenFileDialog ofdImages = new OpenFileDialog();
-          
+            ofdImages.Filter = "file ảnh |*.jpg|*.png";
             if (ofdImages.ShowDialog() == DialogResult.OK)
             {
                 filename = ofdImages.FileName;

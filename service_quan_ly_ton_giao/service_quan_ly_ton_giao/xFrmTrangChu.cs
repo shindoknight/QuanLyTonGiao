@@ -21,12 +21,12 @@ namespace service_quan_ly_ton_giao
         private void xFrmTrangChu_Load(object sender, EventArgs e)
         {
            
-            frmMapChinh f = new frmMapChinh();
+           /* frmMapChinh f = new frmMapChinh();
             f.FormBorderStyle = FormBorderStyle.None;
             f.TopLevel = false;
             f.Parent = xtraTabPage1;
             f.Dock = DockStyle.Fill;
-            f.Show();
+            f.Show();*/
         }
         /// <summary>
         /// Kiểm tra tabpage có tồn tại hay không.
@@ -55,7 +55,7 @@ namespace service_quan_ly_ton_giao
         /// <param name="Name">Tên tabpage mới</param>
         /// <param name="form">Tên form con của tab mới</param>
         /// <param name="imageIndex">index của icon</param>
-        public void TabCreating( string Text, string Name, DevExpress.XtraEditors.XtraForm form, DevExpress.Utils.ImageCollection imgcl,int imgindex)
+        public void TabCreating( string Text, string Name, Form form, DevExpress.Utils.ImageCollection imgcl,int imgindex)
         {
             xtraTabControl1.Images = imgcl;
             int index = KiemTraTonTai(xtraTabControl1, Name);
@@ -69,7 +69,7 @@ namespace service_quan_ly_ton_giao
                 DevExpress.XtraTab.XtraTabPage tabpage = new DevExpress.XtraTab.XtraTabPage { Text = Text, Name = Name, ImageIndex = imgindex };
                 xtraTabControl1.TabPages.Add(tabpage);
                 xtraTabControl1.SelectedTabPage = tabpage;
-
+                form.FormBorderStyle = FormBorderStyle.None;
                 form.TopLevel = false;
                 form.Parent = tabpage;
                 form.Show();

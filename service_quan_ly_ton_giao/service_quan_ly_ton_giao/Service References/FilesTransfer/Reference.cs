@@ -59,12 +59,16 @@ namespace service_quan_ly_ton_giao.FilesTransfer {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string fileName;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string type;
+        
         public UploadFileRequestBody() {
         }
         
-        public UploadFileRequestBody(byte[] f, string fileName) {
+        public UploadFileRequestBody(byte[] f, string fileName, string type) {
             this.f = f;
             this.fileName = fileName;
+            this.type = type;
         }
     }
     
@@ -202,11 +206,12 @@ namespace service_quan_ly_ton_giao.FilesTransfer {
             return base.Channel.UploadFile(request);
         }
         
-        public string UploadFile(byte[] f, string fileName) {
+        public string UploadFile(byte[] f, string fileName, string type) {
             service_quan_ly_ton_giao.FilesTransfer.UploadFileRequest inValue = new service_quan_ly_ton_giao.FilesTransfer.UploadFileRequest();
             inValue.Body = new service_quan_ly_ton_giao.FilesTransfer.UploadFileRequestBody();
             inValue.Body.f = f;
             inValue.Body.fileName = fileName;
+            inValue.Body.type = type;
             service_quan_ly_ton_giao.FilesTransfer.UploadFileResponse retVal = ((service_quan_ly_ton_giao.FilesTransfer.FilesTransferSoap)(this)).UploadFile(inValue);
             return retVal.Body.UploadFileResult;
         }
@@ -216,11 +221,12 @@ namespace service_quan_ly_ton_giao.FilesTransfer {
             return base.Channel.UploadFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<service_quan_ly_ton_giao.FilesTransfer.UploadFileResponse> UploadFileAsync(byte[] f, string fileName) {
+        public System.Threading.Tasks.Task<service_quan_ly_ton_giao.FilesTransfer.UploadFileResponse> UploadFileAsync(byte[] f, string fileName, string type) {
             service_quan_ly_ton_giao.FilesTransfer.UploadFileRequest inValue = new service_quan_ly_ton_giao.FilesTransfer.UploadFileRequest();
             inValue.Body = new service_quan_ly_ton_giao.FilesTransfer.UploadFileRequestBody();
             inValue.Body.f = f;
             inValue.Body.fileName = fileName;
+            inValue.Body.type = type;
             return ((service_quan_ly_ton_giao.FilesTransfer.FilesTransferSoap)(this)).UploadFileAsync(inValue);
         }
         

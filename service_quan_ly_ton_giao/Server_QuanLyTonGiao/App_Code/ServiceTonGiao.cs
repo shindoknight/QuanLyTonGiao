@@ -64,11 +64,11 @@ public class ServiceTonGiao : System.Web.Services.WebService
             int n=0;
             if (hinhanh != "")
             {
-                string upfile = trans.UploadFile(f, hinhanh);
+                string upfile = trans.UploadFile(f, hinhanh,"TonGiao");
 
                 if (upfile == "OK")
                 {
-                    SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'"+ "/Images/" + hinhanh+"',0,0)", conn);
+                    SqlCommand comm = new SqlCommand("insert into tblTonGiao values (N'" + Ten + "',N'" + gioithieu + "',N'"+ "/Images/TonGiao/" + hinhanh+"',0,0)", conn);
                     n = comm.ExecuteNonQuery();
                 }
 
@@ -97,21 +97,47 @@ public class ServiceTonGiao : System.Web.Services.WebService
         }
     }
     [WebMethod]
-    public int SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo)
+    public string SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo,byte[] f)
     {
+        FilesTransfer trans = new FilesTransfer();
         try
         {
             OpenConnect();
-            SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where IDTonGiao=" + id, conn);
-            int n;
-            n = comm.ExecuteNonQuery();
-            CloseConnect();
-            return n;
+            int n = 0;
+            if (hinhanh != "")
+            {
+                string upfile = trans.UploadFile(f, hinhanh, "TonGiao");
+
+                if (upfile == "OK")
+                {
+                    SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where IDTonGiao=" + id, conn);
+                    n = comm.ExecuteNonQuery();
+                }
+
+                else
+                {
+                    CloseConnect();
+                    return "Lỗi up file: \n" + upfile;
+                }
+                CloseConnect();
+            }
+            else
+            {
+                SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "', SLTinDo=0 where IDTonGiao=" + id, conn);
+                n = comm.ExecuteNonQuery();
+                CloseConnect();
+            }
+            if (n > 0)
+            {
+                return "Sửa Tôn giáo thành công!";
+            }
+            else return "Sửa Tôn giáo không thành công!";
         }
-        catch(Exception e)
+        catch (Exception ex)
         {
-            return 0;
+            return "Sửa Tôn giáo không thành công!";
         }
+       
     }
     [WebMethod]
     public int Xoa(string id)

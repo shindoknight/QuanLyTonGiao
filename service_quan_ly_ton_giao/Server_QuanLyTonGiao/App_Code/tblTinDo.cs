@@ -65,9 +65,9 @@ public class tblTinDo : System.Web.Services.WebService
             "Values ( N'" + phapDanh + "', N'" + hodemTheDanh + "', N'" + tenTheDanh + "', N'" + ngaySinh + "' , N'" + gioiTinh + "' , N'" + danToc + "' , N'" + queQuan + "',N'" + diaChi + "' ,N'" + taiChinh + "',N'" + sucKhoe + "'," +
             " N'" + tcTichCuc + "',N'" + tcNguyHiem + "',N'" + hinhAnh + "',N'" + matDoi + "',N'" + matDao + "',N'" + hdCaNhan + "',N'" + hdToChuc + "','" + idChucSac + "','" + idCoSo + "','" + daXoa + "',N'" + ngayVaoTonGiao + "',N'" + idChucVu + "' ) ", conn);
 
-        comm.ExecuteNonQuery();
+        int kt=comm.ExecuteNonQuery();
         CloseConnect();
-        return 1;
+        return kt;
     }
 
     [WebMethod]

@@ -24,6 +24,114 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DanhSach">
+        <s:complexType />
+      </s:element>
+      <s:element name="DanhSachResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DanhSachResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoiMatKhau">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mkmoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoiMatKhauResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoiMatKhauResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Xoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="XoaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sua">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ngaysinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="quyen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SuaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SuaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoten" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ngaysinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="phanquyen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ThemUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="DangNhapSoapIn">
@@ -32,10 +140,70 @@
   <wsdl:message name="DangNhapSoapOut">
     <wsdl:part name="parameters" element="tns:DangNhapResponse" />
   </wsdl:message>
+  <wsdl:message name="GetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DanhSachSoapIn">
+    <wsdl:part name="parameters" element="tns:DanhSach" />
+  </wsdl:message>
+  <wsdl:message name="DanhSachSoapOut">
+    <wsdl:part name="parameters" element="tns:DanhSachResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoiMatKhauSoapIn">
+    <wsdl:part name="parameters" element="tns:DoiMatKhau" />
+  </wsdl:message>
+  <wsdl:message name="DoiMatKhauSoapOut">
+    <wsdl:part name="parameters" element="tns:DoiMatKhauResponse" />
+  </wsdl:message>
+  <wsdl:message name="XoaSoapIn">
+    <wsdl:part name="parameters" element="tns:Xoa" />
+  </wsdl:message>
+  <wsdl:message name="XoaSoapOut">
+    <wsdl:part name="parameters" element="tns:XoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SuaSoapIn">
+    <wsdl:part name="parameters" element="tns:Sua" />
+  </wsdl:message>
+  <wsdl:message name="SuaSoapOut">
+    <wsdl:part name="parameters" element="tns:SuaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemUser" />
+  </wsdl:message>
+  <wsdl:message name="ThemUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceUserSoap">
     <wsdl:operation name="DangNhap">
       <wsdl:input message="tns:DangNhapSoapIn" />
       <wsdl:output message="tns:DangNhapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoSoapIn" />
+      <wsdl:output message="tns:GetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhSach">
+      <wsdl:input message="tns:DanhSachSoapIn" />
+      <wsdl:output message="tns:DanhSachSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhau">
+      <wsdl:input message="tns:DoiMatKhauSoapIn" />
+      <wsdl:output message="tns:DoiMatKhauSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <wsdl:input message="tns:XoaSoapIn" />
+      <wsdl:output message="tns:XoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sua">
+      <wsdl:input message="tns:SuaSoapIn" />
+      <wsdl:output message="tns:SuaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemUser">
+      <wsdl:input message="tns:ThemUserSoapIn" />
+      <wsdl:output message="tns:ThemUserSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceUserSoap" type="tns:ServiceUserSoap">
@@ -49,11 +217,119 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhSach">
+      <soap:operation soapAction="http://tempuri.org/DanhSach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhau">
+      <soap:operation soapAction="http://tempuri.org/DoiMatKhau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <soap:operation soapAction="http://tempuri.org/Xoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sua">
+      <soap:operation soapAction="http://tempuri.org/Sua" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemUser">
+      <soap:operation soapAction="http://tempuri.org/ThemUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceUserSoap12" type="tns:ServiceUserSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DangNhap">
       <soap12:operation soapAction="http://tempuri.org/DangNhap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhSach">
+      <soap12:operation soapAction="http://tempuri.org/DanhSach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoiMatKhau">
+      <soap12:operation soapAction="http://tempuri.org/DoiMatKhau" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Xoa">
+      <soap12:operation soapAction="http://tempuri.org/Xoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sua">
+      <soap12:operation soapAction="http://tempuri.org/Sua" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemUser">
+      <soap12:operation soapAction="http://tempuri.org/ThemUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

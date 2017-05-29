@@ -159,3 +159,9 @@ D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanL
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.pdb
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmSuaTinDo.resources
 D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.frmThemTinDo.resources
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormUser.resources
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormDSUser.resources
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\DevExpress.Diagram.v16.1.Core.dll
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\DevExpress.XtraDiagram.v16.1.dll
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\DevExpress.Diagram.v16.1.Core.xml
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\bin\Debug\DevExpress.XtraDiagram.v16.1.xml

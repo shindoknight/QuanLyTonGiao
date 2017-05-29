@@ -549,6 +549,7 @@ namespace service_quan_ly_ton_giao
                     GhiDuLieuVaoFileTheoHuyen("", e.Node.Text);
 
                     HienThiThongKeLenmap();
+                    
                 }
                 catch
                 {
@@ -816,6 +817,8 @@ namespace service_quan_ly_ton_giao
         {
             XacDinhTinDoTheoTungTonGiao("Hồi giáo");
             txtTenTonGiao.Text = "Hồi giáo";
+            
         }
+
     }
 }

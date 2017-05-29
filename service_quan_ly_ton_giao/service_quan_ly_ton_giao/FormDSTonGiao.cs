@@ -188,7 +188,6 @@ namespace service_quan_ly_ton_giao
         }
         void HienThiTinDo()
         {
-
             //hien thi tin do
             DataTable dsvung = wf.DuLieuVung("");
 
