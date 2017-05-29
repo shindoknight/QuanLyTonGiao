@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using service_quan_ly_ton_giao.tblTinDo;
+using service_quan_ly_ton_giao.ServiceTinDo;
 
 
 namespace service_quan_ly_ton_giao
@@ -19,7 +19,7 @@ namespace service_quan_ly_ton_giao
         {
             InitializeComponent();
         }
-        tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
+        ServiceTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
         private void frmDSTinDo_Load(object sender, EventArgs e)
         {
             

@@ -170,6 +170,7 @@
             this.bbtnDSTinDo.Id = 4;
             this.bbtnDSTinDo.LargeImageIndex = 11;
             this.bbtnDSTinDo.Name = "bbtnDSTinDo";
+            this.bbtnDSTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSTinDo_ItemClick);
             // 
             // bbtnBanDoTinDo
             // 
@@ -193,6 +194,7 @@
             this.bbtnThemTinDo.Id = 7;
             this.bbtnThemTinDo.LargeImageIndex = 3;
             this.bbtnThemTinDo.Name = "bbtnThemTinDo";
+            this.bbtnThemTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTinDo_ItemClick);
             // 
             // bbtnDSCSTG
             // 

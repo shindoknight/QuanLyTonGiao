@@ -254,5 +254,19 @@ namespace service_quan_ly_ton_giao
             FormNhapXuatExcel f = new FormNhapXuatExcel();
             _frmChucNang.TabCreating("Nhập Dữ Liệu", f.Name, f, imageCollection16x16, 16);
         }
+
+        private void bbtnDSTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmDSTinDo f = new frmDSTinDo();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 8);
+        }
+
+        private void bbtnThemTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmThemTinDo f = new frmThemTinDo();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 9);
+        }
     }
 }
