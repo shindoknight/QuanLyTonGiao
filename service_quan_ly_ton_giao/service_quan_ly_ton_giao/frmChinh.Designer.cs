@@ -304,6 +304,7 @@
             this.bbtnNhap.Id = 24;
             this.bbtnNhap.LargeImageIndex = 20;
             this.bbtnNhap.Name = "bbtnNhap";
+            this.bbtnNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnNhap_ItemClick);
             // 
             // btnXuat
             // 

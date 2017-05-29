@@ -247,5 +247,12 @@ namespace service_quan_ly_ton_giao
             xtrThongKe f = new xtrThongKe();
             _frmChucNang.TabCreating("Thống kê", f.Name, f, imageCollection16x16, 16);
         }
+
+        private void bbtnNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
+            FormNhapXuatExcel f = new FormNhapXuatExcel();
+            _frmChucNang.TabCreating("Nhập Dữ Liệu", f.Name, f, imageCollection16x16, 16);
+        }
     }
 }
