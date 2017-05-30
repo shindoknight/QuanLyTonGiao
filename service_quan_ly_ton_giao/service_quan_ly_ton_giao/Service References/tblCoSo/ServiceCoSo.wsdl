@@ -14,6 +14,8 @@
             <s:element minOccurs="1" maxOccurs="1" name="ChucNang" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="DaXoa" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="TenThuongGoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KinhDo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ViDo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -37,6 +39,8 @@
             <s:element minOccurs="1" maxOccurs="1" name="ChucNang" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="DaXoa" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="TenThuongGoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KinhDo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ViDo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
