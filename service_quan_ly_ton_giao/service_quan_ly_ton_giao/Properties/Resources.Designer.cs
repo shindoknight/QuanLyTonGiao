@@ -63,6 +63,16 @@ namespace service_quan_ly_ton_giao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1459435787_key_y {
+            get {
+                object obj = ResourceManager.GetObject("1459435787_key-y", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1459968311_exit {
             get {
                 object obj = ResourceManager.GetObject("1459968311_exit", resourceCulture);
@@ -83,9 +93,29 @@ namespace service_quan_ly_ton_giao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_view_list_details_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-view-list-details-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add {
             get {
                 object obj = ResourceManager.GetObject("Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_preferences_desktop_user_password_icon {
+            get {
+                object obj = ResourceManager.GetObject("Apps-preferences-desktop-user-password-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

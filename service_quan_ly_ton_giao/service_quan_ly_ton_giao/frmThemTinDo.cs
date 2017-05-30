@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using service_quan_ly_ton_giao.tblTinDo;
+using service_quan_ly_ton_giao.ServiceTinDo;
 namespace service_quan_ly_ton_giao
 {
     public partial class frmThemTinDo : Form
@@ -17,7 +17,7 @@ namespace service_quan_ly_ton_giao
             InitializeComponent();
         }
 
-        tblTinDo.tblTinDoSoapClient tindo = new tblTinDoSoapClient();
+        tblTinDoSoapClient tindo = new tblTinDoSoapClient();
 
         void HienThi()
         {

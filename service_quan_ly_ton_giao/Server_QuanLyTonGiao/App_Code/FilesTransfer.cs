@@ -25,7 +25,7 @@ public class FilesTransfer : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public string UploadFile(byte[] f, string fileName)
+    public string UploadFile(byte[] f, string fileName, string type)
     {
         // the byte array argument contains the content of the file
         // the string argument contains the name and extension
@@ -39,7 +39,7 @@ public class FilesTransfer : System.Web.Services.WebService
             // instance a filestream pointing to the
             // storage folder, use the original file name
             // to name the resulting file
-            FileStream fs = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath(@"~/Images/") + fileName, FileMode.Create);
+            FileStream fs = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath(@"~/Images/"+type+"/") + fileName, FileMode.Create);
 
             // write the memory stream containing the original
             // file as a byte array to the filestream
@@ -62,7 +62,7 @@ public class FilesTransfer : System.Web.Services.WebService
     [WebMethod()]
     public byte[] DownloadFile(string FName)
     {
-        System.IO.FileStream fs1 = new FileStream(FName, FileMode.Open, FileAccess.Read);
+        System.IO.FileStream fs1 = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath(FName), FileMode.Open, FileAccess.Read);
         byte[] b1 = new byte[fs1.Length];
         fs1.Read(b1, 0, (int)fs1.Length);
         fs1.Close();

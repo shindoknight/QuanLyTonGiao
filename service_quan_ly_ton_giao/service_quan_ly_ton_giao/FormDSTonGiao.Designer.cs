@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
-            DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
+            DevExpress.XtraMap.SizeLegend sizeLegend2 = new DevExpress.XtraMap.SizeLegend();
+            DevExpress.XtraMap.ColorListLegend colorListLegend2 = new DevExpress.XtraMap.ColorListLegend();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -55,21 +55,22 @@
             this.txtTenTG = new System.Windows.Forms.TextBox();
             this.labelTen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTenTG = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSLTindo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.map = new DevExpress.XtraMap.MapControl();
-            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
-            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThemToChuc = new System.Windows.Forms.Button();
             this.btnThemChucSac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.map = new DevExpress.XtraMap.MapControl();
+            this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
+            this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.btnChonfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
@@ -81,9 +82,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.map)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // vectorItemsLayer1
@@ -178,6 +179,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnChonfile);
             this.panel2.Controls.Add(this.rtbGioiThieu);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.txtTenTG);
@@ -197,9 +199,9 @@
             // 
             this.rtbGioiThieu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rtbGioiThieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 162);
+            this.rtbGioiThieu.Location = new System.Drawing.Point(0, 184);
             this.rtbGioiThieu.Name = "rtbGioiThieu";
-            this.rtbGioiThieu.Size = new System.Drawing.Size(726, 169);
+            this.rtbGioiThieu.Size = new System.Drawing.Size(726, 147);
             this.rtbGioiThieu.TabIndex = 17;
             this.rtbGioiThieu.Text = "";
             // 
@@ -323,6 +325,16 @@
             this.label4.Text = "Giới Thiệu";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(124, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbTenTG
             // 
             this.lbTenTG.AutoSize = true;
@@ -365,44 +377,10 @@
             this.panel1.Size = new System.Drawing.Size(726, 70);
             this.panel1.TabIndex = 14;
             // 
-            // map
-            // 
-            this.map.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
-            this.map.Dock = System.Windows.Forms.DockStyle.Right;
-            this.map.Layers.Add(this.imageLayer1);
-            this.map.Layers.Add(this.vectorItemsLayer1);
-            sizeLegend1.Layer = this.vectorItemsLayer1;
-            colorListLegend1.Layer = this.vectorItemsLayer1;
-            this.map.Legends.Add(sizeLegend1);
-            this.map.Legends.Add(colorListLegend1);
-            this.map.Location = new System.Drawing.Point(726, 0);
-            this.map.Name = "map";
-            this.map.Size = new System.Drawing.Size(383, 601);
-            this.map.TabIndex = 12;
-            this.map.ToolTipController = this.toolTipController1;
-            this.map.ZoomLevel = 5D;
-            // 
-            // imageLayer1
-            // 
-            this.imageLayer1.DataProvider = this.openStreetMapDataProvider1;
-            // 
-            // toolTipController1
-            // 
-            this.toolTipController1.AllowHtmlText = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(387, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnThemToChuc
             // 
             this.btnThemToChuc.Image = global::service_quan_ly_ton_giao.Properties.Resources.Add;
-            this.btnThemToChuc.Location = new System.Drawing.Point(638, 15);
+            this.btnThemToChuc.Location = new System.Drawing.Point(608, 15);
             this.btnThemToChuc.Name = "btnThemToChuc";
             this.btnThemToChuc.Size = new System.Drawing.Size(82, 43);
             this.btnThemToChuc.TabIndex = 1;
@@ -415,7 +393,7 @@
             // btnThemChucSac
             // 
             this.btnThemChucSac.Image = global::service_quan_ly_ton_giao.Properties.Resources.Actions_list_add_icon__1_;
-            this.btnThemChucSac.Location = new System.Drawing.Point(511, 15);
+            this.btnThemChucSac.Location = new System.Drawing.Point(490, 15);
             this.btnThemChucSac.Name = "btnThemChucSac";
             this.btnThemChucSac.Size = new System.Drawing.Size(91, 43);
             this.btnThemChucSac.TabIndex = 1;
@@ -428,7 +406,7 @@
             // 
             this.btnXoa.Enabled = false;
             this.btnXoa.Image = global::service_quan_ly_ton_giao.Properties.Resources.Remove;
-            this.btnXoa.Location = new System.Drawing.Point(413, 15);
+            this.btnXoa.Location = new System.Drawing.Point(387, 15);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 43);
             this.btnXoa.TabIndex = 0;
@@ -441,7 +419,7 @@
             // 
             this.btnLuu.Enabled = false;
             this.btnLuu.Image = global::service_quan_ly_ton_giao.Properties.Resources.Floppy_Small_icon__1_;
-            this.btnLuu.Location = new System.Drawing.Point(298, 15);
+            this.btnLuu.Location = new System.Drawing.Point(274, 15);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 43);
             this.btnLuu.TabIndex = 0;
@@ -452,7 +430,6 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Enabled = false;
             this.btnLoad.Image = global::service_quan_ly_ton_giao.Properties.Resources.Button_Refresh_icon__1_;
             this.btnLoad.Location = new System.Drawing.Point(13, 15);
             this.btnLoad.Name = "btnLoad";
@@ -469,12 +446,48 @@
             this.btnSua.Image = global::service_quan_ly_ton_giao.Properties.Resources.edit_icon__1_;
             this.btnSua.Location = new System.Drawing.Point(142, 15);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 43);
+            this.btnSua.Size = new System.Drawing.Size(98, 43);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Chỉnh Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // map
+            // 
+            this.map.CenterPoint = new DevExpress.XtraMap.GeoPoint(15D, 107D);
+            this.map.Dock = System.Windows.Forms.DockStyle.Right;
+            this.map.Layers.Add(this.imageLayer1);
+            this.map.Layers.Add(this.vectorItemsLayer1);
+            sizeLegend2.Layer = this.vectorItemsLayer1;
+            colorListLegend2.Layer = this.vectorItemsLayer1;
+            this.map.Legends.Add(sizeLegend2);
+            this.map.Legends.Add(colorListLegend2);
+            this.map.Location = new System.Drawing.Point(726, 0);
+            this.map.Name = "map";
+            this.map.Size = new System.Drawing.Size(383, 601);
+            this.map.TabIndex = 12;
+            this.map.ToolTipController = this.toolTipController1;
+            this.map.ZoomLevel = 5D;
+            // 
+            // imageLayer1
+            // 
+            this.imageLayer1.DataProvider = this.openStreetMapDataProvider1;
+            // 
+            // toolTipController1
+            // 
+            this.toolTipController1.AllowHtmlText = true;
+            // 
+            // btnChonfile
+            // 
+            this.btnChonfile.Location = new System.Drawing.Point(547, 96);
+            this.btnChonfile.Name = "btnChonfile";
+            this.btnChonfile.Size = new System.Drawing.Size(75, 23);
+            this.btnChonfile.TabIndex = 18;
+            this.btnChonfile.Text = "Chọn file";
+            this.btnChonfile.UseVisualStyleBackColor = true;
+            this.btnChonfile.Visible = false;
+            this.btnChonfile.Click += new System.EventHandler(this.btnChonfile_Click);
             // 
             // FormDSTonGiao
             // 
@@ -497,9 +510,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucSac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.map)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -545,5 +558,6 @@
         private DevExpress.XtraMap.MapItemStorage mapItemStorage1;
         private DevExpress.Utils.ToolTipController toolTipController1;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnChonfile;
     }
 }

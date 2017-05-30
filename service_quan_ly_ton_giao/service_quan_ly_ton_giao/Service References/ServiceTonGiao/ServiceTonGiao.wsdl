@@ -43,14 +43,14 @@
             <s:element minOccurs="0" maxOccurs="1" name="Ten" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="gioithieu" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="hinhanh" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="sltindo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="SuaTonGiaoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="SuaTonGiaoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SuaTonGiaoResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

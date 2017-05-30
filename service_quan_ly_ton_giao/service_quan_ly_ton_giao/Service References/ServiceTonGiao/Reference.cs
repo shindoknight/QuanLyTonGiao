@@ -31,12 +31,13 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemTonGiao", ReplyAction="*")]
         System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse> ThemTonGiaoAsync(service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoRequest request);
         
+        // CODEGEN: Parameter 'f' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SuaTonGiao", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo);
+        service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse SuaTonGiao(service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SuaTonGiao", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> SuaTonGiaoAsync(string id, string Ten, string gioithieu, string hinhanh, string sltindo);
+        System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse> SuaTonGiaoAsync(service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Xoa", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -121,6 +122,57 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SuaTonGiao", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SuaTonGiaoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string id;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string Ten;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string gioithieu;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string hinhanh;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] f;
+        
+        public SuaTonGiaoRequest() {
+        }
+        
+        public SuaTonGiaoRequest(string id, string Ten, string gioithieu, string hinhanh, byte[] f) {
+            this.id = id;
+            this.Ten = Ten;
+            this.gioithieu = gioithieu;
+            this.hinhanh = hinhanh;
+            this.f = f;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="SuaTonGiaoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class SuaTonGiaoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string SuaTonGiaoResult;
+        
+        public SuaTonGiaoResponse() {
+        }
+        
+        public SuaTonGiaoResponse(string SuaTonGiaoResult) {
+            this.SuaTonGiaoResult = SuaTonGiaoResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceTonGiaoSoapChannel : service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap, System.ServiceModel.IClientChannel {
     }
@@ -185,12 +237,35 @@ namespace service_quan_ly_ton_giao.ServiceTonGiao {
             return ((service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap)(this)).ThemTonGiaoAsync(inValue);
         }
         
-        public int SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo) {
-            return base.Channel.SuaTonGiao(id, Ten, gioithieu, hinhanh, sltindo);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap.SuaTonGiao(service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest request) {
+            return base.Channel.SuaTonGiao(request);
         }
         
-        public System.Threading.Tasks.Task<int> SuaTonGiaoAsync(string id, string Ten, string gioithieu, string hinhanh, string sltindo) {
-            return base.Channel.SuaTonGiaoAsync(id, Ten, gioithieu, hinhanh, sltindo);
+        public string SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, byte[] f) {
+            service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest inValue = new service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest();
+            inValue.id = id;
+            inValue.Ten = Ten;
+            inValue.gioithieu = gioithieu;
+            inValue.hinhanh = hinhanh;
+            inValue.f = f;
+            service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse retVal = ((service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap)(this)).SuaTonGiao(inValue);
+            return retVal.SuaTonGiaoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse> service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap.SuaTonGiaoAsync(service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest request) {
+            return base.Channel.SuaTonGiaoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse> SuaTonGiaoAsync(string id, string Ten, string gioithieu, string hinhanh, byte[] f) {
+            service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest inValue = new service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoRequest();
+            inValue.id = id;
+            inValue.Ten = Ten;
+            inValue.gioithieu = gioithieu;
+            inValue.hinhanh = hinhanh;
+            inValue.f = f;
+            return ((service_quan_ly_ton_giao.ServiceTonGiao.ServiceTonGiaoSoap)(this)).SuaTonGiaoAsync(inValue);
         }
         
         public int Xoa(string id) {

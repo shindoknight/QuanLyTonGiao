@@ -15,7 +15,7 @@ namespace service_quan_ly_ton_giao
 {
     public partial class frmChiTietToChucQuanTri : DevExpress.XtraEditors.XtraForm
     {
-        string imageFilePath = @"../../icon/cstg";
+        //string imageFilePath = @"../../icon/cstg";
         string imageFilePath2 = @"../../icon/tcqt";
 
         VectorItemsLayer VectorLayer { get { return (VectorItemsLayer)map.Layers["VectorLayer"]; } }

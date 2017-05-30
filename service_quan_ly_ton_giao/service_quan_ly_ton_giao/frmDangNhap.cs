@@ -28,7 +28,8 @@ namespace service_quan_ly_ton_giao
                 quyen = int.Parse(dt.Rows[0]["PhanQuyen"].ToString());
                 idUser = dt.Rows[0]["IDUser"].ToString();
                 username = dt.Rows[0]["UserName"].ToString();
-                frmChinh frm = new frmChinh(quyen,idUser,username);
+                string name= dt.Rows[0]["HoTen"].ToString();
+                frmChinh frm = new frmChinh(quyen,idUser,name);
                 this.Visible = false;
                 frm.FormClosed += new FormClosedEventHandler(frmChinh_Closed);
                 //frm.VisibleChanged += new EventHandler(frmChinh_Closed);
@@ -56,6 +57,12 @@ namespace service_quan_ly_ton_giao
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormUser f = new FormUser(false);
+            f.ShowDialog();
         }
     }
 }

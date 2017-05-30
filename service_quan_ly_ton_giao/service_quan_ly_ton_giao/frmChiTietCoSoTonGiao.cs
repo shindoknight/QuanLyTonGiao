@@ -22,7 +22,7 @@ namespace service_quan_ly_ton_giao
         MapItemStorage ItemStorage { get { return (MapItemStorage)VectorLayer.Data; } }
         tblCoSo.ServiceCoSoSoapClient wf = new tblCoSo.ServiceCoSoSoapClient();
         //
-        private bool _them = false;
+        //private bool _them = false;
         //sử dụng để dùng với picbox
 
         private bool _doianh = false;

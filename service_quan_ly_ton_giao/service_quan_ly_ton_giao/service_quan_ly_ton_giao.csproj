@@ -36,6 +36,7 @@
     <Reference Include="DevExpress.BonusSkins.v16.1" />
     <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.Diagram.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Map.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
     <Reference Include="DevExpress.Utils.v16.1" />
@@ -44,12 +45,14 @@
     <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraMap.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -63,6 +66,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BienToanCuc.cs" />
@@ -72,11 +76,23 @@
     <Compile Include="FormDSTonGiao.Designer.cs">
       <DependentUpon>FormDSTonGiao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDSUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDSUser.Designer.cs">
+      <DependentUpon>FormDSUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhapXuatExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapXuatExcel.Designer.cs">
+      <DependentUpon>FormNhapXuatExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThemTonGiao.cs">
       <SubType>Form</SubType>
@@ -89,6 +105,12 @@
     </Compile>
     <Compile Include="FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChinh.cs">
       <SubType>Form</SubType>
@@ -153,7 +175,7 @@
     <Compile Include="frmSuaTinDo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSuaTinDo.designer.cs">
+    <Compile Include="frmSuaTinDo.Designer.cs">
       <DependentUpon>frmSuaTinDo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemCoSoTonGiao.cs">
@@ -165,7 +187,7 @@
     <Compile Include="frmThemTinDo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemTinDo.designer.cs">
+    <Compile Include="frmThemTinDo.Designer.cs">
       <DependentUpon>frmThemTinDo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemToChucQuanTri.cs">
@@ -186,6 +208,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceTinDo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceTonGiao\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,17 +228,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\tblTinDo\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\tblToChucQuanTri\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\tblUser\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -243,14 +260,23 @@
     <EmbeddedResource Include="FormDSTonGiao.resx">
       <DependentUpon>FormDSTonGiao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDSUser.resx">
+      <DependentUpon>FormDSUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapXuatExcel.resx">
+      <DependentUpon>FormNhapXuatExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemTonGiao.resx">
       <DependentUpon>FormThemTonGiao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChinh.resx">
       <DependentUpon>frmChinh.cs</DependentUpon>
@@ -335,34 +361,40 @@
     <None Include="Service References\FilesTransfer\service_quan_ly_ton_giao.FilesTransfer.UploadFileResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceTinDo\tblTinDo.wsdl" />
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+    <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceUser\ServiceUser.wsdl" />
+    <None Include="Service References\ServiceUser\service_quan_ly_ton_giao.ServiceUser.SuaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUser\service_quan_ly_ton_giao.ServiceUser.ThemUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
-    <None Include="Service References\tblTinDo\tblTinDo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
     <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
     <None Include="Service References\tblCoSo\WebService.wsdl" />
-    <None Include="Service References\tblUser\tblUser.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FilesTransfer\" />
+    <WCFMetadataStorage Include="Service References\ServiceTinDo\" />
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
-    <WCFMetadataStorage Include="Service References\ServiceUser\" />
     <WCFMetadataStorage Include="Service References\Map\" />
     <WCFMetadataStorage Include="Service References\ServiceTonGiao\" />
+    <WCFMetadataStorage Include="Service References\ServiceUser\" />
     <WCFMetadataStorage Include="Service References\tblCoSo\" />
-    <WCFMetadataStorage Include="Service References\tblTinDo\" />
     <WCFMetadataStorage Include="Service References\tblToChucQuanTri\" />
-    <WCFMetadataStorage Include="Service References\tblUser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bible.png" />
@@ -419,44 +451,9 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\tblUser\tblUser.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblUser\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceUser\ServiceUser.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\Reference.svcmap" />
-    <None Include="Service References\ServiceUser\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceUser\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceUser\Reference.svcmap" />
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -508,6 +505,77 @@
     <None Include="Resources\Actions-list-add-icon %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Button-Refresh-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTinDo\tblTinDo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTinDo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTinDo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTinDo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1459435787_key-y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-preferences-desktop-user-password-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\ServiceUser.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-view-list-details-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -518,24 +586,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceTonGiao\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Button-Refresh-icon %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblTinDo\tblTinDo.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblTinDo\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblTinDo\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\tblTinDo\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

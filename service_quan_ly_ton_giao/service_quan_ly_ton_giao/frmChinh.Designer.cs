@@ -76,13 +76,11 @@
             this.ribbonNhap_Xuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.labelName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection32x32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -127,7 +125,7 @@
             this.ribbonPageTrangChu,
             this.ribbonPageDanhMuc,
             this.ribbonPageChucNang});
-            this.ribbonControl1.Size = new System.Drawing.Size(1089, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(1262, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
@@ -135,12 +133,14 @@
             // 
             this.imageCollection16x16.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection16x16.ImageStream")));
             this.imageCollection16x16.Images.SetKeyName(0, "house.png");
+            this.imageCollection16x16.Images.SetKeyName(4, "Actions-mail-mark-task-icon.png");
             this.imageCollection16x16.Images.SetKeyName(11, "bible.png");
             this.imageCollection16x16.Images.SetKeyName(12, "diagram.png");
             this.imageCollection16x16.Images.SetKeyName(13, "map.png");
             this.imageCollection16x16.Images.SetKeyName(14, "placeholder.png");
             this.imageCollection16x16.Images.SetKeyName(15, "Actions-list-add-icon.png");
             this.imageCollection16x16.Images.SetKeyName(16, "chart-icon.png");
+            this.imageCollection16x16.Images.SetKeyName(17, "1459435555_User.png");
             // 
             // bbtnTTTaiKhoan
             // 
@@ -156,6 +156,7 @@
             this.bbtnDangXuat.Id = 2;
             this.bbtnDangXuat.LargeImageIndex = 8;
             this.bbtnDangXuat.Name = "bbtnDangXuat";
+            this.bbtnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDangXuat_ItemClick);
             // 
             // bbtnThemTK
             // 
@@ -163,6 +164,7 @@
             this.bbtnThemTK.Id = 3;
             this.bbtnThemTK.LargeImageIndex = 3;
             this.bbtnThemTK.Name = "bbtnThemTK";
+            this.bbtnThemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTK_ItemClick);
             // 
             // bbtnDSTinDo
             // 
@@ -170,6 +172,7 @@
             this.bbtnDSTinDo.Id = 4;
             this.bbtnDSTinDo.LargeImageIndex = 11;
             this.bbtnDSTinDo.Name = "bbtnDSTinDo";
+            this.bbtnDSTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDSTinDo_ItemClick);
             // 
             // bbtnBanDoTinDo
             // 
@@ -193,6 +196,7 @@
             this.bbtnThemTinDo.Id = 7;
             this.bbtnThemTinDo.LargeImageIndex = 3;
             this.bbtnThemTinDo.Name = "bbtnThemTinDo";
+            this.bbtnThemTinDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThemTinDo_ItemClick);
             // 
             // bbtnDSCSTG
             // 
@@ -216,6 +220,7 @@
             this.bbtnDanhSachTK.Id = 11;
             this.bbtnDanhSachTK.LargeImageIndex = 4;
             this.bbtnDanhSachTK.Name = "bbtnDanhSachTK";
+            this.bbtnDanhSachTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnDanhSachTK_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -304,6 +309,7 @@
             this.bbtnNhap.Id = 24;
             this.bbtnNhap.LargeImageIndex = 20;
             this.bbtnNhap.Name = "bbtnNhap";
+            this.bbtnNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnNhap_ItemClick);
             // 
             // btnXuat
             // 
@@ -424,7 +430,6 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnDSTinDo);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnThemTinDo);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbtnSuaTinDo);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Tín đồ";
             // 
@@ -486,7 +491,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 744);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1089, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1262, 31);
             // 
             // xtraTabControl1
             // 
@@ -496,25 +501,15 @@
             this.xtraTabControl1.Images = this.imageCollection16x16;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1089, 598);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1262, 598);
             this.xtraTabControl1.TabIndex = 3;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1});
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.ImageIndex = 0;
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1083, 567);
-            this.xtraTabPage1.Text = "Trang chủ";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(1029, 55);
+            this.labelName.Location = new System.Drawing.Point(1140, 68);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(60, 22);
             this.labelName.TabIndex = 7;
@@ -525,7 +520,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 775);
+            this.ClientSize = new System.Drawing.Size(1262, 775);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -543,7 +538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection16x16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection32x32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -580,7 +574,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.Utils.ImageCollection imageCollection16x16;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraBars.BarButtonItem bbtnDSTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThemTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThongKe;

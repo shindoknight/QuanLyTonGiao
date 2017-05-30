@@ -51,10 +51,9 @@ namespace service_quan_ly_ton_giao
         ServiceTonGiao.ServiceTonGiaoSoapClient wsTonGiao = new ServiceTonGiao.ServiceTonGiaoSoapClient();
         private void frmChinh_Load(object sender, EventArgs e)
         {
-            _frmTrangChu.TopLevel = false;
-            _frmTrangChu.Parent = xtraTabPage1;
-            _frmTrangChu.Dock = DockStyle.Fill;
-            _frmTrangChu.Show();
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
+            FormDSUser f = new FormDSUser();
+            _frmTrangChu.TabCreating("Danh Sách", "DSUser", f, imageCollection16x16, 4);
 
         }
          private bool ExistForm(string name)
@@ -131,9 +130,14 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnTTTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDSTinDo f = new frmDSTinDo();
-
-            _frmTrangChu.TabCreating(f.Text, f.Name, f, imageCollection16x16, 0);
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
+            FormUser f;
+            if (_quyen==1)
+            {
+                f = new FormUser(_id,true);
+            }
+            else f = new FormUser(_id, false);
+            _frmTrangChu.TabCreating(f.Text, f.Name, f, imageCollection16x16, 17);
             
         }
 
@@ -246,6 +250,46 @@ namespace service_quan_ly_ton_giao
             TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
             xtrThongKe f = new xtrThongKe();
             _frmChucNang.TabCreating("Thống kê", f.Name, f, imageCollection16x16, 16);
+        }
+
+        private void bbtnNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Chức Năng", "ChucNang", _frmChucNang, 2);
+            FormNhapXuatExcel f = new FormNhapXuatExcel();
+            _frmChucNang.TabCreating("Nhập Dữ Liệu", f.Name, f, imageCollection16x16, 16);
+        }
+
+        private void bbtnDSTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmDSTinDo f = new frmDSTinDo();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 8);
+        }
+
+        private void bbtnThemTinDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Danh Mục", "DanhMuc", _frmDanhMuc, 1);
+            frmThemTinDo f = new frmThemTinDo();
+            _frmDanhMuc.TabCreating(f.Text, f.Name, f, imageCollection16x16, 9);
+        }
+
+        private void bbtnThemTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
+            FormUser f = new FormUser(true);
+            _frmTrangChu.TabCreating("Thêm User", "ThemUser", f, imageCollection16x16, 3);
+        }
+
+        private void bbtnDanhSachTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
+            FormDSUser f = new FormDSUser();
+            _frmTrangChu.TabCreating("Danh Sách", "DSUser", f, imageCollection16x16, 4);
+        }
+
+        private void bbtnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }
