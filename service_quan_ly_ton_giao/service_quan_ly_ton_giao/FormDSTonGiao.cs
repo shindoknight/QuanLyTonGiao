@@ -314,35 +314,86 @@ namespace service_quan_ly_ton_giao
             txtTenTG.Visible = true;
             btnLuu.Enabled = true;
             lbTenTG.Visible = false;
+            btnChonfile.Visible = true;
+            hinhanh = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
             {
-                if (ws.SuaTonGiao(id, txtTenTG.Text, rtbGioiThieu.Text, hinhanh, txtSLTindo.Text) > 0)
+
+                if (hinhanh != "")
                 {
+                    // get the exact file name from the path
+                    String strFile = System.IO.Path.GetFileName(hinhanh);
+
+                    // create an instance fo the web service
+
+
+                    // get the file information form the selected file
+                    FileInfo fInfo = new FileInfo(hinhanh);
+
+                    // get the length of the file to see if it is possible
+                    // to upload it (with the standard 4 MB limit)
+                    long numBytes = fInfo.Length;
+                    double dLen = Convert.ToDouble(fInfo.Length / 1000000);
+
+                    // Default limit of 4 MB on web server
+                    // have to change the web.config to if
+                    // you want to allow larger uploads
+                    if (dLen < 5)
                     {
-                        MessageBox.Show("Sửa thành công!");
-                        DataTable s = ws.LayDanhSach();
-                        dgvDSTG.DataSource = s;
+                        // set up a file stream and binary reader for the
+                        // selected file
+                        FileStream fStream = new FileStream(hinhanh, FileMode.Open, FileAccess.Read);
+                        BinaryReader br = new BinaryReader(fStream);
 
-                        labelTen.Visible = false;
-                        txtTenTG.Visible = false;
-                        btnLuu.Enabled = false;
-                        
-                        lbTenTG.Text = labelTen.Text;
-                        lbTenTG.Visible = true;
+                        // convert the file to a byte array
+                        byte[] data = br.ReadBytes((int)numBytes);
+                        br.Close();
 
+                        // pass the byte array (file) and file name to the web
+                        //service
+                        string sTmp = ws.SuaTonGiao(id,txtTenTG.Text, rtbGioiThieu.Text, strFile, data);
+                        fStream.Close();
+                        fStream.Dispose();
+
+                        // this will always say OK unless an error occurs,
+                        // if an error occurs, the service returns the error
+                        //message
+
+                        MessageBox.Show(sTmp);
+                    }
+                    else
+                    {
+                        // Display message if the file was too large to upload
+                        MessageBox.Show("Độ lớn ảnh vượt quá giới hạn 5MB", "File Size");
                     }
                 }
-                    
-                else MessageBox.Show("Sửa không thành công!");
+                else
+                {
+                    string sTmp = ws.SuaTonGiao(id,txtTenTG.Text, rtbGioiThieu.Text, "", null);
+                    MessageBox.Show(sTmp);
+
+                }
+                DataTable s = ws.LayDanhSach();
+                dgvDSTG.DataSource = s;
+
+                labelTen.Visible = false;
+                txtTenTG.Visible = false;
+                btnLuu.Enabled = false;
+                btnChonfile.Visible = false;
+                lbTenTG.Text = labelTen.Text;
+                lbTenTG.Visible = true;
+
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối WebService, vui lòng update");
+                // display an error message to the user
+                MessageBox.Show(ex.Message.ToString(), "Lỗi upload, vui lòng xem lại file đã chọn");
             }
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -416,6 +467,17 @@ namespace service_quan_ly_ton_giao
         {
             DataTable s = ws.LayDanhSach();
             dgvDSTG.DataSource = s;
+        }
+
+        private void btnChonfile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdImages = new OpenFileDialog();
+            ofdImages.Filter = "file ảnh .jpg |*.jpg|file ảnh .png |*.png|Tất cả các file |*.*";
+            if (ofdImages.ShowDialog() == DialogResult.OK)
+            {
+                hinhanh = ofdImages.FileName;
+            }
+            if(hinhanh!="") pictureBox1.Image = Image.FromFile(hinhanh.ToString());
         }
     }
 }

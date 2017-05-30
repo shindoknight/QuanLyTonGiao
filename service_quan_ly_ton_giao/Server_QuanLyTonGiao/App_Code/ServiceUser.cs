@@ -69,7 +69,7 @@ public class ServiceUser : System.Web.Services.WebService
     public DataTable DanhSach()
     {
         OpenConnect();
-        SqlCommand comm = new SqlCommand("select * from tblUser  ", con);
+        SqlCommand comm = new SqlCommand("select * from tblUser where daxoa=0 ", con);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
         DataTable dtdistrict = new DataTable("tblUser");
@@ -90,7 +90,7 @@ public class ServiceUser : System.Web.Services.WebService
     public int Xoa( string id)
     {
         OpenConnect();
-        SqlCommand comm = new SqlCommand("update tblUser set dãoa=0 where iduser=N'" + id + "' ", con);
+        SqlCommand comm = new SqlCommand("update tblUser set daxoa=1 where iduser=N'" + id + "' ", con);
         int n = comm.ExecuteNonQuery();
         CloseConnect();
         return n;
@@ -142,9 +142,19 @@ public class ServiceUser : System.Web.Services.WebService
     public string ThemUser(string user, string pass,string hoten, string Email, string ngaysinh,string hinhanh, byte[] f ,int phanquyen)
     {
         FilesTransfer trans = new FilesTransfer();
-        try
+        
+         try
         {
             OpenConnect();
+            SqlCommand com = new SqlCommand("select * from tblUser where username=N'" + user + "' ", con);
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dtdistrict = new DataTable("tblUser");
+            da.Fill(dtdistrict);
+            if(dtdistrict.Rows.Count>0)
+            {
+                return "Tên tài khoản " + user + " đã tồn tại.!";
+            }
             int n = 0;
             if (hinhanh != "")
             {

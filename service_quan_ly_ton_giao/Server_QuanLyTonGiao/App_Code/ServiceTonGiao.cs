@@ -97,7 +97,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
         }
     }
     [WebMethod]
-    public string SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh, string sltindo,byte[] f)
+    public string SuaTonGiao(string id, string Ten, string gioithieu, string hinhanh,byte[] f)
     {
         FilesTransfer trans = new FilesTransfer();
         try
@@ -110,7 +110,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
 
                 if (upfile == "OK")
                 {
-                    SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'" + hinhanh + "', SLTinDo=0 where IDTonGiao=" + id, conn);
+                    SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "',HinhAnh=N'~/Images/TonGiao/" + hinhanh + "' where IDTonGiao=" + id, conn);
                     n = comm.ExecuteNonQuery();
                 }
 
@@ -123,7 +123,7 @@ public class ServiceTonGiao : System.Web.Services.WebService
             }
             else
             {
-                SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + "', SLTinDo=0 where IDTonGiao=" + id, conn);
+                SqlCommand comm = new SqlCommand("update tblTonGiao set TenTonGiao= N'" + Ten + "',GioiThieu= N'" + gioithieu + " where IDTonGiao=" + id, conn);
                 n = comm.ExecuteNonQuery();
                 CloseConnect();
             }

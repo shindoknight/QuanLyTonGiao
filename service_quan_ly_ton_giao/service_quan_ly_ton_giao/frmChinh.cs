@@ -51,10 +51,9 @@ namespace service_quan_ly_ton_giao
         ServiceTonGiao.ServiceTonGiaoSoapClient wsTonGiao = new ServiceTonGiao.ServiceTonGiaoSoapClient();
         private void frmChinh_Load(object sender, EventArgs e)
         {
-            _frmTrangChu.TopLevel = false;
-            _frmTrangChu.Parent = xFrmTrangChu;
-            _frmTrangChu.Dock = DockStyle.Fill;
-            _frmTrangChu.Show();
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
+            FormDSUser f = new FormDSUser();
+            _frmTrangChu.TabCreating("Danh Sách", "DSUser", f, imageCollection16x16, 4);
 
         }
          private bool ExistForm(string name)
@@ -131,7 +130,7 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnTTTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
             FormUser f;
             if (_quyen==1)
             {
@@ -276,17 +275,21 @@ namespace service_quan_ly_ton_giao
 
         private void bbtnThemTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
             FormUser f = new FormUser(true);
             _frmTrangChu.TabCreating("Thêm User", "ThemUser", f, imageCollection16x16, 3);
         }
 
         private void bbtnDanhSachTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TabCreating(xtraTabControl1, "Trang Chủ", "xFrmTrangChu", _frmTrangChu, 0);
+            TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
             FormDSUser f = new FormDSUser();
-            _frmTrangChu.TabCreating("Thêm User", "ThemUser", f, imageCollection16x16, 3);
+            _frmTrangChu.TabCreating("Danh Sách", "DSUser", f, imageCollection16x16, 4);
         }
-    
+
+        private void bbtnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

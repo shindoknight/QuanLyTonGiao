@@ -62,7 +62,7 @@ public class FilesTransfer : System.Web.Services.WebService
     [WebMethod()]
     public byte[] DownloadFile(string FName)
     {
-        System.IO.FileStream fs1 = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath(@"~/"+FName), FileMode.Open, FileAccess.Read);
+        System.IO.FileStream fs1 = new FileStream(System.Web.Hosting.HostingEnvironment.MapPath(FName), FileMode.Open, FileAccess.Read);
         byte[] b1 = new byte[fs1.Length];
         fs1.Read(b1, 0, (int)fs1.Length);
         fs1.Close();

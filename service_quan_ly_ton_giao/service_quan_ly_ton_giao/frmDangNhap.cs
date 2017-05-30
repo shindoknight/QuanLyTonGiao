@@ -58,5 +58,11 @@ namespace service_quan_ly_ton_giao
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormUser f = new FormUser(false);
+            f.ShowDialog();
+        }
     }
 }

@@ -363,6 +363,9 @@
     </None>
     <None Include="Service References\ServiceTinDo\tblTinDo.wsdl" />
     <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
+    <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.SuaTonGiaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceTonGiao\service_quan_ly_ton_giao.ServiceTonGiao.ThemTonGiaoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -378,7 +381,6 @@
     <None Include="Service References\Map\ServiceMap.wsdl" />
     <None Include="Service References\tblCoSo\ServiceCoSo.wsdl" />
     <None Include="Service References\tblToChucQuanTri\tblToChucQuanTri.wsdl" />
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.wsdl" />
     <None Include="Service References\tblCoSo\WebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
@@ -452,18 +454,6 @@
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\Reference.svcmap" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\tblToChucQuanTri\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -513,21 +503,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Actions-list-add-icon %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Button-Refresh-icon %281%29.png" />
@@ -599,6 +574,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Actions-view-list-details-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\ServiceTonGiao.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceTonGiao\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

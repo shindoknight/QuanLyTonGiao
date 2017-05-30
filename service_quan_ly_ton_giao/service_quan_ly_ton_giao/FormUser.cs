@@ -252,46 +252,77 @@ namespace service_quan_ly_ton_giao
             {
                 _hinhanh = ofdImages.FileName;
             }
-            pictureBox1.Image = Image.FromFile(_hinhanh.ToString());
+            if(_hinhanh!=null) pictureBox1.Image = Image.FromFile(_hinhanh.ToString());
         }
 
         private void btnXong_Click(object sender, EventArgs e)
         {
             try
             {
-
-                // get the exact file name from the path
-                String strFile = System.IO.Path.GetFileName(_hinhanh);
-
-                // create an instance fo the web service
-
-
-                // get the file information form the selected file
-                FileInfo fInfo = new FileInfo(_hinhanh);
-
-                // get the length of the file to see if it is possible
-                // to upload it (with the standard 4 MB limit)
-                long numBytes = fInfo.Length;
-                double dLen = Convert.ToDouble(fInfo.Length / 1000000);
-
-                // Default limit of 4 MB on web server
-                // have to change the web.config to if
-                // you want to allow larger uploads
-                if (dLen < 10)
+                int quyen = 3;
+                if (_hinhanh != null)
                 {
-                    // set up a file stream and binary reader for the
-                    // selected file
-                    FileStream fStream = new FileStream(_hinhanh, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fStream);
+                    // get the exact file name from the path
+                    String strFile = System.IO.Path.GetFileName(_hinhanh);
 
-                    // convert the file to a byte array
-                    byte[] data = br.ReadBytes((int)numBytes);
-                    br.Close();
+                    // create an instance fo the web service
 
-                    // pass the byte array (file) and file name to the web
-                    //service
-                    int quyen=3;
-                    switch(comboBox1.Text)
+
+                    // get the file information form the selected file
+                    FileInfo fInfo = new FileInfo(_hinhanh);
+
+                    // get the length of the file to see if it is possible
+                    // to upload it (with the standard 4 MB limit)
+                    long numBytes = fInfo.Length;
+                    double dLen = Convert.ToDouble(fInfo.Length / 1000000);
+
+                    // Default limit of 4 MB on web server
+                    // have to change the web.config to if
+                    // you want to allow larger uploads
+                    if (dLen < 10)
+                    {
+                        // set up a file stream and binary reader for the
+                        // selected file
+                        FileStream fStream = new FileStream(_hinhanh, FileMode.Open, FileAccess.Read);
+                        BinaryReader br = new BinaryReader(fStream);
+
+                        // convert the file to a byte array
+                        byte[] data = br.ReadBytes((int)numBytes);
+                        br.Close();
+
+                        // pass the byte array (file) and file name to the web
+                        //service
+                       
+                        switch (comboBox1.Text)
+                        {
+                            case "Admin":
+                                quyen = 1;
+                                break;
+                            case "Nhân Viên Quản Lý":
+                                quyen = 2;
+                                break;
+                            default:
+                                quyen = 3;
+                                break;
+                        }
+                        string sTmp = ws.ThemUser(txtTenDangNhap.Text, txtMKMoi.Text, txtHoTen.Text, txtEmail.Text, dateEdit1.Text, strFile, data, quyen);
+                        fStream.Close();
+                        fStream.Dispose();
+                        // this will always say OK unless an error occurs,
+                        // if an error occurs, the service returns the error
+                        //message
+
+                        MessageBox.Show(sTmp);
+                    }
+                    else
+                    {
+                        // Display message if the file was too large to upload
+                        MessageBox.Show("Độ lớn ảnh vượt quá giới hạn 10MB", "File Size");
+                    }
+                }
+                else
+                {
+                    switch (comboBox1.Text)
                     {
                         case "Admin":
                             quyen = 1;
@@ -303,19 +334,8 @@ namespace service_quan_ly_ton_giao
                             quyen = 3;
                             break;
                     }
-                    string sTmp = ws.ThemUser(txtTenDangNhap.Text, txtMKMoi.Text,txtHoTen.Text,txtEmail.Text,dateEdit1.Text, strFile, data,quyen);
-                    fStream.Close();
-                    fStream.Dispose();
-                    // this will always say OK unless an error occurs,
-                    // if an error occurs, the service returns the error
-                    //message
-
+                    string sTmp = ws.ThemUser(txtTenDangNhap.Text, txtMKMoi.Text, txtHoTen.Text, txtEmail.Text, dateEdit1.Text, "", null, quyen);
                     MessageBox.Show(sTmp);
-                }
-                else
-                {
-                    // Display message if the file was too large to upload
-                    MessageBox.Show("Độ lớn ảnh vượt quá giới hạn 10MB", "File Size");
                 }
             }
             catch (Exception ex)
@@ -323,6 +343,8 @@ namespace service_quan_ly_ton_giao
                 // display an error message to the user
                 MessageBox.Show(ex.Message.ToString(), "Lỗi upload, vui lòng xem lại file đã chọn");
             }
+        
+                
         }
     }
 }
