@@ -113,6 +113,10 @@
             this.NgayVaoTonGiao});
             this.gridVTinDo.GridControl = this.gridCTinDo;
             this.gridVTinDo.Name = "gridVTinDo";
+            this.gridVTinDo.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridVTinDo.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridVTinDo.OptionsBehavior.AllowFixedGroups = DevExpress.Utils.DefaultBoolean.False;
+            this.gridVTinDo.OptionsBehavior.Editable = false;
             this.gridVTinDo.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // PhapDanh

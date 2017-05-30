@@ -430,7 +430,6 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnDSTinDo);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbtnThemTinDo);
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbtnSuaTinDo);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Tín đồ";
             // 
