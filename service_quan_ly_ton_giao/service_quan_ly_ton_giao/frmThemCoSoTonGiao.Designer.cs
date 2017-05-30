@@ -78,6 +78,10 @@
             this.mapItemStorage2 = new DevExpress.XtraMap.MapItemStorage();
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtKinh = new System.Windows.Forms.TextBox();
+            this.txtVi = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,6 +119,10 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.txtVi);
+            this.groupControl2.Controls.Add(this.label16);
+            this.groupControl2.Controls.Add(this.txtKinh);
+            this.groupControl2.Controls.Add(this.label15);
             this.groupControl2.Controls.Add(this.cboIDNguoiQL);
             this.groupControl2.Controls.Add(this.radKhong);
             this.groupControl2.Controls.Add(this.radCo);
@@ -211,7 +219,7 @@
             // 
             this.ckThanhPho.AutoSize = true;
             this.ckThanhPho.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckThanhPho.Location = new System.Drawing.Point(136, 289);
+            this.ckThanhPho.Location = new System.Drawing.Point(112, 288);
             this.ckThanhPho.Name = "ckThanhPho";
             this.ckThanhPho.Size = new System.Drawing.Size(183, 23);
             this.ckThanhPho.TabIndex = 67;
@@ -222,7 +230,7 @@
             // btnTimKiemXa
             // 
             this.btnTimKiemXa.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiemXa.Image")));
-            this.btnTimKiemXa.Location = new System.Drawing.Point(641, 261);
+            this.btnTimKiemXa.Location = new System.Drawing.Point(617, 260);
             this.btnTimKiemXa.Name = "btnTimKiemXa";
             this.btnTimKiemXa.Size = new System.Drawing.Size(31, 23);
             this.btnTimKiemXa.TabIndex = 66;
@@ -272,7 +280,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(493, 264);
+            this.label13.Location = new System.Drawing.Point(469, 263);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(27, 19);
             this.label13.TabIndex = 61;
@@ -281,7 +289,7 @@
             // cboXa
             // 
             this.cboXa.FormattingEnabled = true;
-            this.cboXa.Location = new System.Drawing.Point(537, 262);
+            this.cboXa.Location = new System.Drawing.Point(513, 261);
             this.cboXa.Name = "cboXa";
             this.cboXa.Size = new System.Drawing.Size(98, 21);
             this.cboXa.TabIndex = 60;
@@ -290,7 +298,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(294, 265);
+            this.label12.Location = new System.Drawing.Point(270, 264);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 19);
             this.label12.TabIndex = 59;
@@ -299,7 +307,7 @@
             // cboHuyen
             // 
             this.cboHuyen.FormattingEnabled = true;
-            this.cboHuyen.Location = new System.Drawing.Point(355, 262);
+            this.cboHuyen.Location = new System.Drawing.Point(331, 261);
             this.cboHuyen.Name = "cboHuyen";
             this.cboHuyen.Size = new System.Drawing.Size(97, 21);
             this.cboHuyen.TabIndex = 58;
@@ -309,7 +317,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(130, 264);
+            this.label11.Location = new System.Drawing.Point(106, 263);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 19);
             this.label11.TabIndex = 57;
@@ -318,7 +326,7 @@
             // cboTinh
             // 
             this.cboTinh.FormattingEnabled = true;
-            this.cboTinh.Location = new System.Drawing.Point(171, 262);
+            this.cboTinh.Location = new System.Drawing.Point(147, 261);
             this.cboTinh.Name = "cboTinh";
             this.cboTinh.Size = new System.Drawing.Size(98, 21);
             this.cboTinh.TabIndex = 56;
@@ -564,6 +572,7 @@
             this.map.Name = "map";
             this.map.Size = new System.Drawing.Size(470, 396);
             this.map.TabIndex = 1;
+            this.map.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseDoubleClick);
             // 
             // imageLayer1
             // 
@@ -573,6 +582,38 @@
             // 
             this.vectorItemsLayer1.Data = this.mapItemStorage2;
             this.vectorItemsLayer1.Name = "VectorLayer";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(660, 268);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 73;
+            this.label15.Text = "Kinh độ";
+            // 
+            // txtKinh
+            // 
+            this.txtKinh.Location = new System.Drawing.Point(726, 262);
+            this.txtKinh.Name = "txtKinh";
+            this.txtKinh.Size = new System.Drawing.Size(100, 21);
+            this.txtKinh.TabIndex = 74;
+            // 
+            // txtVi
+            // 
+            this.txtVi.Location = new System.Drawing.Point(726, 293);
+            this.txtVi.Name = "txtVi";
+            this.txtVi.Size = new System.Drawing.Size(100, 21);
+            this.txtVi.TabIndex = 76;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(660, 299);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 13);
+            this.label16.TabIndex = 75;
+            this.label16.Text = "Vĩ độ";
             // 
             // frmThemCoSoTonGiao
             // 
@@ -655,5 +696,9 @@
         private System.Windows.Forms.ComboBox cboIDNguoiQL;
         private DevExpress.XtraMap.OpenStreetMapDataProvider openStreetMapDataProvider2;
         private DevExpress.XtraMap.MapItemStorage mapItemStorage2;
+        private System.Windows.Forms.TextBox txtVi;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtKinh;
+        private System.Windows.Forms.Label label15;
     }
 }

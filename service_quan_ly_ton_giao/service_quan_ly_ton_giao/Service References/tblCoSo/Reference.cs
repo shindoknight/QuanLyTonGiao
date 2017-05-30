@@ -18,17 +18,17 @@ namespace service_quan_ly_ton_giao.tblCoSo {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemDLCoSo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi);
+        int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ThemDLCoSo", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> ThemDLCoSoAsync(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi);
+        System.Threading.Tasks.Task<int> ThemDLCoSoAsync(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SuaDLCoSo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int SuaDLCoSo(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi);
+        int SuaDLCoSo(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SuaDLCoSo", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> SuaDLCoSoAsync(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi);
+        System.Threading.Tasks.Task<int> SuaDLCoSoAsync(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/XoaLogicDLCoSo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -177,20 +177,20 @@ namespace service_quan_ly_ton_giao.tblCoSo {
                 base(binding, remoteAddress) {
         }
         
-        public int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi) {
-            return base.Channel.ThemDLCoSo(TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi);
+        public int ThemDLCoSo(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo) {
+            return base.Channel.ThemDLCoSo(TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi, KinhDo, ViDo);
         }
         
-        public System.Threading.Tasks.Task<int> ThemDLCoSoAsync(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi) {
-            return base.Channel.ThemDLCoSoAsync(TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi);
+        public System.Threading.Tasks.Task<int> ThemDLCoSoAsync(string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo) {
+            return base.Channel.ThemDLCoSoAsync(TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi, KinhDo, ViDo);
         }
         
-        public int SuaDLCoSo(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi) {
-            return base.Channel.SuaDLCoSo(IDCoSo, TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi);
+        public int SuaDLCoSo(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo) {
+            return base.Channel.SuaDLCoSo(IDCoSo, TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi, KinhDo, ViDo);
         }
         
-        public System.Threading.Tasks.Task<int> SuaDLCoSoAsync(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi) {
-            return base.Channel.SuaDLCoSoAsync(IDCoSo, TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi);
+        public System.Threading.Tasks.Task<int> SuaDLCoSoAsync(int IDCoSo, string TenCoSo, string DiaChi, int NguoiQuanLy, string HinhAnh, int IDToChuc, string GioiThieu, int ChucNang, int DaXoa, string TenThuongGoi, string KinhDo, string ViDo) {
+            return base.Channel.SuaDLCoSoAsync(IDCoSo, TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, DaXoa, TenThuongGoi, KinhDo, ViDo);
         }
         
         public int XoaLogicDLCoSo(int IDCoSo) {

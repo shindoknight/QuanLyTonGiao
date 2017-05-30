@@ -79,11 +79,11 @@ namespace service_quan_ly_ton_giao
             for (i = 0; i < int.Parse(ds.Rows.Count.ToString()); i++)
             {
 
-                DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
+               
                 try
                 {
-                    string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                    string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
@@ -94,15 +94,7 @@ namespace service_quan_ly_ton_giao
                 }
                 catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
                 {
-                    DataTable tv2 = wf.TimViTriTheoHuyen(" where IDHuyen=N'" + tv1.Rows[i]["IDHuyen"].ToString() + "'");
-                    string ki = tv2.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                    string vi = tv2.Rows[0]["KinhDo"].ToString().Replace(".", ",");
-                    #region #MapCustomElementExample
-                    var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
-                    var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
-                    customElement.Image = new Bitmap(image, new Size(40, 40));
-                    ItemStorage.Items.Add(customElement);
-                    #endregion #MapCustomElementExample*/
+                    MessageBox.Show("Xảy ra lỗi");
                 }
 
             }
@@ -118,6 +110,8 @@ namespace service_quan_ly_ton_giao
             cboIDNguoiQL.ResetText();
             txtTenNguoiQuanLy.ResetText();
             txtTenThuongGoi.ResetText();
+            txtKinh.ResetText();
+            txtVi.ResetText();
             picAnh.Load("../../hinh_anh/h.a.co_so_tg/hinh_anh.png");
             radCo.Checked = true;
             txtGioiThieu.ResetText();
@@ -141,7 +135,7 @@ namespace service_quan_ly_ton_giao
         
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(txtTenCoSo.Text=="")
+            if(txtTenCoSo.Text==""||txtVi.Text==""||txtKinh.Text=="")
             {
                 MessageBox.Show("Thông tin về cơ sở tôn giáo chưa đầy đủ không thể thêm.Yêu cầu xem lại !");
             }
@@ -174,20 +168,13 @@ namespace service_quan_ly_ton_giao
                     }
                     string DiaChi = wf.DuLieuXa(" ,tblHuyen,tblTinh where tblXa.IDHuyen=tblHuyen.IDHuyen and tblHuyen.IDTinh=tblTinh.IDTinh and TenXa=N'" + cboXa.Text + "' and TenHuyen=N'" + cboHuyen.Text + "' and TenTinh=N'" + cboTinh.Text + "'").Rows[0]["IDXa"].ToString();
                     //kiem tra xem xa do da co so ton giao chua
-                    DataTable dsx = wf.HienThiDSCoSo(",a.GioiThieu", " where a.DiaChi=N'" + DiaChi + "'");
-                    if (int.Parse(dsx.Rows.Count.ToString()) == 0)
-                    {
-                        string GioiThieu = txtGioiThieu.Text;
-                        wf.ThemDLCoSo( TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, 0, TenThuongGoi);
-                        MessageBox.Show("Thông tin về cơ sở tôn giáo đã được lưu");
-                        HienThi();
-                        //HienThiLenMap();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thông tin về cơ sở tôn giáo có sai sót yêu cầu xem lại !");
-                        HienThi();
-                    }
+                   
+                    string GioiThieu = txtGioiThieu.Text;
+                    wf.ThemDLCoSo( TenCoSo, DiaChi, NguoiQuanLy, HinhAnh, IDToChuc, GioiThieu, ChucNang, 0, TenThuongGoi,txtKinh.Text,txtVi.Text);
+                    MessageBox.Show("Thông tin về cơ sở tôn giáo đã được lưu");
+                    HienThi();
+                    //HienThiLenMap();
+                    
                 }
             }
             
@@ -251,11 +238,11 @@ namespace service_quan_ly_ton_giao
                 for (i = 0; i < int.Parse(ds2.Rows.Count.ToString()); i++)
                 {
 
-                    DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
+                    //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
@@ -265,15 +252,7 @@ namespace service_quan_ly_ton_giao
                     }
                     catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
                     {
-                        DataTable tv2 = wf.TimViTriTheoHuyen(" where IDHuyen=N'" + tv1.Rows[i]["IDHuyen"].ToString() + "'");
-                        string ki = tv2.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv2.Rows[0]["KinhDo"].ToString().Replace(".", ",");
-                        #region #MapCustomElementExample
-                        var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
-                        var image = new Bitmap(imageFilePath + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
-                        customElement.Image = new Bitmap(image, new Size(40, 40));
-                        ItemStorage.Items.Add(customElement);
-                        #endregion #MapCustomElementExample*/
+                        MessageBox.Show("Xảy ra lỗi");
                     }
 
                 }
@@ -298,11 +277,11 @@ namespace service_quan_ly_ton_giao
                 for (i = 0; i < int.Parse(ds2.Rows.Count.ToString()); i++)
                 {
 
-                    DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
+                    //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath2 + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
@@ -312,15 +291,7 @@ namespace service_quan_ly_ton_giao
                     }
                     catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
                     {
-                        DataTable tv2 = wf.TimViTriTheoHuyen(" where IDHuyen=N'" + tv1.Rows[i]["IDHuyen"].ToString() + "'");
-                        string ki = tv2.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv2.Rows[0]["KinhDo"].ToString().Replace(".", ",");
-                        #region #MapCustomElementExample
-                        var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
-                        var image = new Bitmap(imageFilePath2 + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
-                        customElement.Image = new Bitmap(image, new Size(40, 40));
-                        ItemStorage.Items.Add(customElement);
-                        #endregion #MapCustomElementExample*/
+                        MessageBox.Show("Xảy ra lỗi");
                     }
 
                 }
@@ -357,17 +328,8 @@ namespace service_quan_ly_ton_giao
                 string ki1 = ds.Rows[0]["ViDo"].ToString().Replace(".", ",");
                 string vi1 = ds.Rows[0]["KinhDo"].ToString().Replace(".", ",");
                 map.CenterPoint = new GeoPoint(latitude: (float.Parse(ki1)), longitude: (float.Parse(vi1)));
-                //hiển thị toàn vộ các cơ sở theo tôn giáo
-                //HienThiToanBoCacCoSoSoTheoTG();
-                //hien thi co so TG len map
-                DataTable ds2 = wf.DuLieuTonGiao(" where TenTonGiao=N'" + cboTenTonGiao.Text + "'");//xác định là tôn giáo nào
-                //ve len map
-                #region #MapCustomElementExample
-                var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki1), float.Parse(vi1)), Text = "Địa chỉ: " + cboXa.Text };
-                var image = new Bitmap(imageFilePath + "0.png");
-                customElement.Image = new Bitmap(image, new Size(40, 40));
-                ItemStorage.Items.Add(customElement);
-                #endregion #MapCustomElementExample*/
+                
+                
                 map.Zoom(15);
             }
             catch
@@ -437,6 +399,29 @@ namespace service_quan_ly_ton_giao
             frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
             frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
             frm.Show();
+        }
+
+        private void map_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string x = map.CenterPoint.GetX().ToString();
+            string y = map.CenterPoint.GetY().ToString();
+            ItemStorage.Items.Clear();
+            #region #MapCustomElementExample
+            var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(y), float.Parse(x)), Text = "" };
+            var image = new Bitmap(imageFilePath + "0.png");
+            customElement.Image = new Bitmap(image, new Size(40, 40));
+            ItemStorage.Items.Add(customElement);
+            #endregion #MapCustomElementExample
+            string[] x1 = x.Split(',');
+            x1[1] = x1[1].Substring(0, 8);
+            x = x1[0] + "." + x1[1];
+            //textBox2.Text = x;
+            string[] y1 = y.Split(',');
+            y1[1] = y1[1].Substring(0, 8);
+            y = y1[0] + "." + y1[1];
+            txtVi.Text = y;
+            txtKinh.Text = x;
+           
         }
     }
 }

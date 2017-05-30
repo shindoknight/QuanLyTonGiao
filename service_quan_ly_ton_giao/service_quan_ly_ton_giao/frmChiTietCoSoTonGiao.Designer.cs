@@ -564,6 +564,7 @@
             this.map.MapItemClick += new DevExpress.XtraMap.MapItemClickEventHandler(this.map_MapItemClick);
             this.map.ExportMapItem += new DevExpress.XtraMap.ExportMapItemEventHandler(this.map_ExportMapItem);
             this.map.MouseClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
+            this.map.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseDoubleClick);
             this.map.MouseDown += new System.Windows.Forms.MouseEventHandler(this.map_MouseClick);
             // 
             // imageLayer1
