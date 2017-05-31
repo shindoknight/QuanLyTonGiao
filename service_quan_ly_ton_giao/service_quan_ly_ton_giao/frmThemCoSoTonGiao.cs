@@ -60,8 +60,8 @@ namespace service_quan_ly_ton_giao
             DataTable ds5 = wf.DuLieuXa("where IDHuyen=N'" + ds4.Rows[0]["IDHuyen"].ToString() + "'");
             try
             {
-                string ki = ds5.Rows[0]["ViDo"].ToString().Replace(".",",");
-                string vi = ds5.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                string ki = ds5.Rows[0]["ViDo"].ToString();
+                string vi = ds5.Rows[0]["KinhDo"].ToString();
 
                 map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                 map.Zoom(12);
@@ -82,8 +82,8 @@ namespace service_quan_ly_ton_giao
                
                 try
                 {
-                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = ds.Rows[i]["ViDo"].ToString();
+                    string vi = ds.Rows[i]["KinhDo"].ToString();
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
@@ -241,8 +241,8 @@ namespace service_quan_ly_ton_giao
                     //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds2.Rows[i]["ViDo"].ToString();
+                        string vi = ds2.Rows[i]["KinhDo"].ToString();
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
@@ -280,8 +280,8 @@ namespace service_quan_ly_ton_giao
                     //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds2.Rows[i]["ViDo"].ToString();
+                        string vi = ds2.Rows[i]["KinhDo"].ToString();
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath2 + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
@@ -301,8 +301,8 @@ namespace service_quan_ly_ton_giao
                 DataTable tv4 = wf.TimViTri(" where IDXa=N'" + ds2.Rows[tam]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = tv4.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                    string vi = tv4.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = tv4.Rows[0]["ViDo"].ToString();
+                    string vi = tv4.Rows[0]["KinhDo"].ToString();
 
                     map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                     map.Zoom(5);
@@ -310,8 +310,8 @@ namespace service_quan_ly_ton_giao
                 catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
                 {
                     DataTable tv3 = wf.TimViTriTheoHuyen(" where IDHuyen=N'" + tv4.Rows[tam]["IDHuyen"].ToString() + "'");
-                    string ki = tv3.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                    string vi = tv3.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = tv3.Rows[0]["ViDo"].ToString();
+                    string vi = tv3.Rows[0]["KinhDo"].ToString();
 
                     map.CenterPoint = new GeoPoint(latitude: float.Parse(ki), longitude: float.Parse(vi));
                     map.Zoom(5);
@@ -325,8 +325,8 @@ namespace service_quan_ly_ton_giao
             {
                 DataTable ds = wf.DuLieuXa(" ,tblHuyen,tblTinh where tblXa.IDHuyen=tblHuyen.IDHuyen and tblHuyen.IDTinh=tblTinh.IDTinh and TenXa=N'" + cboXa.Text + "' and TenHuyen=N'" + cboHuyen.Text + "' and TenTinh=N'" + cboTinh.Text + "'");
                 ItemStorage.Items.Clear();
-                string ki1 = ds.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                string vi1 = ds.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                string ki1 = ds.Rows[0]["ViDo"].ToString();
+                string vi1 = ds.Rows[0]["KinhDo"].ToString();
                 map.CenterPoint = new GeoPoint(latitude: (float.Parse(ki1)), longitude: (float.Parse(vi1)));
                 
                 

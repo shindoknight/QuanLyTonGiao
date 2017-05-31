@@ -27,7 +27,7 @@ public class ServiceUser : System.Web.Services.WebService
     {
         try
         {
-            string strConnect = @"Data Source=MI\M;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
+            string strConnect = @"Data Source=.\SQLEXPRESS;Initial Catalog=QUANLYTONGIAO;Integrated Security=True";
             con = new SqlConnection(strConnect);
             con.Open();
         }

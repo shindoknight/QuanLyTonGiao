@@ -203,8 +203,8 @@ namespace service_quan_ly_ton_giao
                 //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = ds.Rows[i]["ViDo"].ToString();
+                    string vi = ds.Rows[i]["KinhDo"].ToString();
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
@@ -352,8 +352,8 @@ namespace service_quan_ly_ton_giao
                 //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = ds.Rows[i]["ViDo"].ToString();
+                    string vi = ds.Rows[i]["KinhDo"].ToString();
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
@@ -384,8 +384,8 @@ namespace service_quan_ly_ton_giao
                 //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                 try
                 {
-                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
-                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                    string ki = ds.Rows[i]["ViDo"].ToString();
+                    string vi = ds.Rows[i]["KinhDo"].ToString();
                     #region #MapCustomElementExample
                     var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
