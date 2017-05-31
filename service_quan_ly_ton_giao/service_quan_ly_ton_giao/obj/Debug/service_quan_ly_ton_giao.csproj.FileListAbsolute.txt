@@ -332,3 +332,4 @@ C:\Users\m\Documents\GitHub\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_
 C:\Users\m\Documents\GitHub\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe.licenses
 C:\Users\m\Documents\GitHub\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.exe
 C:\Users\m\Documents\GitHub\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.pdb
+D:\1-Study\5-HK7\CONG NGHE LAP TRINH TICH HOP\Cong Nghe Lap Trinh Tich Hop\QuanLyTonGiao\service_quan_ly_ton_giao\service_quan_ly_ton_giao\obj\Debug\service_quan_ly_ton_giao.FormRac.resources

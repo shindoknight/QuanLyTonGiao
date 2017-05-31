@@ -47,7 +47,7 @@
             this.bbtnDSTonGiao = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnThemTonGiao = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnThongKe = new DevExpress.XtraBars.BarButtonItem();
-            this.bbtnTimKiem = new DevExpress.XtraBars.BarButtonItem();
+            this.bbtnThungRac = new DevExpress.XtraBars.BarButtonItem();
             this.barlbName = new DevExpress.XtraBars.BarStaticItem();
             this.bbtnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bbtnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
@@ -105,7 +105,7 @@
             this.bbtnDSTonGiao,
             this.bbtnThemTonGiao,
             this.bbtnThongKe,
-            this.bbtnTimKiem,
+            this.bbtnThungRac,
             this.barlbName,
             this.bbtnThoat,
             this.bbtnSaoLuu,
@@ -259,12 +259,12 @@
             this.bbtnThongKe.Name = "bbtnThongKe";
             this.bbtnThongKe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbtnThongKe_ItemClick);
             // 
-            // bbtnTimKiem
+            // bbtnThungRac
             // 
-            this.bbtnTimKiem.Caption = "Tìm Kiếm";
-            this.bbtnTimKiem.Id = 17;
-            this.bbtnTimKiem.LargeImageIndex = 16;
-            this.bbtnTimKiem.Name = "bbtnTimKiem";
+            this.bbtnThungRac.Caption = "Thùng Rác";
+            this.bbtnThungRac.Id = 17;
+            this.bbtnThungRac.LargeImageIndex = 27;
+            this.bbtnThungRac.Name = "bbtnThungRac";
             // 
             // barlbName
             // 
@@ -370,6 +370,7 @@
             this.imageCollection32x32.Images.SetKeyName(24, "diagram.png");
             this.imageCollection32x32.Images.SetKeyName(25, "map.png");
             this.imageCollection32x32.Images.SetKeyName(26, "placeholder.png");
+            this.imageCollection32x32.Images.SetKeyName(27, "trash-icon.png");
             // 
             // ribbonPageTrangChu
             // 
@@ -468,7 +469,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.bbtnThongKe);
-            this.ribbonPageGroup9.ItemLinks.Add(this.bbtnTimKiem);
+            this.ribbonPageGroup9.ItemLinks.Add(this.bbtnThungRac);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Chức năng chung";
             // 
@@ -488,7 +489,7 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 744);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 384);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1262, 31);
@@ -501,7 +502,7 @@
             this.xtraTabControl1.Images = this.imageCollection16x16;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 146);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(1262, 598);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1262, 238);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.CloseButtonClick += new System.EventHandler(this.xtraTabControl1_CloseButtonClick);
             // 
@@ -520,7 +521,7 @@
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 775);
+            this.ClientSize = new System.Drawing.Size(1262, 415);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar1);
@@ -577,7 +578,7 @@
         private DevExpress.XtraBars.BarButtonItem bbtnDSTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThemTonGiao;
         private DevExpress.XtraBars.BarButtonItem bbtnThongKe;
-        private DevExpress.XtraBars.BarButtonItem bbtnTimKiem;
+        private DevExpress.XtraBars.BarButtonItem bbtnThungRac;
         private DevExpress.XtraBars.BarStaticItem barlbName;
         private System.Windows.Forms.Label labelName;
         private DevExpress.XtraBars.BarButtonItem bbtnThoat;

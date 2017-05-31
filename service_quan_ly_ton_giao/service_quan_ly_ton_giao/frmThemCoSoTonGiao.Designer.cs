@@ -82,6 +82,7 @@
             this.mapItemStorage2 = new DevExpress.XtraMap.MapItemStorage();
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -588,6 +589,7 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.button3);
             this.groupControl3.Controls.Add(this.map);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
@@ -616,6 +618,15 @@
             // 
             this.vectorItemsLayer1.Data = this.mapItemStorage2;
             this.vectorItemsLayer1.Name = "VectorLayer";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Location = new System.Drawing.Point(235, 228);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(13, 13);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // frmThemCoSoTonGiao
             // 
@@ -702,5 +713,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtKinh;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
     }
 }

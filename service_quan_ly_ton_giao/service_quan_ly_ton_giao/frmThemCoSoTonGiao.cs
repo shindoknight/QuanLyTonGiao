@@ -412,13 +412,15 @@ namespace service_quan_ly_ton_giao
             customElement.Image = new Bitmap(image, new Size(40, 40));
             ItemStorage.Items.Add(customElement);
             #endregion #MapCustomElementExample
-            string[] x1 = x.Split(',');
+            /*string[] x1 = x.Split(',');
             x1[1] = x1[1].Substring(0, 8);
             x = x1[0] + "." + x1[1];
             //textBox2.Text = x;
             string[] y1 = y.Split(',');
             y1[1] = y1[1].Substring(0, 8);
-            y = y1[0] + "." + y1[1];
+            y = y1[0] + "." + y1[1];*/
+            x = x.Substring(0, 8);
+            y = y.Substring(0, 8);
             txtVi.Text = y;
             txtKinh.Text = x;
 
