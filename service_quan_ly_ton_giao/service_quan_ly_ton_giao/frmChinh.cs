@@ -52,8 +52,8 @@ namespace service_quan_ly_ton_giao
         private void frmChinh_Load(object sender, EventArgs e)
         {
             TabCreating(xtraTabControl1, "Trang Chủ", "TrangChu", _frmTrangChu, 0);
-            FormDSUser f = new FormDSUser();
-            _frmTrangChu.TabCreating("Danh Sách", "DSUser", f, imageCollection16x16, 4);
+            frmMapChinh f = new frmMapChinh();
+            _frmTrangChu.TabCreating("Trang chủ", "Trang chủ", f, imageCollection16x16, 4);
 
         }
          private bool ExistForm(string name)

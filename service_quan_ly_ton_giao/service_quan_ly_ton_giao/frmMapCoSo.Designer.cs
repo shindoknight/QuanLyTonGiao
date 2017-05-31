@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -86,8 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -120,7 +126,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1237, 585);
-            this.splitContainer1.SplitterDistance = 135;
+            this.splitContainer1.SplitterDistance = 117;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer3
@@ -137,7 +143,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupControl3);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
-            this.splitContainer3.Size = new System.Drawing.Size(1237, 135);
+            this.splitContainer3.Size = new System.Drawing.Size(1237, 117);
             this.splitContainer3.SplitterDistance = 817;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -161,13 +167,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(817, 135);
+            this.groupControl1.Size = new System.Drawing.Size(817, 117);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Tìm kiếm chi tiết";
             // 
             // btnChiTietTC
             // 
-            this.btnChiTietTC.Location = new System.Drawing.Point(471, 32);
+            this.btnChiTietTC.Location = new System.Drawing.Point(470, 24);
             this.btnChiTietTC.Name = "btnChiTietTC";
             this.btnChiTietTC.Size = new System.Drawing.Size(30, 23);
             this.btnChiTietTC.TabIndex = 13;
@@ -177,17 +183,18 @@
             // 
             // btnChiTietTonGiao
             // 
-            this.btnChiTietTonGiao.Location = new System.Drawing.Point(217, 33);
+            this.btnChiTietTonGiao.Location = new System.Drawing.Point(216, 25);
             this.btnChiTietTonGiao.Name = "btnChiTietTonGiao";
             this.btnChiTietTonGiao.Size = new System.Drawing.Size(30, 23);
             this.btnChiTietTonGiao.TabIndex = 12;
             this.btnChiTietTonGiao.Text = "CT";
             this.btnChiTietTonGiao.UseVisualStyleBackColor = true;
+            this.btnChiTietTonGiao.Click += new System.EventHandler(this.btnChiTietTonGiao_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(126, 113);
+            this.checkBox1.Location = new System.Drawing.Point(125, 88);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(189, 17);
             this.checkBox1.TabIndex = 11;
@@ -199,7 +206,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 82);
+            this.label8.Location = new System.Drawing.Point(24, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 10;
@@ -221,7 +228,7 @@
             // cboXa
             // 
             this.cboXa.FormattingEnabled = true;
-            this.cboXa.Location = new System.Drawing.Point(530, 83);
+            this.cboXa.Location = new System.Drawing.Point(529, 58);
             this.cboXa.Name = "cboXa";
             this.cboXa.Size = new System.Drawing.Size(121, 21);
             this.cboXa.TabIndex = 9;
@@ -229,7 +236,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(489, 89);
+            this.label7.Location = new System.Drawing.Point(488, 64);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 13);
             this.label7.TabIndex = 8;
@@ -238,7 +245,7 @@
             // cboHuyen
             // 
             this.cboHuyen.FormattingEnabled = true;
-            this.cboHuyen.Location = new System.Drawing.Point(343, 82);
+            this.cboHuyen.Location = new System.Drawing.Point(342, 57);
             this.cboHuyen.Name = "cboHuyen";
             this.cboHuyen.Size = new System.Drawing.Size(121, 21);
             this.cboHuyen.TabIndex = 7;
@@ -247,7 +254,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 85);
+            this.label6.Location = new System.Drawing.Point(298, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 6;
@@ -256,7 +263,7 @@
             // cboTenToChucQuanTri
             // 
             this.cboTenToChucQuanTri.FormattingEnabled = true;
-            this.cboTenToChucQuanTri.Location = new System.Drawing.Point(344, 34);
+            this.cboTenToChucQuanTri.Location = new System.Drawing.Point(343, 26);
             this.cboTenToChucQuanTri.Name = "cboTenToChucQuanTri";
             this.cboTenToChucQuanTri.Size = new System.Drawing.Size(121, 21);
             this.cboTenToChucQuanTri.TabIndex = 5;
@@ -264,7 +271,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 37);
+            this.label5.Location = new System.Drawing.Point(252, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 4;
@@ -273,7 +280,7 @@
             // cboTinh
             // 
             this.cboTinh.FormattingEnabled = true;
-            this.cboTinh.Location = new System.Drawing.Point(126, 80);
+            this.cboTinh.Location = new System.Drawing.Point(125, 55);
             this.cboTinh.Name = "cboTinh";
             this.cboTinh.Size = new System.Drawing.Size(121, 21);
             this.cboTinh.TabIndex = 3;
@@ -282,7 +289,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 83);
+            this.label4.Location = new System.Drawing.Point(87, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 2;
@@ -291,7 +298,7 @@
             // cboTonGiao
             // 
             this.cboTonGiao.FormattingEnabled = true;
-            this.cboTonGiao.Location = new System.Drawing.Point(89, 34);
+            this.cboTonGiao.Location = new System.Drawing.Point(88, 26);
             this.cboTonGiao.Name = "cboTonGiao";
             this.cboTonGiao.Size = new System.Drawing.Size(121, 21);
             this.cboTonGiao.TabIndex = 1;
@@ -300,7 +307,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 37);
+            this.label3.Location = new System.Drawing.Point(24, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 0;
@@ -312,7 +319,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(416, 135);
+            this.groupControl3.Size = new System.Drawing.Size(416, 117);
             this.groupControl3.TabIndex = 1;
             // 
             // splitContainer6
@@ -322,13 +329,38 @@
             this.splitContainer6.Name = "splitContainer6";
             this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.groupControl4);
+            // 
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.txtSoLuong);
             this.splitContainer6.Panel2.Controls.Add(this.label9);
-            this.splitContainer6.Size = new System.Drawing.Size(412, 113);
-            this.splitContainer6.SplitterDistance = 71;
+            this.splitContainer6.Size = new System.Drawing.Size(412, 95);
+            this.splitContainer6.SplitterDistance = 59;
             this.splitContainer6.TabIndex = 0;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.pictureBox1);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(0, 0);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(412, 59);
+            this.groupControl4.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(408, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // txtSoLuong
             // 
@@ -368,7 +400,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(1237, 446);
+            this.splitContainer2.Size = new System.Drawing.Size(1237, 464);
             this.splitContainer2.SplitterDistance = 267;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -386,7 +418,7 @@
             treeNode3.Text = "Địa giới hành chính";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3});
-            this.treeView1.Size = new System.Drawing.Size(267, 446);
+            this.treeView1.Size = new System.Drawing.Size(267, 464);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -407,8 +439,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(966, 446);
-            this.splitContainer4.SplitterDistance = 43;
+            this.splitContainer4.Size = new System.Drawing.Size(966, 464);
+            this.splitContainer4.SplitterDistance = 44;
             this.splitContainer4.TabIndex = 0;
             // 
             // txtTen
@@ -462,8 +494,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainer5.Size = new System.Drawing.Size(966, 399);
-            this.splitContainer5.SplitterDistance = 340;
+            this.splitContainer5.Size = new System.Drawing.Size(966, 416);
+            this.splitContainer5.SplitterDistance = 354;
             this.splitContainer5.TabIndex = 0;
             // 
             // map
@@ -473,7 +505,7 @@
             this.map.Layers.Add(this.vectorItemsLayer1);
             this.map.Location = new System.Drawing.Point(0, 0);
             this.map.Name = "map";
-            this.map.Size = new System.Drawing.Size(966, 340);
+            this.map.Size = new System.Drawing.Size(966, 354);
             this.map.TabIndex = 0;
             this.map.ZoomLevel = 8D;
             this.map.MapItemClick += new DevExpress.XtraMap.MapItemClickEventHandler(this.map_MapItemClick);
@@ -494,7 +526,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(966, 55);
+            this.groupControl2.Size = new System.Drawing.Size(966, 58);
             this.groupControl2.TabIndex = 0;
             // 
             // btnConggiao
@@ -504,7 +536,7 @@
             this.btnConggiao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConggiao.Location = new System.Drawing.Point(110, 20);
             this.btnConggiao.Name = "btnConggiao";
-            this.btnConggiao.Size = new System.Drawing.Size(108, 33);
+            this.btnConggiao.Size = new System.Drawing.Size(108, 36);
             this.btnConggiao.TabIndex = 1;
             this.btnConggiao.Text = "Công giáo";
             this.btnConggiao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -518,7 +550,7 @@
             this.btnPhatGiao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPhatGiao.Location = new System.Drawing.Point(2, 20);
             this.btnPhatGiao.Name = "btnPhatGiao";
-            this.btnPhatGiao.Size = new System.Drawing.Size(108, 33);
+            this.btnPhatGiao.Size = new System.Drawing.Size(108, 36);
             this.btnPhatGiao.TabIndex = 0;
             this.btnPhatGiao.Text = "Phật giáo";
             this.btnPhatGiao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -548,10 +580,14 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
             this.splitContainer6.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -613,5 +649,7 @@
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label label9;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

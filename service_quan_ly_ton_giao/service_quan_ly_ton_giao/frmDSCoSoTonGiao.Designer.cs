@@ -198,6 +198,7 @@
             this.btnChiTietTonGiao.Text = "CT";
             this.btnChiTietTonGiao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTietTonGiao.UseVisualStyleBackColor = true;
+            this.btnChiTietTonGiao.Click += new System.EventHandler(this.btnChiTietTonGiao_Click);
             // 
             // cboTenToChucQuanTri
             // 

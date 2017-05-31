@@ -147,8 +147,8 @@ namespace service_quan_ly_ton_giao
                     //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = ds.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = ds.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                        string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
@@ -242,6 +242,7 @@ namespace service_quan_ly_ton_giao
             ItemStorage.Items.Clear();
             if(int.Parse(ds.Rows.Count.ToString())==1)
             {
+
                 //DataTable tv1 = wf.TimViTri(" where IDXa=N'" + ds.Rows[0]["DiaChi"].ToString() + "'");
                 try
                 {
@@ -335,8 +336,10 @@ namespace service_quan_ly_ton_giao
                 map.CenterPoint = new GeoPoint(latitude: (float.Parse(ki1)), longitude: (float.Parse(vi1)));
                 for(int i=0;i<ds.Rows.Count;i++)
                 {
+                    string ki = ds.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                    string vi = ds.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                     #region #MapCustomElementExample
-                    var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki1), float.Parse(vi1)), Text = ds.Rows[i]["TenCoSo"].ToString() + "- Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
+                    var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = ds.Rows[i]["TenCoSo"].ToString() + "- Địa chỉ: " + ds.Rows[i]["TenXa"].ToString() };
                     var image = new Bitmap(imageFilePath + ds.Rows[i]["IDTonGiao"].ToString() + ".png");
                     customElement.Image = new Bitmap(image, new Size(40, 40));
                     ItemStorage.Items.Add(customElement);
@@ -709,6 +712,12 @@ namespace service_quan_ly_ton_giao
             frmChiTietToChucQuanTri frm = new frmChiTietToChucQuanTri();
             frm.txtIDToChuc.Text = tc.Rows[0]["IDToChuc"].ToString();
             frm.Show();
+        }
+
+        private void btnChiTietTonGiao_Click(object sender, EventArgs e)
+        {
+            FormDSTonGiao f = new FormDSTonGiao();
+            f.Show();
         }
     }
 }

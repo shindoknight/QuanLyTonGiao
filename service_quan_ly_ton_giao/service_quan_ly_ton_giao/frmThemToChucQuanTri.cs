@@ -103,6 +103,8 @@ namespace service_quan_ly_ton_giao
         private void btnTonGiao_Click(object sender, EventArgs e)
         {
             HienThiDS(" where b.TenTonGiao=N'"+cboTenTonGiao.Text+"'");
+            FormDSTonGiao f = new FormDSTonGiao();
+            f.Show();
         }
 
         private void btnChiTiet_Click(object sender, EventArgs e)

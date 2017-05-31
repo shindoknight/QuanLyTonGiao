@@ -15,7 +15,7 @@ namespace service_quan_ly_ton_giao
 {
     public partial class frmChiTietToChucQuanTri : DevExpress.XtraEditors.XtraForm
     {
-        //string imageFilePath = @"../../icon/cstg";
+        string imageFilePath = @"../../icon/cstg";
         string imageFilePath2 = @"../../icon/tcqt";
 
         VectorItemsLayer VectorLayer { get { return (VectorItemsLayer)map.Layers["VectorLayer"]; } }
@@ -60,11 +60,11 @@ namespace service_quan_ly_ton_giao
                 for (i = 0; i < int.Parse(ds2.Rows.Count.ToString()); i++)
                 {
 
-                    DataTable tv1 = wf2.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
+                   // DataTable tv1 = wf2.TimViTri(" where IDXa=N'" + ds2.Rows[i]["DiaChi"].ToString() + "'");
                     try
                     {
-                        string ki = tv1.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv1.Rows[0]["KinhDo"].ToString().Replace(".", ",");
+                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
                         #region #MapCustomElementExample
                         var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
                         var image = new Bitmap(imageFilePath2 + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
@@ -74,15 +74,7 @@ namespace service_quan_ly_ton_giao
                     }
                     catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
                     {
-                        DataTable tv2 = wf2.TimViTriTheoHuyen(" where IDHuyen=N'" + tv1.Rows[i]["IDHuyen"].ToString() + "'");
-                        string ki = tv2.Rows[0]["ViDo"].ToString().Replace(".", ",");
-                        string vi = tv2.Rows[0]["KinhDo"].ToString().Replace(".", ",");
-                        #region #MapCustomElementExample
-                        var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
-                        var image = new Bitmap(imageFilePath2 + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
-                        customElement.Image = new Bitmap(image, new Size(40, 40));
-                        ItemStorage.Items.Add(customElement);
-                        #endregion #MapCustomElementExample*/
+                        MessageBox.Show("Xảy ra lỗi !");
                     }
 
                 }
@@ -271,6 +263,51 @@ namespace service_quan_ly_ton_giao
         private void navigationPane1_Click(object sender, EventArgs e)
         {
 
+        }
+        //btnTimKiemTheoTonGiao
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable ds2 = wf2.HienThiDSCoSo("", " where a.TenTonGiao=N'" + cboTenTonGiao.Text + "'");
+            ItemStorage.Items.Clear();
+            if (int.Parse(ds2.Rows.Count.ToString()) == 0)
+            {
+                MessageBox.Show(cboTenTonGiao.Text + " không có cơ sở tôn giáo !");
+                map.CenterPoint = new GeoPoint(latitude: 15.46056, longitude: 107.7433);
+                map.Zoom(5);
+            }
+            else
+            {
+                int i;
+                for (i = 0; i < int.Parse(ds2.Rows.Count.ToString()); i++)
+                {
+
+
+                    try
+                    {
+                        string ki = ds2.Rows[i]["ViDo"].ToString().Replace(".", ",");
+                        string vi = ds2.Rows[i]["KinhDo"].ToString().Replace(".", ",");
+                        #region #MapCustomElementExample
+                        var customElement = new MapCustomElement() { Location = new GeoPoint(float.Parse(ki), float.Parse(vi)), Text = "" + ds2.Rows[i]["TenCoSo"].ToString() + "-Địa chỉ: " + ds2.Rows[i]["TenXa"].ToString() };
+                        var image = new Bitmap(imageFilePath + ds2.Rows[0]["IDTonGiao"].ToString() + ".png");
+                        customElement.Image = new Bitmap(image, new Size(40, 40));
+                        ItemStorage.Items.Add(customElement);
+                        #endregion #MapCustomElementExample
+                    }
+                    catch//trong truong hop không có tọa độ xã->lấy tọa độ của huyện
+                    {
+                        MessageBox.Show("Xảy ra lỗi");
+                    }
+
+                }
+                map.CenterPoint = new GeoPoint(latitude: 15.46056, longitude: 107.7433);
+                map.Zoom(5);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormDSTonGiao f = new FormDSTonGiao();
+            f.Show();
         }
     }
 }

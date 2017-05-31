@@ -15,7 +15,7 @@ using System.Data.SqlClient;//dùng để sử dụng các câu lệnh kết n�
 // [System.Web.Script.Services.ScriptService]
 public class ServiceMap : System.Web.Services.WebService
 {
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
 
     public ServiceMap()
     {

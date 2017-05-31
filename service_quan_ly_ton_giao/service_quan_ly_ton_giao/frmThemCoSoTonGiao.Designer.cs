@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemCoSoTonGiao));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtVi = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtKinh = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.cboIDNguoiQL = new System.Windows.Forms.ComboBox();
             this.radKhong = new System.Windows.Forms.RadioButton();
             this.radCo = new System.Windows.Forms.RadioButton();
@@ -78,10 +82,6 @@
             this.mapItemStorage2 = new DevExpress.XtraMap.MapItemStorage();
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtKinh = new System.Windows.Forms.TextBox();
-            this.txtVi = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -163,6 +163,38 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(831, 541);
             this.groupControl2.TabIndex = 0;
+            // 
+            // txtVi
+            // 
+            this.txtVi.Location = new System.Drawing.Point(726, 293);
+            this.txtVi.Name = "txtVi";
+            this.txtVi.Size = new System.Drawing.Size(100, 21);
+            this.txtVi.TabIndex = 76;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(660, 299);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 13);
+            this.label16.TabIndex = 75;
+            this.label16.Text = "Vĩ độ";
+            // 
+            // txtKinh
+            // 
+            this.txtKinh.Location = new System.Drawing.Point(726, 262);
+            this.txtKinh.Name = "txtKinh";
+            this.txtKinh.Size = new System.Drawing.Size(100, 21);
+            this.txtKinh.TabIndex = 74;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(660, 268);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 73;
+            this.label15.Text = "Kinh độ";
             // 
             // cboIDNguoiQL
             // 
@@ -275,6 +307,7 @@
             this.button1.TabIndex = 62;
             this.button1.Text = "CT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label13
             // 
@@ -573,6 +606,7 @@
             this.map.Size = new System.Drawing.Size(470, 396);
             this.map.TabIndex = 1;
             this.map.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.map_MouseDoubleClick);
+            this.map.MouseHover += new System.EventHandler(this.map_MouseHover);
             // 
             // imageLayer1
             // 
@@ -582,38 +616,6 @@
             // 
             this.vectorItemsLayer1.Data = this.mapItemStorage2;
             this.vectorItemsLayer1.Name = "VectorLayer";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(660, 268);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(42, 13);
-            this.label15.TabIndex = 73;
-            this.label15.Text = "Kinh độ";
-            // 
-            // txtKinh
-            // 
-            this.txtKinh.Location = new System.Drawing.Point(726, 262);
-            this.txtKinh.Name = "txtKinh";
-            this.txtKinh.Size = new System.Drawing.Size(100, 21);
-            this.txtKinh.TabIndex = 74;
-            // 
-            // txtVi
-            // 
-            this.txtVi.Location = new System.Drawing.Point(726, 293);
-            this.txtVi.Name = "txtVi";
-            this.txtVi.Size = new System.Drawing.Size(100, 21);
-            this.txtVi.TabIndex = 76;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(660, 299);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(30, 13);
-            this.label16.TabIndex = 75;
-            this.label16.Text = "Vĩ độ";
             // 
             // frmThemCoSoTonGiao
             // 
