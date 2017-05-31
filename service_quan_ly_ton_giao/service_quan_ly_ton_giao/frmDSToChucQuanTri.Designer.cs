@@ -99,7 +99,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1177, 524);
-            this.splitContainer1.SplitterDistance = 114;
+            this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer3
@@ -115,7 +115,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainer3.Size = new System.Drawing.Size(1177, 114);
+            this.splitContainer3.Size = new System.Drawing.Size(1177, 25);
             this.splitContainer3.SplitterDistance = 586;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -124,7 +124,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(586, 114);
+            this.groupControl1.Size = new System.Drawing.Size(586, 25);
             this.groupControl1.TabIndex = 0;
             // 
             // groupControl2
@@ -132,7 +132,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(587, 114);
+            this.groupControl2.Size = new System.Drawing.Size(587, 25);
             this.groupControl2.TabIndex = 0;
             // 
             // splitContainer2
@@ -148,7 +148,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer2.Size = new System.Drawing.Size(1177, 406);
+            this.splitContainer2.Size = new System.Drawing.Size(1177, 495);
             this.splitContainer2.SplitterDistance = 225;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -163,7 +163,7 @@
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
             this.treeView1.ShowNodeToolTips = true;
-            this.treeView1.Size = new System.Drawing.Size(225, 406);
+            this.treeView1.Size = new System.Drawing.Size(225, 495);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -181,8 +181,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupControl4);
-            this.splitContainer4.Size = new System.Drawing.Size(948, 406);
-            this.splitContainer4.SplitterDistance = 67;
+            this.splitContainer4.Size = new System.Drawing.Size(948, 495);
+            this.splitContainer4.SplitterDistance = 81;
             this.splitContainer4.TabIndex = 0;
             // 
             // groupControl3
@@ -192,7 +192,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(948, 67);
+            this.groupControl3.Size = new System.Drawing.Size(948, 81);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Tìm kiếm nhanh";
             // 
@@ -221,7 +221,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(948, 335);
+            this.groupControl4.Size = new System.Drawing.Size(948, 410);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "Danh sách tổ chức quản trị tôn giáo";
             // 
@@ -250,7 +250,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnXoa,
             this.btnChiTiet});
-            this.gridControl1.Size = new System.Drawing.Size(944, 313);
+            this.gridControl1.Size = new System.Drawing.Size(944, 388);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

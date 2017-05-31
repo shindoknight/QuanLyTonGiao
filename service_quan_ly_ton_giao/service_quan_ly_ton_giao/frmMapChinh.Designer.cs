@@ -299,6 +299,7 @@
             this.map.Layers.Add(this.imageLayer1);
             this.map.Layers.Add(this.vectorItemsLayer1);
             sizeLegend1.Layer = this.vectorItemsLayer1;
+            colorListLegend1.Alignment = DevExpress.XtraMap.LegendAlignment.TopRight;
             colorListLegend1.Layer = this.vectorItemsLayer1;
             this.map.Legends.Add(sizeLegend1);
             this.map.Legends.Add(colorListLegend1);

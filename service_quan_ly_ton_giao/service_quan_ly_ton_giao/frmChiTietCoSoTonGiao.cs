@@ -563,5 +563,11 @@ namespace service_quan_ly_ton_giao
             ItemStorage.Items.Add(customElement);
             #endregion #MapCustomElementExample
         }
+
+        private void btnChiTietTonGiao_Click(object sender, EventArgs e)
+        {
+            FormDSTonGiao f = new FormDSTonGiao();
+            f.Show();
+        }
     }
 }

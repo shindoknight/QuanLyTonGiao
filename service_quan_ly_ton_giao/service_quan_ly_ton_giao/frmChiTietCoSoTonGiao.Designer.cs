@@ -189,6 +189,7 @@
             this.btnChiTietTonGiao.TabIndex = 35;
             this.btnChiTietTonGiao.Text = "CT";
             this.btnChiTietTonGiao.UseVisualStyleBackColor = true;
+            this.btnChiTietTonGiao.Click += new System.EventHandler(this.btnChiTietTonGiao_Click);
             // 
             // btnToChucQuanTri
             // 

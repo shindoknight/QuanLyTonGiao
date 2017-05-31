@@ -24,7 +24,7 @@ public class tblToChucQuanTri : System.Web.Services.WebService
     }
 
    
-    SqlConnection conn = new SqlConnection(@"server=.\SQLEXPRESS0; database=QUANLYTONGIAO; integrated security = true;");
+    SqlConnection conn = new SqlConnection(@"server=MI\M; database=QUANLYTONGIAO; integrated security = true;");
     [WebMethod]
     public int ThemDLToChuc(string TenToChuc, int IDTonGiao, string GioiThieu, string HinhAnh)
     {
@@ -84,8 +84,8 @@ public class tblToChucQuanTri : System.Web.Services.WebService
     public DataTable HienThiDSToChucQuanTri(string dieukien)
     {
         SqlCommand comm = new SqlCommand(@"select b.IDToChuc,b.TenToChuc,a.SLCoSoTonGiao,b.TenTonGiao,b.IDTonGiao,a.SoLuongTinDo,b.GioiThieu,b.HinhAnh from (select IDToChuc,TenTonGiao,TenToChuc,tblToChucQuanTri.GioiThieu,tblToChucQuanTri.IDTonGiao,tblToChucQuanTri.HinhAnh from tblToChucQuanTri,tblTonGiao where tblTonGiao.IDTonGiao=tblToChucQuanTri.IDTonGiao and tblToChucQuanTri.DaXoa=0) b left join 
-        (select COUNT(tblCoSo.IDCoSo) as SLCoSoTonGiao ,IDToChuc,SUM(c.SL) as SoLuongTinDo from tblCoSo ,(select COUNT(IDTinDo) as SL,tblTinDo.IDCoSo from tblTinDo,tblCoSo where tblTinDo.IDCoSo= tblCoSo.IDCoSo
-        group by tblTinDo.IDCoSo) c where c.IDCoSo=tblCoSo.IDCoSo group by IDToChuc) a on a.IDToChuc=b.IDToChuc" + dieukien, conn);
+        (select COUNT(tblCoSo.IDCoSo) as SLCoSoTonGiao ,IDToChuc,SUM(c.SL) as SoLuongTinDo from tblCoSo left join (select COUNT(IDTinDo) as SL,tblTinDo.IDCoSo from tblTinDo,tblCoSo where tblTinDo.IDCoSo= tblCoSo.IDCoSo
+        group by tblTinDo.IDCoSo) c on c.IDCoSo=tblCoSo.IDCoSo group by IDToChuc) a on a.IDToChuc=b.IDToChuc" + dieukien, conn);
         comm.CommandType = CommandType.Text;
         SqlDataAdapter da = new SqlDataAdapter(comm);
         DataTable dtdistrict = new DataTable("a", "b");

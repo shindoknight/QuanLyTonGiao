@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraMap.SizeLegend sizeLegend2 = new DevExpress.XtraMap.SizeLegend();
-            DevExpress.XtraMap.ColorListLegend colorListLegend2 = new DevExpress.XtraMap.ColorListLegend();
+            DevExpress.XtraMap.SizeLegend sizeLegend1 = new DevExpress.XtraMap.SizeLegend();
+            DevExpress.XtraMap.ColorListLegend colorListLegend1 = new DevExpress.XtraMap.ColorListLegend();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
             this.mapItemStorage1 = new DevExpress.XtraMap.MapItemStorage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -42,6 +42,7 @@
             this.clmHinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnChonfile = new System.Windows.Forms.Button();
             this.rtbGioiThieu = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -70,7 +71,6 @@
             this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
             this.openStreetMapDataProvider1 = new DevExpress.XtraMap.OpenStreetMapDataProvider();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.btnChonfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
@@ -194,6 +194,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(726, 531);
             this.panel2.TabIndex = 15;
+            // 
+            // btnChonfile
+            // 
+            this.btnChonfile.Location = new System.Drawing.Point(547, 96);
+            this.btnChonfile.Name = "btnChonfile";
+            this.btnChonfile.Size = new System.Drawing.Size(75, 23);
+            this.btnChonfile.TabIndex = 18;
+            this.btnChonfile.Text = "Chọn file";
+            this.btnChonfile.UseVisualStyleBackColor = true;
+            this.btnChonfile.Visible = false;
+            this.btnChonfile.Click += new System.EventHandler(this.btnChonfile_Click);
             // 
             // rtbGioiThieu
             // 
@@ -459,10 +470,11 @@
             this.map.Dock = System.Windows.Forms.DockStyle.Right;
             this.map.Layers.Add(this.imageLayer1);
             this.map.Layers.Add(this.vectorItemsLayer1);
-            sizeLegend2.Layer = this.vectorItemsLayer1;
-            colorListLegend2.Layer = this.vectorItemsLayer1;
-            this.map.Legends.Add(sizeLegend2);
-            this.map.Legends.Add(colorListLegend2);
+            sizeLegend1.Layer = this.vectorItemsLayer1;
+            colorListLegend1.Alignment = DevExpress.XtraMap.LegendAlignment.TopRight;
+            colorListLegend1.Layer = this.vectorItemsLayer1;
+            this.map.Legends.Add(sizeLegend1);
+            this.map.Legends.Add(colorListLegend1);
             this.map.Location = new System.Drawing.Point(726, 0);
             this.map.Name = "map";
             this.map.Size = new System.Drawing.Size(383, 601);
@@ -477,17 +489,6 @@
             // toolTipController1
             // 
             this.toolTipController1.AllowHtmlText = true;
-            // 
-            // btnChonfile
-            // 
-            this.btnChonfile.Location = new System.Drawing.Point(547, 96);
-            this.btnChonfile.Name = "btnChonfile";
-            this.btnChonfile.Size = new System.Drawing.Size(75, 23);
-            this.btnChonfile.TabIndex = 18;
-            this.btnChonfile.Text = "Chọn file";
-            this.btnChonfile.UseVisualStyleBackColor = true;
-            this.btnChonfile.Visible = false;
-            this.btnChonfile.Click += new System.EventHandler(this.btnChonfile_Click);
             // 
             // FormDSTonGiao
             // 

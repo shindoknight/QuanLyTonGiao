@@ -421,7 +421,18 @@ namespace service_quan_ly_ton_giao
             y = y1[0] + "." + y1[1];
             txtVi.Text = y;
             txtKinh.Text = x;
-           
+
+        }
+
+        private void map_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormDSTonGiao f = new FormDSTonGiao();
+            f.Show();
         }
     }
 }
